@@ -1,0 +1,38 @@
+:root {
+  --primary: #0d6efd;
+  --gray-500: #8b96a5;
+  --gray-600: #505050;
+  --dark: #1c1c1c;
+  --white: #fff;
+}
+
+.flag-card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 221px;
+  height: 36px;
+}
+
+.flag-card-country {
+  margin-left: 11px;
+}
+
+.flag-card-country h4 {
+  margin-top: 5px;
+  /* margin-left: 2px; */
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+
+  color: var(--dark);
+}
+
+.flag-card-country p {
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--gray-500);
+}

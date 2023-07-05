@@ -1,0 +1,104 @@
+:root {
+  --primary: #0d6efd;
+  --gray-500: #8b96a5;
+  --gray-600: #505050;
+  --dark: #1c1c1c;
+  --white: #fff;
+}
+
+.section6 {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  height: 190px;
+  padding-top: 38px;
+  background: #eff2f4;
+}
+
+.section6-subscribe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 4px;
+}
+
+.section6-subscribe h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: -0.2px;
+  color: var(--dark);
+}
+
+.section6-subscribe p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: #606060;
+}
+
+.section6-form {
+  position: relative;
+  margin-top: 21px;
+}
+
+.section6-form img {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  pointer-events: none;
+}
+
+.section6-form input {
+  width: 274px;
+  height: 40px;
+
+  padding-left: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--gray-500);
+
+  border: 1px solid #dee2e7;
+  border-radius: 6px;
+}
+
+.section6-form input:focus {
+  outline: 4px solid #1572fd63;
+  border: 2px solid var(--primary);
+}
+
+.section6-form input::placeholder {
+  padding-left: 26px;
+  color: var(--gray-500);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.section6-form button {
+  width: 110px;
+  height: 40px;
+  margin-left: 8px;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  border: none;
+  border-radius: 6px;
+  color: var(--white);
+  background: linear-gradient(180deg, #127fff 0%, #0067ff 100%);
+  cursor: pointer;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.section6-form button:hover {
+  background: var(--white);
+  color: var(--primary);
+  border: 1px solid #dee2e7;
+}
+
+.hidden {
+  display: none;
+}

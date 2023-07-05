@@ -1,0 +1,30 @@
+:root {
+  --primary: #0d6efd;
+  --gray-500: #8b96a5;
+  --gray-600: #505050;
+  --dark: #1c1c1c;
+  --white: #fff;
+}
+
+.section4 {
+  margin-top: 30px;
+  margin-left: 3px;
+}
+
+.section4 h2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.2px;
+
+  color: var(--dark);
+}
+
+.section4-wrapper {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  gap: 20px;
+  width: 1180px;
+  height: 640px;
+  margin-top: 24px;
+}
