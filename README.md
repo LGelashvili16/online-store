@@ -1,3 +1,7 @@
+# This is the online store project
+
+[Click here to open the webpage!](https://lgellson.github.io/online-store/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
