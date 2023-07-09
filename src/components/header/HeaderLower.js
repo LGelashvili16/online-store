@@ -8,7 +8,7 @@ import { headerFlags } from '../../data/header/headerData.js';
 import { currencyData } from '../../data/header/headerData.js';
 import { headerCategoriesData } from '../../data/header/headerData.js';
 
-import './HeaderLower.css';
+import styles from './HeaderLower.module.css';
 
 const HeaderLower = () => {
   const [showHelpList, setShowHelpList] = useState(false);
@@ -72,23 +72,38 @@ const HeaderLower = () => {
   });
 
   return (
-    <div className="header-lower">
-      <div className="header-lower-wrapper">
+    <div className={styles['header-lower']}>
+      <div className={styles['resp-header-lower']}>
+        <div>
+          <Link>All category</Link>
+        </div>
+        <div>
+          <Link>Gadgets</Link>
+        </div>
+        <div>
+          <Link>Clothes</Link>
+        </div>
+        <div>
+          <Link>Accesories</Link>
+        </div>
+      </div>
+
+      <div className={styles['header-lower-wrapper']}>
         <nav>
-          <ul className="header-lower-list">
-            <li className="header-lower-list-burger">
+          <ul className={styles['header-lower-list']}>
+            <li className={styles['header-lower-list-burger']}>
               <img src={burgerMenuImg} alt="Burger menu" />
               {/* <Link to="">All category</Link> */}
               <p
-                className="burger-allCategory"
+                className={styles['burger-allCategory']}
                 onClick={allCategoryHandler}
                 ref={categoryRef}
               >
                 All category
               </p>
               <ul
-                className={`burger-allCategory-list ${
-                  showAllCategory ? 'showAllCat' : ''
+                className={`${styles['burger-allCategory-list']} ${
+                  showAllCategory ? styles['showAllCat'] : ''
                 }`}
                 ref={categoryListRef}
               >
@@ -115,20 +130,20 @@ const HeaderLower = () => {
             <li>
               <Link to="">Menu item</Link>
             </li>
-            <li className="header-help">
+            <li className={styles['header-help']}>
               <p onClick={headerHelpHandler} ref={helpListRef}>
                 Help
               </p>
 
               <img
-                className="header-lower-dropdown-arrow"
+                className={styles['header-lower-dropdown-arrow']}
                 src={arrowImg}
                 alt="arrow"
               />
 
               <ul
-                className={`header-help-dropdown-list ${
-                  !showHelpList ? 'hidden' : ''
+                className={`${styles['header-help-dropdown-list']} ${
+                  !showHelpList ? styles['hidden'] : ''
                 }`}
                 ref={menuRef}
               >
@@ -142,20 +157,20 @@ const HeaderLower = () => {
           </ul>
         </nav>
 
-        <div className="header-currency-shipping">
+        <div className={styles['header-currency-shipping']}>
           <ul>
-            <li className="header-curency-dropdown">
+            <li className={styles['header-currency-dropdown']}>
               <p onClick={currencyHandler} ref={currencyListRef}>
                 {currencyData[0]}
               </p>
               <img
-                className="header-currency-dropdown-arrow"
+                className={styles['header-currency-dropdown-arrow']}
                 src={arrowImg}
                 alt="arrow"
               />
               <ul
-                className={`header-currency-list ${
-                  !showCurrencyList ? 'hidden' : ''
+                className={`${styles['header-currency-list']} ${
+                  !showCurrencyList ? styles['hidden'] : ''
                 }`}
                 ref={currencyRef}
               >
@@ -165,23 +180,23 @@ const HeaderLower = () => {
               </ul>
             </li>
 
-            <li className="header-shipping-dropdown">
+            <li className={styles['header-shipping-dropdown']}>
               <p onClick={shippingHandler} ref={shippingRef}>
                 Ship to
               </p>
               <img
-                className="header-current-shipping"
+                className={styles['header-current-shipping']}
                 src={headerFlags[0].flag}
                 alt=""
               />
               <img
-                className="header-shipping-dropdown-arrow"
+                className={styles['header-shipping-dropdown-arrow']}
                 src={arrowImg}
                 alt="arrow"
               />
               <ul
-                className={`header-flags-list ${
-                  !showShippingList ? 'hidden' : ''
+                className={`${styles['header-flags-list']} ${
+                  !showShippingList ? styles['hidden'] : ''
                 }`}
                 ref={shippingListRef}
               >

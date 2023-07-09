@@ -1,13 +1,13 @@
-import './ClothesCard.css';
+import style from './ClothesCard.module.css';
 
 const ClothesCard = (props) => {
   return (
-    <div className="clothes-card">
-      <div className="clothes-card-img">
+    <div className={style['clothes-card']}>
+      <div className={style['clothes-card-img']}>
         <img src={props.image} alt="" />
       </div>
-      <h4 className="clothes-card-price">{props.price}</h4>
-      <div className="clothes-card-description">
+      <h4 className={style['clothes-card-price']}>{props.price}</h4>
+      <div className={style['clothes-card-description']}>
         <p>{props.description}</p>
         <p>{props.description2}</p>
       </div>

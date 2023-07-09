@@ -102,3 +102,9 @@
 .hidden {
   display: none;
 }
+
+@media (max-width: 480px) {
+  .section6 {
+    display: none;
+  }
+}

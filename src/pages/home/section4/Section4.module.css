@@ -28,3 +28,28 @@
   height: 640px;
   margin-top: 24px;
 }
+
+@media (max-width: 480px) {
+  .section4 {
+    margin-top: 20px;
+    margin-left: 3px;
+  }
+
+  .section4 h2 {
+    font-size: 18px;
+    font-style: normal;
+    line-height: normal;
+    margin-left: 10px;
+  }
+
+  .section4-wrapper {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto;
+    gap: 8px;
+    max-width: 360px;
+    min-height: 640px;
+    height: 100%;
+    margin-top: 10px;
+  }
+}

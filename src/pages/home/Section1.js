@@ -1,4 +1,4 @@
-import './Section1.css';
+import styles from './Section1.module.css';
 import avatar from '../../assets/home/section1/Avatar.svg';
 
 import { section1Data } from '../../data/home/homeData';
@@ -7,21 +7,21 @@ import { Link } from 'react-router-dom';
 const Section1 = () => {
   const addActiveHandler = (e) => {
     Array.from(e.target.closest('ul').children).forEach((element) => {
-      element.classList.remove('active');
+      element.classList.remove(styles['active']);
     });
 
-    e.target.closest('li').classList.add('active');
+    e.target.closest('li').classList.add(styles['active']);
   };
 
   return (
-    <section className="section1">
-      <ul className="section1-block1">
+    <section className={styles['section1']}>
+      <ul className={styles['section1-block1']}>
         {section1Data.map((title, index) => {
           return (
             <li
               key={index}
               data-id={index}
-              className={index === 0 ? 'active' : ''}
+              className={index === 0 ? styles.active : ''}
             >
               <Link to="" onClick={addActiveHandler}>
                 {title}
@@ -31,17 +31,17 @@ const Section1 = () => {
         })}
       </ul>
 
-      <div className="section1-block2">
+      <div className={styles['section1-block2']}>
         <h2>Latest trending</h2>
         <h1>Electronic items</h1>
         <button>Learn more</button>
       </div>
 
-      <div className="section1-block3">
-        <div className="section1-block3-user">
-          <div className="section1-block3-user-info">
+      <div className={styles['section1-block3']}>
+        <div className={styles['section1-block3-user']}>
+          <div className={styles['section1-block3-user-info']}>
             <img src={avatar} alt="avatar" />
-            <div className="section1-block3-user-greeting">
+            <div className={styles['section1-block3-greeting']}>
               <p>
                 Hi, user
                 <br />
@@ -49,11 +49,11 @@ const Section1 = () => {
               </p>
             </div>
           </div>
-          <button className="section1-block3-join">Join now</button>
-          <button className="section1-block3-login">Log in</button>
+          <button className={styles['section1-block3-join']}>Join now</button>
+          <button className={styles['section1-block3-login']}>Log in</button>
         </div>
 
-        <div className="section1-block3-offer">
+        <div className={styles['section1-block3-offer']}>
           <h3>
             Get US $10 off
             <br />
@@ -63,7 +63,7 @@ const Section1 = () => {
           </h3>
         </div>
 
-        <div className="section1-block3-quote">
+        <div className={styles['section1-block3-quote']}>
           <h3>
             Send quotes with
             <br />

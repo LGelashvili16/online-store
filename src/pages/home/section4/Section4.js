@@ -1,12 +1,12 @@
-import './Section4.css';
+import styles from './Section4.module.css';
 import { section4Data } from '../../../data/home/homeData';
 import ClothesCard from './ClothesCard';
 
 const Section4 = () => {
   return (
-    <section className="section4">
+    <section className={styles['section4']}>
       <h2>Recommended items</h2>
-      <div className="section4-wrapper">
+      <div className={styles['section4-wrapper']}>
         {section4Data.map((prod, i) => {
           return (
             <ClothesCard

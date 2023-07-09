@@ -1,4 +1,4 @@
-import './Section6.css';
+import styles from './Section6.module.css';
 import mailIcon from '../../assets/home/section6/mail.svg';
 import { useState } from 'react';
 
@@ -14,16 +14,18 @@ const Section6 = () => {
   };
 
   return (
-    <div className="section6">
-      <div className="section6-subscribe">
+    <div className={styles['section6']}>
+      <div className={styles['section6-subscribe']}>
         <h3>Subscribe on our newsletter</h3>
         <p>
           Get daily news on upcoming offers from many suppliers all over the
           world
         </p>
-        <form className="section6-form">
+        <form className={styles['section6-form']}>
           <img
-            className={`section6-mailIcon ${showIcon ? 'hidden' : ''}`}
+            className={`${styles['section6-mailIcon']} ${
+              showIcon ? styles['hidden'] : ''
+            }`}
             src={mailIcon}
             alt=""
           />

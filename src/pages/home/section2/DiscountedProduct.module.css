@@ -57,3 +57,26 @@
   background: #ffe3e3;
   color: #eb001b;
 }
+
+@media (max-width: 480px) {
+  .discounted-product-card {
+    width: 140px;
+    height: 180px;
+  }
+
+  .discounted-product-img {
+    width: 98px;
+    height: 98px;
+  }
+
+  .discounted-product-img img {
+    height: 83px;
+  }
+
+  .discounted-product-title {
+    margin-top: 4px;
+    font-size: 13px;
+    line-height: normal;
+    letter-spacing: -0.2px;
+  }
+}

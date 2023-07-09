@@ -7,6 +7,8 @@
 }
 
 .section3 {
+  display: flex;
+  justify-content: center;
   margin-top: 20px;
   margin-left: 3px;
 }
@@ -229,6 +231,113 @@
   background: var(--white);
   color: var(--primary);
   border: 1px solid #dee2e7;
+}
+
+/* ************ Responsive ************  */
+
+.section3-btn-resp {
+  display: none;
+  width: 98px;
+  height: 30px;
+
+  margin-left: 0;
+  margin-top: 17px;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  border: none;
+  border-radius: 6px;
+  background: var(
+    --primary-gradient,
+    linear-gradient(180deg, #127fff 0%, #0067ff 100%)
+  );
+  color: var(--white);
+
+  transition: all 0.2s ease-in-out;
+}
+
+@media (max-width: 480px) {
+  .section3 {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+
+  .section3-send-quote {
+    width: 360px;
+    height: 155px;
+    border-radius: 0;
+    background: url('../../assets/home/section3/parcels.png');
+    background-size: cover;
+  }
+
+  .section3-gradient-bg {
+    flex-direction: column;
+    border-radius: 0;
+    background: linear-gradient(
+      128deg,
+      #2c7cf1 0%,
+      rgba(0, 209, 255, 0.5) 100%
+    );
+  }
+
+  .section3-title {
+    margin-top: 30px;
+    margin-left: 23px;
+  }
+
+  .section3-title h2 {
+    font-size: 18px;
+    letter-spacing: -0.2px;
+    color: var(--white);
+  }
+
+  .section3-title p {
+    display: none;
+  }
+
+  .section3-btn-resp {
+    display: block;
+  }
+
+  .section3-form {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    width: 360px;
+    height: 346px;
+    margin-top: 20px;
+    margin-right: 0;
+    padding-bottom: 15px;
+    border-radius: 0;
+    z-index: 1;
+  }
+
+  .section3-form h3 {
+    margin-top: 10px;
+    margin-left: 18px;
+    font-size: 18px;
+  }
+
+  .section3-form input[type='text'] {
+    width: 90%;
+    height: 40px;
+
+    margin-left: 18px;
+    padding-left: 9px;
+  }
+
+  .section3-form textarea {
+    width: 90%;
+    height: 73px;
+    margin-left: 18px;
+    padding-left: 11px;
+  }
+
+  .section3-form-quantity {
+    gap: 7px;
+    padding-left: 18px;
+  }
 }
 
 .hidden {

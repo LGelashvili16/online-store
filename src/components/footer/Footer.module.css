@@ -164,3 +164,18 @@ footer {
 .footer-arrow {
   margin-right: 6px;
 }
+
+@media (max-width: 480px) {
+  .footer-upper {
+    display: none;
+  }
+
+  .footer-lower {
+    margin-top: 20px;
+    height: 68px;
+    width: 100%;
+    padding: 0 20px;
+    background: #eff2f4;
+    border-top: 1px solid #dee2e7;
+  }
+}

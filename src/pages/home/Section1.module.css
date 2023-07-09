@@ -8,9 +8,11 @@
 
 .section1 {
   display: flex;
+  flex-wrap: wrap;
 
-  width: 1180px;
-  height: 400px;
+  max-width: 1180px;
+  width: 100%;
+  min-height: 400px;
 
   margin-top: 20px;
   margin-left: 3px;
@@ -154,14 +156,6 @@
   gap: 10px;
 }
 
-.section1-block3-user-info img {
-  /* margin-left: -4px; */
-}
-
-.section1-block3-user-greeting {
-  /* margin-left: 12px; */
-}
-
 .section1-block3-user-greeting p {
   font-size: 16px;
   font-family: Inter;
@@ -259,4 +253,64 @@
   font-size: 16px;
   font-weight: 400;
   color: var(--white);
+}
+
+@media (max-width: 480px) {
+  .section1 {
+    max-width: 360px;
+    width: 100%;
+    min-height: 180px;
+
+    margin-top: 0;
+    margin-left: 0;
+    padding: 0 0 0 0;
+
+    border: none;
+    border-radius: 6px;
+
+    background: var(--white);
+  }
+
+  .section1-block1 {
+    display: none;
+  }
+
+  .section1-block2 {
+    width: 100%;
+    margin-left: 0;
+    background: url('../../assets/home/section1/section1-Banner.png') no-repeat;
+    background-size: cover;
+  }
+
+  .section1-block2 h2 {
+    margin-top: 24px;
+    margin-left: 22px;
+    font-size: 18px;
+  }
+
+  .section1-block2 h1 {
+    margin-left: 22px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .section1-block2 button {
+    margin-top: 18px;
+    margin-left: 22px;
+    width: 91px;
+    height: 30px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    border-radius: 6px;
+    border: 1px solid var(--white, #fff);
+    color: #0d6efd;
+
+    box-shadow: 0px 1px 2px 0px rgba(56, 56, 56, 0.08);
+  }
+
+  .section1-block3 {
+    display: none;
+  }
 }

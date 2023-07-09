@@ -1,4 +1,4 @@
-import './Footer.css';
+import styles from './Footer.module.css';
 import brandLogo from '../../assets/header/icons/brand-logo.svg';
 import facebookIco from '../../assets/footer/facebook.svg';
 import twitterIco from '../../assets/footer/twitter.svg';
@@ -18,13 +18,13 @@ const Footer = () => {
 
   return (
     <footer>
-      <div className="footer-upper">
-        <div className="footer-brand">
+      <div className={styles['footer-upper']}>
+        <div className={styles['footer-brand']}>
           <img src={brandLogo} alt="brand logo" />
           <p>
             Best information about the company gies here but now lorem ipsum is
           </p>
-          <div className="footer-social-links">
+          <div className={styles['footer-social-links']}>
             <Link>
               <img src={facebookIco} alt="facebook" />
             </Link>
@@ -43,10 +43,10 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="footer-info">
-          <div className="footer-info-about">
+        <div className={styles['footer-info']}>
+          <div className={styles['footer-info-about']}>
             <h4>About</h4>
-            <div className="footer-about-links">
+            <div className={styles['footer-about-links']}>
               {about.map((link, i) => {
                 return (
                   <Link to="" key={i}>
@@ -57,9 +57,9 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="footer-info-partnership">
+          <div className={styles['footer-info-partnership']}>
             <h4>Partnership</h4>
-            <div className="footer-partnership-links">
+            <div className={styles['footer-partnership-links']}>
               {partnership.map((link, i) => {
                 return (
                   <Link to="" key={i}>
@@ -70,9 +70,9 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="footer-info-information">
+          <div className={styles['footer-info-information']}>
             <h4>Information</h4>
-            <div className="footer-information-links">
+            <div className={styles['footer-information-links']}>
               {information.map((link, i) => {
                 return (
                   <Link to="" key={i}>
@@ -83,9 +83,9 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="footer-info-forUsers">
+          <div className={styles['footer-info-forUsers']}>
             <h4>For users</h4>
-            <div className="footer-forUsers-links">
+            <div className={styles['footer-forUsers-links']}>
               {forUsers.map((link, i) => {
                 return (
                   <Link to="" key={i}>
@@ -96,9 +96,9 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="footer-info-getApp">
+          <div className={styles['footer-info-getApp']}>
             <h4>Get app</h4>
-            <div className="footer-getApp">
+            <div className={styles['footer-getApp']}>
               <Link>
                 <img src={appleStoreImg} alt="" />
               </Link>
@@ -110,13 +110,17 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="footer-lower">
-        <div className="footer-lower-content">
-          <p className="footer-copyright">&copy; 2023 Ecommerce.</p>
-          <div className="footer-change-lang">
+      <div className={styles['footer-lower']}>
+        <div className={styles['footer-lower-content']}>
+          <p className={styles['footer-copyright']}>&copy; 2023 Ecommerce.</p>
+          <div className={styles['footer-change-lang']}>
             <img src={usaFlagImg} alt="English" />
             <p>English</p>
-            <img className="footer-arrow" src={upArrowImg} alt="expand" />
+            <img
+              className={styles['footer-arrow']}
+              src={upArrowImg}
+              alt="expand"
+            />
           </div>
         </div>
       </div>

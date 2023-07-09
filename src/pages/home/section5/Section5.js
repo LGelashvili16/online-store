@@ -1,4 +1,4 @@
-import './Section5.css';
+import style from './Section5.module.css';
 import {
   section5ServicesData,
   section5SuppliersData,
@@ -8,9 +8,9 @@ import FlagCard from './FlagCard';
 
 const Section5 = () => {
   return (
-    <section className="section5">
-      <h2 className="section5-services">Our extra services</h2>
-      <div className="section5-services-cards">
+    <section className={style['section5']}>
+      <h2 className={style['section5-services']}>Our extra services</h2>
+      <div className={style['section5-services-cards']}>
         {section5ServicesData.map((card, i) => {
           return (
             <ServiceCard
@@ -24,8 +24,8 @@ const Section5 = () => {
         })}
       </div>
 
-      <h2 className="section5-suppliers">Suppliers by region</h2>
-      <div className="section5-flags">
+      <h2 className={style['section5-suppliers']}>Suppliers by region</h2>
+      <div className={style['section5-flags']}>
         {section5SuppliersData.map((country, i) => {
           return (
             <FlagCard

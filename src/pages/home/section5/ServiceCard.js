@@ -1,15 +1,15 @@
-import './ServiceCard.css';
+import styles from './ServiceCard.module.css';
 
 const ServiceCard = (props) => {
   return (
-    <div className="service-card">
-      <div className="card-image">
+    <div className={styles['service-card']}>
+      <div className={styles['card-image']}>
         <img src={props.image} alt="" />
-        <div className="card-icon">
+        <div className={styles['card-icon']}>
           <img src={props.icon} alt="" />
         </div>
       </div>
-      <div className="card-title">
+      <div className={styles['card-title']}>
         <h3>{props.title}</h3>
         <h3>{props.title2}</h3>
       </div>

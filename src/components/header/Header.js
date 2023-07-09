@@ -1,10 +1,23 @@
-import './Header.css';
+import styles from './Header.module.css';
 import brandLogoImg from '../../assets/header/icons/brand-logo.svg';
 import profileImg from '../../assets/header/icons/profile.svg';
 import messageImg from '../../assets/header/icons/message.svg';
 import ordersImg from '../../assets/header/icons/orders.svg';
 import myCartImg from '../../assets/header/icons/my-cart.svg';
 import arrowImg from '../../assets/header/icons/expand-arrow.svg';
+
+import respMenu from '../../assets/header/icons/Hamburger-menu.svg';
+import respCart from '../../assets/header/icons/resp-shopping-cart.svg';
+import respProfile from '../../assets/header/icons/resp-person.svg';
+import respAvatar from '../../assets/header/icons/resp-Avatar.png';
+import searchProfile from '../../assets/header/icons/search-icon.png';
+import respHome from '../../assets/header/icons/resp-menu-home.svg';
+import respCategories from '../../assets/header/icons/resp-menu-controls.svg';
+import respFav from '../../assets/header/icons/resp-menu-fav.svg';
+import respOrders from '../../assets/header/icons/resp-menu-orders.svg';
+import respLang from '../../assets/header/icons/resp-menu-lang.svg';
+import respContact from '../../assets/header/icons/resp-menu-contact.svg';
+import respAbout from '../../assets/header/icons/resp-menu-about.svg';
 
 import { headerCategoriesData } from '../../data/header/headerData.js';
 import { Link } from 'react-router-dom';
@@ -13,6 +26,15 @@ import HeaderLower from './HeaderLower';
 
 const Header = () => {
   const [showCategories, setShowCategories] = useState(false);
+  const [showBurgerMenu, setShowBurgerMenu] = useState(false);
+
+  const burgerMenuHandler = (e) => {
+    setShowBurgerMenu(!showBurgerMenu);
+  };
+
+  const stopPropagationHandelr = (e) => {
+    e.stopPropagation();
+  };
 
   const headerCategoryHandler = () => {
     setShowCategories(!showCategories);
@@ -29,30 +51,105 @@ const Header = () => {
 
   return (
     <header>
-      <div className="header-top">
-        <div className="header-logo">
+      <div className={styles['header-top']}>
+        <div className={styles['resp-header-menu']}>
+          <img src={respMenu} alt="" onClick={burgerMenuHandler} />
+
+          <div
+            className={`${styles['resp-menu-page-wrapper']} ${
+              !showBurgerMenu ? styles['hidden'] : ''
+            }`}
+            onClick={burgerMenuHandler}
+          >
+            <div
+              className={styles['resp-menu-page']}
+              onClick={stopPropagationHandelr}
+            >
+              <div className={styles['resp-menu-page-s1']}>
+                <img src={respAvatar} alt="" />
+                <div>
+                  <Link>Sign in</Link>
+                  <Link>Register</Link>
+                </div>
+              </div>
+
+              <div className={styles['resp-menu-page-s2']}>
+                <div>
+                  <img src={respHome} /> <Link>Home</Link>
+                </div>
+
+                <div>
+                  <img src={respCategories} /> <Link>Categories</Link>
+                </div>
+
+                <div>
+                  <img src={respFav} /> <Link>Favorites</Link>
+                </div>
+
+                <div>
+                  <img src={respOrders} /> <Link>My orders</Link>
+                </div>
+              </div>
+
+              <div className={styles['resp-menu-page-s3']}>
+                <div>
+                  <img src={respLang} /> <Link>English | USD</Link>
+                </div>
+
+                <div>
+                  <img src={respContact} /> <Link>Contact us</Link>
+                </div>
+
+                <div>
+                  <img src={respAbout} /> <Link>About</Link>
+                </div>
+              </div>
+
+              <div className={styles['resp-menu-page-s4']}>
+                <Link>User agreetment</Link>
+                <Link>Partnership</Link>
+                <Link>Privacy policy</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles['header-logo']}>
           <Link to="">
             <img src={brandLogoImg} alt="Brand-Logo" />
           </Link>
         </div>
 
-        <form className="header-form">
-          <input className="header-search" type="text" placeholder="Search" />
+        <form className={styles['header-form']}>
+          <img
+            className={styles['header-form-search-icon']}
+            src={searchProfile}
+            alt=""
+          />
+          <input
+            className={styles['header-search']}
+            type="text"
+            placeholder="Search"
+          />
 
-          <div className="header-select">
+          <div className={styles['header-select']}>
             <p
-              className="header-select-input"
+              className={styles['header-select-input']}
               onClick={headerCategoryHandler}
               ref={categoriesRef}
             >
               All category
             </p>
 
-            <img className="header-dropdown-arrow" src={arrowImg} alt="arrow" />
+            <img
+              className={styles['header-dropdown-arrow']}
+              src={arrowImg}
+              alt="arrow"
+            />
 
             <ul
-              className={`header-dropdown-list ${
-                !showCategories ? 'hidden' : ''
+              className={`${styles['header-dropdown-list']} ${
+                !showCategories ? styles['hidden'] : ''
               }`}
               ref={menuRef}
             >
@@ -64,28 +161,62 @@ const Header = () => {
             </ul>
           </div>
 
-          <input className="header-search-btn" type="submit" value="Search" />
+          <input
+            className={styles['header-search-btn']}
+            type="submit"
+            value="Search"
+          />
         </form>
 
-        <div className="header-user">
-          <div className="header-user-item">
-            <img className="profile-icon" src={profileImg} alt="Profile" />
+        <div className={styles['header-user']}>
+          <div className={`${styles['header-user-item']} ${styles['profile']}`}>
+            <img
+              className={styles['profile-icon']}
+              src={profileImg}
+              alt="Profile"
+            />
             <p>Profile</p>
           </div>
 
-          <div className="header-user-item message">
-            <img className="message-icon" src={messageImg} alt="Message" />
+          <div className={`${styles['header-user-item']} ${styles['message']}`}>
+            <img
+              className={styles['message-icon']}
+              src={messageImg}
+              alt="Message"
+            />
             <p>Message</p>
           </div>
 
-          <div className="header-user-item orders">
-            <img className="orders-icon" src={ordersImg} alt="Orders" />
+          <div className={`${styles['header-user-item']} ${styles['orders']}`}>
+            <img
+              className={styles['orders-icon']}
+              src={ordersImg}
+              alt="Orders"
+            />
             <p>Orders</p>
           </div>
 
-          <div className="header-user-item my-cart">
-            <img className="my-cart-icon" src={myCartImg} alt="My Cart" />
+          <div className={`${styles['header-user-item']} ${styles['my-cart']}`}>
+            <img
+              className={styles['my-cart-icon']}
+              src={myCartImg}
+              alt="My Cart"
+            />
             <p>My cart</p>
+          </div>
+
+          <div className={styles['resp-header-user']}>
+            <img
+              className={styles['my-cart-icon']}
+              src={respCart}
+              alt="My Cart"
+            />
+
+            <img
+              className={styles['profile-icon']}
+              src={respProfile}
+              alt="Profile"
+            />
           </div>
         </div>
       </div>

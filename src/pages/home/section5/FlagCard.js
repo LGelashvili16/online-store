@@ -1,10 +1,10 @@
-import './FlagCard.css';
+import styles from './FlagCard.module.css';
 
 const FlagCard = (props) => {
   return (
-    <div className="flag-card">
+    <div className={styles['flag-card']}>
       <img src={props.flag} alt={props.name} />
-      <div className="flag-card-country">
+      <div className={styles['flag-card-country']}>
         <h4>{props.name}</h4>
         <p>{props.site}</p>
       </div>

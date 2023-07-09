@@ -43,3 +43,9 @@
   margin-top: 24px;
   /* margin-left: -1px; */
 }
+
+@media (max-width: 480px) {
+  .section5 {
+    display: none;
+  }
+}
