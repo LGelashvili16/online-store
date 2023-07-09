@@ -24,7 +24,7 @@ const Section3 = () => {
     return () => {
       window.removeEventListener('resize', detectMobile);
     };
-  }, [mobileScreen]);
+  }, []);
 
   const pcsListHandler = () => {
     setShowPcsList(!showPcsList);

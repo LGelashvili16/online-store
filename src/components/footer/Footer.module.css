@@ -166,6 +166,10 @@ footer {
 }
 
 @media (max-width: 480px) {
+  footer {
+    height: auto;
+  }
+
   .footer-upper {
     display: none;
   }
