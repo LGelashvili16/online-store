@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/online-store/static/css/main.ddacd6d6.css",
-    "main.js": "/online-store/static/js/main.dbc3e0ef.js",
+    "main.css": "/online-store/static/css/main.e2a5a555.css",
+    "main.js": "/online-store/static/js/main.c076a766.js",
     "static/js/787.a92fe09e.chunk.js": "/online-store/static/js/787.a92fe09e.chunk.js",
     "static/media/parcels.png": "/online-store/static/media/parcels.4be3316d701f729664cd.png",
     "static/media/section1-Banner.png": "/online-store/static/media/section1-Banner.398308ec3c1d1ad1ab60.png",
@@ -37,6 +37,7 @@
     "static/media/Avatar.svg": "/online-store/static/media/Avatar.bd05e2962da451fc82075251bb68eb63.svg",
     "static/media/twitter.svg": "/online-store/static/media/twitter.95d4a48293b75c4274e2c4b43b02f6e3.svg",
     "static/media/insta.svg": "/online-store/static/media/insta.3267754f2b0175c4d5414f9a45ae7cee.svg",
+    "static/media/resp-menu-lang.svg": "/online-store/static/media/resp-menu-lang.267befbbc06548d10bbfb0dd05d40b3c.svg",
     "static/media/my-cart.svg": "/online-store/static/media/my-cart.207ad64a372084cb35801a6042ae771a.svg",
     "static/media/ITA.svg": "/online-store/static/media/ITA.f16c8ba515414f71425d63c1485d500f.svg",
     "static/media/FRA.svg": "/online-store/static/media/FRA.131abd2328a400d199d006a6c8c7d92b.svg",
@@ -50,24 +51,33 @@
     "static/media/Russia.svg": "/online-store/static/media/Russia.e9dda1e7dc54a9509a07df1a5f647148.svg",
     "static/media/Germany.svg": "/online-store/static/media/Germany.6bc8ca467e79aec10cf96397fed0b7dc.svg",
     "static/media/linkedin.svg": "/online-store/static/media/linkedin.f89b64cec3d96c8099e33637bd82924a.svg",
+    "static/media/resp-shopping-cart.svg": "/online-store/static/media/resp-shopping-cart.808701eea073f8c7077159a9bb1e4484.svg",
     "index.html": "/online-store/index.html",
+    "static/media/resp-menu-fav.svg": "/online-store/static/media/resp-menu-fav.91ef85971497fb72f683cfa7b8b27484.svg",
+    "static/media/resp-menu-controls.svg": "/online-store/static/media/resp-menu-controls.a331ee6f028765503054e58ac80c2c7c.svg",
     "static/media/search.svg": "/online-store/static/media/search.9b4ea1315d1bfe989242de10b60c8617.svg",
     "static/media/facebook.svg": "/online-store/static/media/facebook.793d8d623f1f8f285fed3fdabfcda841.svg",
     "static/media/message.svg": "/online-store/static/media/message.aa6ca9acb0117eecf2a283f79c8e4b24.svg",
     "static/media/mail.svg": "/online-store/static/media/mail.1b8554d16b68ebf78fc32086546f90bd.svg",
     "static/media/orders.svg": "/online-store/static/media/orders.fb6337b43e2ba0927246ce0018be6f47.svg",
+    "static/media/resp-person.svg": "/online-store/static/media/resp-person.6a686e32b18464f2e71485cf495b99b0.svg",
     "static/media/profile.svg": "/online-store/static/media/profile.668135a8d8f992b0d3ce109cfbb373b1.svg",
+    "static/media/resp-menu-orders.svg": "/online-store/static/media/resp-menu-orders.804bfb1485880781de07920d662bed26.svg",
+    "static/media/resp-menu-contact.svg": "/online-store/static/media/resp-menu-contact.de770e491826c40cd64b92d289f9a558.svg",
+    "static/media/resp-menu-about.svg": "/online-store/static/media/resp-menu-about.50039609c4007e8116281da8211f058a.svg",
     "static/media/inventory.svg": "/online-store/static/media/inventory.4bd67cafdb723d4c296e60f039334b4b.svg",
+    "static/media/arrow_forward.svg": "/online-store/static/media/arrow_forward.57b1b7ba792a5b02089afdff7005c176.svg",
+    "static/media/resp-menu-home.svg": "/online-store/static/media/resp-menu-home.c257b4fc2d61d679fdb67e607da930bb.svg",
     "static/media/security.svg": "/online-store/static/media/security.c1984e380032b5186076b5128712c54a.svg",
     "static/media/send.svg": "/online-store/static/media/send.cba2830afcac76f9bdd905655bcb0e19.svg",
     "static/media/expand-arrow.svg": "/online-store/static/media/expand-arrow.22dc3a5e1b1fdaa43f4c380c7e94ae36.svg",
     "static/media/Hamburger-menu.svg": "/online-store/static/media/Hamburger-menu.b72c2fe4b90c88b30ba203cc3f2f3a97.svg",
-    "main.ddacd6d6.css.map": "/online-store/static/css/main.ddacd6d6.css.map",
-    "main.dbc3e0ef.js.map": "/online-store/static/js/main.dbc3e0ef.js.map",
+    "main.e2a5a555.css.map": "/online-store/static/css/main.e2a5a555.css.map",
+    "main.c076a766.js.map": "/online-store/static/js/main.c076a766.js.map",
     "787.a92fe09e.chunk.js.map": "/online-store/static/js/787.a92fe09e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ddacd6d6.css",
-    "static/js/main.dbc3e0ef.js"
+    "static/css/main.e2a5a555.css",
+    "static/js/main.c076a766.js"
   ]
 }
