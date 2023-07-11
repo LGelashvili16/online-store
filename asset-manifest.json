@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/online-store/static/css/main.5e797d32.css",
-    "main.js": "/online-store/static/js/main.a4e21c5e.js",
+    "main.css": "/online-store/static/css/main.5f48fef5.css",
+    "main.js": "/online-store/static/js/main.ff26022a.js",
     "static/js/787.a92fe09e.chunk.js": "/online-store/static/js/787.a92fe09e.chunk.js",
     "static/media/parcels.png": "/online-store/static/media/parcels.4be3316d701f729664cd.png",
     "static/media/section1-Banner.png": "/online-store/static/media/section1-Banner.398308ec3c1d1ad1ab60.png",
@@ -66,18 +66,23 @@
     "static/media/resp-menu-contact.svg": "/online-store/static/media/resp-menu-contact.de770e491826c40cd64b92d289f9a558.svg",
     "static/media/resp-menu-about.svg": "/online-store/static/media/resp-menu-about.50039609c4007e8116281da8211f058a.svg",
     "static/media/inventory.svg": "/online-store/static/media/inventory.4bd67cafdb723d4c296e60f039334b4b.svg",
+    "static/media/empty-star.svg": "/online-store/static/media/empty-star.dc77349c3bdfb4d859463f3770d6ae9b.svg",
+    "static/media/filled-star.svg": "/online-store/static/media/filled-star.b115c3d018b2fb4932a5b7a2e9dad7a9.svg",
     "static/media/arrow_forward.svg": "/online-store/static/media/arrow_forward.57b1b7ba792a5b02089afdff7005c176.svg",
     "static/media/resp-menu-home.svg": "/online-store/static/media/resp-menu-home.c257b4fc2d61d679fdb67e607da930bb.svg",
     "static/media/security.svg": "/online-store/static/media/security.c1984e380032b5186076b5128712c54a.svg",
     "static/media/send.svg": "/online-store/static/media/send.cba2830afcac76f9bdd905655bcb0e19.svg",
     "static/media/expand-arrow.svg": "/online-store/static/media/expand-arrow.22dc3a5e1b1fdaa43f4c380c7e94ae36.svg",
+    "static/media/expand_less.svg": "/online-store/static/media/expand_less.bee3d04f02d7869faf326d3e18e7c407.svg",
+    "static/media/check-mark.svg": "/online-store/static/media/check-mark.1aca9326950a232307f2.svg",
+    "static/media/chevron_right.svg": "/online-store/static/media/chevron_right.9f7521880b9c53f92ca66e2fecd57c6f.svg",
     "static/media/Hamburger-menu.svg": "/online-store/static/media/Hamburger-menu.b72c2fe4b90c88b30ba203cc3f2f3a97.svg",
-    "main.5e797d32.css.map": "/online-store/static/css/main.5e797d32.css.map",
-    "main.a4e21c5e.js.map": "/online-store/static/js/main.a4e21c5e.js.map",
+    "main.5f48fef5.css.map": "/online-store/static/css/main.5f48fef5.css.map",
+    "main.ff26022a.js.map": "/online-store/static/js/main.ff26022a.js.map",
     "787.a92fe09e.chunk.js.map": "/online-store/static/js/787.a92fe09e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5e797d32.css",
-    "static/js/main.a4e21c5e.js"
+    "static/css/main.5f48fef5.css",
+    "static/js/main.ff26022a.js"
   ]
 }
