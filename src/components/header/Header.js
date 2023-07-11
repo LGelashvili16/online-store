@@ -75,33 +75,33 @@ const Header = () => {
 
               <div className={styles['resp-menu-page-s2']}>
                 <div>
-                  <img src={respHome} /> <Link>Home</Link>
+                  <img src={respHome} alt="" /> <Link>Home</Link>
                 </div>
 
                 <div>
-                  <img src={respCategories} /> <Link>Categories</Link>
+                  <img src={respCategories} alt="" /> <Link>Categories</Link>
                 </div>
 
                 <div>
-                  <img src={respFav} /> <Link>Favorites</Link>
+                  <img src={respFav} alt="" /> <Link>Favorites</Link>
                 </div>
 
                 <div>
-                  <img src={respOrders} /> <Link>My orders</Link>
+                  <img src={respOrders} alt="" /> <Link>My orders</Link>
                 </div>
               </div>
 
               <div className={styles['resp-menu-page-s3']}>
                 <div>
-                  <img src={respLang} /> <Link>English | USD</Link>
+                  <img src={respLang} alt="" /> <Link>English | USD</Link>
                 </div>
 
                 <div>
-                  <img src={respContact} /> <Link>Contact us</Link>
+                  <img src={respContact} alt="" /> <Link>Contact us</Link>
                 </div>
 
                 <div>
-                  <img src={respAbout} /> <Link>About</Link>
+                  <img src={respAbout} alt="" /> <Link>About</Link>
                 </div>
               </div>
 
@@ -115,7 +115,7 @@ const Header = () => {
         </div>
 
         <div className={styles['header-logo']}>
-          <Link to="">
+          <Link to="/online-store/">
             <img src={brandLogoImg} alt="Brand-Logo" />
           </Link>
         </div>
@@ -155,7 +155,7 @@ const Header = () => {
             >
               {headerCategoriesData.map((item, index) => (
                 <li key={index}>
-                  <Link to="">{item}</Link>
+                  <Link to={item.link}>{item.name}</Link>
                 </li>
               ))}
             </ul>

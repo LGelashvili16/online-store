@@ -1,0 +1,136 @@
+.container {
+  max-width: 1178px;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  gap: 28px;
+}
+
+.section-products {
+  max-width: 1178px;
+  width: 100%;
+}
+
+.organize-products {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 920px;
+  width: 100%;
+  min-height: 62px;
+  padding-inline: 19px 10px;
+
+  background-color: #fff;
+  border: 1px solid #dee2e7;
+  border-radius: 6px;
+}
+
+.organize-products-info {
+  color: #1c1c1c;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.organize-products-view {
+  display: flex;
+  align-items: center;
+}
+
+/* Verify */
+
+.organize-products-verifing {
+  width: 144px;
+  height: 36px;
+  margin-right: 1px;
+
+  display: flex;
+  align-items: center;
+}
+
+.organize-products-verifing input {
+  appearance: none;
+  border: 2px solid #bdbdbd;
+  border-radius: 5px;
+  width: 20px;
+  height: 20px;
+  margin-right: 13px;
+  cursor: pointer;
+}
+
+.organize-products-verifing input:checked {
+  position: relative;
+  background-color: #0d6efd;
+  border: 2px solid #0d6efd;
+}
+
+.organize-products-verifing input:checked::after {
+  content: url('../../assets/mobile-accessories/check-mark.svg');
+  position: absolute;
+  width: 13px;
+  height: 9px;
+  transform: translate(-50%, -50%);
+  top: 25%;
+  left: 50%;
+}
+
+.organize-products-verifing label {
+  font-size: 16px;
+  font-weight: 400;
+  color: #1c1c1c;
+  cursor: pointer;
+}
+
+/* Featured */
+
+.organize-products-featured {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 172px;
+  height: 40px;
+  padding-inline: 10px 8px;
+
+  border: 1px solid #dee2e7;
+  border-radius: 6px;
+}
+
+.organize-products-featured img {
+  transform: rotate(180deg);
+}
+
+/* View Switcher */
+
+.organize-products-switcher {
+  display: flex;
+  margin-left: 10px;
+}
+
+.organize-products-switcher-grid {
+  width: 38px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid #dee2e7;
+  border-radius: 6px 0 0 6px;
+}
+
+.organize-products-switcher-list {
+  width: 38px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid #dee2e7;
+  border-radius: 0 6px 6px 0;
+}
+
+.active {
+  background-color: #eff2f4;
+}

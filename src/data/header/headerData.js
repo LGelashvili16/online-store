@@ -10,19 +10,21 @@ import uae from '../../assets/header/icons/UAE.svg';
 import usa from '../../assets/header/icons/USA.svg';
 
 export const headerCategoriesData = [
-  'Art',
-  'Books',
-  'Cameras',
-  'Cell phones',
-  'Travel',
-  'Video games',
-  'Electronics',
-  'Jewelery',
-  'Handmade',
-  'Garden & outdoor',
-  'Home & kitchen',
-  'Tools',
-  'Toys',
+  { name: 'Mobile accessories', link: 'mobile-accessories' },
+  { name: 'Electronics', link: '' },
+  { name: 'Smartphones', link: '' },
+  { name: 'Modern tech', link: '' },
+  { name: 'Art', link: '' },
+  { name: 'Books', link: '' },
+  { name: 'Cameras', link: '' },
+  { name: 'Cell phones', link: '' },
+  { name: 'Travel', link: '' },
+  { name: 'Video games', link: '' },
+  { name: 'Jewelery', link: '' },
+  { name: 'Handmade', link: '' },
+  { name: 'Garden & outdoor', link: '' },
+  { name: 'Tools', link: '' },
+  { name: 'Toys', link: '' },
 ];
 
 export const headerHelpData = [

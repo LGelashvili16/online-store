@@ -110,7 +110,7 @@ const HeaderLower = () => {
                 {headerCategoriesData.map((category, i) => {
                   return (
                     <li key={i}>
-                      <Link>{category}</Link>
+                      <Link to={category.link}>{category.name}</Link>
                     </li>
                   );
                 })}

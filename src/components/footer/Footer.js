@@ -20,7 +20,9 @@ const Footer = () => {
     <footer>
       <div className={styles['footer-upper']}>
         <div className={styles['footer-brand']}>
-          <img src={brandLogo} alt="brand logo" />
+          <Link to="/online-store/">
+            <img src={brandLogo} alt="brand logo" />
+          </Link>
           <p>
             Best information about the company gies here but now lorem ipsum is
           </p>

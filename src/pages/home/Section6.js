@@ -14,7 +14,7 @@ const Section6 = () => {
   };
 
   return (
-    <div className={styles['section6']}>
+    <section className={styles['section6']}>
       <div className={styles['section6-subscribe']}>
         <h3>Subscribe on our newsletter</h3>
         <p>
@@ -38,7 +38,7 @@ const Section6 = () => {
           <button>Subscribe</button>
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 
