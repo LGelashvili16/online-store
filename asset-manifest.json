@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/online-store/static/css/main.f0c0225d.css",
-    "main.js": "/online-store/static/js/main.65bda919.js",
+    "main.css": "/online-store/static/css/main.4f61a937.css",
+    "main.js": "/online-store/static/js/main.2d5cab79.js",
     "static/js/787.a92fe09e.chunk.js": "/online-store/static/js/787.a92fe09e.chunk.js",
     "static/media/parcels.png": "/online-store/static/media/parcels.4be3316d701f729664cd.png",
     "static/media/section1-Banner.png": "/online-store/static/media/section1-Banner.398308ec3c1d1ad1ab60.png",
@@ -83,12 +83,12 @@
     "static/media/check-mark.svg": "/online-store/static/media/check-mark.1aca9326950a232307f2.svg",
     "static/media/chevron_right.svg": "/online-store/static/media/chevron_right.9f7521880b9c53f92ca66e2fecd57c6f.svg",
     "static/media/Hamburger-menu.svg": "/online-store/static/media/Hamburger-menu.b72c2fe4b90c88b30ba203cc3f2f3a97.svg",
-    "main.f0c0225d.css.map": "/online-store/static/css/main.f0c0225d.css.map",
-    "main.65bda919.js.map": "/online-store/static/js/main.65bda919.js.map",
+    "main.4f61a937.css.map": "/online-store/static/css/main.4f61a937.css.map",
+    "main.2d5cab79.js.map": "/online-store/static/js/main.2d5cab79.js.map",
     "787.a92fe09e.chunk.js.map": "/online-store/static/js/787.a92fe09e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f0c0225d.css",
-    "static/js/main.65bda919.js"
+    "static/css/main.4f61a937.css",
+    "static/js/main.2d5cab79.js"
   ]
 }
