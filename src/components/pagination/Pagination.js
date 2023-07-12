@@ -36,6 +36,9 @@ const Pagination = ({
     const extractNum = e.target.closest('li').children[0].innerHTML.split(' ');
 
     showProductsAmount(+extractNum[1]);
+
+    // set current page to 1
+    onPageChange(1);
   };
 
   const rightArrHandler = () => {
