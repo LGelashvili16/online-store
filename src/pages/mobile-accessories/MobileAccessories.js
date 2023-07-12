@@ -7,13 +7,25 @@ import gridView from '../../assets/mobile-accessories/gridview.png';
 import listView from '../../assets/mobile-accessories/listview.png';
 import { useState } from 'react';
 import ProductsList from './productsList/ProductsList';
-import Section6 from '../home/Section6';
+import Newsletter from '../../components/newsletter/Newsletter';
+import Pagination from '../../components/pagination/Pagination';
+
+import { products } from '../../data/mobileAccessories/mobileAccessoriesData';
 
 const MobileAccessories = () => {
   const [gridActive, setGridActive] = useState(false);
   const [listActive, setListActive] = useState(true);
+  const [cutProductsAmount, setCutProductsAmount] = useState(6);
 
-  const activeHandler = (e) => {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const currentProducts = (start, end) => {
+    return products.slice(start * (currentPage - 1), end * currentPage);
+  };
+
+  const curProducts = currentProducts(cutProductsAmount, cutProductsAmount);
+
+  const activePageHandler = (e) => {
     const active = /active/g;
     const curElement = e.target.closest('div').classList;
 
@@ -24,6 +36,8 @@ const MobileAccessories = () => {
 
     return;
   };
+
+  const productsAmount = products.length;
 
   return (
     <>
@@ -38,7 +52,7 @@ const MobileAccessories = () => {
           <section className={styles['section-products']}>
             <div
               className={styles['organize-products']}
-              style={{ 'max-width': gridActive ? '926px' : '' }}
+              style={{ maxWidth: gridActive ? '926px' : '' }}
             >
               <p className={styles['organize-products-info']}>
                 12,911 items in <strong>Mobile accessory</strong>
@@ -60,7 +74,7 @@ const MobileAccessories = () => {
                     className={`${styles['organize-products-switcher-grid']} ${
                       gridActive ? styles['active'] : ''
                     }`}
-                    onClick={activeHandler}
+                    onClick={activePageHandler}
                   >
                     <img src={gridView} alt="" />
                   </div>
@@ -68,7 +82,7 @@ const MobileAccessories = () => {
                     className={`${styles['organize-products-switcher-list']} ${
                       listActive ? styles['active'] : ''
                     }`}
-                    onClick={activeHandler}
+                    onClick={activePageHandler}
                   >
                     <img src={listView} alt="" />
                   </div>
@@ -76,11 +90,19 @@ const MobileAccessories = () => {
               </div>
             </div>
 
-            <ProductsList layout={listActive} />
+            <ProductsList products={curProducts} layout={listActive} />
+
+            <Pagination
+              currentPage={currentPage}
+              total={productsAmount}
+              limit={cutProductsAmount}
+              onPageChange={(page) => setCurrentPage(page)}
+              showProductsAmount={(amount) => setCutProductsAmount(amount)}
+            />
           </section>
         </div>
       </div>
-      <Section6 />
+      <Newsletter />
     </>
   );
 };

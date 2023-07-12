@@ -1,8 +1,9 @@
-import styles from './Section6.module.css';
-import mailIcon from '../../assets/home/section6/mail.svg';
+import styles from './Newsletter.module.css';
+
+import mailIcon from '../../assets/newsletter/mail.svg';
 import { useState } from 'react';
 
-const Section6 = () => {
+const Newsletter = () => {
   const [showIcon, setShowIcon] = useState(false);
 
   const hideIconHandler = () => {
@@ -14,16 +15,16 @@ const Section6 = () => {
   };
 
   return (
-    <section className={styles['section6']}>
-      <div className={styles['section6-subscribe']}>
+    <section className={styles['newsletter']}>
+      <div className={styles['newsletter-subscribe']}>
         <h3>Subscribe on our newsletter</h3>
         <p>
           Get daily news on upcoming offers from many suppliers all over the
           world
         </p>
-        <form className={styles['section6-form']}>
+        <form className={styles['newsletter-form']}>
           <img
-            className={`${styles['section6-mailIcon']} ${
+            className={`${styles['newsletter-mailIcon']} ${
               showIcon ? styles['hidden'] : ''
             }`}
             src={mailIcon}
@@ -42,4 +43,4 @@ const Section6 = () => {
   );
 };
 
-export default Section6;
+export default Newsletter;

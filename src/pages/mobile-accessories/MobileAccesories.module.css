@@ -13,6 +13,8 @@
 
 .section-products {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .organize-products {

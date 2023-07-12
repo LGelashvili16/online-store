@@ -1,8 +1,7 @@
 import styles from './ProductsList.module.css';
 import ProductItem from './ProductItem';
-import { products } from '../../../data/mobileAccessories/mobileAccessoriesData';
 
-const ProductsList = ({ layout }) => {
+const ProductsList = ({ layout, products }) => {
   return (
     <div
       className={`${styles['list-container']} ${

@@ -6,7 +6,7 @@
   --white: #fff;
 }
 
-.section6 {
+.newsletter {
   display: flex;
   justify-content: center;
 
@@ -16,14 +16,14 @@
   background: #eff2f4;
 }
 
-.section6-subscribe {
+.newsletter-subscribe {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-left: 4px;
 }
 
-.section6-subscribe h3 {
+.newsletter-subscribe h3 {
   font-size: 20px;
   font-weight: 600;
   line-height: 28px;
@@ -31,7 +31,7 @@
   color: var(--dark);
 }
 
-.section6-subscribe p {
+.newsletter-subscribe p {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -39,19 +39,19 @@
   color: #606060;
 }
 
-.section6-form {
+.newsletter-form {
   position: relative;
   margin-top: 21px;
 }
 
-.section6-form img {
+.newsletter-form img {
   position: absolute;
   top: 12px;
   left: 10px;
   pointer-events: none;
 }
 
-.section6-form input {
+.newsletter-form input {
   width: 274px;
   height: 40px;
 
@@ -64,19 +64,19 @@
   border-radius: 6px;
 }
 
-.section6-form input:focus {
+.newsletter-form input:focus {
   outline: 4px solid #1572fd63;
   border: 2px solid var(--primary);
 }
 
-.section6-form input::placeholder {
+.newsletter-form input::placeholder {
   padding-left: 26px;
   color: var(--gray-500);
   font-size: 16px;
   font-weight: 400;
 }
 
-.section6-form button {
+.newsletter-form button {
   width: 110px;
   height: 40px;
   margin-left: 8px;
@@ -93,7 +93,7 @@
   transition: all 0.2s ease-in-out;
 }
 
-.section6-form button:hover {
+.newsletter-form button:hover {
   background: var(--white);
   color: var(--primary);
   border: 1px solid #dee2e7;
@@ -104,7 +104,7 @@
 }
 
 @media (max-width: 480px) {
-  .section6 {
+  .newsletter {
     display: none;
   }
 }
