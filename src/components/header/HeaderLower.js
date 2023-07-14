@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import burgerMenuImg from '../../assets/header/icons/Hamburger-menu.svg';
+import burgerMenuImg from '../../assets/header/icons/Hamburger-menu.png';
 import arrowImg from '../../assets/header/icons/expand-arrow.svg';
 import { useRef, useState } from 'react';
 

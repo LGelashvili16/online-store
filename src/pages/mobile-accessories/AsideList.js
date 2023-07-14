@@ -18,7 +18,7 @@ import {
 const MIN = 0;
 const MAX = 999999;
 
-const AsideList = () => {
+const AsideList = ({ setFilterItems }) => {
   const [showCategory, setShowCategory] = useState(true);
   const [showBrands, setShowbrands] = useState(true);
   const [showFeatures, setShowFeatures] = useState(true);
@@ -54,6 +54,23 @@ const AsideList = () => {
 
   const maxInputValueHandler = (e) => {
     setSliderValues([sliderValues[0], +e.target.value]);
+  };
+
+  const filteredHandler = (e) => {
+    // console.log(e.target.closest('li').children[0].checked);
+    if (e.target.closest('li').children[0].checked) {
+      setFilterItems((prev) => {
+        return [...prev, e.target.closest('li').children[1].innerHTML];
+      });
+    }
+
+    if (e.target.closest('li').children[0].checked === false) {
+      setFilterItems((prev) => {
+        return prev.filter((elem) => {
+          return e.target.closest('li').children[1].innerHTML !== elem;
+        });
+      });
+    }
   };
 
   return (
@@ -122,7 +139,7 @@ const AsideList = () => {
             {showBrandsList
               ? shortenedBrands.map((cat, i) => {
                   return (
-                    <li key={i}>
+                    <li key={i} onClick={filteredHandler}>
                       <input type="checkbox" name={cat} id={cat} />
                       <label htmlFor={cat}>{cat}</label>
                     </li>
@@ -130,8 +147,8 @@ const AsideList = () => {
                 })
               : brands.map((cat, i) => {
                   return (
-                    <li key={i}>
-                      <input type="checkbox" name={cat} />
+                    <li key={i} onClick={filteredHandler}>
+                      <input type="checkbox" name={cat} id={cat} />
                       <label htmlFor={cat}>{cat}</label>
                     </li>
                   );
@@ -168,7 +185,7 @@ const AsideList = () => {
             {showFeaturesList
               ? shortenedFeatures.map((cat, i) => {
                   return (
-                    <li key={i}>
+                    <li key={i} onClick={filteredHandler}>
                       <input type="checkbox" name={cat} id={cat} />
                       <label htmlFor={cat}>{cat}</label>
                     </li>
@@ -176,8 +193,8 @@ const AsideList = () => {
                 })
               : features.map((cat, i) => {
                   return (
-                    <li key={i}>
-                      <input type="checkbox" name={cat} />
+                    <li key={i} onClick={filteredHandler}>
+                      <input type="checkbox" name={cat} id={cat} />
                       <label htmlFor={cat}>{cat}</label>
                     </li>
                   );
@@ -201,7 +218,7 @@ const AsideList = () => {
           className={styles['title']}
           onClick={() => setShowPriceRange(!showPriceRange)}
         >
-          <h3>Price Range</h3>
+          <h3>Price range</h3>
           <img
             src={expandArr}
             alt="arr"

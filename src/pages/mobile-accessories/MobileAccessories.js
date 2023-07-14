@@ -11,13 +11,18 @@ import Newsletter from '../../components/newsletter/Newsletter';
 import Pagination from '../../components/pagination/Pagination';
 
 import { products } from '../../data/mobileAccessories/mobileAccessoriesData';
+import SelectedFilter from './SelectedFilter';
 
 const MobileAccessories = () => {
   const [gridActive, setGridActive] = useState(false);
   const [listActive, setListActive] = useState(true);
   const [cutProductsAmount, setCutProductsAmount] = useState(6);
 
+  const [filterItems, setFilterItems] = useState([]);
+
   const [currentPage, setCurrentPage] = useState(1);
+
+  console.log(filterItems);
 
   const currentProducts = (start, end) => {
     return products.slice(start * (currentPage - 1), end * currentPage);
@@ -46,7 +51,7 @@ const MobileAccessories = () => {
 
         <div className={styles['content']}>
           <aside>
-            <AsideList />
+            <AsideList setFilterItems={setFilterItems} />
           </aside>
 
           <section className={styles['section-products']}>
@@ -89,6 +94,11 @@ const MobileAccessories = () => {
                 </div>
               </div>
             </div>
+
+            <SelectedFilter
+              filteredOptions={filterItems}
+              setFilterItems={setFilterItems}
+            />
 
             <ProductsList products={curProducts} layout={listActive} />
 

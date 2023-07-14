@@ -6,7 +6,7 @@ import ordersImg from '../../assets/header/icons/orders.svg';
 import myCartImg from '../../assets/header/icons/my-cart.svg';
 import arrowImg from '../../assets/header/icons/expand-arrow.svg';
 
-import respMenu from '../../assets/header/icons/Hamburger-menu.svg';
+import respMenu from '../../assets/header/icons/Hamburger-menu.png';
 import respCart from '../../assets/header/icons/resp-shopping-cart.svg';
 import respProfile from '../../assets/header/icons/resp-person.svg';
 import respAvatar from '../../assets/header/icons/resp-Avatar.png';

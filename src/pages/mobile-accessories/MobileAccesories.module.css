@@ -2,13 +2,17 @@
   display: flex;
   flex-direction: column;
   /* align-items: center; */
-  max-width: 1183px;
+  max-width: 1178px;
   width: 100%;
 }
 
 .content {
   display: flex;
-  gap: 28px;
+  gap: 26px;
+}
+
+.content aside {
+  margin-left: 3px;
 }
 
 .section-products {
