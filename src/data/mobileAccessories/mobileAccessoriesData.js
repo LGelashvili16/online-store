@@ -24,26 +24,48 @@ export const category = [
 ];
 
 export const brands = [
-  'Samsung',
-  'Apple',
-  'Huawei',
-  'Pocco',
-  'Lenovo',
-  'Google',
-  'Xiaomi',
-  'Sony',
-  'LG',
+  { id: 1, name: 'Samsung', check: false },
+  { id: 2, name: 'Apple', check: false },
+  { id: 3, name: 'Huawei', check: false },
+  { id: 4, name: 'Pocco', check: false },
+  { id: 5, name: 'Lenovo', check: false },
+  { id: 6, name: 'Google', check: false },
+  { id: 7, name: 'Xiaomi', check: false },
+  { id: 8, name: 'Sony', check: false },
+  { id: 9, name: 'LG', check: false },
 ];
 
+// export const brands = [
+//   'Samsung',
+//   'Apple',
+//   'Huawei',
+//   'Pocco',
+//   'Lenovo',
+//   'Google',
+//   'Xiaomi',
+//   'Sony',
+//   'LG',
+// ];
+
 export const features = [
-  'Metallic',
-  'Plastic cover',
-  '8GB Ram',
-  'Super power',
-  'Large memory',
-  'Wireless charger',
-  'Fast charge',
+  { id: 11, name: 'Metallic', checked: false },
+  { id: 22, name: 'Plastic cover', checked: false },
+  { id: 33, name: '8GB Ram', checked: false },
+  { id: 44, name: 'Super power', checked: false },
+  { id: 55, name: 'Large memory', checked: false },
+  { id: 66, name: 'Wireless charger', checked: false },
+  { id: 77, name: 'Fast charge', checked: false },
 ];
+
+// export const features = [
+//   'Metallic',
+//   'Plastic cover',
+//   '8GB Ram',
+//   'Super power',
+//   'Large memory',
+//   'Wireless charger',
+//   'Fast charge',
+// ];
 
 export const condition = ['Any', 'Refurbished', 'Brand new', 'Old items'];
 

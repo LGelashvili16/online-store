@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import ReactSlider from 'react-slider';
@@ -8,17 +8,24 @@ import expandArr from '../../assets/mobile-accessories/expand_less.svg';
 import filledStar from '../../assets/mobile-accessories/filled-star.svg';
 import emptyStar from '../../assets/mobile-accessories/empty-star.svg';
 
-import {
-  category,
-  brands,
-  features,
-  condition,
-} from '../../data/mobileAccessories/mobileAccessoriesData';
-
 const MIN = 0;
 const MAX = 999999;
 
-const AsideList = ({ setFilterItems }) => {
+const AsideList = ({
+  category,
+  brands,
+  setBrandsForm,
+  features,
+  setFeaturesForm,
+  condition,
+  filterItems,
+  setFilterItems,
+}) => {
+  const shortenedCategory = category.slice(0, 4);
+  const shortBrandsForm = brands.slice(0, 5);
+  const shorFeaturesForm = features.slice(0, 5);
+
+  // Showing tabs
   const [showCategory, setShowCategory] = useState(true);
   const [showBrands, setShowbrands] = useState(true);
   const [showFeatures, setShowFeatures] = useState(true);
@@ -26,16 +33,58 @@ const AsideList = ({ setFilterItems }) => {
   const [showCondition, setShowCondition] = useState(true);
   const [showRatings, setShowRatings] = useState(true);
 
+  // Showing lists
   const [showCategoryList, setShowCategoryList] = useState(true);
   const [showBrandsList, setShowBrandsList] = useState(true);
   const [showFeaturesList, setShowFeaturesList] = useState(true);
 
+  // Slider values
   const [sliderValues, setSliderValues] = useState([MIN, MAX]);
 
-  const shortenedCategory = category.slice(0, 4);
-  const shortenedBrands = brands.slice(0, 5);
-  const shortenedFeatures = features.slice(0, 5);
+  // useEffect
+  useEffect(() => {
+    if (filterItems.length > 0) {
+      setBrandsForm((prev) => {
+        return prev.map((el) => {
+          filterItems.forEach((filtered) => {
+            if (filtered === el.name) {
+              el.check = true;
+            }
+          });
+          return { ...el };
+        });
+      });
 
+      setFeaturesForm((prev) => {
+        return prev.map((el) => {
+          filterItems.forEach((filtered) => {
+            if (filtered === el.name) {
+              el.checked = true;
+            }
+          });
+          return { ...el };
+        });
+      });
+    }
+
+    if (filterItems.length === 0) {
+      setBrandsForm((prev) => {
+        return prev.map((el) => {
+          el.check = false;
+          return { ...el };
+        });
+      });
+
+      setFeaturesForm((prev) => {
+        return prev.map((el) => {
+          el.checked = false;
+          return { ...el };
+        });
+      });
+    }
+  }, [filterItems]);
+
+  // Handlers
   const categoryHandler = () => {
     setShowCategoryList(!showCategoryList);
   };
@@ -57,14 +106,44 @@ const AsideList = ({ setFilterItems }) => {
   };
 
   const filteredHandler = (e) => {
-    // console.log(e.target.closest('li').children[0].checked);
-    if (e.target.closest('li').children[0].checked) {
+    // Click on CHECKBOX & LABEL - Unchecked
+    if (
+      (e.target === e.target.closest('li').children[0] &&
+        e.target.closest('li').children[0].checked) ||
+      (e.target === e.target.closest('li').children[1] &&
+        e.target.closest('li').children[0].checked)
+    ) {
+      setBrandsForm((prev) => {
+        return prev.map((elem) => {
+          if (elem.name === e.target.closest('li').children[1].innerHTML) {
+            elem.check = true;
+          }
+          return elem;
+        });
+      });
+
       setFilterItems((prev) => {
-        return [...prev, e.target.closest('li').children[1].innerHTML];
+        const final = [...prev, e.target.closest('li').children[1].innerHTML];
+        return final;
       });
     }
 
-    if (e.target.closest('li').children[0].checked === false) {
+    // Click on CHECKBOX & LABEL - Checked
+    if (
+      (e.target === e.target.closest('li').children[0] &&
+        e.target.closest('li').children[0].checked === false) ||
+      (e.target === e.target.closest('li').children[1] &&
+        e.target.closest('li').children[0].checked === false)
+    ) {
+      setBrandsForm((prev) => {
+        return prev.map((elem) => {
+          if (elem.name === e.target.closest('li').children[1].innerHTML) {
+            elem.check = false;
+          }
+          return elem;
+        });
+      });
+
       setFilterItems((prev) => {
         return prev.filter((elem) => {
           return e.target.closest('li').children[1].innerHTML !== elem;
@@ -73,6 +152,52 @@ const AsideList = ({ setFilterItems }) => {
     }
   };
 
+  const featuresListHandler = (e) => {
+    // Click on CHECKBOX & LABEL - Unchecked
+    if (
+      e.target === e.target.closest('li').children[0] &&
+      e.target.closest('li').children[0].checked
+    ) {
+      setFeaturesForm((prev) => {
+        return prev.map((elem) => {
+          if (elem.name === e.target.closest('li').children[1].innerHTML) {
+            elem.checked = true;
+          }
+          return elem;
+        });
+      });
+
+      setFilterItems((prev) => {
+        const final = [...prev, e.target.closest('li').children[1].innerHTML];
+        return final;
+      });
+    }
+
+    // Click on CHECKBOX & LABEL - Checked
+    if (
+      (e.target === e.target.closest('li').children[0] &&
+        e.target.closest('li').children[0].checked === false) ||
+      (e.target === e.target.closest('li').children[1] &&
+        e.target.closest('li').children[0].checked === false)
+    ) {
+      setFeaturesForm((prev) => {
+        return prev.map((elem) => {
+          if (elem.name === e.target.closest('li').children[1].innerHTML) {
+            elem.checked = false;
+          }
+          return elem;
+        });
+      });
+
+      setFilterItems((prev) => {
+        return prev.filter((elem) => {
+          return e.target.closest('li').children[1].innerHTML !== elem;
+        });
+      });
+    }
+  };
+
+  // JSX
   return (
     <div className={styles['aside-container']}>
       <div className={styles['category']}>
@@ -137,19 +262,34 @@ const AsideList = ({ setFilterItems }) => {
         {showBrands ? (
           <ul>
             {showBrandsList
-              ? shortenedBrands.map((cat, i) => {
+              ? shortBrandsForm.map((category, i) => {
                   return (
-                    <li key={i} onClick={filteredHandler}>
-                      <input type="checkbox" name={cat} id={cat} />
-                      <label htmlFor={cat}>{cat}</label>
+                    <li
+                      className={styles['brands-li']}
+                      key={i}
+                      onClick={filteredHandler}
+                    >
+                      <input
+                        type="checkbox"
+                        id={category.id}
+                        checked={category.check}
+                        onChange={() => {}}
+                      />
+                      <label htmlFor={category.id}>{category.name}</label>
                     </li>
                   );
                 })
-              : brands.map((cat, i) => {
+              : brands.map((category, i) => {
                   return (
                     <li key={i} onClick={filteredHandler}>
-                      <input type="checkbox" name={cat} id={cat} />
-                      <label htmlFor={cat}>{cat}</label>
+                      <input
+                        type="checkbox"
+                        name={category.name}
+                        id={category.id}
+                        checked={category.check}
+                        onChange={() => {}}
+                      />
+                      <label htmlFor={category.id}>{category.name}</label>
                     </li>
                   );
                 })}
@@ -183,19 +323,39 @@ const AsideList = ({ setFilterItems }) => {
         {showFeatures ? (
           <ul>
             {showFeaturesList
-              ? shortenedFeatures.map((cat, i) => {
+              ? shorFeaturesForm.map((cat, i) => {
                   return (
-                    <li key={i} onClick={filteredHandler}>
-                      <input type="checkbox" name={cat} id={cat} />
-                      <label htmlFor={cat}>{cat}</label>
+                    <li
+                      className={styles['features-li']}
+                      key={i}
+                      onClick={featuresListHandler}
+                    >
+                      <input
+                        type="checkbox"
+                        name={cat.name}
+                        id={cat.id}
+                        checked={cat.checked}
+                        onChange={() => {}}
+                      />
+                      <label htmlFor={cat.id}>{cat.name}</label>
                     </li>
                   );
                 })
               : features.map((cat, i) => {
                   return (
-                    <li key={i} onClick={filteredHandler}>
-                      <input type="checkbox" name={cat} id={cat} />
-                      <label htmlFor={cat}>{cat}</label>
+                    <li
+                      className={styles['features-li']}
+                      key={i}
+                      onClick={featuresListHandler}
+                    >
+                      <input
+                        type="checkbox"
+                        name={cat.name}
+                        id={cat.id}
+                        checked={cat.checked}
+                        onChange={() => {}}
+                      />
+                      <label htmlFor={cat.id}>{cat.name}</label>
                     </li>
                   );
                 })}

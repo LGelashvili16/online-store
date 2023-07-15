@@ -13,6 +13,13 @@ import Pagination from '../../components/pagination/Pagination';
 import { products } from '../../data/mobileAccessories/mobileAccessoriesData';
 import SelectedFilter from './SelectedFilter';
 
+import {
+  category,
+  brands,
+  features,
+  condition,
+} from '../../data/mobileAccessories/mobileAccessoriesData';
+
 const MobileAccessories = () => {
   const [gridActive, setGridActive] = useState(false);
   const [listActive, setListActive] = useState(true);
@@ -22,13 +29,17 @@ const MobileAccessories = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  console.log(filterItems);
+  const [brandsForm, setBrandsForm] = useState(brands);
+  const [featuresForm, setFeaturesForm] = useState(features);
 
-  const currentProducts = (start, end) => {
+  const currentPageProducts = (start, end) => {
     return products.slice(start * (currentPage - 1), end * currentPage);
   };
 
-  const curProducts = currentProducts(cutProductsAmount, cutProductsAmount);
+  const curPageProducts = currentPageProducts(
+    cutProductsAmount,
+    cutProductsAmount
+  );
 
   const activePageHandler = (e) => {
     const active = /active/g;
@@ -51,7 +62,16 @@ const MobileAccessories = () => {
 
         <div className={styles['content']}>
           <aside>
-            <AsideList setFilterItems={setFilterItems} />
+            <AsideList
+              category={category}
+              brands={brandsForm}
+              setBrandsForm={setBrandsForm}
+              features={featuresForm}
+              setFeaturesForm={setFeaturesForm}
+              condition={condition}
+              filterItems={filterItems}
+              setFilterItems={setFilterItems}
+            />
           </aside>
 
           <section className={styles['section-products']}>
@@ -98,9 +118,11 @@ const MobileAccessories = () => {
             <SelectedFilter
               filteredOptions={filterItems}
               setFilterItems={setFilterItems}
+              setBrandsForm={setBrandsForm}
+              setFeaturesForm={setFeaturesForm}
             />
 
-            <ProductsList products={curProducts} layout={listActive} />
+            <ProductsList products={curPageProducts} layout={listActive} />
 
             <Pagination
               currentPage={currentPage}
