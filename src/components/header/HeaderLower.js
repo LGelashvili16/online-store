@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import burgerMenuImg from '../../assets/header/icons/Hamburger-menu.png';
 import arrowImg from '../../assets/header/icons/expand-arrow.svg';
 import { useRef, useState } from 'react';
@@ -15,6 +15,8 @@ const HeaderLower = () => {
   const [showCurrencyList, setShowCurrencyList] = useState(false);
   const [showShippingList, setShowShippingList] = useState(false);
   const [showAllCategory, setShowAllCategory] = useState(false);
+  const [chosenCurrency, setChosenCurrency] = useState(currencyData[0]);
+  const navigate = useNavigate();
 
   const headerHelpHandler = () => {
     setShowHelpList(!showHelpList);
@@ -42,7 +44,17 @@ const HeaderLower = () => {
   };
 
   const categoryRef = useRef();
+  const categoryImgRef = useRef();
   const categoryListRef = useRef();
+
+  const categoryRedirectHandler = (link) => {
+    navigate(link);
+  };
+
+  const chooseCurrencyHandler = (e) => {
+    console.log(e.target.textContent);
+    setChosenCurrency(e.target.textContent);
+  };
 
   window.addEventListener('click', (e) => {
     if (e.target !== menuRef.current && e.target !== helpListRef.current) {
@@ -64,10 +76,14 @@ const HeaderLower = () => {
     }
 
     if (
-      e.target !== categoryRef.current &&
-      e.target !== categoryListRef.current
+      e.target !== categoryImgRef.current &&
+      e.target !== categoryRef.current
     ) {
       setShowAllCategory(false);
+    }
+
+    if (e.target === categoryListRef.current) {
+      setShowAllCategory(true);
     }
   });
 
@@ -91,13 +107,21 @@ const HeaderLower = () => {
       <div className={styles['header-lower-wrapper']}>
         <nav>
           <ul className={styles['header-lower-list']}>
-            <li className={styles['header-lower-list-burger']}>
-              <img src={burgerMenuImg} alt="Burger menu" />
+            <li
+              className={styles['header-lower-list-burger']}
+              onClick={allCategoryHandler}
+            >
+              <img
+                src={burgerMenuImg}
+                alt="Burger menu"
+                onClick={allCategoryHandler}
+                ref={categoryImgRef}
+              />
               {/* <Link to="">All category</Link> */}
               <p
                 className={styles['burger-allCategory']}
-                onClick={allCategoryHandler}
                 ref={categoryRef}
+                onClick={allCategoryHandler}
               >
                 All category
               </p>
@@ -109,7 +133,10 @@ const HeaderLower = () => {
               >
                 {headerCategoriesData.map((category, i) => {
                   return (
-                    <li key={i}>
+                    <li
+                      key={i}
+                      onClick={() => categoryRedirectHandler(category.link)}
+                    >
                       <Link to={category.link}>{category.name}</Link>
                     </li>
                   );
@@ -161,7 +188,7 @@ const HeaderLower = () => {
           <ul>
             <li className={styles['header-currency-dropdown']}>
               <p onClick={currencyHandler} ref={currencyListRef}>
-                {currencyData[0]}
+                {chosenCurrency}
               </p>
               <img
                 className={styles['header-currency-dropdown-arrow']}
@@ -175,7 +202,9 @@ const HeaderLower = () => {
                 ref={currencyRef}
               >
                 {currencyData.map((currency, index) => (
-                  <li key={index}>{<p>{currency}</p>}</li>
+                  <li key={index} onClick={chooseCurrencyHandler}>
+                    {<p>{currency}</p>}
+                  </li>
                 ))}
               </ul>
             </li>

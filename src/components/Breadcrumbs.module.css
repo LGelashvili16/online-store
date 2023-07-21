@@ -24,3 +24,9 @@
   letter-spacing: -0.2px;
   color: var(--gray-500, #8b96a5);
 }
+
+@media (max-width: 480px) {
+  .breadcrumbs {
+    display: none;
+  }
+}

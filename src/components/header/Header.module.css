@@ -139,8 +139,9 @@ header {
 }
 
 .header-dropdown-list a {
+  width: 100%;
+  height: 100%;
   text-decoration: none;
-
   color: #1c1c1c;
 }
 
@@ -362,6 +363,39 @@ header {
 .resp-header-user img {
   width: 24px;
   height: 24px;
+}
+
+/* ************ Responsive at mobile accesory page ************ */
+
+.resp-header-top {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 1px;
+  justify-content: center;
+  align-items: flex-end;
+
+  min-height: 80px;
+}
+
+.resp-goBack-title {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-right: 66px;
+  height: 56px;
+  text-decoration: none;
+}
+
+.resp-goBack-title h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--dark, #1c1c1c);
+}
+
+.resp-header-user {
+  height: 56px;
+  align-items: center;
 }
 
 .hidden {

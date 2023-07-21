@@ -53,11 +53,6 @@
   width: 100%;
 }
 
-.brands-li {
-}
-.features-li {
-}
-
 .category ul li a {
   text-decoration: none;
   width: 100%;
@@ -121,9 +116,6 @@ ul li input[type='radio']:checked::after {
   background-color: #0d6efd;
 }
 
-ul li label {
-}
-
 ul li label:hover {
   cursor: pointer;
 }
@@ -149,9 +141,6 @@ ul li label:hover {
 }
 
 /* Double slider */
-
-.price-range title {
-}
 
 .price-range-slider-wrapper {
   width: 100%;
@@ -276,4 +265,10 @@ ul li label:hover {
   background-color: #0d6efd;
   color: #fff;
   border: 1px solid #0d6efd;
+}
+
+@media (max-width: 480px) {
+  .aside-container {
+    display: none;
+  }
 }

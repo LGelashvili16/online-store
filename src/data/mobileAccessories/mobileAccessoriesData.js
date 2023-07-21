@@ -5,6 +5,9 @@ import laptopImg from '../../assets/mobile-accessories/laptop.png';
 import smartwatchImg from '../../assets/mobile-accessories/smartwatch.png';
 import headphonesImg from '../../assets/mobile-accessories/headphones.png';
 
+import bagImg from '../../assets/mobile-accessories/bag.png';
+import jacketImg from '../../assets/mobile-accessories/jacket.png';
+
 export const category = [
   'Mobile accessory',
   'Electronics',
@@ -35,18 +38,6 @@ export const brands = [
   { id: 9, name: 'LG', check: false },
 ];
 
-// export const brands = [
-//   'Samsung',
-//   'Apple',
-//   'Huawei',
-//   'Pocco',
-//   'Lenovo',
-//   'Google',
-//   'Xiaomi',
-//   'Sony',
-//   'LG',
-// ];
-
 export const features = [
   { id: 11, name: 'Metallic', checked: false },
   { id: 22, name: 'Plastic cover', checked: false },
@@ -56,16 +47,6 @@ export const features = [
   { id: 66, name: 'Wireless charger', checked: false },
   { id: 77, name: 'Fast charge', checked: false },
 ];
-
-// export const features = [
-//   'Metallic',
-//   'Plastic cover',
-//   '8GB Ram',
-//   'Super power',
-//   'Large memory',
-//   'Wireless charger',
-//   'Fast charge',
-// ];
 
 export const condition = ['Any', 'Refurbished', 'Brand new', 'Old items'];
 
@@ -267,5 +248,33 @@ export const products = [
     shipping: 'Free Shipping',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+  },
+];
+
+export const mayAlsoLikeData = [
+  {
+    image: bagImg,
+    price: '$10.30',
+    description: 'Solid Backpack blue jeans large size',
+  },
+  {
+    image: smartwatchImg,
+    price: '$10.30',
+    description: 'T-shirts with multiple color, for men',
+  },
+  {
+    image: jacketImg,
+    price: '$10.30',
+    description: 'T-shirts with multiple color, for men',
+  },
+  {
+    image: bagImg,
+    price: '$10.30',
+    description: 'T-shirts with multiple color, for men',
+  },
+  {
+    image: bagImg,
+    price: '$10.30',
+    description: 'T-shirts with multiple color, for men',
   },
 ];

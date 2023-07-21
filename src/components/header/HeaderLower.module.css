@@ -187,11 +187,12 @@
   position: relative;
   display: flex;
   gap: 2px;
+  min-width: 124px;
+  padding-right: 26px;
 }
 
 .header-currency-dropdown p {
   cursor: pointer;
-  width: 124px;
 }
 
 .header-currency-dropdown-arrow {

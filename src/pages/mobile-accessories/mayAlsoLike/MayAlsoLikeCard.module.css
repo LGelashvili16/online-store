@@ -1,0 +1,38 @@
+.card {
+  min-width: 150px;
+  height: 220px;
+  padding: 10px;
+  padding-right: 0;
+
+  border: 1px solid #dee2e7;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.card-image {
+  width: 130px;
+  height: 131px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 7px;
+}
+
+.card-image img {
+  max-width: 112px;
+  max-height: 116px;
+}
+
+.card h3 {
+  margin-left: 2px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #1c1c1c;
+  margin-bottom: 2px;
+}
+
+.card p {
+  font-size: 13px;
+  font-weight: 400;
+  color: #8b96a5;
+}

@@ -67,7 +67,7 @@ const ProductItem = (props) => {
           <div
             className={`${
               props.layout ? styles['product-rating-dot'] : styles['hidden']
-            }`}
+            } ${styles['dot2']}`}
           ></div>
 
           <p

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import ReactSlider from 'react-slider';
@@ -7,6 +7,8 @@ import styles from './AsideList.module.css';
 import expandArr from '../../assets/mobile-accessories/expand_less.svg';
 import filledStar from '../../assets/mobile-accessories/filled-star.svg';
 import emptyStar from '../../assets/mobile-accessories/empty-star.svg';
+
+import { useFilterProducts } from '../Context';
 
 const MIN = 0;
 const MAX = 999999;
@@ -197,7 +199,8 @@ const AsideList = ({
     }
   };
 
-  // JSX
+  //! ****************************** JSX
+
   return (
     <div className={styles['aside-container']}>
       <div className={styles['category']}>

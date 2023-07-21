@@ -18,15 +18,25 @@ import respOrders from '../../assets/header/icons/resp-menu-orders.svg';
 import respLang from '../../assets/header/icons/resp-menu-lang.svg';
 import respContact from '../../assets/header/icons/resp-menu-contact.svg';
 import respAbout from '../../assets/header/icons/resp-menu-about.svg';
+import goBackIcon from '../../assets/mobile-accessories/arrow_back.png';
 
 import { headerCategoriesData } from '../../data/header/headerData.js';
-import { Link } from 'react-router-dom';
-import { useRef, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
 import HeaderLower from './HeaderLower';
 
 const Header = () => {
   const [showCategories, setShowCategories] = useState(false);
   const [showBurgerMenu, setShowBurgerMenu] = useState(false);
+  const [mobileGoBack, setMobileGoBack] = useState('');
+  const [mobileGoBackTitle, setMobileGoBackTitle] = useState('');
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
+
+  const menuRef = useRef();
+  const categoriesRef = useRef();
+
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const burgerMenuHandler = (e) => {
     setShowBurgerMenu(!showBurgerMenu);
@@ -40,8 +50,38 @@ const Header = () => {
     setShowCategories(!showCategories);
   };
 
-  const menuRef = useRef();
-  const categoriesRef = useRef();
+  const categoryRedirectHandler = (link) => {
+    navigate(link);
+  };
+
+  const mobileGoBackHandler = () => {
+    setMobileGoBack(location.pathname);
+
+    const goBackTitle =
+      location.pathname
+        .split('/')
+        .slice(-1)[0]
+        .replace('-', ' ')
+        .charAt(0)
+        .toUpperCase() +
+      location.pathname.split('/').slice(-1)[0].replace('-', ' ').slice(1);
+
+    setMobileGoBackTitle(goBackTitle);
+  };
+
+  useEffect(() => {
+    mobileGoBackHandler();
+
+    window.addEventListener('resize', () => {
+      setWindowSize(window.innerWidth);
+    });
+
+    return () => {
+      window.removeEventListener('resize', () => {
+        setWindowSize(window.innerWidth);
+      });
+    };
+  }, [location.pathname]);
 
   window.addEventListener('click', (e) => {
     if (e.target !== menuRef.current && e.target !== categoriesRef.current) {
@@ -51,8 +91,20 @@ const Header = () => {
 
   return (
     <header>
-      <div className={styles['header-top']}>
-        <div className={styles['resp-header-menu']}>
+      <div
+        className={`${
+          mobileGoBack !== '/online-store/' && windowSize <= 480
+            ? styles['resp-header-top']
+            : styles['header-top']
+        }`}
+      >
+        <div
+          className={`${
+            mobileGoBack !== '/online-store/' && windowSize <= 480
+              ? styles['hidden']
+              : styles['resp-header-menu']
+          }`}
+        >
           <img src={respMenu} alt="" onClick={burgerMenuHandler} />
 
           <div
@@ -114,11 +166,29 @@ const Header = () => {
           </div>
         </div>
 
-        <div className={styles['header-logo']}>
+        <div
+          className={`${
+            mobileGoBack !== '/online-store/' && windowSize <= 480
+              ? styles['hidden']
+              : styles['header-logo']
+          }`}
+        >
           <Link to="/online-store/">
             <img src={brandLogoImg} alt="Brand-Logo" />
           </Link>
         </div>
+
+        <Link
+          to="/online-store/"
+          className={`${
+            mobileGoBack !== '/online-store/' && windowSize <= 480
+              ? styles['resp-goBack-title']
+              : styles['hidden']
+          }`}
+        >
+          <img src={goBackIcon} alt="go back" />
+          <h2>{mobileGoBackTitle}</h2>
+        </Link>
 
         <form className={styles['header-form']}>
           <img
@@ -154,7 +224,10 @@ const Header = () => {
               ref={menuRef}
             >
               {headerCategoriesData.map((item, index) => (
-                <li key={index}>
+                <li
+                  key={index}
+                  onClick={() => categoryRedirectHandler(item.link)}
+                >
                   <Link to={item.link}>{item.name}</Link>
                 </li>
               ))}
@@ -168,7 +241,13 @@ const Header = () => {
           />
         </form>
 
-        <div className={styles['header-user']}>
+        <div
+          className={`${
+            mobileGoBack !== '/online-store/' && windowSize <= 480
+              ? styles['resp-header-user']
+              : styles['header-user']
+          }`}
+        >
           <div className={`${styles['header-user-item']} ${styles['profile']}`}>
             <img
               className={styles['profile-icon']}
