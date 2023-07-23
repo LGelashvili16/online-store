@@ -48,7 +48,7 @@ export const headerFlags = [
 ];
 
 export const currencyData = [
-  'English, USD',
-  'European, EUR',
-  'Australian, AUD',
+  { name: 'English, USD', sign: '$' },
+  { name: 'European, EUR', sign: '€' },
+  { name: 'Australian, AUD', sign: '$' },
 ];

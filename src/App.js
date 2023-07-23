@@ -15,7 +15,7 @@ import RootLayout from './layouts/RootLayout';
 import MobileAccessories from './pages/mobile-accessories/MobileAccessories';
 
 //Global State
-import { GlobalStateProvider } from './pages/Context';
+import { GlobalStateProvider } from './contexts/Context';
 
 const router = createBrowserRouter(
   createRoutesFromElements(

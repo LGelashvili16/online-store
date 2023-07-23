@@ -8,6 +8,8 @@ import { headerFlags } from '../../data/header/headerData.js';
 import { currencyData } from '../../data/header/headerData.js';
 import { headerCategoriesData } from '../../data/header/headerData.js';
 
+import { useCurrencyData, useShipToData } from '../../contexts/Context';
+
 import styles from './HeaderLower.module.css';
 
 const HeaderLower = () => {
@@ -15,7 +17,9 @@ const HeaderLower = () => {
   const [showCurrencyList, setShowCurrencyList] = useState(false);
   const [showShippingList, setShowShippingList] = useState(false);
   const [showAllCategory, setShowAllCategory] = useState(false);
-  const [chosenCurrency, setChosenCurrency] = useState(currencyData[0]);
+  const [currentCurrency, setCurrentCurrency] = useCurrencyData();
+  const [currentShipTo, setCurrentShipTo] = useShipToData();
+
   const navigate = useNavigate();
 
   const headerHelpHandler = () => {
@@ -30,6 +34,7 @@ const HeaderLower = () => {
   };
 
   const currencyRef = useRef();
+  const currencyTextRef = useRef();
   const currencyListRef = useRef();
 
   const shippingHandler = () => {
@@ -51,9 +56,12 @@ const HeaderLower = () => {
     navigate(link);
   };
 
-  const chooseCurrencyHandler = (e) => {
-    console.log(e.target.textContent);
-    setChosenCurrency(e.target.textContent);
+  const currentCurrencyHandler = (e) => {
+    setCurrentCurrency(e.target.textContent);
+  };
+
+  const currentShipToHandler = (e) => {
+    setCurrentShipTo(e.target.closest('li').children[0].src);
   };
 
   window.addEventListener('click', (e) => {
@@ -63,9 +71,13 @@ const HeaderLower = () => {
 
     if (
       e.target !== currencyRef.current &&
-      e.target !== currencyListRef.current
+      e.target !== currencyTextRef.current
     ) {
       setShowCurrencyList(false);
+    }
+
+    if (e.target === currencyListRef.current) {
+      setShowCurrencyList(true);
     }
 
     if (
@@ -186,9 +198,13 @@ const HeaderLower = () => {
 
         <div className={styles['header-currency-shipping']}>
           <ul>
-            <li className={styles['header-currency-dropdown']}>
-              <p onClick={currencyHandler} ref={currencyListRef}>
-                {chosenCurrency}
+            <li
+              className={styles['header-currency-dropdown']}
+              onClick={currencyHandler}
+              ref={currencyRef}
+            >
+              <p ref={currencyTextRef} onClick={currencyHandler}>
+                {currentCurrency}
               </p>
               <img
                 className={styles['header-currency-dropdown-arrow']}
@@ -199,11 +215,11 @@ const HeaderLower = () => {
                 className={`${styles['header-currency-list']} ${
                   !showCurrencyList ? styles['hidden'] : ''
                 }`}
-                ref={currencyRef}
+                ref={currencyListRef}
               >
                 {currencyData.map((currency, index) => (
-                  <li key={index} onClick={chooseCurrencyHandler}>
-                    {<p>{currency}</p>}
+                  <li key={index} onClick={currentCurrencyHandler}>
+                    {<p>{currency.name}</p>}
                   </li>
                 ))}
               </ul>
@@ -215,7 +231,7 @@ const HeaderLower = () => {
               </p>
               <img
                 className={styles['header-current-shipping']}
-                src={headerFlags[0].flag}
+                src={currentShipTo}
                 alt=""
               />
               <img
@@ -230,7 +246,7 @@ const HeaderLower = () => {
                 ref={shippingListRef}
               >
                 {headerFlags.map((item, index) => (
-                  <li key={index}>
+                  <li key={index} onClick={currentShipToHandler}>
                     {<img src={item.flag} alt="" />}
                     {<p>{item.country}</p>}
                   </li>

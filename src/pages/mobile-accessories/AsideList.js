@@ -8,7 +8,7 @@ import expandArr from '../../assets/mobile-accessories/expand_less.svg';
 import filledStar from '../../assets/mobile-accessories/filled-star.svg';
 import emptyStar from '../../assets/mobile-accessories/empty-star.svg';
 
-import { useFilterProducts } from '../Context';
+import { useFilterProducts } from '../../contexts/Context';
 
 const MIN = 0;
 const MAX = 999999;

@@ -1,0 +1,59 @@
+.section2-row1-offers-countdown {
+  display: flex;
+  gap: 6px;
+  margin-top: 17px;
+}
+
+.timer-card {
+  width: 45px;
+  height: 50px;
+  padding-top: 7px;
+  border-radius: 4px;
+  background: #606060;
+  text-align: center;
+}
+
+.timer-card h3 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.timer-card p {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--white);
+}
+
+@media (max-width: 480px) {
+  .section2-row1-offers-countdown {
+    display: flex;
+    gap: 4px;
+    margin-top: 0;
+  }
+
+  .timer-card:first-child {
+    display: none;
+  }
+
+  .timer-card {
+    width: 45px;
+    height: 44px;
+    padding-top: 6px;
+    border-radius: 0;
+    background: #eff2f4;
+    text-align: center;
+  }
+
+  .timer-card h3 {
+    font-weight: 600;
+    color: var(--gray-500);
+  }
+
+  .timer-card p {
+    font-size: 11px;
+    color: var(--gray-500);
+  }
+}

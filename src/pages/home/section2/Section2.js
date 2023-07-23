@@ -10,6 +10,7 @@ import {
 
 import styles from './Section2.module.css';
 import frwdArrowIcon from '../../../assets/home/section2/arrow_forward.svg';
+import CountDown from './CountDown';
 
 const Section2 = () => {
   return (
@@ -23,24 +24,7 @@ const Section2 = () => {
             </p>
           </div>
 
-          <div className={styles['section2-row1-offers-countdown']}>
-            <div className={styles['timer-card']}>
-              <h3>04</h3>
-              <p>Days</p>
-            </div>
-            <div className={styles['timer-card']}>
-              <h3>13</h3>
-              <p>Hour</p>
-            </div>
-            <div className={styles['timer-card']}>
-              <h3>34</h3>
-              <p>Min</p>
-            </div>
-            <div className={styles['timer-card']}>
-              <h3>56</h3>
-              <p>Sec</p>
-            </div>
-          </div>
+          <CountDown />
         </div>
 
         <div className={styles['section2-row1-products']}>
