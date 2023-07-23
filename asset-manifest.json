@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/online-store/static/css/main.714e8eca.css",
-    "main.js": "/online-store/static/js/main.6b436ed6.js",
+    "main.css": "/online-store/static/css/main.4d4876bd.css",
+    "main.js": "/online-store/static/js/main.eace2ed1.js",
     "static/js/787.a92fe09e.chunk.js": "/online-store/static/js/787.a92fe09e.chunk.js",
     "static/media/parcels.png": "/online-store/static/media/parcels.4be3316d701f729664cd.png",
     "static/media/section1-Banner.png": "/online-store/static/media/section1-Banner.398308ec3c1d1ad1ab60.png",
@@ -10,9 +10,9 @@
     "static/media/parcel-person.png": "/online-store/static/media/parcel-person.7266295227e9a092f6ff.png",
     "static/media/airplane.png": "/online-store/static/media/airplane.5b7b4d25f9cb967542b0.png",
     "static/media/elecronics-bg.png": "/online-store/static/media/elecronics-bg.013808f95d19cba05732.png",
-    "static/media/shirt.png": "/online-store/static/media/shirt.22b04e13a7b471e431b1.png",
-    "static/media/bag.png": "/online-store/static/media/bag.7cf96c72ae43d3f732c9.png",
     "static/media/jacket.png": "/online-store/static/media/jacket.f1ae04b7cc93a4efe61f.png",
+    "static/media/shirt.png": "/online-store/static/media/shirt.22b04e13a7b471e431b1.png",
+    "static/media/bag.png": "/online-store/static/media/bag.0693375d751825a8a857.png",
     "static/media/soft-chairs.png": "/online-store/static/media/soft-chairs.8b12dd501a5c69215771.png",
     "static/media/t-shirt.png": "/online-store/static/media/t-shirt.dc8a10117c708eed29b4.png",
     "static/media/laptop.png": "/online-store/static/media/laptop.3596adfd6b800a05816c.png",
@@ -82,12 +82,12 @@
     "static/media/expand_less.svg": "/online-store/static/media/expand_less.bee3d04f02d7869faf326d3e18e7c407.svg",
     "static/media/check-mark.svg": "/online-store/static/media/check-mark.1aca9326950a232307f2.svg",
     "static/media/chevron_right.svg": "/online-store/static/media/chevron_right.9f7521880b9c53f92ca66e2fecd57c6f.svg",
-    "main.714e8eca.css.map": "/online-store/static/css/main.714e8eca.css.map",
-    "main.6b436ed6.js.map": "/online-store/static/js/main.6b436ed6.js.map",
+    "main.4d4876bd.css.map": "/online-store/static/css/main.4d4876bd.css.map",
+    "main.eace2ed1.js.map": "/online-store/static/js/main.eace2ed1.js.map",
     "787.a92fe09e.chunk.js.map": "/online-store/static/js/787.a92fe09e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.714e8eca.css",
-    "static/js/main.6b436ed6.js"
+    "static/css/main.4d4876bd.css",
+    "static/js/main.eace2ed1.js"
   ]
 }
