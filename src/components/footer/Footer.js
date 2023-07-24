@@ -7,7 +7,6 @@ import instaIco from '../../assets/footer/insta.svg';
 import youtubeIco from '../../assets/footer/youtube.svg';
 import appleStoreImg from '../../assets/footer/market-button.png';
 import androidMarketImg from '../../assets/footer/marketAndroid-button.png';
-import usaFlagImg from '../../assets/footer/USA.png';
 import upArrowImg from '../../assets/footer/expand_less.png';
 
 import { Link } from 'react-router-dom';

@@ -373,7 +373,7 @@
     height: 69px;
     max-width: 360px;
     border: none;
-    /* overflow: hidden; */
+    overflow: hidden;
   }
 
   .resp-header-lower {

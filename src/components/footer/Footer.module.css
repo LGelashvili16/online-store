@@ -235,4 +235,16 @@ footer {
     background: #eff2f4;
     border-top: 1px solid #dee2e7;
   }
+
+  .footer-lower-content {
+    width: 360px;
+    padding-inline: 10px;
+  }
+
+  .footer-change-lang-list {
+    position: absolute;
+    bottom: 30px;
+    left: -17px;
+    width: 140px;
+  }
 }
