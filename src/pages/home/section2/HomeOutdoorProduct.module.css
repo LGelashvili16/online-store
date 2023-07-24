@@ -9,14 +9,12 @@
 .section2-row2-product {
   display: flex;
   justify-content: space-between;
-  width: 224px;
+  min-width: 224px;
   height: 127px;
   padding-top: 20px;
   padding-left: 15px;
   border-left: 1px solid #e0e0e0;
   border-bottom: 1px solid #e0e0e0;
-
-  cursor: pointer;
 }
 
 .row2-product-title h3 {
@@ -53,6 +51,7 @@
   max-width: 100%;
   max-height: 80%;
   margin: 0 auto;
+  pointer-events: none;
 }
 
 /* ******** Responsive ******** */
@@ -74,7 +73,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 140px;
+    min-width: 140px;
     height: 160px;
     padding-top: 0;
     padding-left: 0;

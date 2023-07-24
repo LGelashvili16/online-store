@@ -18,10 +18,22 @@ import { useEffect, useRef, useState } from 'react';
 const Section2 = () => {
   const [row1ProductsWidth, setRow1ProductsWidth] = useState(0);
   const row1ProductsRef = useRef();
+  const [row2ProductsWidth, setRow2ProductsWidth] = useState(0);
+  const row2ProductsRef = useRef();
+  const [row3ProductsWidth, setRow3ProductsWidth] = useState(0);
+  const row3ProductsRef = useRef();
 
   useEffect(() => {
     setRow1ProductsWidth(
       row1ProductsRef.current.scrollWidth - row1ProductsRef.current.offsetWidth
+    );
+
+    setRow2ProductsWidth(
+      row2ProductsRef.current.scrollWidth - row2ProductsRef.current.offsetWidth
+    );
+
+    setRow3ProductsWidth(
+      row3ProductsRef.current.scrollWidth - row3ProductsRef.current.offsetWidth
     );
   }, []);
 
@@ -77,18 +89,28 @@ const Section2 = () => {
           </div>
         </div>
 
-        <div className={styles['section2-row2-products']}>
-          {section2HomeOutdoor.map((prod, index) => {
-            return (
-              <HomeOutdoorProduct
-                key={index}
-                title={prod.title}
-                price={prod.price}
-                image={prod.image}
-              />
-            );
-          })}
-        </div>
+        <motion.div
+          className={styles['section2-row2-products-container']}
+          ref={row2ProductsRef}
+        >
+          <motion.div
+            drag="x"
+            dragConstraints={{ right: 0, left: -row2ProductsWidth }}
+            whileDrag={{ cursor: 'grabbing' }}
+            className={styles['section2-row2-products']}
+          >
+            {section2HomeOutdoor.map((prod, index) => {
+              return (
+                <HomeOutdoorProduct
+                  key={index}
+                  title={prod.title}
+                  price={prod.price}
+                  image={prod.image}
+                />
+              );
+            })}
+          </motion.div>
+        </motion.div>
 
         <button className={styles['section2-row2-btn-resp']}>
           Source now <img src={frwdArrowIcon} alt="" />
@@ -112,18 +134,28 @@ const Section2 = () => {
           </div>
         </div>
 
-        <div className={styles['section2-row3-products']}>
-          {section2Electronics.map((prod, index) => {
-            return (
-              <ElectronicsProduct
-                key={index}
-                title={prod.title}
-                price={prod.price}
-                image={prod.image}
-              />
-            );
-          })}
-        </div>
+        <motion.div
+          className={styles['section2-row3-products-container']}
+          ref={row3ProductsRef}
+        >
+          <motion.div
+            drag="x"
+            dragConstraints={{ right: 0, left: -row3ProductsWidth }}
+            whileDrag={{ cursor: 'grabbing' }}
+            className={styles['section2-row3-products']}
+          >
+            {section2Electronics.map((prod, index) => {
+              return (
+                <ElectronicsProduct
+                  key={index}
+                  title={prod.title}
+                  price={prod.price}
+                  image={prod.image}
+                />
+              );
+            })}
+          </motion.div>
+        </motion.div>
 
         <button className={styles['section2-row3-btn-resp']}>
           Source now <img src={frwdArrowIcon} alt="" />

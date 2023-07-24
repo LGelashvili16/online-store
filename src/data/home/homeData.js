@@ -87,9 +87,27 @@ export const section2HomeOutdoor = [
   { title: 'Blenders', price: '39', image: blendersImg },
   { title: 'Home appliance', price: '19', image: homeApplianceImg },
   { title: 'Coffee maker', price: '10', image: coffeeMakerImg },
+
+  { title: 'Soft chairs', price: '19', image: softChairsImg },
+  { title: 'Sofa & chair', price: '19', image: sofaChairImg },
+  { title: 'Kitchen dishes', price: '19', image: kitcheDishesImg },
+  { title: 'Smart watches', price: '19', image: smartWatches2Img },
+  { title: 'Kitchen mixer', price: '100', image: kitchenMixerImg },
+  { title: 'Blenders', price: '39', image: blendersImg },
+  { title: 'Home appliance', price: '19', image: homeApplianceImg },
+  { title: 'Coffee maker', price: '10', image: coffeeMakerImg },
 ];
 
 export const section2Electronics = [
+  { title: 'Smart watches', price: '19', image: smartWatches2Img },
+  { title: 'Cameras', price: '89', image: camerasImg },
+  { title: 'Headphones', price: '10', image: headphones2Img },
+  { title: 'Smart watches', price: '90', image: kitchenMixerImg },
+  { title: 'Gaming set', price: '35', image: gamingSetImg },
+  { title: 'Laptops & PC', price: '340', image: laptopsAndPCImg },
+  { title: 'Smartphones', price: '19', image: smartphones2Img },
+  { title: 'Electric kattle', price: '240', image: electricKettleImg },
+
   { title: 'Smart watches', price: '19', image: smartWatches2Img },
   { title: 'Cameras', price: '89', image: camerasImg },
   { title: 'Headphones', price: '10', image: headphones2Img },
