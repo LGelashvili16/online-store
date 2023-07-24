@@ -56,8 +56,14 @@
   color: var(--gray-500);
 }
 
+.section2-row1-products-container {
+  overflow: hidden;
+}
+
 .section2-row1-products {
+  width: 895px;
   display: flex;
+  cursor: grab;
 }
 
 /* *********************************** */

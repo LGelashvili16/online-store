@@ -12,7 +12,19 @@ import styles from './Section2.module.css';
 import frwdArrowIcon from '../../../assets/home/section2/arrow_forward.svg';
 import CountDown from './CountDown';
 
+import { motion } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+
 const Section2 = () => {
+  const [row1ProductsWidth, setRow1ProductsWidth] = useState(0);
+  const row1ProductsRef = useRef();
+
+  useEffect(() => {
+    setRow1ProductsWidth(
+      row1ProductsRef.current.scrollWidth - row1ProductsRef.current.offsetWidth
+    );
+  }, []);
+
   return (
     <section className={styles['section2']}>
       <div className={styles['section2-row1']}>
@@ -27,18 +39,28 @@ const Section2 = () => {
           <CountDown />
         </div>
 
-        <div className={styles['section2-row1-products']}>
-          {section2Discounted.map((product, index) => {
-            return (
-              <DiscountedProduct
-                key={index}
-                image={product.image}
-                title={product.title}
-                discount={product.discount}
-              />
-            );
-          })}
-        </div>
+        <motion.div
+          className={styles['section2-row1-products-container']}
+          ref={row1ProductsRef}
+        >
+          <motion.div
+            drag="x"
+            dragConstraints={{ right: 0, left: -row1ProductsWidth }}
+            whileTap={{ cursor: 'grabbing' }}
+            className={styles['section2-row1-products']}
+          >
+            {section2Discounted.map((product, index) => {
+              return (
+                <DiscountedProduct
+                  key={index}
+                  image={product.image}
+                  title={product.title}
+                  discount={product.discount}
+                />
+              );
+            })}
+          </motion.div>
+        </motion.div>
       </div>
 
       <div className={styles['section2-row2']}>

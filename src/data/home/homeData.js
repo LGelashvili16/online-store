@@ -73,6 +73,9 @@ export const section2Discounted = [
   { image: canonCamerasImg, title: 'Canon cameras', discount: '-40%' },
   { image: headphonesImg, title: 'Headphones', discount: '-25%' },
   { image: smartphonesImg, title: 'Smartphones', discount: '-25%' },
+  { image: laptopsImg, title: 'Laptops', discount: '-15%' },
+  { image: headphonesImg, title: 'Headphones', discount: '-25%' },
+  { image: canonCamerasImg, title: 'Canon cameras', discount: '-40%' },
 ];
 
 export const section2HomeOutdoor = [

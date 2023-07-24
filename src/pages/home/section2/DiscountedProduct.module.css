@@ -10,12 +10,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 179px;
+  min-width: 179px;
   height: 235px;
 
   border-left: 1px solid #e0e0e0;
-
-  cursor: pointer;
 }
 
 .discounted-product-img {
@@ -25,6 +23,7 @@
   margin-top: 8px;
   width: 140px;
   height: 140px;
+  pointer-events: none;
 }
 
 .discounted-product-title {

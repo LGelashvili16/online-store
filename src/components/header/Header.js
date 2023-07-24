@@ -219,7 +219,7 @@ const Header = () => {
 
             <ul
               className={`${styles['header-dropdown-list']} ${
-                !showCategories ? styles['hidden'] : ''
+                !showCategories ? styles['list-hidden'] : ''
               }`}
               ref={menuRef}
             >
