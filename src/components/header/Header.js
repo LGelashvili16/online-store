@@ -42,6 +42,16 @@ const Header = () => {
     setShowBurgerMenu(!showBurgerMenu);
   };
 
+  useEffect(() => {
+    if (showBurgerMenu) {
+      document.body.style.overflow = 'hidden';
+    }
+
+    if (!showBurgerMenu) {
+      document.body.style.overflow = 'auto';
+    }
+  }, [showBurgerMenu]);
+
   const stopPropagationHandelr = (e) => {
     e.stopPropagation();
   };
