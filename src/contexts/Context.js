@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 
 import { currencyData, headerFlags } from '../data/header/headerData';
+import { language } from '../data/footer/footerData';
 
 import {
   category,
@@ -12,6 +13,7 @@ import {
 const currencyDataContext = React.createContext();
 const shipToContext = React.createContext();
 const FilterProductsContext = React.createContext();
+const ChangeLanguageContext = React.createContext();
 
 export function useCurrencyData() {
   return useContext(currencyDataContext);
@@ -25,9 +27,14 @@ export function useFilterProducts() {
   return useContext(FilterProductsContext);
 }
 
+export function useChangeLanguage() {
+  return useContext(ChangeLanguageContext);
+}
+
 export const GlobalStateProvider = ({ children }) => {
   const [currentCurrency, setCurrentCurrency] = useState(currencyData[0].name);
   const [currentShipTo, setCurrentShipTo] = useState(headerFlags[0].flag);
+  const [currentLang, setCurrentLang] = useState(language[0]);
   const [filterProducts, setFilterProducts] = useState({
     category: category,
     brands: brands,
@@ -41,7 +48,9 @@ export const GlobalStateProvider = ({ children }) => {
         <FilterProductsContext.Provider
           value={[filterProducts, setFilterProducts]}
         >
-          {children}
+          <ChangeLanguageContext.Provider value={[currentLang, setCurrentLang]}>
+            {children}
+          </ChangeLanguageContext.Provider>
         </FilterProductsContext.Provider>
       </shipToContext.Provider>
     </currencyDataContext.Provider>

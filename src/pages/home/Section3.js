@@ -8,6 +8,15 @@ const Section3 = () => {
   const [showRespForm, setShowRespForm] = useState(false);
   const [mobileScreen, setMobileScreen] = useState(false);
 
+  const [pcs, setPcs] = useState('');
+
+  const formRefs = useRef({
+    requestedItem: '',
+    requestedItemDetails: '',
+    requestedItemQuantity: '',
+    pcs: pcs,
+  });
+
   const detectMobile = () => {
     if (window.innerWidth <= 480) {
       setMobileScreen(true);
@@ -37,12 +46,40 @@ const Section3 = () => {
     setShowRespForm(!showRespForm);
   };
 
-  window.addEventListener('click', (e) => {
+  const pcsHandler = (e) => {
+    setPcs(`${e.target.textContent}`);
+    formRefs.current.pcs = e.target.textContent;
+  };
+
+  const formSubmitHandler = (e) => {
+    e.preventDefault();
+
+    e.target.children[1].value = '';
+    e.target.children[2].value = '';
+    e.target.children[3].children[0].value = '';
+    setPcs('');
+  };
+
+  const onChangeHandler = (e) => {
+    const { name, value } = e.target;
+    console.log((formRefs.current[name] = value));
+    console.log(formRefs.current);
+  };
+
+  // Attach window click listener
+  const windowClickHandler = (e) => {
     if (e.target !== pcsRef.current && e.target !== pcsListRef.current) {
       setShowPcsList(false);
     }
-  });
+  };
 
+  useEffect(() => {
+    window.addEventListener('click', windowClickHandler);
+
+    return () => window.removeEventListener('click', windowClickHandler);
+  }, []);
+
+  // ! JSX
   return (
     <section className={styles['section3']}>
       <div
@@ -72,20 +109,39 @@ const Section3 = () => {
             className={`${styles['section3-form']} ${
               mobileScreen && !showRespForm ? styles['hidden'] : styles['']
             }`}
+            onSubmit={formSubmitHandler}
           >
             <h3>Send quote to suppliers</h3>
-            <input type="text" placeholder="What item you need?" />
+            <input
+              type="text"
+              name="requestedItem"
+              placeholder="What item you need?"
+              onChange={onChangeHandler}
+            />
 
-            <textarea placeholder="Type more details"></textarea>
+            <textarea
+              className={styles['textarea']}
+              name="requestedItemDetails"
+              placeholder="Type more details"
+              onChange={onChangeHandler}
+            ></textarea>
 
             <div className={styles['section3-form-quantity']}>
-              <input type="number" placeholder="Quantity" />
+              <input
+                type="number"
+                name="requestedItemQuantity"
+                placeholder="Quantity"
+                onChange={onChangeHandler}
+              />
               <div
                 className={styles['pcs-dropdown']}
                 onClick={pcsListHandler}
                 ref={pcsRef}
               >
-                <p>Pcs</p>
+                <p>
+                  <span>{pcs}</span>
+                  <span>Pcs</span>
+                </p>
                 <img src={dropdownArrow} alt="Arrow" />
                 <ul
                   className={`${styles['pcs-list']}  ${
@@ -94,7 +150,11 @@ const Section3 = () => {
                   ref={pcsListRef}
                 >
                   {pcsAmount.map((n, i) => {
-                    return <li key={i}>{n}</li>;
+                    return (
+                      <li key={i} onClick={pcsHandler}>
+                        {n}
+                      </li>
+                    );
                   })}
                 </ul>
               </div>

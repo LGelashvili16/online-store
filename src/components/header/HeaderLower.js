@@ -106,6 +106,9 @@ const HeaderLower = () => {
           <Link>All category</Link>
         </div>
         <div>
+          <Link to="mobile-accessory">Mobile accessory</Link>
+        </div>
+        <div>
           <Link>Gadgets</Link>
         </div>
         <div>

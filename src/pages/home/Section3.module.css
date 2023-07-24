@@ -95,8 +95,9 @@
 }
 
 .section3-form textarea {
-  width: 440px;
-  height: 73px;
+  max-width: 440px;
+  max-height: 73px;
+  height: 100%;
   margin-left: 20px;
   padding-top: 10px;
   padding-left: 11px;
@@ -154,6 +155,8 @@
 }
 
 .pcs-dropdown p {
+  display: flex;
+  gap: 3px;
   margin-left: 10px;
   font-size: 16px;
   font-weight: 400;
@@ -163,7 +166,8 @@
 .pcs-dropdown img {
   width: 24px;
   height: 24px;
-  margin-left: 41px;
+  position: absolute;
+  right: 8px;
   pointer-events: none;
 }
 
@@ -327,7 +331,7 @@
     padding-left: 9px;
   }
 
-  .section3-form textarea {
+  .textarea {
     width: 90%;
     height: 73px;
     margin-left: 18px;

@@ -75,7 +75,6 @@
 
 .section1-block2 {
   width: 664px;
-  /* height: 373px; */
   margin-left: 12px;
   background: url('../../assets/home/section1/section1-Banner.png') no-repeat
     center;
@@ -116,7 +115,6 @@
   box-shadow: 0px 1px 2px 0px rgba(56, 56, 56, 0.08);
 
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
 }
 
 .section1-block2 button:hover {
@@ -170,7 +168,7 @@
   display: flex;
   width: 180px;
   height: 30px;
-  /* padding: 0px 10px; */
+
   margin-top: 13px;
   justify-content: center;
   align-items: center;
@@ -187,7 +185,6 @@
   color: var(--white);
 
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
 }
 
 .section1-block3-join:hover {
@@ -209,20 +206,19 @@
 
   border-radius: 6px;
   border: 1px solid var(--gray-300, #dee2e7);
-  background: var(--white, #fff);
-  color: var(--primary);
-
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
-
-.section1-block3-login:hover {
   background: var(
     --primary-gradient,
     linear-gradient(180deg, #127fff 0%, #0067ff 100%)
   );
   color: var(--white);
-  border: none;
+
+  cursor: pointer;
+}
+
+.section1-block3-login:hover {
+  background: var(--white, #fff);
+  border: 1px solid var(--gray-300, #dee2e7);
+  color: var(--primary);
 }
 
 .section1-block3-offer {

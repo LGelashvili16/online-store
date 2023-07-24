@@ -342,9 +342,10 @@
 /* ******** Responsive ******** */
 
 .resp-header-lower {
+  width: 360px;
   display: none;
   gap: 4px;
-  padding-left: 25px;
+  padding-left: 15px;
 }
 
 .resp-header-lower div {
@@ -371,9 +372,8 @@
   .header-lower {
     height: 69px;
     max-width: 360px;
-    /* overflow: hidden; */
     border: none;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
 
   .resp-header-lower {
