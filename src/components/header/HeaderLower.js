@@ -1,7 +1,9 @@
+import styles from './HeaderLower.module.css';
+
 import { Link, useNavigate } from 'react-router-dom';
 import burgerMenuImg from '../../assets/header/icons/Hamburger-menu.png';
 import arrowImg from '../../assets/header/icons/expand-arrow.svg';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { headerHelpData } from '../../data/header/headerData.js';
 import { headerFlags } from '../../data/header/headerData.js';
@@ -10,15 +12,25 @@ import { headerCategoriesData } from '../../data/header/headerData.js';
 
 import { useCurrencyData, useShipToData } from '../../contexts/Context';
 
-import styles from './HeaderLower.module.css';
+import { motion } from 'framer-motion';
 
 const HeaderLower = () => {
   const [showHelpList, setShowHelpList] = useState(false);
   const [showCurrencyList, setShowCurrencyList] = useState(false);
   const [showShippingList, setShowShippingList] = useState(false);
   const [showAllCategory, setShowAllCategory] = useState(false);
+
   const [currentCurrency, setCurrentCurrency] = useCurrencyData();
   const [currentShipTo, setCurrentShipTo] = useShipToData();
+
+  const [carouselWidth, setCarouselWidth] = useState(0);
+  const carouselRef = useRef();
+
+  useEffect(() => {
+    setCarouselWidth(
+      carouselRef.current.scrollWidth - carouselRef.current.offsetWidth + 15
+    );
+  }, []);
 
   const navigate = useNavigate();
 
@@ -101,23 +113,29 @@ const HeaderLower = () => {
 
   return (
     <div className={styles['header-lower']}>
-      <div className={styles['resp-header-lower']}>
-        <div>
-          <Link>All category</Link>
-        </div>
-        <div>
-          <Link to="mobile-accessory">Mobile accessory</Link>
-        </div>
-        <div>
-          <Link>Gadgets</Link>
-        </div>
-        <div>
-          <Link>Clothes</Link>
-        </div>
-        <div>
-          <Link>Accesories</Link>
-        </div>
-      </div>
+      <motion.div className={styles['resp-carousel']} ref={carouselRef}>
+        <motion.div
+          drag="x"
+          dragConstraints={{ right: 0, left: -carouselWidth }}
+          className={styles['resp-inner-carousel']}
+        >
+          <div>
+            <Link>All category</Link>
+          </div>
+          <div>
+            <Link to="mobile-accessory">Mobile accessory</Link>
+          </div>
+          <div>
+            <Link>Gadgets</Link>
+          </div>
+          <div>
+            <Link>Clothes</Link>
+          </div>
+          <div>
+            <Link>Accesories</Link>
+          </div>
+        </motion.div>
+      </motion.div>
 
       <div className={styles['header-lower-wrapper']}>
         <nav>

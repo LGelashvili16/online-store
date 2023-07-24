@@ -341,23 +341,27 @@
 
 /* ******** Responsive ******** */
 
-.resp-header-lower {
+.resp-carousel {
   width: 360px;
   display: none;
-  gap: 4px;
   padding-left: 15px;
+  overflow: hidden;
 }
 
-.resp-header-lower div {
+.resp-inner-carousel {
+  display: flex;
+  gap: 4px;
+}
+
+.resp-inner-carousel div {
   padding: 9px 9px 8px 9px;
-  /* padding-top: 9px; */
   background: #eff2f4;
   height: 36px;
   border-radius: 6px;
   flex-shrink: 0;
 }
 
-.resp-header-lower a {
+.resp-inner-carousel a {
   text-decoration: none;
   font-size: 16px;
   font-weight: 400;
@@ -373,10 +377,10 @@
     height: 69px;
     max-width: 360px;
     border: none;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
 
-  .resp-header-lower {
+  .resp-carousel {
     display: flex;
   }
 }
