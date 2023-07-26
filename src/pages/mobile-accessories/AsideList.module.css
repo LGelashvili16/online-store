@@ -53,6 +53,10 @@
   width: 100%;
 }
 
+.ratings ul li label img {
+  pointer-events: none;
+}
+
 .category ul li a {
   text-decoration: none;
   width: 100%;

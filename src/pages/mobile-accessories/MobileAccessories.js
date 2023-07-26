@@ -23,6 +23,7 @@ import {
   brands,
   features,
   condition,
+  ratings,
 } from '../../data/mobileAccessories/mobileAccessoriesData';
 import MayAlsoLike from './mayAlsoLike/MayAlsoLike';
 
@@ -37,6 +38,7 @@ const MobileAccessories = () => {
 
   const [brandsForm, setBrandsForm] = useState(brands);
   const [featuresForm, setFeaturesForm] = useState(features);
+  const [ratingsForm, setRatingsForm] = useState(ratings);
 
   // Calculate products quantity
   const currentPageProducts = (start, end) => {
@@ -75,6 +77,8 @@ const MobileAccessories = () => {
               setBrandsForm={setBrandsForm}
               features={featuresForm}
               setFeaturesForm={setFeaturesForm}
+              ratings={ratingsForm}
+              setRatingsForm={setRatingsForm}
               condition={condition}
               filterItems={filterItems}
               setFilterItems={setFilterItems}
@@ -143,6 +147,7 @@ const MobileAccessories = () => {
               setFilterItems={setFilterItems}
               setBrandsForm={setBrandsForm}
               setFeaturesForm={setFeaturesForm}
+              setRatingsForm={setRatingsForm}
             />
 
             <ProductsList products={curPageProducts} layout={listActive} />

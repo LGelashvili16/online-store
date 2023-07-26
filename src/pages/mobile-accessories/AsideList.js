@@ -1,12 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import ReactSlider from 'react-slider';
+import { generateStars } from '../../utils/starGenerator';
 
 import styles from './AsideList.module.css';
 import expandArr from '../../assets/mobile-accessories/expand_less.svg';
-import filledStar from '../../assets/mobile-accessories/filled-star.svg';
-import emptyStar from '../../assets/mobile-accessories/empty-star.svg';
 
 import { useFilterProducts } from '../../contexts/Context';
 
@@ -19,6 +18,8 @@ const AsideList = ({
   setBrandsForm,
   features,
   setFeaturesForm,
+  ratings,
+  setRatingsForm,
   condition,
   filterItems,
   setFilterItems,
@@ -46,27 +47,36 @@ const AsideList = ({
   // useEffect
   useEffect(() => {
     if (filterItems.length > 0) {
-      setBrandsForm((prev) => {
-        return prev.map((el) => {
-          filterItems.forEach((filtered) => {
-            if (filtered === el.name) {
-              el.check = true;
-            }
-          });
-          return { ...el };
-        });
-      });
-
-      setFeaturesForm((prev) => {
-        return prev.map((el) => {
-          filterItems.forEach((filtered) => {
-            if (filtered === el.name) {
-              el.checked = true;
-            }
-          });
-          return { ...el };
-        });
-      });
+      // setBrandsForm((prev) => {
+      //   return prev.map((el) => {
+      //     filterItems.forEach((filtered) => {
+      //       if (filtered === el.name) {
+      //         el.check = true;
+      //       }
+      //     });
+      //     return { ...el };
+      //   });
+      // });
+      // setFeaturesForm((prev) => {
+      //   return prev.map((el) => {
+      //     filterItems.forEach((filtered) => {
+      //       if (filtered === el.name) {
+      //         el.checked = true;
+      //       }
+      //     });
+      //     return el;
+      //   });
+      // });
+      // setRatingsForm((prev) => {
+      //   return prev.map((el) => {
+      //     filterItems.forEach((filtered) => {
+      //       if (filtered === el.name) {
+      //         el.checked = true;
+      //       }
+      //     });
+      //     return el;
+      //   });
+      // });
     }
 
     if (filterItems.length === 0) {
@@ -81,6 +91,13 @@ const AsideList = ({
         return prev.map((el) => {
           el.checked = false;
           return { ...el };
+        });
+      });
+
+      setRatingsForm((prev) => {
+        return prev.map((el) => {
+          el.checked = false;
+          return el;
         });
       });
     }
@@ -194,6 +211,48 @@ const AsideList = ({
       setFilterItems((prev) => {
         return prev.filter((elem) => {
           return e.target.closest('li').children[1].innerHTML !== elem;
+        });
+      });
+    }
+  };
+
+  // Ratings
+  const ratingsHandler = (e) => {
+    if (
+      e.target === e.target.closest('li').children[0] ||
+      e.target === e.target.closest('li').children[1]
+    ) {
+      setRatingsForm((prev) => {
+        return prev.map((elem) => {
+          if (e.target.closest('li').children[0].name === elem.name) {
+            return { ...elem, checked: !elem.checked };
+          }
+
+          return elem;
+        });
+      });
+    }
+
+    if (
+      (e.target === e.target.closest('li').children[0] &&
+        e.target.closest('li').children[0].checked) ||
+      (e.target === e.target.closest('li').children[1] &&
+        !e.target.closest('li').children[0].checked)
+    ) {
+      setFilterItems((prev) => {
+        return [...prev, e.target.closest('li').children[0].name];
+      });
+    }
+
+    if (
+      (e.target === e.target.closest('li').children[0] &&
+        !e.target.closest('li').children[0].checked) ||
+      (e.target === e.target.closest('li').children[1] &&
+        e.target.closest('li').children[0].checked)
+    ) {
+      setFilterItems((prev) => {
+        return prev.filter((elem) => {
+          return e.target.closest('li').children[0].name !== elem;
         });
       });
     }
@@ -476,50 +535,27 @@ const AsideList = ({
         </div>
 
         {showRatings ? (
-          <ul>
-            <li>
-              <input type="checkbox" name="" id="star-5" />
-              <label htmlFor="star-5">
-                <img src={filledStar} alt="star" />
-                <img src={filledStar} alt="star" />
-                <img src={filledStar} alt="star" />
-                <img src={filledStar} alt="star" />
-                <img src={filledStar} alt="star" />
-              </label>
-            </li>
-
-            <li>
-              <input type="checkbox" name="" id="star-4" />
-              <label htmlFor="star-4">
-                <img src={filledStar} alt="star" />
-                <img src={filledStar} alt="star" />
-                <img src={filledStar} alt="star" />
-                <img src={filledStar} alt="star" />
-                <img src={emptyStar} alt="star" />
-              </label>
-            </li>
-
-            <li>
-              <input type="checkbox" name="" id="star-3" />
-              <label htmlFor="star-3">
-                <img src={filledStar} alt="star" />
-                <img src={filledStar} alt="star" />
-                <img src={filledStar} alt="star" />
-                <img src={emptyStar} alt="star" />
-                <img src={emptyStar} alt="star" />
-              </label>
-            </li>
-
-            <li>
-              <input type="checkbox" name="" id="star-2" />
-              <label htmlFor="star-2">
-                <img src={filledStar} alt="star" />
-                <img src={filledStar} alt="star" />
-                <img src={emptyStar} alt="star" />
-                <img src={emptyStar} alt="star" />
-                <img src={emptyStar} alt="star" />
-              </label>
-            </li>
+          <ul className={styles['ratings-list']}>
+            {ratings.map((rating) => {
+              return (
+                <li key={rating.id} onClick={ratingsHandler}>
+                  <input
+                    type="checkbox"
+                    name={rating.name}
+                    id={rating.name}
+                    checked={rating.checked}
+                    onChange={() => {}}
+                  />
+                  <label>
+                    {generateStars(
+                      rating.stars,
+                      rating.filledImg,
+                      rating.emptyImg
+                    )}
+                  </label>
+                </li>
+              );
+            })}
           </ul>
         ) : (
           ''

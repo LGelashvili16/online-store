@@ -13,8 +13,7 @@
 
 .grid {
   width: 360px;
-  margin-inline: auto;
-  padding-inline: 10px;
+
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 20px;
@@ -29,5 +28,7 @@
   .grid {
     gap: 10px;
     grid-template-columns: 1fr 1fr;
+    margin-inline: auto;
+    padding-inline: 10px;
   }
 }

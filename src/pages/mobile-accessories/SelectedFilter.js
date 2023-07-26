@@ -6,6 +6,7 @@ const SelectedFilter = ({
   setFilterItems,
   setBrandsForm,
   setFeaturesForm,
+  setRatingsForm,
 }) => {
   const onDeleteHandler = (e) => {
     // console.log(e.target.closest('span').innerText);
@@ -23,6 +24,15 @@ const SelectedFilter = ({
     });
 
     setFeaturesForm((prev) => {
+      return prev.map((el) => {
+        if (el.name === e.target.closest('span').innerText) {
+          el.checked = false;
+        }
+        return el;
+      });
+    });
+
+    setRatingsForm((prev) => {
       return prev.map((el) => {
         if (el.name === e.target.closest('span').innerText) {
           el.checked = false;

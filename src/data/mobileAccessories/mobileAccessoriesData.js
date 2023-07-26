@@ -8,6 +8,9 @@ import headphonesImg from '../../assets/mobile-accessories/headphones.png';
 import bagImg from '../../assets/mobile-accessories/bag.png';
 import jacketImg from '../../assets/mobile-accessories/jacket.png';
 
+import filledStar from '../../assets/mobile-accessories/filled-star.svg';
+import emptyStar from '../../assets/mobile-accessories/empty-star.svg';
+
 export const category = [
   'Mobile accessory',
   'Electronics',
@@ -49,6 +52,41 @@ export const features = [
 ];
 
 export const condition = ['Any', 'Refurbished', 'Brand new', 'Old items'];
+
+export const ratings = [
+  {
+    id: 111,
+    name: '5 star',
+    checked: false,
+    stars: 5,
+    filledImg: filledStar,
+    emptyImg: emptyStar,
+  },
+  {
+    id: 222,
+    name: '4 star',
+    checked: false,
+    stars: 4,
+    filledImg: filledStar,
+    emptyImg: emptyStar,
+  },
+  {
+    id: 333,
+    name: '3 star',
+    checked: false,
+    stars: 3,
+    filledImg: filledStar,
+    emptyImg: emptyStar,
+  },
+  {
+    id: 444,
+    name: '2 star',
+    checked: false,
+    stars: 2,
+    filledImg: filledStar,
+    emptyImg: emptyStar,
+  },
+];
 
 export const products = [
   {

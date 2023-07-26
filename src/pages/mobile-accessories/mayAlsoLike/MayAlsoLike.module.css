@@ -2,14 +2,14 @@
   display: none;
   flex-direction: column;
   align-items: center;
-  padding-left: 20px;
+  /* padding-left: 20px; */
   width: 100%;
   margin-top: 20px;
   margin-bottom: 48px;
 }
 
 .may-also-like-title {
-  width: 360px;
+  width: 340px;
 }
 
 .may-also-like-title h2 {
@@ -20,11 +20,15 @@
   margin-bottom: 20px;
 }
 
+.may-also-like-cards-container {
+  overflow: hidden;
+  width: 340px;
+}
+
 .may-also-like-cards {
   display: flex;
   gap: 8px;
   width: 360px;
-  overflow: hidden;
 }
 
 @media (max-width: 480px) {
