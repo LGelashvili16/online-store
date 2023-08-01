@@ -227,3 +227,148 @@
 .product-description-row3 .product-description-rows-title h4:first-child {
   height: 38px;
 }
+
+/* ******************** */
+
+.seller-wrapper {
+  margin-left: 27px;
+}
+
+.seller {
+  width: max(100%, 280px);
+  height: min(100%, 325px);
+  padding: 19px 16px 0;
+
+  border: 1px solid #dee2e7;
+  border-radius: 6px;
+  box-shadow: 0px 1px 2px 0px rgba(56, 56, 56, 0.08);
+}
+
+.seller-name-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.seller-name-wrapper span {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #c6f3f1;
+  border-radius: 4px;
+
+  color: rgba(76, 167, 167, 0.6);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+.seller-name p {
+  color: #1c1c1c;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+.seller-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 13px;
+}
+
+.seller-counrty {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.seller-verification,
+.seller-shipTo {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.seller-counrty span,
+.seller-verification span,
+.seller-shipTo span {
+  color: #8b96a5;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+.seller-inquiry-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.seller-inquiry-profile button:first-child {
+  height: 40px;
+  background: linear-gradient(180deg, #127fff 0%, #0067ff 100%);
+  border: none;
+  border-radius: 6px;
+
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.seller-inquiry-profile button:first-child:hover {
+  background: #fff;
+  color: #127fff;
+  border: 1px solid #127fff;
+}
+
+.seller-inquiry-profile button:last-child {
+  height: 40px;
+  background: #fff;
+  border: 1px solid #dee2e7;
+  border-radius: 6px;
+
+  color: #0d6efd;
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.seller-inquiry-profile button:last-child:hover {
+  background: #fff;
+  border: 1px solid #0d6efd;
+}
+
+.save {
+  margin-top: 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.save span {
+  color: #0d6efd;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+}

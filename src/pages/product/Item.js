@@ -11,6 +11,11 @@ import salesIcon from '../../assets/item/shopping_basket.png';
 import filledStar from '../../assets/mobile-accessories/filled-star.svg';
 import emptyStar from '../../assets/mobile-accessories/empty-star.svg';
 
+import germanyFlag from '../../assets/item/Germanyflag.png';
+import verifiedIcon from '../../assets/item/verified_user.png';
+import worldwideIcon from '../../assets/item/worldwide.png';
+import saveIcon from '../../assets/item/favorite_border.png';
+
 const Item = () => {
   console.log('PRODUCT COMPONENT');
 
@@ -148,6 +153,44 @@ const Item = () => {
               <p>2 years full warranty</p>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className={styles['seller-wrapper']}>
+        <div className={styles['seller']}>
+          <div className={styles['seller-name-wrapper']}>
+            <span>R</span>
+
+            <div className={styles['seller-name']}>
+              <p>Supplier</p>
+              <p>Guanjoi Trading LLC</p>
+            </div>
+          </div>
+
+          <div className={styles['seller-info']}>
+            <div className={styles['seller-counrty']}>
+              <img src={germanyFlag} alt="flag" /> <span>Germany, Berlin</span>
+            </div>
+
+            <div className={styles['seller-verification']}>
+              <img src={verifiedIcon} alt="flag" /> <span>Verified Seller</span>
+            </div>
+
+            <div className={styles['seller-shipTo']}>
+              <img src={worldwideIcon} alt="flag" />{' '}
+              <span>Worldwide Shipping</span>
+            </div>
+          </div>
+
+          <div className={styles['seller-inquiry-profile']}>
+            <button>Send inquiry</button>
+            <button>Seller's profile</button>
+          </div>
+        </div>
+
+        <div className={styles['save']}>
+          <img src={saveIcon} alt="save" />
+          <span>Save for later</span>
         </div>
       </div>
     </div>
