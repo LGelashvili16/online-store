@@ -64,22 +64,22 @@ const Header = () => {
     navigate(link);
   };
 
-  const mobileGoBackHandler = () => {
-    setMobileGoBack(location.pathname);
-
-    const goBackTitle =
-      location.pathname
-        .split('/')
-        .slice(-1)[0]
-        .replace('-', ' ')
-        .charAt(0)
-        .toUpperCase() +
-      location.pathname.split('/').slice(-1)[0].replace('-', ' ').slice(1);
-
-    setMobileGoBackTitle(goBackTitle);
-  };
-
   useEffect(() => {
+    const mobileGoBackHandler = () => {
+      setMobileGoBack(location.pathname);
+
+      const goBackTitle =
+        location.pathname
+          .split('/')
+          .slice(-1)[0]
+          .replace('-', ' ')
+          .charAt(0)
+          .toUpperCase() +
+        location.pathname.split('/').slice(-1)[0].replace('-', ' ').slice(1);
+
+      setMobileGoBackTitle(goBackTitle);
+    };
+
     mobileGoBackHandler();
 
     window.addEventListener('resize', () => {
@@ -93,11 +93,19 @@ const Header = () => {
     };
   }, [location.pathname]);
 
-  window.addEventListener('click', (e) => {
+  const windowClickHandler = (e) => {
     if (e.target !== menuRef.current && e.target !== categoriesRef.current) {
       setShowCategories(false);
     }
-  });
+  };
+
+  useEffect(() => {
+    window.addEventListener('click', windowClickHandler);
+
+    return () => {
+      window.removeEventListener('click', windowClickHandler);
+    };
+  }, []);
 
   return (
     <header>

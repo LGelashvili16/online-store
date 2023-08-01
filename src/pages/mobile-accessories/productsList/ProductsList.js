@@ -13,7 +13,8 @@ const ProductsList = ({ layout, products }) => {
           <ProductItem
             layout={layout}
             key={i}
-            image={prod.image}
+            id={prod.id}
+            image={prod.images[0]}
             title={prod.title}
             price={prod.price}
             oldPrice={prod.oldPrice}

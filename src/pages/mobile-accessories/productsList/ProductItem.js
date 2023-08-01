@@ -2,11 +2,25 @@ import styles from './ProductItem.module.css';
 import favoriteIcon from '../../../assets/mobile-accessories/favorite.svg';
 import filledStarImg from '../../../assets/mobile-accessories/filled-star.svg';
 import emptyStarImg from '../../../assets/mobile-accessories/empty-star.svg';
+import { useNavigate } from 'react-router-dom';
+import { useRef } from 'react';
 
 const ProductItem = (props) => {
+  const favoriteRef = useRef();
+  const navigation = useNavigate();
+
+  const productClickHandler = (e) => {
+    if (
+      e.target !== favoriteRef.current &&
+      e.target !== favoriteRef.current.children[0]
+    )
+      navigation(`../product/${`mobile-accessory`}/${props.id}`);
+  };
+
   return (
     <div
       className={`${props.layout ? styles['product'] : styles['g-product']}`}
+      onClick={productClickHandler}
     >
       <div
         className={`${
@@ -103,6 +117,7 @@ const ProductItem = (props) => {
             ? styles['product-favorite']
             : styles['g-product-favorite']
         }`}
+        ref={favoriteRef}
       >
         <img src={favoriteIcon} alt="favorite" />
       </div>

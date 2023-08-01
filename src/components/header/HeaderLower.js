@@ -76,7 +76,7 @@ const HeaderLower = () => {
     setCurrentShipTo(e.target.closest('li').children[0].src);
   };
 
-  window.addEventListener('click', (e) => {
+  const windowClickHandler = (e) => {
     if (e.target !== menuRef.current && e.target !== helpListRef.current) {
       setShowHelpList(false);
     }
@@ -109,7 +109,15 @@ const HeaderLower = () => {
     if (e.target === categoryListRef.current) {
       setShowAllCategory(true);
     }
-  });
+  };
+
+  useEffect(() => {
+    window.addEventListener('click', windowClickHandler);
+
+    return () => {
+      window.removeEventListener('click', windowClickHandler);
+    };
+  }, []);
 
   return (
     <div className={styles['header-lower']}>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import ReactSlider from 'react-slider';
@@ -46,39 +46,6 @@ const AsideList = ({
 
   // useEffect
   useEffect(() => {
-    if (filterItems.length > 0) {
-      // setBrandsForm((prev) => {
-      //   return prev.map((el) => {
-      //     filterItems.forEach((filtered) => {
-      //       if (filtered === el.name) {
-      //         el.check = true;
-      //       }
-      //     });
-      //     return { ...el };
-      //   });
-      // });
-      // setFeaturesForm((prev) => {
-      //   return prev.map((el) => {
-      //     filterItems.forEach((filtered) => {
-      //       if (filtered === el.name) {
-      //         el.checked = true;
-      //       }
-      //     });
-      //     return el;
-      //   });
-      // });
-      // setRatingsForm((prev) => {
-      //   return prev.map((el) => {
-      //     filterItems.forEach((filtered) => {
-      //       if (filtered === el.name) {
-      //         el.checked = true;
-      //       }
-      //     });
-      //     return el;
-      //   });
-      // });
-    }
-
     if (filterItems.length === 0) {
       setBrandsForm((prev) => {
         return prev.map((el) => {
@@ -565,4 +532,4 @@ const AsideList = ({
   );
 };
 
-export default AsideList;
+export default memo(AsideList);

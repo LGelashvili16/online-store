@@ -10,7 +10,7 @@ import listView from '../../assets/mobile-accessories/listview.png';
 import sortIcon from '../../assets/mobile-accessories/sort.png';
 import filterIcon from '../../assets/mobile-accessories/filter_alt.png';
 
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import ProductsList from './productsList/ProductsList';
 import Newsletter from '../../components/newsletter/Newsletter';
 import Pagination from '../../components/pagination/Pagination';
@@ -28,6 +28,8 @@ import {
 import MayAlsoLike from './mayAlsoLike/MayAlsoLike';
 
 const MobileAccessories = () => {
+  console.log('MOBILE-ACCESSORY COMPONENT');
+
   const [gridActive, setGridActive] = useState(false);
   const [listActive, setListActive] = useState(true);
   const [cutProductsAmount, setCutProductsAmount] = useState(6);
@@ -169,4 +171,4 @@ const MobileAccessories = () => {
   );
 };
 
-export default MobileAccessories;
+export default memo(MobileAccessories);
