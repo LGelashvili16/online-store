@@ -18,6 +18,8 @@ import RootLayout from './layouts/RootLayout';
 //Global State
 import { GlobalStateProvider } from './contexts/Context';
 import ProductLayout from './layouts/ProductLayout';
+import { CartStateProvider } from './contexts/cartContext';
+import Cart from './pages/cart/Cart';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,6 +31,8 @@ const router = createBrowserRouter(
         <Route path=":from/:id" element={<ProductPage />} />
         {/* <Route path="mobile-accessory/:id" element={<ProductPage />} /> */}
       </Route>
+
+      <Route path="cart" element={<Cart />} />
     </Route>
   )
 );
@@ -36,7 +40,9 @@ const router = createBrowserRouter(
 function App() {
   return (
     <GlobalStateProvider>
-      <RouterProvider router={router} />
+      <CartStateProvider>
+        <RouterProvider router={router} />
+      </CartStateProvider>
     </GlobalStateProvider>
   );
 }

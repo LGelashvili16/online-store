@@ -36,7 +36,7 @@
   font-weight: 400;
 }
 
-button {
+.shop-now {
   width: 108px;
   height: 40px;
 
@@ -55,7 +55,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.shop-now:hover {
   border: 2px solid #ff9017;
   background: none;
   color: #ff9017;

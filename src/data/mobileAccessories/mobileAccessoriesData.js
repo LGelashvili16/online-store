@@ -107,6 +107,12 @@ export const products = [
     shipping: 'Free Shipping',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
   },
   {
     id: 2,
@@ -119,6 +125,12 @@ export const products = [
     shipping: 'Free Shipping',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
   },
   {
     id: 3,
@@ -138,6 +150,12 @@ export const products = [
     shipping: 'Free Shipping',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
   },
   {
     id: 4,
@@ -150,6 +168,12 @@ export const products = [
     shipping: 'Free Shipping',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
   },
   {
     id: 5,
@@ -169,6 +193,12 @@ export const products = [
     shipping: 'Free Shipping',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
   },
   {
     id: 6,
@@ -188,6 +218,12 @@ export const products = [
     shipping: 'Free Shipping',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
   },
   {
     id: 7,
@@ -200,6 +236,12 @@ export const products = [
     shipping: 'Free Shipping',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
   },
   {
     id: 8,
@@ -219,6 +261,12 @@ export const products = [
     shipping: 'Free Shipping',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
   },
   {
     id: 9,
@@ -238,6 +286,12 @@ export const products = [
     shipping: 'Free Shipping',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
   },
   {
     id: 10,
@@ -257,6 +311,12 @@ export const products = [
     shipping: 'Free Shipping',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
   },
   {
     id: 11,
@@ -269,6 +329,12 @@ export const products = [
     shipping: 'Free Shipping',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
   },
   {
     id: 12,
@@ -288,6 +354,12 @@ export const products = [
     shipping: 'Free Shipping',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
   },
   {
     id: 13,
@@ -307,6 +379,12 @@ export const products = [
     shipping: 'Free Shipping',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
   },
   {
     id: 14,
@@ -319,6 +397,12 @@ export const products = [
     shipping: 'Free Shipping',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
   },
   {
     id: 15,
@@ -331,6 +415,12 @@ export const products = [
     shipping: 'Free Shipping',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
   },
   {
     id: 16,
@@ -350,6 +440,12 @@ export const products = [
     shipping: 'Free Shipping',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
   },
   {
     id: 17,
@@ -369,6 +465,12 @@ export const products = [
     shipping: 'Free Shipping',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
   },
   {
     id: 18,
@@ -388,6 +490,12 @@ export const products = [
     shipping: 'Free Shipping',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
   },
 ];
 

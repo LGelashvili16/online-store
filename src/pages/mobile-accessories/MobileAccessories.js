@@ -28,8 +28,6 @@ import {
 import MayAlsoLike from './mayAlsoLike/MayAlsoLike';
 
 const MobileAccessories = () => {
-  console.log('MOBILE-ACCESSORY COMPONENT');
-
   const [gridActive, setGridActive] = useState(false);
   const [listActive, setListActive] = useState(true);
   const [cutProductsAmount, setCutProductsAmount] = useState(6);

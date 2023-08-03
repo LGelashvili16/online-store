@@ -232,6 +232,9 @@
 
 .seller-wrapper {
   margin-left: 27px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .seller {
@@ -315,6 +318,7 @@
 }
 
 .seller-inquiry-profile button:first-child {
+  width: 248px;
   height: 40px;
   background: linear-gradient(180deg, #127fff 0%, #0067ff 100%);
   border: none;
@@ -336,6 +340,7 @@
 }
 
 .seller-inquiry-profile button:last-child {
+  width: 248px;
   height: 40px;
   background: #fff;
   border: 1px solid #dee2e7;
@@ -371,4 +376,29 @@
   font-weight: 500;
   line-height: 24px;
   letter-spacing: -0.1px;
+}
+
+.AddToCart {
+  width: 140px;
+  height: 40px;
+  margin-top: 20px;
+  background: #00b517;
+
+  border: none;
+  border-radius: 6px;
+
+  color: #fff;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.AddToCart:hover {
+  background: transparent;
+  border: 2px solid #00b517;
+  color: #00b517;
+  transform: scale(0.95);
 }

@@ -24,6 +24,7 @@ import { headerCategoriesData } from '../../data/header/headerData.js';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import HeaderLower from './HeaderLower';
+import { useCart } from '../../contexts/cartContext';
 
 const Header = () => {
   const [showCategories, setShowCategories] = useState(false);
@@ -31,6 +32,7 @@ const Header = () => {
   const [mobileGoBack, setMobileGoBack] = useState('');
   const [mobileGoBackTitle, setMobileGoBackTitle] = useState('');
   const [windowSize, setWindowSize] = useState(window.innerWidth);
+  const [cart] = useCart();
 
   const menuRef = useRef();
   const categoriesRef = useRef();
@@ -293,14 +295,18 @@ const Header = () => {
             <p>Orders</p>
           </div>
 
-          <div className={`${styles['header-user-item']} ${styles['my-cart']}`}>
+          <Link
+            to="cart"
+            className={`${styles['header-user-item']} ${styles['my-cart']}`}
+          >
             <img
               className={styles['my-cart-icon']}
               src={myCartImg}
               alt="My Cart"
             />
             <p>My cart</p>
-          </div>
+            <span className={styles['my-cart-badge']}>{cart.length}</span>
+          </Link>
 
           <div className={styles['resp-header-user']}>
             <img

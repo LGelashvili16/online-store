@@ -7,7 +7,7 @@ const SuperDoscount = () => {
         <h3>Super discount on more than 100 USD</h3>
         <p>Have you ever finally just write dummy info</p>
       </div>
-      <button>Shop now</button>
+      <button className={styles['shop-now']}>Shop now</button>
     </div>
   );
 };

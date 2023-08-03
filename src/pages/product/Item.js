@@ -15,9 +15,10 @@ import germanyFlag from '../../assets/item/Germanyflag.png';
 import verifiedIcon from '../../assets/item/verified_user.png';
 import worldwideIcon from '../../assets/item/worldwide.png';
 import saveIcon from '../../assets/item/favorite_border.png';
+import { useCart } from '../../contexts/cartContext';
 
 const Item = () => {
-  console.log('PRODUCT COMPONENT');
+  const [cart, setCart] = useCart();
 
   const params = useParams();
   const [currentProduct] = products.slice(+params.id - 1, +params.id);
@@ -40,6 +41,22 @@ const Item = () => {
     });
 
     e.target.closest('div').children[0].classList.add(styles['active-price']);
+  };
+
+  const addToCartHandler = () => {
+    setCart((prev) => {
+      if (prev.length === 0) {
+        return [currentProduct];
+      }
+
+      // const arr = [...prev];
+
+      // if (!arr.includes(currentProduct)) {
+      //   arr.push(currentProduct);
+      // }
+
+      return !prev.includes(currentProduct) ? [...prev, currentProduct] : prev;
+    });
   };
 
   return (
@@ -188,6 +205,9 @@ const Item = () => {
           <img src={saveIcon} alt="save" />
           <span>Save for later</span>
         </div>
+        <button className={styles['AddToCart']} onClick={addToCartHandler}>
+          Add to cart
+        </button>
       </div>
     </div>
   );
