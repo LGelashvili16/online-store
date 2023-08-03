@@ -35,11 +35,9 @@ const Item = () => {
   };
 
   const priceHandler = (e) => {
-    Array.from(e.target.closest('.Item_prices__efD63').children).forEach(
-      (el) => {
-        el.children[0].classList.remove(styles['active-price']);
-      }
-    );
+    Array.from(e.target.closest('[data-name]').children).forEach((el) => {
+      el.children[0].classList.remove(styles['active-price']);
+    });
 
     e.target.closest('div').children[0].classList.add(styles['active-price']);
   };
@@ -99,11 +97,9 @@ const Item = () => {
           </div>
         </div>
 
-        <div className={styles['prices']}>
+        <div className={styles['prices']} data-name="prices">
           <div onClick={priceHandler}>
-            <h4 className={`${styles['price']} ${styles['active-price']}`}>
-              {currentProduct.price}
-            </h4>
+            <h4 className={styles['active-price']}>{currentProduct.price}</h4>
             <span>50-100 pcs</span>
           </div>
 

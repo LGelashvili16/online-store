@@ -1,0 +1,23 @@
+.youMayLike-container {
+  width: 280px;
+  height: 553px;
+  padding-top: 20px;
+  padding-left: 16px;
+  background: #fff;
+  border: 1px solid #dee2e7;
+  border-radius: 6px;
+}
+
+.youMayLike-container h3 {
+  margin-bottom: 14px;
+  color: #1c1c1c;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.youMayLike-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

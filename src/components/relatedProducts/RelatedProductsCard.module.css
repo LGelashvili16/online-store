@@ -1,0 +1,39 @@
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image {
+  width: 172px;
+  height: 172px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #eee;
+  border-radius: 6px;
+}
+
+.card-image img {
+  max-width: 140px;
+  max-height: 140px;
+}
+
+.card h4 {
+  margin-top: 14px;
+  color: #505050;
+
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.card p {
+  margin-top: 9px;
+  color: #8b96a5;
+
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+}
