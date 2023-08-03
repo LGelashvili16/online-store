@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/online-store/static/css/main.f554d480.css",
-    "main.js": "/online-store/static/js/main.35488ce4.js",
+    "main.css": "/online-store/static/css/main.b5ba6a4e.css",
+    "main.js": "/online-store/static/js/main.729004c1.js",
     "static/js/787.a92fe09e.chunk.js": "/online-store/static/js/787.a92fe09e.chunk.js",
     "static/media/parcels.png": "/online-store/static/media/parcels.4be3316d701f729664cd.png",
     "static/media/section1-Banner.png": "/online-store/static/media/section1-Banner.398308ec3c1d1ad1ab60.png",
@@ -23,12 +23,17 @@
     "static/media/home-appliance.png": "/online-store/static/media/home-appliance.6f3e7d968c4d216fcb63.png",
     "static/media/wallet.png": "/online-store/static/media/wallet.cb7172ebaa0e8fd2c747.png",
     "static/media/xiaomi.png": "/online-store/static/media/xiaomi.9126f8f5ee3cffaa2880.png",
+    "static/media/r-shirt.png": "/online-store/static/media/r-shirt.bff971dca43fa4e7cb19.png",
+    "static/media/r-unknown.png": "/online-store/static/media/r-unknown.6c817eed1ae937e3c7af.png",
     "static/media/headphones.png": "/online-store/static/media/headphones.2e6321deba09baa589ea.png",
     "static/media/smart-watches2.png": "/online-store/static/media/smart-watches2.4937c7ef0e9fcccb9744.png",
     "static/media/smartwatch.png": "/online-store/static/media/smartwatch.a37522c01c55a886664b.png",
     "static/media/canon-cameras.png": "/online-store/static/media/canon-cameras.68a8344b42be8939d156.png",
     "static/media/laptops.png": "/online-store/static/media/laptops.43872def8dae3d154de1.png",
+    "static/media/r-wallet.png": "/online-store/static/media/r-wallet.e1f16359025fbb24534b.png",
     "static/media/smartphones.png": "/online-store/static/media/smartphones.4a59caf151d607246233.png",
+    "static/media/r-headphones.png": "/online-store/static/media/r-headphones.7a17f5b3a1a894859c62.png",
+    "static/media/r-smartwatch.png": "/online-store/static/media/r-smartwatch.476d3e08b144ef4fa233.png",
     "static/media/kitchen-mixer.png": "/online-store/static/media/kitchen-mixer.51136ed9438259652845.png",
     "static/media/smart-watches.png": "/online-store/static/media/smart-watches.32c4d79479d508f18709.png",
     "static/media/brand-logo.svg": "/online-store/static/media/brand-logo.697d97d33f7c03caabf37b583c1d464b.svg",
@@ -82,12 +87,12 @@
     "static/media/expand_less.svg": "/online-store/static/media/expand_less.bee3d04f02d7869faf326d3e18e7c407.svg",
     "static/media/check-mark.svg": "/online-store/static/media/check-mark.1aca9326950a232307f2.svg",
     "static/media/chevron_right.svg": "/online-store/static/media/chevron_right.9f7521880b9c53f92ca66e2fecd57c6f.svg",
-    "main.f554d480.css.map": "/online-store/static/css/main.f554d480.css.map",
-    "main.35488ce4.js.map": "/online-store/static/js/main.35488ce4.js.map",
+    "main.b5ba6a4e.css.map": "/online-store/static/css/main.b5ba6a4e.css.map",
+    "main.729004c1.js.map": "/online-store/static/js/main.729004c1.js.map",
     "787.a92fe09e.chunk.js.map": "/online-store/static/js/787.a92fe09e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f554d480.css",
-    "static/js/main.35488ce4.js"
+    "static/css/main.b5ba6a4e.css",
+    "static/js/main.729004c1.js"
   ]
 }
