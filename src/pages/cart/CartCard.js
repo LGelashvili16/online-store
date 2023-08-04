@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './CartCard.module.css';
 import dropdownArrow from '../../assets/header/icons/expand-arrow.svg';
 import { pcsAmount } from '../../data/home/homeData';
-import { useCart } from '../../contexts/cartContext';
+import { useCart } from '../../contexts/CartContext';
 
 const CartCard = ({ product }) => {
   const currentPrice = +product.price.slice(1, product.price.length);

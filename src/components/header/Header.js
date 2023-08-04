@@ -24,7 +24,7 @@ import { headerCategoriesData } from '../../data/header/headerData.js';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import HeaderLower from './HeaderLower';
-import { useCart } from '../../contexts/cartContext';
+import { useCart } from '../../contexts/CartContext';
 
 const Header = () => {
   const [showCategories, setShowCategories] = useState(false);

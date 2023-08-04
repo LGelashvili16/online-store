@@ -15,7 +15,7 @@ import germanyFlag from '../../assets/item/Germanyflag.png';
 import verifiedIcon from '../../assets/item/verified_user.png';
 import worldwideIcon from '../../assets/item/worldwide.png';
 import saveIcon from '../../assets/item/favorite_border.png';
-import { useCart } from '../../contexts/cartContext';
+import { useCart } from '../../contexts/CartContext';
 
 const Item = () => {
   const [cart, setCart] = useCart();

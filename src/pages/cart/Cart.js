@@ -1,4 +1,4 @@
-import { useCart } from '../../contexts/cartContext';
+import { useCart } from '../../contexts/CartContext';
 import styles from './Cart.module.css';
 import CartCard from './CartCard';
 import backIcon from '../../assets/item/arrow_back.png';
@@ -13,6 +13,7 @@ import secureIcon from '../../assets/cart/secure.png';
 import supportIcon from '../../assets/cart/support.png';
 import deliveryIcon from '../../assets/cart/delivery.png';
 import SuperDoscount from '../../components/superDiscount/SuperDoscount';
+import SavedForLater from '../../components/savedForLater/SavedForLater';
 
 const Cart = () => {
   const [cart, setCart] = useCart();
@@ -22,6 +23,8 @@ const Cart = () => {
   const subtotal = cart.reduce((acc, cur) => {
     return acc + +cur.price.slice(1, cur.price.length);
   }, 0);
+
+  const discount = 0;
 
   const tax = subtotal * 0.18;
 
@@ -75,17 +78,21 @@ const Cart = () => {
             <div className={styles['checkout-calc']}>
               <div className={styles['subtotal']}>
                 <span className={styles['subtotal-name']}>Subtotal:</span>
-                <span className={styles['subtotal-money']}>${subtotal}</span>
+                <span className={styles['subtotal-money']}>
+                  ${subtotal.toFixed(2)}
+                </span>
               </div>
 
               <div className={styles['discount']}>
                 <span className={styles['discount-name']}>Discount:</span>
-                <span className={styles['discount-money']}>- ${0}</span>
+                <span className={styles['discount-money']}>
+                  - ${discount.toFixed(2)}
+                </span>
               </div>
 
               <div className={styles['tax']}>
                 <span className={styles['tax-name']}>Tax:</span>
-                <span className={styles['tax-money']}>+ ${tax}</span>
+                <span className={styles['tax-money']}>+ ${tax.toFixed(2)}</span>
               </div>
             </div>
 
@@ -155,6 +162,8 @@ const Cart = () => {
           </div>
         </div>
       </div>
+
+      <SavedForLater />
 
       <div className={styles['super-discount']}>
         <SuperDoscount />

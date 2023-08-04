@@ -18,8 +18,9 @@ import RootLayout from './layouts/RootLayout';
 //Global State
 import { GlobalStateProvider } from './contexts/Context';
 import ProductLayout from './layouts/ProductLayout';
-import { CartStateProvider } from './contexts/cartContext';
+import { CartStateProvider } from './contexts/CartContext';
 import Cart from './pages/cart/Cart';
+import { SaveForLaterStateProvider } from './contexts/SaveForLaterContext';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -41,7 +42,9 @@ function App() {
   return (
     <GlobalStateProvider>
       <CartStateProvider>
-        <RouterProvider router={router} />
+        <SaveForLaterStateProvider>
+          <RouterProvider router={router} />
+        </SaveForLaterStateProvider>
       </CartStateProvider>
     </GlobalStateProvider>
   );
