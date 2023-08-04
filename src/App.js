@@ -22,6 +22,7 @@ import { CartStateProvider } from './contexts/CartContext';
 import Cart from './pages/cart/Cart';
 import { SaveForLaterStateProvider } from './contexts/SaveForLaterContext';
 import SavedForLater from './pages/savedForLater/SavedForLater';
+import { ProductsProvider } from './contexts/ProductsContext';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -43,11 +44,13 @@ const router = createBrowserRouter(
 function App() {
   return (
     <GlobalStateProvider>
-      <CartStateProvider>
-        <SaveForLaterStateProvider>
-          <RouterProvider router={router} />
-        </SaveForLaterStateProvider>
-      </CartStateProvider>
+      <ProductsProvider>
+        <CartStateProvider>
+          <SaveForLaterStateProvider>
+            <RouterProvider router={router} />
+          </SaveForLaterStateProvider>
+        </CartStateProvider>
+      </ProductsProvider>
     </GlobalStateProvider>
   );
 }

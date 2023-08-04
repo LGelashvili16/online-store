@@ -15,13 +15,22 @@ import germanyFlag from '../../assets/item/Germanyflag.png';
 import verifiedIcon from '../../assets/item/verified_user.png';
 import worldwideIcon from '../../assets/item/worldwide.png';
 import saveIcon from '../../assets/item/favorite_border.png';
+import saveFilledIcon from '../../assets/mobile-accessories/favorite_filled.png';
 import { useCart } from '../../contexts/CartContext';
+import { useMobileAccessoryProducts } from '../../contexts/ProductsContext';
+import { useSaveForLater } from '../../contexts/SaveForLaterContext';
 
 const Item = () => {
+  const [mobileAccessoryProducts, setMobileAccessoryProducts] =
+    useMobileAccessoryProducts();
+  const [saveForLater, setSaveForLater] = useSaveForLater();
   const [cart, setCart] = useCart();
 
   const params = useParams();
-  const [currentProduct] = products.slice(+params.id - 1, +params.id);
+  const [currentProduct] = mobileAccessoryProducts.slice(
+    +params.id - 1,
+    +params.id
+  );
 
   const [mainImg, setMainImg] = useState(currentProduct.images[0]);
 
@@ -51,6 +60,38 @@ const Item = () => {
 
       return !prev.includes(currentProduct) ? [...prev, currentProduct] : prev;
     });
+  };
+
+  const saveHandler = () => {
+    // Update Globally
+    setMobileAccessoryProducts((prev) => {
+      prev.forEach((el) => {
+        if (el.id === currentProduct.id) {
+          el.saved = !el.saved;
+        }
+      });
+
+      return prev;
+    });
+
+    if (currentProduct.saved) {
+      setSaveForLater((prev) => {
+        if (!prev.includes(currentProduct)) {
+          return [...prev, currentProduct];
+        }
+        if (prev.includes(currentProduct)) {
+          return prev;
+        }
+      });
+    }
+
+    if (!currentProduct.saved) {
+      setSaveForLater((prev) => {
+        return prev.filter((prod) => {
+          return prod !== currentProduct;
+        });
+      });
+    }
   };
 
   return (
@@ -195,9 +236,12 @@ const Item = () => {
           </div>
         </div>
 
-        <div className={styles['save']}>
-          <img src={saveIcon} alt="save" />
-          <span>Save for later</span>
+        <div className={styles['save']} onClick={saveHandler}>
+          <img
+            src={currentProduct.saved ? saveFilledIcon : saveIcon}
+            alt="save"
+          />
+          <span> {currentProduct.saved ? 'Saved' : 'Save for later'} </span>
         </div>
         <button className={styles['AddToCart']} onClick={addToCartHandler}>
           Add to cart

@@ -6,10 +6,12 @@ import emptyStarImg from '../../../assets/mobile-accessories/empty-star.svg';
 import { useNavigate } from 'react-router-dom';
 import { useRef, useState } from 'react';
 import { useSaveForLater } from '../../../contexts/SaveForLaterContext';
+import { useMobileAccessoryProducts } from '../../../contexts/ProductsContext';
 
 const ProductItem = ({ product, layout }) => {
-  const [activeFavorite, setActiveFavorite] = useState(false);
   const [saveForLater, setSaveForLater] = useSaveForLater();
+  const [mobileAccessoryProducts, setMobileAccessoryProducts] =
+    useMobileAccessoryProducts();
 
   const favoriteRef = useRef();
   const navigation = useNavigate();
@@ -23,17 +25,29 @@ const ProductItem = ({ product, layout }) => {
   };
 
   const favoriteHandler = () => {
-    setActiveFavorite((prev) => !prev);
+    // Update Globally
+    setMobileAccessoryProducts((prev) => {
+      prev.forEach((el) => {
+        if (el.id === product.id) {
+          el.saved = !el.saved;
+        }
+      });
 
-    if (!activeFavorite) {
+      return prev;
+    });
+
+    if (product.saved) {
       setSaveForLater((prev) => {
         if (!prev.includes(product)) {
           return [...prev, product];
         }
+        if (prev.includes(product)) {
+          return prev;
+        }
       });
     }
 
-    if (activeFavorite) {
+    if (!product.saved) {
       setSaveForLater((prev) => {
         return prev.filter((prod) => {
           return prod !== product;
@@ -142,7 +156,7 @@ const ProductItem = ({ product, layout }) => {
         onClick={favoriteHandler}
       >
         <img
-          src={activeFavorite ? favoriteFilledIcon : favoriteIcon}
+          src={product.saved ? favoriteFilledIcon : favoriteIcon}
           alt="favorite"
         />
       </div>

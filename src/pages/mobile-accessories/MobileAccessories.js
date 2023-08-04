@@ -15,7 +15,9 @@ import ProductsList from './productsList/ProductsList';
 import Newsletter from '../../components/newsletter/Newsletter';
 import Pagination from '../../components/pagination/Pagination';
 
-import { products } from '../../data/mobileAccessories/mobileAccessoriesData';
+// import { products } from '../../data/mobileAccessories/mobileAccessoriesData';
+import { useMobileAccessoryProducts } from '../../contexts/ProductsContext';
+
 import SelectedFilter from './SelectedFilter';
 
 import {
@@ -28,6 +30,9 @@ import {
 import MayAlsoLike from './mayAlsoLike/MayAlsoLike';
 
 const MobileAccessories = () => {
+  const [mobileAccessoryProducts, setMobileAccessoryProducts] =
+    useMobileAccessoryProducts();
+
   const [gridActive, setGridActive] = useState(false);
   const [listActive, setListActive] = useState(true);
   const [cutProductsAmount, setCutProductsAmount] = useState(6);
@@ -42,7 +47,10 @@ const MobileAccessories = () => {
 
   // Calculate products quantity
   const currentPageProducts = (start, end) => {
-    return products.slice(start * (currentPage - 1), end * currentPage);
+    return mobileAccessoryProducts.slice(
+      start * (currentPage - 1),
+      end * currentPage
+    );
   };
 
   const curPageProducts = currentPageProducts(
@@ -62,7 +70,7 @@ const MobileAccessories = () => {
     return;
   };
 
-  const productsAmount = products.length;
+  const productsAmount = mobileAccessoryProducts.length;
 
   return (
     <>

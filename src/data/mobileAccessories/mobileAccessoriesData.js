@@ -113,6 +113,7 @@ export const products = [
       material: 'plastic',
       seller: 'Artel Market',
     },
+    saved: false,
   },
   {
     id: 2,
@@ -131,6 +132,7 @@ export const products = [
       material: 'plastic',
       seller: 'Artel Market',
     },
+    saved: false,
   },
   {
     id: 3,
@@ -156,6 +158,7 @@ export const products = [
       material: 'plastic',
       seller: 'Artel Market',
     },
+    saved: false,
   },
   {
     id: 4,
@@ -174,6 +177,7 @@ export const products = [
       material: 'plastic',
       seller: 'Artel Market',
     },
+    saved: false,
   },
   {
     id: 5,
@@ -199,6 +203,7 @@ export const products = [
       material: 'plastic',
       seller: 'Artel Market',
     },
+    saved: false,
   },
   {
     id: 6,
@@ -224,6 +229,7 @@ export const products = [
       material: 'plastic',
       seller: 'Artel Market',
     },
+    saved: false,
   },
   {
     id: 7,
@@ -242,6 +248,7 @@ export const products = [
       material: 'plastic',
       seller: 'Artel Market',
     },
+    saved: false,
   },
   {
     id: 8,
@@ -267,6 +274,7 @@ export const products = [
       material: 'plastic',
       seller: 'Artel Market',
     },
+    saved: false,
   },
   {
     id: 9,
@@ -292,6 +300,7 @@ export const products = [
       material: 'plastic',
       seller: 'Artel Market',
     },
+    saved: false,
   },
   {
     id: 10,
@@ -317,6 +326,7 @@ export const products = [
       material: 'plastic',
       seller: 'Artel Market',
     },
+    saved: false,
   },
   {
     id: 11,
@@ -335,6 +345,7 @@ export const products = [
       material: 'plastic',
       seller: 'Artel Market',
     },
+    saved: false,
   },
   {
     id: 12,
@@ -360,6 +371,7 @@ export const products = [
       material: 'plastic',
       seller: 'Artel Market',
     },
+    saved: false,
   },
   {
     id: 13,
@@ -385,6 +397,7 @@ export const products = [
       material: 'plastic',
       seller: 'Artel Market',
     },
+    saved: false,
   },
   {
     id: 14,
@@ -403,6 +416,7 @@ export const products = [
       material: 'plastic',
       seller: 'Artel Market',
     },
+    saved: false,
   },
   {
     id: 15,
@@ -421,6 +435,7 @@ export const products = [
       material: 'plastic',
       seller: 'Artel Market',
     },
+    saved: false,
   },
   {
     id: 16,
@@ -446,6 +461,7 @@ export const products = [
       material: 'plastic',
       seller: 'Artel Market',
     },
+    saved: false,
   },
   {
     id: 17,
@@ -471,6 +487,7 @@ export const products = [
       material: 'plastic',
       seller: 'Artel Market',
     },
+    saved: false,
   },
   {
     id: 18,
@@ -496,6 +513,7 @@ export const products = [
       material: 'plastic',
       seller: 'Artel Market',
     },
+    saved: false,
   },
 ];
 
