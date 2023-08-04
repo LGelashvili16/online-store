@@ -13,7 +13,7 @@ import secureIcon from '../../assets/cart/secure.png';
 import supportIcon from '../../assets/cart/support.png';
 import deliveryIcon from '../../assets/cart/delivery.png';
 import SuperDoscount from '../../components/superDiscount/SuperDoscount';
-import SavedForLater from '../../components/savedForLater/SavedForLater';
+import SavedForLater from '../savedForLater/SavedForLater';
 
 const Cart = () => {
   const [cart, setCart] = useCart();

@@ -49,12 +49,6 @@ const Item = () => {
         return [currentProduct];
       }
 
-      // const arr = [...prev];
-
-      // if (!arr.includes(currentProduct)) {
-      //   arr.push(currentProduct);
-      // }
-
       return !prev.includes(currentProduct) ? [...prev, currentProduct] : prev;
     });
   };

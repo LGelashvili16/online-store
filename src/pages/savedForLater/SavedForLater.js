@@ -9,10 +9,14 @@ const SavedForLater = () => {
     <div className={styles['saved']}>
       <h3>Saved for later</h3>
 
-      <div>
-        {saveForLater.map((prod, i) => {
-          return <SavedForLaterCard />;
-        })}
+      <div className={styles['saved-cards']}>
+        {saveForLater.length > 0 ? (
+          saveForLater.map((prod, i) => {
+            return <SavedForLaterCard key={i} product={prod} />;
+          })
+        ) : (
+          <p className={styles['no-products']}>No saved products found!</p>
+        )}
       </div>
     </div>
   );

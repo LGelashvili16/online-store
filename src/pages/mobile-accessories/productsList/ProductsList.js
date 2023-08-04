@@ -9,21 +9,7 @@ const ProductsList = ({ layout, products }) => {
       }`}
     >
       {products.map((prod, i) => {
-        return (
-          <ProductItem
-            layout={layout}
-            key={i}
-            id={prod.id}
-            image={prod.images[0]}
-            title={prod.title}
-            price={prod.price}
-            oldPrice={prod.oldPrice}
-            rating={prod.rating}
-            orders={prod.orders}
-            shipping={prod.shipping}
-            description={prod.description}
-          />
-        );
+        return <ProductItem key={i} product={prod} layout={layout} />;
       })}
     </div>
   );

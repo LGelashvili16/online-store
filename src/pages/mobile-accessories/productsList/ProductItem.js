@@ -1,11 +1,16 @@
 import styles from './ProductItem.module.css';
 import favoriteIcon from '../../../assets/mobile-accessories/favorite.svg';
+import favoriteFilledIcon from '../../../assets/mobile-accessories/favorite_filled.png';
 import filledStarImg from '../../../assets/mobile-accessories/filled-star.svg';
 import emptyStarImg from '../../../assets/mobile-accessories/empty-star.svg';
 import { useNavigate } from 'react-router-dom';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import { useSaveForLater } from '../../../contexts/SaveForLaterContext';
 
-const ProductItem = (props) => {
+const ProductItem = ({ product, layout }) => {
+  const [activeFavorite, setActiveFavorite] = useState(false);
+  const [saveForLater, setSaveForLater] = useSaveForLater();
+
   const favoriteRef = useRef();
   const navigation = useNavigate();
 
@@ -14,44 +19,64 @@ const ProductItem = (props) => {
       e.target !== favoriteRef.current &&
       e.target !== favoriteRef.current.children[0]
     )
-      navigation(`../product/${`mobile-accessory`}/${props.id}`);
+      navigation(`../product/${`mobile-accessory`}/${product.id}`);
+  };
+
+  const favoriteHandler = () => {
+    setActiveFavorite((prev) => !prev);
+
+    if (!activeFavorite) {
+      setSaveForLater((prev) => {
+        if (!prev.includes(product)) {
+          return [...prev, product];
+        }
+      });
+    }
+
+    if (activeFavorite) {
+      setSaveForLater((prev) => {
+        return prev.filter((prod) => {
+          return prod !== product;
+        });
+      });
+    }
   };
 
   return (
     <div
-      className={`${props.layout ? styles['product'] : styles['g-product']}`}
+      className={`${layout ? styles['product'] : styles['g-product']}`}
       onClick={productClickHandler}
     >
       <div
         className={`${
-          props.layout ? styles['product-image'] : styles['g-product-image']
+          layout ? styles['product-image'] : styles['g-product-image']
         }`}
       >
-        <img src={props.image} alt="product images" />
+        <img src={product.images[0]} alt="product images" />
       </div>
 
       <div
         className={`${
-          props.layout ? styles['product-details'] : styles['g-product-details']
+          layout ? styles['product-details'] : styles['g-product-details']
         }`}
       >
         <h4
           className={`${
-            props.layout
+            layout
               ? styles['product-details-title']
               : styles['g-product-details-title']
           }`}
         >
-          {props.title}
+          {product.title}
         </h4>
 
         <div
           className={`${
-            props.layout ? styles['product-price'] : styles['g-product-price']
+            layout ? styles['product-price'] : styles['g-product-price']
           }`}
         >
-          <h2>{props.price}</h2>
-          <h3>{props.oldPrice}</h3>
+          <h2>{product.price}</h2>
+          <h3>{product.oldPrice}</h3>
         </div>
 
         <div className={styles['product-rating']}>
@@ -66,45 +91,43 @@ const ProductItem = (props) => {
 
           <div
             className={`${
-              props.layout ? styles['product-rating-dot'] : styles['hidden']
+              layout ? styles['product-rating-dot'] : styles['hidden']
             }`}
           ></div>
 
           <p
             className={`${
-              props.layout ? styles['product-rating-orders'] : styles['hidden']
+              layout ? styles['product-rating-orders'] : styles['hidden']
             }`}
           >
-            {props.orders} orders
+            {product.orders} orders
           </p>
 
           <div
             className={`${
-              props.layout ? styles['product-rating-dot'] : styles['hidden']
+              layout ? styles['product-rating-dot'] : styles['hidden']
             } ${styles['dot2']}`}
           ></div>
 
           <p
             className={`${
-              props.layout
-                ? styles['product-rating-shipping']
-                : styles['hidden']
+              layout ? styles['product-rating-shipping'] : styles['hidden']
             }`}
           >
-            {props.shipping}
+            {product.shipping}
           </p>
         </div>
 
         <p
           className={`${
-            props.layout ? styles['product-description'] : styles['hidden']
+            layout ? styles['product-description'] : styles['hidden']
           }`}
         >
-          {props.description}
+          {product.description}
         </p>
         <button
           className={`${
-            props.layout ? styles['product-details-btn'] : styles['hidden']
+            layout ? styles['product-details-btn'] : styles['hidden']
           }`}
         >
           View details
@@ -113,13 +136,15 @@ const ProductItem = (props) => {
 
       <div
         className={`${
-          props.layout
-            ? styles['product-favorite']
-            : styles['g-product-favorite']
+          layout ? styles['product-favorite'] : styles['g-product-favorite']
         }`}
         ref={favoriteRef}
+        onClick={favoriteHandler}
       >
-        <img src={favoriteIcon} alt="favorite" />
+        <img
+          src={activeFavorite ? favoriteFilledIcon : favoriteIcon}
+          alt="favorite"
+        />
       </div>
     </div>
   );
