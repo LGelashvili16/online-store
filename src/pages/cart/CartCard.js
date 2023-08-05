@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './CartCard.module.css';
 import dropdownArrow from '../../assets/header/icons/expand-arrow.svg';
+import minusIcon from '../../assets/cart/minus.png';
+import plusIcon from '../../assets/cart/plus.png';
+import optionsIcon from '../../assets/cart/options.png';
+
 import { pcsAmount } from '../../data/home/homeData';
 import { useCart } from '../../contexts/CartContext';
 
@@ -72,10 +76,22 @@ const CartCard = ({ product }) => {
             </button>
             <button className={styles['later-btn']}>Save for later</button>
           </div>
+
+          <div className={styles['resp-quantity']}>
+            <button>
+              {' '}
+              <img src={minusIcon} alt="" />
+            </button>
+            <span>{pcs}</span>
+            <button>
+              <img src={plusIcon} alt="" />
+            </button>
+          </div>
         </div>
       </div>
 
       <div className={styles['price-quantity']}>
+        <img src={optionsIcon} alt="" />
         <span className={styles['price']}>${price}</span>
 
         <div

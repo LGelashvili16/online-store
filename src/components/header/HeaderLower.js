@@ -124,14 +124,16 @@ const HeaderLower = () => {
   return (
     <div
       className={`${styles['header-lower']} ${
-        location.pathname.includes('product/mobile-accessory')
+        location.pathname.includes('product/mobile-accessory') ||
+        location.pathname.includes('cart')
           ? styles['hidden']
           : ''
       }`}
     >
       <motion.div
         className={`${styles['resp-carousel']} ${
-          location.pathname.includes('product/mobile-accessory')
+          location.pathname.includes('product/mobile-accessory') ||
+          location.pathname.includes('cart')
             ? styles['hidden']
             : ''
         }`}

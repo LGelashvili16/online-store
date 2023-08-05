@@ -45,6 +45,10 @@ const Header = () => {
     setShowBurgerMenu(!showBurgerMenu);
   };
 
+  const goBackHandler = () => {
+    navigate(-1);
+  };
+
   useEffect(() => {
     if (showBurgerMenu) {
       document.body.style.overflow = 'hidden';
@@ -118,7 +122,8 @@ const Header = () => {
             ? styles['resp-header-top']
             : styles['header-top']
         } ${
-          location.pathname.includes('/product/mobile-accessory')
+          location.pathname.includes('/product/mobile-accessory') ||
+          location.pathname.includes('cart')
             ? styles['resp-header-product']
             : styles['']
         }`}
@@ -204,16 +209,17 @@ const Header = () => {
         </div>
 
         <Link
-          to={
-            location.pathname.includes('product/mobile-accessory')
-              ? 'mobile-accessory'
-              : '/online-store/'
-          }
+          // to={
+          //   location.pathname.includes('product/mobile-accessory')
+          //     ? 'mobile-accessory'
+          //     : '/online-store/'
+          // }
           className={`${
             mobileGoBack !== '/online-store/' && windowSize <= 480
               ? styles['resp-goBack-title']
               : styles['hidden']
           }`}
+          onClick={goBackHandler}
         >
           <img src={goBackIcon} alt="go back" />
 
@@ -221,58 +227,59 @@ const Header = () => {
             <h2>{mobileGoBackTitle}</h2>
           )}
         </Link>
-        {!location.pathname.includes('/product/mobile-accessory') && (
-          <form className={styles['header-form']}>
-            <img
-              className={styles['header-form-search-icon']}
-              src={searchProfile}
-              alt=""
-            />
-            <input
-              className={styles['header-search']}
-              type="text"
-              placeholder="Search"
-            />
-
-            <div className={styles['header-select']}>
-              <p
-                className={styles['header-select-input']}
-                onClick={headerCategoryHandler}
-                ref={categoriesRef}
-              >
-                All category
-              </p>
-
+        {!location.pathname.includes('/product/mobile-accessory') &&
+          !location.pathname.includes('cart') && (
+            <form className={styles['header-form']}>
               <img
-                className={styles['header-dropdown-arrow']}
-                src={arrowImg}
-                alt="arrow"
+                className={styles['header-form-search-icon']}
+                src={searchProfile}
+                alt=""
+              />
+              <input
+                className={styles['header-search']}
+                type="text"
+                placeholder="Search"
               />
 
-              <ul
-                className={`${styles['header-dropdown-list']} ${
-                  !showCategories ? styles['list-hidden'] : ''
-                }`}
-                ref={menuRef}
-              >
-                {headerCategoriesData.map((item, index) => (
-                  <li
-                    key={index}
-                    onClick={() => categoryRedirectHandler(item.link)}
-                  >
-                    <Link to={item.link}>{item.name}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+              <div className={styles['header-select']}>
+                <p
+                  className={styles['header-select-input']}
+                  onClick={headerCategoryHandler}
+                  ref={categoriesRef}
+                >
+                  All category
+                </p>
 
-            <input
-              className={styles['header-search-btn']}
-              type="submit"
-              value="Search"
-            />
-          </form>
-        )}
+                <img
+                  className={styles['header-dropdown-arrow']}
+                  src={arrowImg}
+                  alt="arrow"
+                />
+
+                <ul
+                  className={`${styles['header-dropdown-list']} ${
+                    !showCategories ? styles['list-hidden'] : ''
+                  }`}
+                  ref={menuRef}
+                >
+                  {headerCategoriesData.map((item, index) => (
+                    <li
+                      key={index}
+                      onClick={() => categoryRedirectHandler(item.link)}
+                    >
+                      <Link to={item.link}>{item.name}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <input
+                className={styles['header-search-btn']}
+                type="submit"
+                value="Search"
+              />
+            </form>
+          )}
 
         <div
           className={`${
