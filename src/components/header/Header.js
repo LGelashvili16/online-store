@@ -38,6 +38,7 @@ const Header = () => {
   const categoriesRef = useRef();
 
   const location = useLocation();
+
   const navigate = useNavigate();
 
   const burgerMenuHandler = (e) => {
@@ -116,6 +117,10 @@ const Header = () => {
           mobileGoBack !== '/online-store/' && windowSize <= 480
             ? styles['resp-header-top']
             : styles['header-top']
+        } ${
+          location.pathname.includes('/product/mobile-accessory')
+            ? styles['resp-header-product']
+            : styles['']
         }`}
       >
         <div
@@ -199,7 +204,11 @@ const Header = () => {
         </div>
 
         <Link
-          to="/online-store/"
+          to={
+            location.pathname.includes('product/mobile-accessory')
+              ? 'mobile-accessory'
+              : '/online-store/'
+          }
           className={`${
             mobileGoBack !== '/online-store/' && windowSize <= 480
               ? styles['resp-goBack-title']
@@ -207,59 +216,63 @@ const Header = () => {
           }`}
         >
           <img src={goBackIcon} alt="go back" />
-          <h2>{mobileGoBackTitle}</h2>
+
+          {!location.pathname.includes('/product/mobile-accessory') && (
+            <h2>{mobileGoBackTitle}</h2>
+          )}
         </Link>
-
-        <form className={styles['header-form']}>
-          <img
-            className={styles['header-form-search-icon']}
-            src={searchProfile}
-            alt=""
-          />
-          <input
-            className={styles['header-search']}
-            type="text"
-            placeholder="Search"
-          />
-
-          <div className={styles['header-select']}>
-            <p
-              className={styles['header-select-input']}
-              onClick={headerCategoryHandler}
-              ref={categoriesRef}
-            >
-              All category
-            </p>
-
+        {!location.pathname.includes('/product/mobile-accessory') && (
+          <form className={styles['header-form']}>
             <img
-              className={styles['header-dropdown-arrow']}
-              src={arrowImg}
-              alt="arrow"
+              className={styles['header-form-search-icon']}
+              src={searchProfile}
+              alt=""
+            />
+            <input
+              className={styles['header-search']}
+              type="text"
+              placeholder="Search"
             />
 
-            <ul
-              className={`${styles['header-dropdown-list']} ${
-                !showCategories ? styles['list-hidden'] : ''
-              }`}
-              ref={menuRef}
-            >
-              {headerCategoriesData.map((item, index) => (
-                <li
-                  key={index}
-                  onClick={() => categoryRedirectHandler(item.link)}
-                >
-                  <Link to={item.link}>{item.name}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+            <div className={styles['header-select']}>
+              <p
+                className={styles['header-select-input']}
+                onClick={headerCategoryHandler}
+                ref={categoriesRef}
+              >
+                All category
+              </p>
 
-          <input
-            className={styles['header-search-btn']}
-            type="submit"
-            value="Search"
-          />
-        </form>
+              <img
+                className={styles['header-dropdown-arrow']}
+                src={arrowImg}
+                alt="arrow"
+              />
+
+              <ul
+                className={`${styles['header-dropdown-list']} ${
+                  !showCategories ? styles['list-hidden'] : ''
+                }`}
+                ref={menuRef}
+              >
+                {headerCategoriesData.map((item, index) => (
+                  <li
+                    key={index}
+                    onClick={() => categoryRedirectHandler(item.link)}
+                  >
+                    <Link to={item.link}>{item.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <input
+              className={styles['header-search-btn']}
+              type="submit"
+              value="Search"
+            />
+          </form>
+        )}
 
         <div
           className={`${
@@ -309,11 +322,13 @@ const Header = () => {
           </Link>
 
           <div className={styles['resp-header-user']}>
-            <img
-              className={styles['my-cart-icon']}
-              src={respCart}
-              alt="My Cart"
-            />
+            <Link to="cart">
+              <img
+                className={styles['my-cart-icon']}
+                src={respCart}
+                alt="My Cart"
+              />
+            </Link>
 
             <img
               className={styles['profile-icon']}

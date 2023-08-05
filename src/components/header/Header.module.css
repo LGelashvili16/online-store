@@ -389,7 +389,7 @@ header {
   height: 24px;
 }
 
-/* ************ Responsive at mobile accesory page ************ */
+/* ************ Responsive at mobile accessory page ************ */
 
 .resp-header-top {
   width: 100%;
@@ -443,6 +443,13 @@ header {
     max-width: 360px;
     min-height: 96px;
     align-items: center;
+  }
+
+  .resp-header-product {
+    width: 360px;
+    min-height: 56px !important;
+    padding-inline: 16px;
+    justify-content: space-between;
   }
 
   .resp-header-menu {

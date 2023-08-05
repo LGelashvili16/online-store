@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import styles from './Item.module.css';
 import { products } from '../../data/mobileAccessories/mobileAccessoriesData';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { generateStars } from '../../utils/starGenerator';
 import checkIcon from '../../assets/item/check.png';
@@ -16,6 +16,9 @@ import verifiedIcon from '../../assets/item/verified_user.png';
 import worldwideIcon from '../../assets/item/worldwide.png';
 import saveIcon from '../../assets/item/favorite_border.png';
 import saveFilledIcon from '../../assets/mobile-accessories/favorite_filled.png';
+import prevIcon from '../../assets/item/arrow_back-resp.png';
+import nextIcon from '../../assets/item/arrow_forward-resp.png';
+
 import { useCart } from '../../contexts/CartContext';
 import { useMobileAccessoryProducts } from '../../contexts/ProductsContext';
 import { useSaveForLater } from '../../contexts/SaveForLaterContext';
@@ -33,6 +36,32 @@ const Item = () => {
   );
 
   const [mainImg, setMainImg] = useState(currentProduct.images[0]);
+  const [fromLeft, setFromLeft] = useState(0);
+  // const [sliderIndex, setSliderIndex] = useState(1);
+
+  let sliderIndex = useRef(0);
+
+  const imagesRef = useRef();
+  const imageRef = useRef();
+
+  const previousHandler = () => {
+    if (sliderIndex.current > 0) {
+      sliderIndex.current -= 1;
+    }
+
+    setFromLeft(-(imageRef.current.offsetWidth + 2) * sliderIndex.current);
+  };
+
+  const nextHandler = () => {
+    const imagesNumber =
+      imagesRef.current.scrollWidth / imageRef.current.offsetWidth;
+
+    if (sliderIndex.current < imagesNumber - 2) {
+      sliderIndex.current += 1;
+    }
+
+    setFromLeft(-(imageRef.current.offsetWidth + 2) * sliderIndex.current);
+  };
 
   const imageHandler = (e) => {
     Array.from(e.target.closest('ul').children).forEach((element) => {
@@ -100,21 +129,45 @@ const Item = () => {
         <div className={styles['item-main-image']}>
           <img src={mainImg} alt="" />
         </div>
-        <ul className={styles['item-all-images']}>
-          {currentProduct.images.map((img, i) => {
-            return (
-              <li
-                key={i}
-                className={`${styles['image']} ${
-                  i === 0 ? styles['active-image'] : ''
-                }`}
-                onClick={imageHandler}
-              >
-                <img src={img} alt="product" />
-              </li>
-            );
-          })}
-        </ul>
+
+        <div className={styles['item-all-images-wrapper']}>
+          <ul
+            style={{ left: `${fromLeft}px` }}
+            className={styles['item-all-images']}
+            ref={imagesRef}
+          >
+            {currentProduct.images.map((img, i) => {
+              return (
+                <li
+                  key={i}
+                  className={`${styles['image']} ${
+                    i === 0 ? styles['active-image'] : ''
+                  }`}
+                  onClick={imageHandler}
+                  ref={imageRef}
+                >
+                  <img src={img} alt="product" />
+                </li>
+              );
+            })}
+          </ul>
+
+          <div className={styles['resp-images-switcher']}>
+            <button
+              className={styles['resp-images-switcher-prev']}
+              onClick={previousHandler}
+            >
+              <img src={prevIcon} alt="previus" />
+            </button>
+
+            <button
+              className={styles['resp-images-switcher-next']}
+              onClick={nextHandler}
+            >
+              <img src={nextIcon} alt="next" />
+            </button>
+          </div>
+        </div>
       </div>
 
       <div className={styles['about-product']}>
@@ -166,6 +219,20 @@ const Item = () => {
           </div>
         </div>
 
+        <div className={styles['resp-seller-inquiry']}>
+          <button>Send inquiry</button>
+
+          <div
+            className={styles['resp-product-favorite']}
+            onClick={saveHandler}
+          >
+            <img
+              src={currentProduct.saved ? saveFilledIcon : saveIcon}
+              alt="favorite"
+            />
+          </div>
+        </div>
+
         <div className={styles['product-description']}>
           <div className={styles['product-description-row1']}>
             <div className={styles['product-description-rows-title']}>
@@ -202,6 +269,15 @@ const Item = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className={styles['resp-item-description']}>
+        <p>
+          Info about edu item is an ideal companion for anyone engaged in
+          learning. The drone provides precise and ...
+        </p>
+
+        <span>Read more</span>
       </div>
 
       <div className={styles['seller-wrapper']}>

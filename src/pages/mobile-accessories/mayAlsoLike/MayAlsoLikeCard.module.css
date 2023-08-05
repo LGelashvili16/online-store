@@ -20,6 +20,7 @@
 .card-image img {
   max-width: 112px;
   max-height: 116px;
+  pointer-events: none;
 }
 
 .card h3 {

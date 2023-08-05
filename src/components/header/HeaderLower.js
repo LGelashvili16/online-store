@@ -1,6 +1,6 @@
 import styles from './HeaderLower.module.css';
 
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import burgerMenuImg from '../../assets/header/icons/Hamburger-menu.png';
 import arrowImg from '../../assets/header/icons/expand-arrow.svg';
 import { useEffect, useRef, useState } from 'react';
@@ -25,6 +25,8 @@ const HeaderLower = () => {
 
   const [carouselWidth, setCarouselWidth] = useState(0);
   const carouselRef = useRef();
+
+  const location = useLocation();
 
   useEffect(() => {
     setCarouselWidth(
@@ -120,8 +122,21 @@ const HeaderLower = () => {
   }, []);
 
   return (
-    <div className={styles['header-lower']}>
-      <motion.div className={styles['resp-carousel']} ref={carouselRef}>
+    <div
+      className={`${styles['header-lower']} ${
+        location.pathname.includes('product/mobile-accessory')
+          ? styles['hidden']
+          : ''
+      }`}
+    >
+      <motion.div
+        className={`${styles['resp-carousel']} ${
+          location.pathname.includes('product/mobile-accessory')
+            ? styles['hidden']
+            : ''
+        }`}
+        ref={carouselRef}
+      >
         <motion.div
           drag="x"
           dragConstraints={{ right: 0, left: -carouselWidth }}
