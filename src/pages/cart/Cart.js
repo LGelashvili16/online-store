@@ -13,15 +13,17 @@ import secureIcon from '../../assets/cart/secure.png';
 import supportIcon from '../../assets/cart/support.png';
 import deliveryIcon from '../../assets/cart/delivery.png';
 import SuperDoscount from '../../components/superDiscount/SuperDoscount';
-import SavedForLater from '../savedForLater/SavedForLater';
+import SavedForLater from '../../components/savedForLater/SavedForLater';
+import { useState } from 'react';
 
 const Cart = () => {
+  const [pcs, setPcs] = useState(1);
   const [cart, setCart] = useCart();
 
   const navigate = useNavigate();
 
   const subtotal = cart.reduce((acc, cur) => {
-    return acc + +cur.price.slice(1, cur.price.length);
+    return acc + +cur.price.slice(1, cur.price.length) * pcs;
   }, 0);
 
   const discount = 0;
@@ -50,7 +52,9 @@ const Cart = () => {
       <div className={styles['cart']}>
         <div className={styles['products']}>
           {cart.map((prod, i) => {
-            return <CartCard key={i} product={prod} />;
+            return (
+              <CartCard key={i} product={prod} pcs={pcs} setPcs={setPcs} />
+            );
           })}
 
           <div className={styles['products-btns']}>
@@ -104,7 +108,12 @@ const Cart = () => {
                 </span>
               </div>
 
-              <button className={styles['checkout-btn']}>Checkout</button>
+              <button className={styles['checkout-btn']}>
+                Checkout&nbsp;
+                <span className={styles['checkout-btn-items-number']}>
+                  ({cart.length})
+                </span>
+              </button>
 
               <ul className={styles['paying-methods']}>
                 <li>
@@ -163,8 +172,11 @@ const Cart = () => {
         </div>
       </div>
 
-      <SavedForLater />
+      <h3 className={styles['res-saved-title']}>Saved for later</h3>
 
+      <div className={styles['saved-for-later']}>
+        <SavedForLater />
+      </div>
       <div className={styles['super-discount']}>
         <SuperDoscount />
       </div>

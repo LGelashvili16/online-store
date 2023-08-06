@@ -8,12 +8,14 @@ import optionsIcon from '../../assets/cart/options.png';
 import { pcsAmount } from '../../data/home/homeData';
 import { useCart } from '../../contexts/CartContext';
 
-const CartCard = ({ product }) => {
+const CartCard = ({ product, pcs, setPcs }) => {
   const currentPrice = +product.price.slice(1, product.price.length);
 
-  const [pcs, setPcs] = useState(1);
+  // const [pcs, setPcs] = useState(1);
   const [price, setPrice] = useState(currentPrice * +pcs);
   const [showPcsList, setShowPcsList] = useState(false);
+  const [showOptions, setShowOptions] = useState(false);
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
 
   const [cart, setCart] = useCart();
 
@@ -36,6 +38,28 @@ const CartCard = ({ product }) => {
     });
   };
 
+  const optionsHandler = () => {
+    setShowOptions((prev) => !prev);
+  };
+
+  const decreaseHandler = () => {
+    setPcs((prev) => {
+      if (prev > 1) {
+        return --prev;
+      }
+
+      if (prev === 1) {
+        return prev;
+      }
+    });
+  };
+
+  const increaseHandler = () => {
+    setPcs((prev) => {
+      return ++prev;
+    });
+  };
+
   useEffect(() => {
     setPrice(+currentPrice * Number(pcs));
   }, [pcs, currentPrice]);
@@ -51,6 +75,18 @@ const CartCard = ({ product }) => {
     window.addEventListener('click', windowClickHandler);
 
     return () => window.removeEventListener('click', windowClickHandler);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      setWindowSize(window.innerWidth);
+    });
+
+    return () => {
+      window.removeEventListener('resize', () => {
+        setWindowSize(window.innerWidth);
+      });
+    };
   }, []);
 
   return (
@@ -70,7 +106,15 @@ const CartCard = ({ product }) => {
             <span>Seller: {product.information.seller}</span>
           </div>
 
-          <div className={styles['card-btns']}>
+          <div
+            className={`${
+              windowSize > 480
+                ? styles['card-btns']
+                : showOptions
+                ? styles['card-btns']
+                : styles['hidden']
+            }`}
+          >
             <button className={styles['remove-btn']} onClick={removeHandler}>
               Remove
             </button>
@@ -78,12 +122,11 @@ const CartCard = ({ product }) => {
           </div>
 
           <div className={styles['resp-quantity']}>
-            <button>
-              {' '}
+            <button onClick={decreaseHandler}>
               <img src={minusIcon} alt="" />
             </button>
             <span>{pcs}</span>
-            <button>
+            <button onClick={increaseHandler}>
               <img src={plusIcon} alt="" />
             </button>
           </div>
@@ -91,7 +134,12 @@ const CartCard = ({ product }) => {
       </div>
 
       <div className={styles['price-quantity']}>
-        <img src={optionsIcon} alt="" />
+        <img
+          className={styles['options']}
+          src={optionsIcon}
+          alt=""
+          onClick={optionsHandler}
+        />
         <span className={styles['price']}>${price}</span>
 
         <div

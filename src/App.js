@@ -21,7 +21,6 @@ import ProductLayout from './layouts/ProductLayout';
 import { CartStateProvider } from './contexts/CartContext';
 import Cart from './pages/cart/Cart';
 import { SaveForLaterStateProvider } from './contexts/SaveForLaterContext';
-import SavedForLater from './pages/savedForLater/SavedForLater';
 import { ProductsProvider } from './contexts/ProductsContext';
 
 const router = createBrowserRouter(
@@ -32,11 +31,9 @@ const router = createBrowserRouter(
 
       <Route path="product" element={<ProductLayout />}>
         <Route path=":from/:id" element={<ProductPage />} />
-        {/* <Route path="mobile-accessory/:id" element={<ProductPage />} /> */}
       </Route>
 
       <Route path="cart" element={<Cart />} />
-      <Route path="saved" element={<SavedForLater />} />
     </Route>
   )
 );

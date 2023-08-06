@@ -225,6 +225,10 @@
   background: #dee2e7;
 }
 
+.options {
+  display: none;
+}
+
 @media (max-width: 480px) {
   .product {
     border-bottom: 1px solid #dee2e7;
@@ -269,7 +273,24 @@
   }
 
   .card-btns {
-    display: none;
+    padding: 15px 20px 20px;
+
+    position: absolute;
+    top: 0;
+    right: -10px;
+    display: flex;
+    flex-direction: column;
+
+    background: #ffffff;
+    border: 1px solid #dee2e7;
+    border-radius: 6px;
+
+    box-shadow: 0 0 7px 3px #1c1c1c46;
+    z-index: 1;
+  }
+
+  .options {
+    display: block;
   }
 
   .price-quantity {
