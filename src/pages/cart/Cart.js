@@ -20,6 +20,9 @@ const Cart = () => {
   const [pcs, setPcs] = useState(1);
   const [cart, setCart] = useCart();
 
+  // const localStorageCart = JSON.parse(window.localStorage.getItem('cart'));
+  // console.log(localStorageCart);
+
   const navigate = useNavigate();
 
   const subtotal = cart.reduce((acc, cur) => {

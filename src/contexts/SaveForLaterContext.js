@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 const saveForLaterContext = createContext();
 
@@ -7,7 +7,23 @@ export const useSaveForLater = () => {
 };
 
 export const SaveForLaterStateProvider = ({ children }) => {
-  const [saveForLater, setSaveForLater] = useState([]);
+  const localStorageSaved =
+    JSON.parse(window.localStorage.getItem('saved')) === null
+      ? []
+      : JSON.parse(window.localStorage.getItem('saved'));
+
+  const [saveForLater, setSaveForLater] = useState(localStorageSaved);
+
+  useEffect(() => {
+    const data = JSON.parse(window.localStorage.getItem('saved'));
+    if (data !== null) setSaveForLater(data);
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem('saved', JSON.stringify(saveForLater));
+
+    console.log('context', saveForLater);
+  }, [saveForLater]);
 
   return (
     <saveForLaterContext.Provider value={[saveForLater, setSaveForLater]}>

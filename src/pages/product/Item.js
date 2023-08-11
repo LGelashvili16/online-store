@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import styles from './Item.module.css';
 import { products } from '../../data/mobileAccessories/mobileAccessoriesData';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { generateStars } from '../../utils/starGenerator';
 import checkIcon from '../../assets/item/check.png';
@@ -37,12 +37,26 @@ const Item = () => {
 
   const [mainImg, setMainImg] = useState(currentProduct.images[0]);
   const [fromLeft, setFromLeft] = useState(0);
+
+  const [isSaved, setIsSaved] = useState(false);
+  const [currentSaved, setCurrentSaved] = useState({});
   // const [sliderIndex, setSliderIndex] = useState(1);
 
   let sliderIndex = useRef(0);
 
   const imagesRef = useRef();
   const imageRef = useRef();
+
+  const productTrue = { ...currentProduct, saved: true };
+
+  useEffect(() => {
+    saveForLater.forEach((el) => {
+      if (el.id === currentProduct.id) {
+        setIsSaved(true);
+        setCurrentSaved(el);
+      }
+    });
+  }, [saveForLater, currentProduct]);
 
   const previousHandler = () => {
     if (sliderIndex.current > 0) {
@@ -103,24 +117,64 @@ const Item = () => {
       return prev;
     });
 
-    if (currentProduct.saved) {
+    setSaveForLater((prev) => {
+      if (prev.length === 0) {
+        return [productTrue];
+      }
+
+      return [...prev, currentProduct];
+    });
+
+    if (saveForLater.length > 0) {
       setSaveForLater((prev) => {
-        if (!prev.includes(currentProduct)) {
-          return [...prev, currentProduct];
-        }
-        if (prev.includes(currentProduct)) {
-          return prev;
-        }
+        const map = prev.map((prod) => {
+          if (prod.id === currentProduct.id) {
+            return { ...prod, saved: !prod.saved };
+          }
+
+          return prod;
+        });
+
+        return map;
       });
     }
 
-    if (!currentProduct.saved) {
-      setSaveForLater((prev) => {
-        return prev.filter((prod) => {
-          return prod !== currentProduct;
-        });
+    setSaveForLater((prev) => {
+      const unique = prev.filter((el, index) => {
+        return index === prev.findIndex((o) => el.id === o.id);
       });
-    }
+
+      return unique;
+    });
+
+    setSaveForLater((prev) => {
+      const filter = prev.filter((el) => {
+        return el.saved === true;
+      });
+
+      setIsSaved(false);
+
+      return filter;
+    });
+
+    // if (isSaved) {
+    //   setSaveForLater((prev) => {
+    //     if (!prev.includes(currentSaved)) {
+    //       return [...prev, currentSaved];
+    //     }
+    //     if (prev.includes(currentSaved)) {
+    //       return prev;
+    //     }
+    //   });
+    // }
+
+    // if (!isSaved) {
+    //   setSaveForLater((prev) => {
+    //     return prev.filter((prod) => {
+    //       return prod !== currentSaved;
+    //     });
+    //   });
+    // }
   };
 
   return (
@@ -313,11 +367,8 @@ const Item = () => {
         </div>
 
         <div className={styles['save']} onClick={saveHandler}>
-          <img
-            src={currentProduct.saved ? saveFilledIcon : saveIcon}
-            alt="save"
-          />
-          <span> {currentProduct.saved ? 'Saved' : 'Save for later'} </span>
+          <img src={isSaved ? saveFilledIcon : saveIcon} alt="save" />
+          <span> {isSaved ? 'Saved' : 'Save for later'} </span>
         </div>
         <button className={styles['AddToCart']} onClick={addToCartHandler}>
           Add to cart

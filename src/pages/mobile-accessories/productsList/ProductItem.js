@@ -4,7 +4,7 @@ import favoriteFilledIcon from '../../../assets/mobile-accessories/favorite_fill
 import filledStarImg from '../../../assets/mobile-accessories/filled-star.svg';
 import emptyStarImg from '../../../assets/mobile-accessories/empty-star.svg';
 import { useNavigate } from 'react-router-dom';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useSaveForLater } from '../../../contexts/SaveForLaterContext';
 import { useMobileAccessoryProducts } from '../../../contexts/ProductsContext';
 
@@ -13,8 +13,27 @@ const ProductItem = ({ product, layout }) => {
   const [mobileAccessoryProducts, setMobileAccessoryProducts] =
     useMobileAccessoryProducts();
 
+  const defaultIsSaved =
+    JSON.parse(window.localStorage.getItem('saved')) !== null &&
+    JSON.parse(window.localStorage.getItem('saved')).length > 0
+      ? JSON.parse(window.localStorage.getItem('saved'))
+      : false;
+
+  const [isSaved, setIsSaved] = useState();
+
   const favoriteRef = useRef();
   const navigation = useNavigate();
+
+  const productTrue = { ...product, saved: true };
+
+  useEffect(() => {
+    if (saveForLater.length > 0) {
+      saveForLater.forEach((el) => {
+        el.id === product.id && setIsSaved(true);
+      });
+    }
+    saveForLater.length === 0 && setIsSaved(false);
+  }, [saveForLater, product]);
 
   const productClickHandler = (e) => {
     if (
@@ -36,24 +55,66 @@ const ProductItem = ({ product, layout }) => {
       return prev;
     });
 
-    if (product.saved) {
+    // add if there is no product
+    setSaveForLater((prev) => {
+      if (prev.length === 0) {
+        return [productTrue];
+      }
+
+      return [...prev, product];
+    });
+
+    // change "saved" propery
+    if (saveForLater.length > 0) {
       setSaveForLater((prev) => {
-        if (!prev.includes(product)) {
-          return [...prev, product];
-        }
-        if (prev.includes(product)) {
-          return prev;
-        }
+        const map = prev.map((prod) => {
+          if (prod.id === product.id) {
+            return { ...prod, saved: !prod.saved };
+          }
+
+          return prod;
+        });
+
+        return map;
       });
     }
 
-    if (!product.saved) {
-      setSaveForLater((prev) => {
-        return prev.filter((prod) => {
-          return prod !== product;
-        });
+    setSaveForLater((prev) => {
+      const unique = prev.filter((el, index) => {
+        return index === prev.findIndex((o) => el.id === o.id);
       });
-    }
+
+      return unique;
+    });
+
+    setSaveForLater((prev) => {
+      const filter = prev.filter((el) => {
+        return el.saved === true;
+      });
+
+      setIsSaved(false);
+
+      return filter;
+    });
+
+    // if (product.saved) {
+    //   setSaveForLater((prev) => {
+    //     if (!prev.includes(product)) {
+    //       return [...prev, product];
+    //     }
+    //     if (prev.includes(product)) {
+    //       return prev;
+    //     }
+    //   });
+    // }
+
+    // if (!product.saved) {
+    //   setSaveForLater((prev) => {
+    //     return prev.filter((prod) => {
+    //       return prod !== product;
+    //     });
+    //   });
+    // }
   };
 
   return (
@@ -155,10 +216,7 @@ const ProductItem = ({ product, layout }) => {
         ref={favoriteRef}
         onClick={favoriteHandler}
       >
-        <img
-          src={product.saved ? favoriteFilledIcon : favoriteIcon}
-          alt="favorite"
-        />
+        <img src={isSaved ? favoriteFilledIcon : favoriteIcon} alt="favorite" />
       </div>
     </div>
   );

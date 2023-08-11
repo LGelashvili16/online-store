@@ -1,0 +1,14 @@
+.container {
+  width: min(100%, 1180px);
+}
+
+.container h3 {
+  margin-top: 20px;
+  color: #1c1c1c;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.cards {
+}

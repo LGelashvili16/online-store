@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import { currencyData, headerFlags } from '../data/header/headerData';
 import { language } from '../data/footer/footerData';
@@ -20,9 +20,51 @@ export function useChangeLanguage() {
 }
 
 export const GlobalStateProvider = ({ children }) => {
-  const [currentCurrency, setCurrentCurrency] = useState(currencyData[0].name);
-  const [currentShipTo, setCurrentShipTo] = useState(headerFlags[0].flag);
-  const [currentLang, setCurrentLang] = useState(language[0]);
+  const localStorageCurrency =
+    JSON.parse(window.localStorage.getItem('currentCurrency')) === null
+      ? currencyData[0].name
+      : JSON.parse(window.localStorage.getItem('currentCurrency'));
+
+  const localStorageShipping =
+    JSON.parse(window.localStorage.getItem('currentShipTo')) === null
+      ? headerFlags[0].flag
+      : JSON.parse(window.localStorage.getItem('currentShipTo'));
+
+  const localStorageLang =
+    JSON.parse(window.localStorage.getItem('currentLang')) === null
+      ? language[0]
+      : JSON.parse(window.localStorage.getItem('currentLang'));
+
+  const [currentCurrency, setCurrentCurrency] = useState(localStorageCurrency);
+  const [currentShipTo, setCurrentShipTo] = useState(localStorageShipping);
+  const [currentLang, setCurrentLang] = useState(localStorageLang);
+  // const [currentCurrency, setCurrentCurrency] = useState(currencyData[0].name);
+  // const [currentShipTo, setCurrentShipTo] = useState(headerFlags[0].flag);
+  // const [currentLang, setCurrentLang] = useState(language[0]);
+
+  useEffect(() => {
+    window.localStorage.setItem(
+      'currentCurrency',
+      JSON.stringify(currentCurrency)
+    );
+
+    window.localStorage.setItem('currentShipTo', JSON.stringify(currentShipTo));
+
+    window.localStorage.setItem('currentLang', JSON.stringify(currentLang));
+  }, [currentCurrency, currentShipTo, currentLang]);
+
+  useEffect(() => {
+    const currencyData = JSON.parse(
+      window.localStorage.getItem('currentCurrency')
+    );
+    if (currencyData !== null) setCurrentCurrency(currencyData);
+
+    const shipToData = JSON.parse(window.localStorage.getItem('currentShipTo'));
+    if (shipToData !== null) setCurrentShipTo(shipToData);
+
+    const langData = JSON.parse(window.localStorage.getItem('currentLang'));
+    if (langData !== null) setCurrentLang(langData);
+  }, []);
 
   return (
     <currencyDataContext.Provider value={[currentCurrency, setCurrentCurrency]}>

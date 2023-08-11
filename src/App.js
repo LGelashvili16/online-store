@@ -22,6 +22,8 @@ import { CartStateProvider } from './contexts/CartContext';
 import Cart from './pages/cart/Cart';
 import { SaveForLaterStateProvider } from './contexts/SaveForLaterContext';
 import { ProductsProvider } from './contexts/ProductsContext';
+import NotFound from './pages/error/NotFound';
+import Saved from './pages/saved/Saved';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -34,6 +36,9 @@ const router = createBrowserRouter(
       </Route>
 
       <Route path="cart" element={<Cart />} />
+      <Route path="saved" element={<Saved />} />
+
+      <Route path="*" element={<NotFound />} />
     </Route>
   )
 );

@@ -25,6 +25,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import HeaderLower from './HeaderLower';
 import { useCart } from '../../contexts/CartContext';
+import { useSaveForLater } from '../../contexts/SaveForLaterContext';
 
 const Header = () => {
   const [showCategories, setShowCategories] = useState(false);
@@ -33,6 +34,7 @@ const Header = () => {
   const [mobileGoBackTitle, setMobileGoBackTitle] = useState('');
   const [windowSize, setWindowSize] = useState(window.innerWidth);
   const [cart] = useCart();
+  const [saveForLater] = useSaveForLater();
 
   const menuRef = useRef();
   const categoriesRef = useRef();
@@ -312,14 +314,18 @@ const Header = () => {
             <p>Message</p>
           </div>
 
-          <div className={`${styles['header-user-item']} ${styles['orders']}`}>
+          <Link
+            to="saved"
+            className={`${styles['header-user-item']} ${styles['orders']}`}
+          >
             <img
               className={styles['orders-icon']}
               src={ordersImg}
               alt="Orders"
             />
-            <p>Orders</p>
-          </div>
+            <p>Saved</p>
+            <span className={styles['saved-badge']}>{saveForLater.length}</span>
+          </Link>
 
           <Link
             to="cart"
