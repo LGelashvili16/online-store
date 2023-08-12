@@ -1,3 +1,6 @@
+.saved-card {
+}
+
 .saved-card-image {
   width: 270px;
   height: 240px;
@@ -13,6 +16,8 @@
 .saved-card-image img {
   max-width: 209px;
   max-height: 194px;
+
+  pointer-events: none;
 }
 
 .saved-card-price {
@@ -32,6 +37,12 @@
   font-weight: 400;
   line-height: 24px;
   letter-spacing: -0.2px;
+}
+
+.saved-card-btns {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .move-btn {
@@ -64,7 +75,34 @@
 }
 
 .remove-btn {
-  display: none;
+  height: 40px;
+  margin-top: 11px;
+
+  padding-inline: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+
+  border-radius: 6px;
+  border: 1px solid #dee2e7;
+  background: #fff;
+
+  color: #fa3434;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  transition: transform 0.1s;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  transform: scale(0.95);
+  border: 1px solid #fa3434;
 }
 
 @media (max-width: 480px) {
@@ -148,21 +186,7 @@
 
   .remove-btn {
     height: 30px;
-
-    padding-inline: 10px;
-
-    display: flex;
-    align-items: center;
-
-    border-radius: 6px;
-    border: 1px solid #dee2e7;
-    background: #fff;
-
-    color: #fa3434;
-    text-align: center;
+    margin-top: 0;
     font-size: 13px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
   }
 }

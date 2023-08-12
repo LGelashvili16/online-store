@@ -46,13 +46,13 @@ const router = createBrowserRouter(
 function App() {
   return (
     <GlobalStateProvider>
-      <ProductsProvider>
-        <CartStateProvider>
-          <SaveForLaterStateProvider>
+      <SaveForLaterStateProvider>
+        <ProductsProvider>
+          <CartStateProvider>
             <RouterProvider router={router} />
-          </SaveForLaterStateProvider>
-        </CartStateProvider>
-      </ProductsProvider>
+          </CartStateProvider>
+        </ProductsProvider>
+      </SaveForLaterStateProvider>
     </GlobalStateProvider>
   );
 }

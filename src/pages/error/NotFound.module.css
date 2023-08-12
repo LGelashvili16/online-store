@@ -43,3 +43,32 @@
 .go-home:hover {
   transform: scale(0.97);
 }
+
+@media (max-width: 480px) {
+  .container {
+    width: min(100%, 360px);
+
+    gap: 15px;
+  }
+
+  .container h2 {
+    font-size: 20px;
+  }
+
+  .container img {
+    max-width: 200px;
+  }
+
+  .container p {
+    text-align: center;
+    max-width: 350px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .go-home {
+    font-size: 13px;
+  }
+}

@@ -21,8 +21,6 @@ export const SaveForLaterStateProvider = ({ children }) => {
 
   useEffect(() => {
     window.localStorage.setItem('saved', JSON.stringify(saveForLater));
-
-    console.log('context', saveForLater);
   }, [saveForLater]);
 
   return (

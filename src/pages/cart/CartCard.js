@@ -7,16 +7,19 @@ import optionsIcon from '../../assets/cart/options.png';
 
 import { pcsAmount } from '../../data/home/homeData';
 import { useCart } from '../../contexts/CartContext';
+import { useSaveForLater } from '../../contexts/SaveForLaterContext';
 
-const CartCard = ({ product, pcs, setPcs }) => {
+const CartCard = ({ product, quantity, setQuantity }) => {
   const currentPrice = +product.price.slice(1, product.price.length);
 
   // const [pcs, setPcs] = useState(1);
-  const [price, setPrice] = useState(currentPrice * +pcs);
+  const [productQuantity, setProductQuantity] = useState(1);
+  const [price, setPrice] = useState(currentPrice * +productQuantity);
   const [showPcsList, setShowPcsList] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
   const [windowSize, setWindowSize] = useState(window.innerWidth);
 
+  const [saveForLater, setSaveForLater] = useSaveForLater();
   const [cart, setCart] = useCart();
 
   const pcsRef = useRef();
@@ -26,8 +29,22 @@ const CartCard = ({ product, pcs, setPcs }) => {
     setShowPcsList(!showPcsList);
   };
 
+  useEffect(() => {
+    setQuantity((prev) => {
+      const find = prev.find((el) => el.id === product.id);
+
+      if (find) {
+        return prev.map((obj) =>
+          obj.id === product.id ? { ...obj, quantity: +productQuantity } : obj
+        );
+      }
+
+      return [...prev, { id: product.id, quantity: +productQuantity }];
+    });
+  }, [productQuantity, product.id, setQuantity]);
+
   const pcsHandler = (e) => {
-    setPcs(+e.target.textContent);
+    setProductQuantity(+e.target.textContent);
   };
 
   const removeHandler = () => {
@@ -43,11 +60,10 @@ const CartCard = ({ product, pcs, setPcs }) => {
   };
 
   const decreaseHandler = () => {
-    setPcs((prev) => {
+    setProductQuantity((prev) => {
       if (prev > 1) {
         return --prev;
       }
-
       if (prev === 1) {
         return prev;
       }
@@ -55,14 +71,61 @@ const CartCard = ({ product, pcs, setPcs }) => {
   };
 
   const increaseHandler = () => {
-    setPcs((prev) => {
+    setProductQuantity((prev) => {
       return ++prev;
     });
   };
 
+  const productTrue = { ...product, saved: true };
+  const productFalse = { ...product, saved: false };
+
+  const favoriteHandler = () => {
+    // add if there is no product
+    setSaveForLater((prev) => {
+      if (prev.length === 0) {
+        return [productTrue];
+      }
+
+      return [...prev, productFalse];
+    });
+
+    // change "saved" propery
+    if (saveForLater.length > 0) {
+      setSaveForLater((prev) => {
+        const map = prev.map((prod) => {
+          if (prod.id === product.id) {
+            return { ...prod, saved: !prod.saved };
+          }
+
+          return prod;
+        });
+
+        return map;
+      });
+    }
+
+    setSaveForLater((prev) => {
+      const unique = prev.filter((el, index) => {
+        return index === prev.findIndex((o) => el.id === o.id);
+      });
+
+      return unique;
+    });
+
+    setSaveForLater((prev) => {
+      const filter = prev.filter((el) => {
+        return el.saved === true;
+      });
+
+      // setIsSaved(false);
+
+      return filter;
+    });
+  };
+
   useEffect(() => {
-    setPrice(+currentPrice * Number(pcs));
-  }, [pcs, currentPrice]);
+    setPrice(+currentPrice * Number(productQuantity));
+  }, [productQuantity, currentPrice]);
 
   // Attach window click listener
   const windowClickHandler = (e) => {
@@ -118,14 +181,16 @@ const CartCard = ({ product, pcs, setPcs }) => {
             <button className={styles['remove-btn']} onClick={removeHandler}>
               Remove
             </button>
-            <button className={styles['later-btn']}>Save for later</button>
+            <button className={styles['later-btn']} onClick={favoriteHandler}>
+              Save for later
+            </button>
           </div>
 
           <div className={styles['resp-quantity']}>
             <button onClick={decreaseHandler}>
               <img src={minusIcon} alt="" />
             </button>
-            <span>{pcs}</span>
+            <span>{productQuantity}</span>
             <button onClick={increaseHandler}>
               <img src={plusIcon} alt="" />
             </button>
@@ -149,7 +214,7 @@ const CartCard = ({ product, pcs, setPcs }) => {
         >
           <p className={styles['pcs-text']}>
             <span>Qty:</span>
-            <span>{pcs}</span>
+            <span>{productQuantity}</span>
           </p>
           <img src={dropdownArrow} alt="Arrow" />
           <ul

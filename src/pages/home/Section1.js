@@ -2,15 +2,21 @@ import styles from './Section1.module.css';
 import avatar from '../../assets/home/section1/Avatar.svg';
 
 import { section1Data } from '../../data/home/homeData';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Section1 = () => {
+  const navigate = useNavigate();
+
   const addActiveHandler = (e) => {
     Array.from(e.target.closest('ul').children).forEach((element) => {
       element.classList.remove(styles['active']);
     });
 
     e.target.closest('li').classList.add(styles['active']);
+  };
+
+  const learnMoreHandler = () => {
+    navigate('mobile-accessory');
   };
 
   return (
@@ -34,7 +40,7 @@ const Section1 = () => {
       <div className={styles['section1-block2']}>
         <h2>Latest trending</h2>
         <h1>Electronic items</h1>
-        <button>Learn more</button>
+        <button onClick={learnMoreHandler}>Learn more</button>
       </div>
 
       <div className={styles['section1-block3']}>

@@ -17,7 +17,7 @@ import SavedForLater from '../../components/savedForLater/SavedForLater';
 import { useState } from 'react';
 
 const Cart = () => {
-  const [pcs, setPcs] = useState(1);
+  const [quantity, setQuantity] = useState([]);
   const [cart, setCart] = useCart();
 
   // const localStorageCart = JSON.parse(window.localStorage.getItem('cart'));
@@ -25,8 +25,11 @@ const Cart = () => {
 
   const navigate = useNavigate();
 
-  const subtotal = cart.reduce((acc, cur) => {
-    return acc + +cur.price.slice(1, cur.price.length) * pcs;
+  const subtotal = cart.reduce((acc, cur, index) => {
+    return (
+      acc +
+      (+cur.price.slice(1, cur.price.length) * quantity[index]?.quantity || 1)
+    );
   }, 0);
 
   const discount = 0;
@@ -56,7 +59,12 @@ const Cart = () => {
         <div className={styles['products']}>
           {cart.map((prod, i) => {
             return (
-              <CartCard key={i} product={prod} pcs={pcs} setPcs={setPcs} />
+              <CartCard
+                key={i}
+                product={prod}
+                quantity={quantity}
+                setQuantity={setQuantity}
+              />
             );
           })}
 

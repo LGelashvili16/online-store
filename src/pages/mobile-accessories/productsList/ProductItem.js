@@ -22,9 +22,10 @@ const ProductItem = ({ product, layout }) => {
   const [isSaved, setIsSaved] = useState();
 
   const favoriteRef = useRef();
-  const navigation = useNavigate();
+  const navigate = useNavigate();
 
   const productTrue = { ...product, saved: true };
+  const productFalse = { ...product, saved: false };
 
   useEffect(() => {
     if (saveForLater.length > 0) {
@@ -40,7 +41,7 @@ const ProductItem = ({ product, layout }) => {
       e.target !== favoriteRef.current &&
       e.target !== favoriteRef.current.children[0]
     )
-      navigation(`../product/${`mobile-accessory`}/${product.id}`);
+      navigate(`../product/${`mobile-accessory`}/${product.id}`);
   };
 
   const favoriteHandler = () => {
@@ -61,7 +62,7 @@ const ProductItem = ({ product, layout }) => {
         return [productTrue];
       }
 
-      return [...prev, product];
+      return [...prev, productFalse];
     });
 
     // change "saved" propery
