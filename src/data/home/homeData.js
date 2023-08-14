@@ -78,25 +78,25 @@ export const section2Discounted = [
   { image: canonCamerasImg, title: 'Canon cameras', discount: '-40%' },
 ];
 
-export const section2HomeOutdoor = [
-  { title: 'Soft chairs', price: '19', image: softChairsImg },
-  { title: 'Sofa & chair', price: '19', image: sofaChairImg },
-  { title: 'Kitchen dishes', price: '19', image: kitcheDishesImg },
-  { title: 'Smart watches', price: '19', image: smartWatches2Img },
-  { title: 'Kitchen mixer', price: '100', image: kitchenMixerImg },
-  { title: 'Blenders', price: '39', image: blendersImg },
-  { title: 'Home appliance', price: '19', image: homeApplianceImg },
-  { title: 'Coffee maker', price: '10', image: coffeeMakerImg },
+// export const section2HomeOutdoor = [
+//   { title: 'Soft chairs', price: '19', image: softChairsImg },
+//   { title: 'Sofa & chair', price: '19', image: sofaChairImg },
+//   { title: 'Kitchen dishes', price: '19', image: kitcheDishesImg },
+//   { title: 'Smart watches', price: '19', image: smartWatches2Img },
+//   { title: 'Kitchen mixer', price: '100', image: kitchenMixerImg },
+//   { title: 'Blenders', price: '39', image: blendersImg },
+//   { title: 'Home appliance', price: '19', image: homeApplianceImg },
+//   { title: 'Coffee maker', price: '10', image: coffeeMakerImg },
 
-  { title: 'Soft chairs', price: '19', image: softChairsImg },
-  { title: 'Sofa & chair', price: '19', image: sofaChairImg },
-  { title: 'Kitchen dishes', price: '19', image: kitcheDishesImg },
-  { title: 'Smart watches', price: '19', image: smartWatches2Img },
-  { title: 'Kitchen mixer', price: '100', image: kitchenMixerImg },
-  { title: 'Blenders', price: '39', image: blendersImg },
-  { title: 'Home appliance', price: '19', image: homeApplianceImg },
-  { title: 'Coffee maker', price: '10', image: coffeeMakerImg },
-];
+//   { title: 'Soft chairs', price: '19', image: softChairsImg },
+//   { title: 'Sofa & chair', price: '19', image: sofaChairImg },
+//   { title: 'Kitchen dishes', price: '19', image: kitcheDishesImg },
+//   { title: 'Smart watches', price: '19', image: smartWatches2Img },
+//   { title: 'Kitchen mixer', price: '100', image: kitchenMixerImg },
+//   { title: 'Blenders', price: '39', image: blendersImg },
+//   { title: 'Home appliance', price: '19', image: homeApplianceImg },
+//   { title: 'Coffee maker', price: '10', image: coffeeMakerImg },
+// ];
 
 export const section2Electronics = [
   { title: 'Smart watches', price: '19', image: smartWatches2Img },

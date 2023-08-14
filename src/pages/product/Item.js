@@ -20,20 +20,27 @@ import prevIcon from '../../assets/item/arrow_back-resp.png';
 import nextIcon from '../../assets/item/arrow_forward-resp.png';
 
 import { useCart } from '../../contexts/CartContext';
-import { useMobileAccessoryProducts } from '../../contexts/ProductsContext';
+import {
+  useHomeOutdoor,
+  useMobileAccessoryProducts,
+} from '../../contexts/ProductsContext';
 import { useSaveForLater } from '../../contexts/SaveForLaterContext';
 
 const Item = () => {
   const [mobileAccessoryProducts, setMobileAccessoryProducts] =
     useMobileAccessoryProducts();
+  const [softChairsProduct, sofaChairProduct, kitcheDishes] = useHomeOutdoor();
+
   const [saveForLater, setSaveForLater] = useSaveForLater();
   const [cart, setCart] = useCart();
 
   const params = useParams();
-  const [currentProduct] = mobileAccessoryProducts.slice(
-    +params.id - 1,
-    +params.id
+
+  const [currentProducts, setCurrentProducts] = useState(
+    mobileAccessoryProducts
   );
+
+  const [currentProduct] = currentProducts.slice(+params.id - 1, +params.id);
 
   const [mainImg, setMainImg] = useState(currentProduct.images[0]);
   const [fromLeft, setFromLeft] = useState(0);
@@ -48,6 +55,29 @@ const Item = () => {
   const imageRef = useRef();
 
   const productTrue = { ...currentProduct, saved: true };
+
+  useEffect(() => {
+    if (params.from === 'soft-chairs') {
+      setCurrentProducts(softChairsProduct);
+      setMainImg(currentProduct.images[0]);
+    }
+
+    if (params.from === 'sofa-&-chair') {
+      setCurrentProducts(sofaChairProduct);
+      setMainImg(currentProduct.images[0]);
+    }
+
+    if (params.from === 'kitchen-dishes') {
+      setCurrentProducts(kitcheDishes);
+      setMainImg(currentProduct.images[0]);
+    }
+  }, [
+    params,
+    softChairsProduct,
+    sofaChairProduct,
+    currentProduct,
+    kitcheDishes,
+  ]);
 
   useEffect(() => {
     saveForLater.forEach((el) => {

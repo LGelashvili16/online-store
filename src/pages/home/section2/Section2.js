@@ -4,9 +4,10 @@ import ElectronicsProduct from './ElectronicsProduct';
 
 import {
   section2Discounted,
-  section2HomeOutdoor,
   section2Electronics,
 } from '../../../data/home/homeData';
+
+import { homeOutdoorProducts } from '../../../data/homeAndOutdoor/homeAndOutdoorData';
 
 import styles from './Section2.module.css';
 import frwdArrowIcon from '../../../assets/home/section2/arrow_forward.svg';
@@ -14,6 +15,7 @@ import CountDown from './CountDown';
 
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Section2 = () => {
   const [row1ProductsWidth, setRow1ProductsWidth] = useState(0);
@@ -22,6 +24,8 @@ const Section2 = () => {
   const row2ProductsRef = useRef();
   const [row3ProductsWidth, setRow3ProductsWidth] = useState(0);
   const row3ProductsRef = useRef();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     setRow1ProductsWidth(
@@ -36,6 +40,14 @@ const Section2 = () => {
       row3ProductsRef.current.scrollWidth - row3ProductsRef.current.offsetWidth
     );
   }, []);
+
+  const homeAndOutdoorHandler = () => {
+    navigate('home-and-outdoor');
+  };
+
+  const consumerElectronicsHandler = () => {
+    navigate('consumer-electronics');
+  };
 
   return (
     <section className={styles['section2']}>
@@ -85,7 +97,7 @@ const Section2 = () => {
             <h4 className={styles['section2-row2-home-resptitle']}>
               Home and outdoor
             </h4>
-            <button>Source now</button>
+            <button onClick={homeAndOutdoorHandler}>Source now</button>
           </div>
         </div>
 
@@ -99,20 +111,23 @@ const Section2 = () => {
             whileDrag={{ cursor: 'grabbing' }}
             className={styles['section2-row2-products']}
           >
-            {section2HomeOutdoor.map((prod, index) => {
+            {homeOutdoorProducts.map((prod, index) => {
               return (
                 <HomeOutdoorProduct
-                  key={index}
+                  key={prod.id}
                   title={prod.title}
                   price={prod.price}
-                  image={prod.image}
+                  image={prod.images[0]}
                 />
               );
             })}
           </motion.div>
         </motion.div>
 
-        <button className={styles['section2-row2-btn-resp']}>
+        <button
+          className={styles['section2-row2-btn-resp']}
+          onClick={homeAndOutdoorHandler}
+        >
           Source now <img src={frwdArrowIcon} alt="" />
         </button>
       </div>
@@ -130,7 +145,7 @@ const Section2 = () => {
               Consumer electronics
             </h4>
 
-            <button>Source now</button>
+            <button onClick={consumerElectronicsHandler}>Source now</button>
           </div>
         </div>
 
@@ -157,7 +172,10 @@ const Section2 = () => {
           </motion.div>
         </motion.div>
 
-        <button className={styles['section2-row3-btn-resp']}>
+        <button
+          className={styles['section2-row3-btn-resp']}
+          onClick={consumerElectronicsHandler}
+        >
           Source now <img src={frwdArrowIcon} alt="" />
         </button>
       </div>

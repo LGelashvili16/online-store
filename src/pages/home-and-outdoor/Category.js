@@ -2,7 +2,7 @@
 
 import Breadcrumbs from '../../components/Breadcrumbs';
 import AsideList from './AsideList';
-import styles from './MobileAccesories.module.css';
+import styles from './Category.module.css';
 
 import expandArrow from '../../assets/mobile-accessories/expand_less.svg';
 import gridView from '../../assets/mobile-accessories/gridview.png';
@@ -10,13 +10,16 @@ import listView from '../../assets/mobile-accessories/listview.png';
 import sortIcon from '../../assets/mobile-accessories/sort.png';
 import filterIcon from '../../assets/mobile-accessories/filter_alt.png';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ProductsList from './productsList/ProductsList';
 import Newsletter from '../../components/newsletter/Newsletter';
 import Pagination from '../../components/pagination/Pagination';
 
 // import { products } from '../../data/mobileAccessories/mobileAccessoriesData';
-import { useMobileAccessoryProducts } from '../../contexts/ProductsContext';
+import {
+  useHomeOutdoor,
+  useMobileAccessoryProducts,
+} from '../../contexts/ProductsContext';
 
 import SelectedFilter from './SelectedFilter';
 
@@ -26,12 +29,17 @@ import {
   features,
   condition,
   ratings,
-} from '../../data/mobileAccessories/mobileAccessoriesData';
-import MayAlsoLike from './mayAlsoLike/MayAlsoLike';
+} from '../../data/homeAndOutdoor/homeAndOutdoorData';
 
-const MobileAccessories = () => {
+import MayAlsoLike from './mayAlsoLike/MayAlsoLike';
+import { useParams } from 'react-router-dom';
+
+const Category = () => {
   const [mobileAccessoryProducts, setMobileAccessoryProducts] =
     useMobileAccessoryProducts();
+  const [softChairsProduct, sofaChairProduct, kitcheDishes] = useHomeOutdoor();
+
+  const [currentProducts, setCurrentProducts] = useState(softChairsProduct);
 
   const [gridActive, setGridActive] = useState(false);
   const [listActive, setListActive] = useState(true);
@@ -45,15 +53,29 @@ const MobileAccessories = () => {
   const [featuresForm, setFeaturesForm] = useState(features);
   const [ratingsForm, setRatingsForm] = useState(ratings);
 
+  const params = useParams();
+
+  useEffect(() => {
+    if (params.name === 'soft-chairs') {
+      setCurrentProducts(softChairsProduct);
+    }
+
+    if (params.name === 'sofa-&-chair') {
+      setCurrentProducts(sofaChairProduct);
+    }
+
+    if (params.name === 'kitchen-dishes') {
+      setCurrentProducts(kitcheDishes);
+    }
+  }, [params.name, softChairsProduct, sofaChairProduct, kitcheDishes]);
+
   // Calculate products quantity
-  const currentPageProducts = (start, end) => {
-    return mobileAccessoryProducts.slice(
-      start * (currentPage - 1),
-      end * currentPage
-    );
+  const currentPageProducts = (products, start, end) => {
+    return products.slice(start * (currentPage - 1), end * currentPage);
   };
 
   const curPageProducts = currentPageProducts(
+    currentProducts,
     cutProductsAmount,
     cutProductsAmount
   );
@@ -70,7 +92,7 @@ const MobileAccessories = () => {
     return;
   };
 
-  const productsAmount = mobileAccessoryProducts.length;
+  const productsAmount = currentProducts.length;
 
   return (
     <>
@@ -100,7 +122,8 @@ const MobileAccessories = () => {
             >
               <div className={styles['organize-products-inner-wrapper']}>
                 <p className={styles['organize-products-info']}>
-                  12,911 items in <strong>Mobile accessory</strong>
+                  12,911 items in{' '}
+                  <strong>{params.name.replaceAll('-', ' ')}</strong>
                 </p>
 
                 <div className={styles['organize-products-view']}>
@@ -177,4 +200,4 @@ const MobileAccessories = () => {
   );
 };
 
-export default MobileAccessories;
+export default Category;
