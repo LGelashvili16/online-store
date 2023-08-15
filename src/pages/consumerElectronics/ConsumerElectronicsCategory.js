@@ -2,7 +2,7 @@
 
 import Breadcrumbs from '../../components/Breadcrumbs';
 import AsideList from './AsideList';
-import styles from './Category.module.css';
+import styles from './ConsumerElectronicsCategory.module.css';
 
 import expandArrow from '../../assets/mobile-accessories/expand_less.svg';
 import gridView from '../../assets/mobile-accessories/gridview.png';
@@ -34,10 +34,19 @@ import {
 import MayAlsoLike from './mayAlsoLike/MayAlsoLike';
 import { useParams } from 'react-router-dom';
 
-const Category = () => {
+const ConsumerElectronicsCategory = () => {
   const [mobileAccessoryProducts, setMobileAccessoryProducts] =
     useMobileAccessoryProducts();
-  const [softChairsProduct, sofaChairProduct, kitcheDishes] = useHomeOutdoor();
+  const [
+    softChairsProduct,
+    sofaChairProduct,
+    kitcheDishesProduct,
+    smartWatchesProduct,
+    kitchenMixerProduct,
+    blendersProduct,
+    homeApplianceProduct,
+    coffeeMakerProduct,
+  ] = useHomeOutdoor();
 
   const [currentProducts, setCurrentProducts] = useState(softChairsProduct);
 
@@ -65,9 +74,39 @@ const Category = () => {
     }
 
     if (params.name === 'kitchen-dishes') {
-      setCurrentProducts(kitcheDishes);
+      setCurrentProducts(kitcheDishesProduct);
     }
-  }, [params.name, softChairsProduct, sofaChairProduct, kitcheDishes]);
+
+    if (params.name === 'smart-watches') {
+      setCurrentProducts(smartWatchesProduct);
+    }
+
+    if (params.name === 'kitchen-mixer') {
+      setCurrentProducts(kitchenMixerProduct);
+    }
+
+    if (params.name === 'blenders') {
+      setCurrentProducts(blendersProduct);
+    }
+
+    if (params.name === 'home-appliance') {
+      setCurrentProducts(homeApplianceProduct);
+    }
+
+    if (params.name === 'coffee-maker') {
+      setCurrentProducts(coffeeMakerProduct);
+    }
+  }, [
+    params.name,
+    softChairsProduct,
+    sofaChairProduct,
+    kitcheDishesProduct,
+    smartWatchesProduct,
+    kitchenMixerProduct,
+    blendersProduct,
+    homeApplianceProduct,
+    coffeeMakerProduct,
+  ]);
 
   // Calculate products quantity
   const currentPageProducts = (products, start, end) => {
@@ -200,4 +239,4 @@ const Category = () => {
   );
 };
 
-export default Category;
+export default ConsumerElectronicsCategory;

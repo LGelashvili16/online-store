@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
-import { homeOutdoorCategories } from '../../data/homeAndOutdoor/homeAndOutdoorData';
-import styles from './HomeAndOutdoorPage.module.css';
+import { consumerElectronicsCategories } from '../../data/consumerElectronics/consumerElectronicsData';
+import styles from './ConsumerElectronicsPage.module.css';
 
-const HomeAndOutdoorPage = () => {
+const ConsumerElectronicsPage = () => {
   const navigate = useNavigate();
 
   const categoryHandler = (name) => {
@@ -11,10 +11,10 @@ const HomeAndOutdoorPage = () => {
 
   return (
     <div className={styles['container']}>
-      <h3 className={styles['page-title']}>Home and outdoor</h3>
+      <h3 className={styles['page-title']}>Consumer elecronics and gadgets</h3>
 
       <div className={styles['category-cards']}>
-        {homeOutdoorCategories.map((category) => {
+        {consumerElectronicsCategories.map((category) => {
           return (
             <div
               key={category.id}
@@ -50,4 +50,4 @@ const HomeAndOutdoorPage = () => {
   );
 };
 
-export default HomeAndOutdoorPage;
+export default ConsumerElectronicsPage;

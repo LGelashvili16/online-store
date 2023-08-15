@@ -7,7 +7,7 @@ import {
   section2Electronics,
 } from '../../../data/home/homeData';
 
-import { homeOutdoorProducts } from '../../../data/homeAndOutdoor/homeAndOutdoorData';
+import { homeOutdoorCategories } from '../../../data/homeAndOutdoor/homeAndOutdoorData';
 
 import styles from './Section2.module.css';
 import frwdArrowIcon from '../../../assets/home/section2/arrow_forward.svg';
@@ -23,6 +23,7 @@ const Section2 = () => {
   const [row2ProductsWidth, setRow2ProductsWidth] = useState(0);
   const row2ProductsRef = useRef();
   const [row3ProductsWidth, setRow3ProductsWidth] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
   const row3ProductsRef = useRef();
 
   const navigate = useNavigate();
@@ -40,6 +41,14 @@ const Section2 = () => {
       row3ProductsRef.current.scrollWidth - row3ProductsRef.current.offsetWidth
     );
   }, []);
+
+  const onDragStart = () => {
+    setIsDragging(true);
+  };
+
+  const onDragEnd = () => {
+    setIsDragging(false);
+  };
 
   const homeAndOutdoorHandler = () => {
     navigate('home-and-outdoor');
@@ -106,18 +115,21 @@ const Section2 = () => {
           ref={row2ProductsRef}
         >
           <motion.div
+            onDragStart={onDragStart}
+            onDragEnd={onDragEnd}
             drag="x"
             dragConstraints={{ right: 0, left: -row2ProductsWidth }}
             whileDrag={{ cursor: 'grabbing' }}
             className={styles['section2-row2-products']}
           >
-            {homeOutdoorProducts.map((prod, index) => {
+            {homeOutdoorCategories.map((prod, index) => {
               return (
                 <HomeOutdoorProduct
                   key={prod.id}
                   title={prod.title}
                   price={prod.price}
                   image={prod.images[0]}
+                  isDragging={isDragging}
                 />
               );
             })}

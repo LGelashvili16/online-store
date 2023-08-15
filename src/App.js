@@ -25,8 +25,9 @@ import { ProductsProvider } from './contexts/ProductsContext';
 import NotFound from './pages/error/NotFound';
 import Saved from './pages/saved/Saved';
 import HomeAndOutdoorPage from './pages/home-and-outdoor/HomeAndOutdoorPage';
-import Category from './pages/home-and-outdoor/Category';
-import HomeAndOutdoorLayout from './layouts/HomeAndOutdoorLayout';
+import ConsumerElectronicsPage from './pages/consumerElectronics/ConsumerElectronicsPage';
+import HomeAndOutdoorCategory from './pages/home-and-outdoor/HomeAndOutdoorCategory';
+import ConsumerElectronicsCategory from './pages/consumerElectronics/ConsumerElectronicsCategory';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -34,8 +35,20 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="mobile-accessory" element={<MobileAccessories />} />
       <Route path="home-and-outdoor" element={<HomeAndOutdoorPage />} />
+      <Route
+        path="consumer-electronics"
+        element={<ConsumerElectronicsPage />}
+      />
 
-      <Route path="home-and-outdoor/category/:name" element={<Category />} />
+      <Route
+        path="home-and-outdoor/category/:name"
+        element={<HomeAndOutdoorCategory />}
+      />
+
+      <Route
+        path="consumer-electronics/category/:name"
+        element={<ConsumerElectronicsCategory />}
+      />
 
       <Route path="product" element={<ProductLayout />}>
         <Route path=":from/:id" element={<ProductPage />} />

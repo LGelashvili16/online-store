@@ -1,8 +1,22 @@
+import { useNavigate } from 'react-router-dom';
 import styles from './HomeOutdoorProduct.module.css';
 
 const HomeOutdoorProduct = (props) => {
+  const navigate = useNavigate();
+
+  const categoryHandler = (name) => {
+    if (!props.isDragging) {
+      navigate(`home-and-outdoor/category/${name.replaceAll(' ', '-')}`);
+    }
+  };
+
   return (
-    <div className={styles['section2-row2-product']}>
+    <div
+      className={styles['section2-row2-product']}
+      onClick={() => {
+        categoryHandler(props.title.toLowerCase());
+      }}
+    >
       <div className={styles['row2-product-title']}>
         <h3>{props.title}</h3>
         <p>

@@ -1,0 +1,38 @@
+.may-also-like {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  /* padding-left: 20px; */
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 48px;
+}
+
+.may-also-like-title {
+  width: 340px;
+}
+
+.may-also-like-title h2 {
+  align-self: flex-start;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1c1c1c;
+  margin-bottom: 20px;
+}
+
+.may-also-like-cards-container {
+  overflow: hidden;
+  width: 340px;
+}
+
+.may-also-like-cards {
+  display: flex;
+  gap: 8px;
+  width: 360px;
+}
+
+@media (max-width: 480px) {
+  .may-also-like {
+    display: flex;
+  }
+}

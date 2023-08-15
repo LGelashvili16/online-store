@@ -2,7 +2,7 @@ import styles from './SavedCard.module.css';
 import cartIcon from '../../assets/cart/shopping_cart.png';
 import { useSaveForLater } from '../../contexts/SaveForLaterContext';
 import { useCart } from '../../contexts/CartContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const SavedCard = ({ product }) => {
   const [saveForLater, setSaveForLater] = useSaveForLater();
@@ -16,7 +16,7 @@ const SavedCard = ({ product }) => {
     //   e.target !== favoriteRef.current.children[0]
     // )
     e.stopPropagation();
-    navigate(`../product/${`mobile-accessory`}/${product.id}`);
+    navigate(`../product/${product.path}/${parseInt(product.id)}`);
   };
 
   const addToCartHandler = (e) => {

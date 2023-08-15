@@ -29,7 +29,16 @@ import { useSaveForLater } from '../../contexts/SaveForLaterContext';
 const Item = () => {
   const [mobileAccessoryProducts, setMobileAccessoryProducts] =
     useMobileAccessoryProducts();
-  const [softChairsProduct, sofaChairProduct, kitcheDishes] = useHomeOutdoor();
+  const [
+    softChairsProduct,
+    sofaChairProduct,
+    kitcheDishesProduct,
+    smartWatchesProduct,
+    kitchenMixerProduct,
+    blendersProduct,
+    homeApplianceProduct,
+    coffeeMakerProduct,
+  ] = useHomeOutdoor();
 
   const [saveForLater, setSaveForLater] = useSaveForLater();
   const [cart, setCart] = useCart();
@@ -68,7 +77,32 @@ const Item = () => {
     }
 
     if (params.from === 'kitchen-dishes') {
-      setCurrentProducts(kitcheDishes);
+      setCurrentProducts(kitcheDishesProduct);
+      setMainImg(currentProduct.images[0]);
+    }
+
+    if (params.from === 'smart-watches') {
+      setCurrentProducts(smartWatchesProduct);
+      setMainImg(currentProduct.images[0]);
+    }
+
+    if (params.from === 'kitchen-mixer') {
+      setCurrentProducts(kitchenMixerProduct);
+      setMainImg(currentProduct.images[0]);
+    }
+
+    if (params.from === 'blenders') {
+      setCurrentProducts(blendersProduct);
+      setMainImg(currentProduct.images[0]);
+    }
+
+    if (params.from === 'home-appliance') {
+      setCurrentProducts(homeApplianceProduct);
+      setMainImg(currentProduct.images[0]);
+    }
+
+    if (params.from === 'coffee-maker') {
+      setCurrentProducts(coffeeMakerProduct);
       setMainImg(currentProduct.images[0]);
     }
   }, [
@@ -76,7 +110,12 @@ const Item = () => {
     softChairsProduct,
     sofaChairProduct,
     currentProduct,
-    kitcheDishes,
+    kitcheDishesProduct,
+    smartWatchesProduct,
+    kitchenMixerProduct,
+    blendersProduct,
+    homeApplianceProduct,
+    coffeeMakerProduct,
   ]);
 
   useEffect(() => {
