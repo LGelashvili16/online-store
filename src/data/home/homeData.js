@@ -67,16 +67,16 @@ export const section1Data = [
   'More category',
 ];
 
-export const section2Discounted = [
-  { image: smartWatchesImg, title: 'Smart watches', discount: '-25%' },
-  { image: laptopsImg, title: 'Laptops', discount: '-15%' },
-  { image: canonCamerasImg, title: 'Canon cameras', discount: '-40%' },
-  { image: headphonesImg, title: 'Headphones', discount: '-25%' },
-  { image: smartphonesImg, title: 'Smartphones', discount: '-25%' },
-  { image: laptopsImg, title: 'Laptops', discount: '-15%' },
-  { image: headphonesImg, title: 'Headphones', discount: '-25%' },
-  { image: canonCamerasImg, title: 'Canon cameras', discount: '-40%' },
-];
+// export const section2Discounted = [
+//   { image: smartWatchesImg, title: 'Smart watches', discount: '-25%' },
+//   { image: laptopsImg, title: 'Laptops', discount: '-15%' },
+//   { image: canonCamerasImg, title: 'Canon cameras', discount: '-40%' },
+//   { image: headphonesImg, title: 'Headphones', discount: '-25%' },
+//   { image: smartphonesImg, title: 'Smartphones', discount: '-25%' },
+//   { image: laptopsImg, title: 'Laptops', discount: '-15%' },
+//   { image: headphonesImg, title: 'Headphones', discount: '-25%' },
+//   { image: canonCamerasImg, title: 'Canon cameras', discount: '-40%' },
+// ];
 
 // export const section2HomeOutdoor = [
 //   { title: 'Soft chairs', price: '19', image: softChairsImg },

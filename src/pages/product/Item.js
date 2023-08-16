@@ -21,6 +21,7 @@ import nextIcon from '../../assets/item/arrow_forward-resp.png';
 
 import { useCart } from '../../contexts/CartContext';
 import {
+  useConsumerElectronics,
   useHomeOutdoor,
   useMobileAccessoryProducts,
 } from '../../contexts/ProductsContext';
@@ -39,6 +40,14 @@ const Item = () => {
     homeApplianceProduct,
     coffeeMakerProduct,
   ] = useHomeOutdoor();
+
+  const [
+    headphonesProduct,
+    gamingSetProduct,
+    smartphonesProduct,
+    camerasProduct,
+    pcLaptopProduct,
+  ] = useConsumerElectronics();
 
   const [saveForLater, setSaveForLater] = useSaveForLater();
   const [cart, setCart] = useCart();
@@ -105,6 +114,36 @@ const Item = () => {
       setCurrentProducts(coffeeMakerProduct);
       setMainImg(currentProduct.images[0]);
     }
+
+    if (params.from === 'headphones') {
+      setCurrentProducts(headphonesProduct);
+      setMainImg(currentProduct.images[0]);
+    }
+
+    if (params.from === 'gaming-set') {
+      setCurrentProducts(gamingSetProduct);
+      setMainImg(currentProduct.images[0]);
+    }
+
+    if (params.from === 'smartphones') {
+      setCurrentProducts(smartphonesProduct);
+      setMainImg(currentProduct.images[0]);
+    }
+
+    if (params.from === 'cameras') {
+      setCurrentProducts(camerasProduct);
+      setMainImg(currentProduct.images[0]);
+    }
+
+    if (params.from === 'laptops-&-pc') {
+      setCurrentProducts(pcLaptopProduct);
+      setMainImg(currentProduct.images[0]);
+    }
+
+    if (params.name === 'smart-watches') {
+      setCurrentProducts(smartWatchesProduct);
+      setMainImg(currentProduct.images[0]);
+    }
   }, [
     params,
     softChairsProduct,
@@ -116,6 +155,11 @@ const Item = () => {
     blendersProduct,
     homeApplianceProduct,
     coffeeMakerProduct,
+    headphonesProduct,
+    gamingSetProduct,
+    smartphonesProduct,
+    camerasProduct,
+    pcLaptopProduct,
   ]);
 
   useEffect(() => {

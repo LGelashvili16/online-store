@@ -26,6 +26,13 @@
   pointer-events: none;
 }
 
+.discounted-product-img img {
+  min-width: 129px;
+  max-height: 128px;
+
+  /* background-position: center; */
+}
+
 .discounted-product-title {
   margin-top: 11px;
 

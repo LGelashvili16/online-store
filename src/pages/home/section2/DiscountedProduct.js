@@ -1,8 +1,22 @@
+import { useNavigate } from 'react-router-dom';
 import styles from './DiscountedProduct.module.css';
 
 const DiscountedProduct = (props) => {
+  const navigate = useNavigate();
+
+  const categoryHandler = (name) => {
+    if (!props.isDragging) {
+      navigate(`consumer-electronics/category/${name.replaceAll(' ', '-')}`);
+    }
+  };
+
   return (
-    <div className={styles['discounted-product-card']}>
+    <div
+      className={styles['discounted-product-card']}
+      onClick={() => {
+        categoryHandler(props.title.toLowerCase());
+      }}
+    >
       <div className={styles['discounted-product-img']}>
         <img src={props.image} alt={props.title} />
       </div>

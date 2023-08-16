@@ -122,6 +122,7 @@ export const consumerElectronicsCategories = [
     id: 1,
     title: 'Smart watches',
     price: '19',
+    discount: '-25%',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
     images: [smartWatches2Img],
@@ -130,6 +131,7 @@ export const consumerElectronicsCategories = [
     id: 2,
     title: 'Cameras',
     price: '89',
+    discount: '-25%',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
     images: [camerasImg],
@@ -138,6 +140,7 @@ export const consumerElectronicsCategories = [
     id: 3,
     title: 'Headphones',
     price: '10',
+    discount: '-20%',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
     images: [headphones2Img],
@@ -146,6 +149,7 @@ export const consumerElectronicsCategories = [
     id: 4,
     title: 'Smart watches',
     price: '90',
+    discount: '-15%',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
     images: [kitchenMixerImg],
@@ -154,6 +158,7 @@ export const consumerElectronicsCategories = [
     id: 5,
     title: 'Gaming set',
     price: '35',
+    discount: '-15%',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
     images: [gamingSetImg],
@@ -162,6 +167,7 @@ export const consumerElectronicsCategories = [
     id: 6,
     title: 'Laptops & PC',
     price: '340',
+    discount: '-15%',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
     images: [laptopsAndPCImg],
@@ -170,6 +176,7 @@ export const consumerElectronicsCategories = [
     id: 7,
     title: 'Smartphones',
     price: '19',
+    discount: '-25%',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
     images: [smartphones2Img],
@@ -178,6 +185,7 @@ export const consumerElectronicsCategories = [
     id: 8,
     title: 'Gaming set',
     price: '35',
+    discount: '-20%',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
     images: [gamingSetImg],
@@ -187,6 +195,7 @@ export const consumerElectronicsCategories = [
     id: 9,
     title: 'Smart watches',
     price: '19',
+    discount: '-25%',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
     images: [smartWatches2Img],
@@ -195,6 +204,7 @@ export const consumerElectronicsCategories = [
     id: 10,
     title: 'Cameras',
     price: '89',
+    discount: '-25%',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
     images: [camerasImg],
@@ -203,6 +213,7 @@ export const consumerElectronicsCategories = [
     id: 11,
     title: 'Headphones',
     price: '10',
+    discount: '-30%',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
     images: [headphones2Img],
@@ -211,6 +222,7 @@ export const consumerElectronicsCategories = [
     id: 12,
     title: 'Smart watches',
     price: '90',
+    discount: '-10%',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
     images: [kitchenMixerImg],
@@ -219,6 +231,7 @@ export const consumerElectronicsCategories = [
     id: 13,
     title: 'Gaming set',
     price: '35',
+    discount: '-25%',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
     images: [gamingSetImg],
@@ -227,6 +240,7 @@ export const consumerElectronicsCategories = [
     id: 14,
     title: 'Laptops & PC',
     price: '340',
+    discount: '-25%',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
     images: [laptopsAndPCImg],
@@ -235,6 +249,7 @@ export const consumerElectronicsCategories = [
     id: 15,
     title: 'Smartphones',
     price: '19',
+    discount: '-15%',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
     images: [smartphones2Img],
@@ -243,6 +258,7 @@ export const consumerElectronicsCategories = [
     id: 16,
     title: 'Laptops & PC',
     price: '240',
+    discount: '-25%',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
     images: [laptopsAndPCImg],

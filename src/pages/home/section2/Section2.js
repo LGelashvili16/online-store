@@ -25,6 +25,7 @@ const Section2 = () => {
   const row2ProductsRef = useRef();
   const [row3ProductsWidth, setRow3ProductsWidth] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
+  const [isDraggingElectronics, setIsDraggingElectronics] = useState(false);
   const row3ProductsRef = useRef();
 
   const navigate = useNavigate();
@@ -49,6 +50,14 @@ const Section2 = () => {
 
   const onDragEnd = () => {
     setIsDragging(false);
+  };
+
+  const onElectronicsDragStart = () => {
+    setIsDraggingElectronics(true);
+  };
+
+  const onelectronicsDragEnd = () => {
+    setIsDraggingElectronics(false);
   };
 
   const homeAndOutdoorHandler = () => {
@@ -78,18 +87,21 @@ const Section2 = () => {
           ref={row1ProductsRef}
         >
           <motion.div
+            onDragStart={onDragStart}
+            onDragEnd={onDragEnd}
             drag="x"
             dragConstraints={{ right: 0, left: -row1ProductsWidth }}
             whileTap={{ cursor: 'grabbing' }}
             className={styles['section2-row1-products']}
           >
-            {section2Discounted.map((product, index) => {
+            {consumerElectronicsCategories.map((product, index) => {
               return (
                 <DiscountedProduct
                   key={index}
-                  image={product.image}
+                  image={product.images[0]}
                   title={product.title}
                   discount={product.discount}
+                  isDragging={isDragging}
                 />
               );
             })}
@@ -167,6 +179,10 @@ const Section2 = () => {
           ref={row3ProductsRef}
         >
           <motion.div
+            // onDragStart={onElectronicsDragStart}
+            // onDragEnd={onelectronicsDragEnd}
+            onDragStart={onDragStart}
+            onDragEnd={onDragEnd}
             drag="x"
             dragConstraints={{ right: 0, left: -row3ProductsWidth }}
             whileDrag={{ cursor: 'grabbing' }}
@@ -179,6 +195,7 @@ const Section2 = () => {
                   title={prod.title}
                   price={prod.price}
                   image={prod.images[0]}
+                  isDragging={isDragging}
                 />
               );
             })}
