@@ -24,6 +24,7 @@ import {
   useConsumerElectronics,
   useHomeOutdoor,
   useMobileAccessoryProducts,
+  useRecommendedProducts,
 } from '../../contexts/ProductsContext';
 import { useSaveForLater } from '../../contexts/SaveForLaterContext';
 
@@ -48,6 +49,8 @@ const Item = () => {
     camerasProduct,
     pcLaptopProduct,
   ] = useConsumerElectronics();
+
+  const [recommendedProducts] = useRecommendedProducts();
 
   const [saveForLater, setSaveForLater] = useSaveForLater();
   const [cart, setCart] = useCart();
@@ -140,8 +143,13 @@ const Item = () => {
       setMainImg(currentProduct.images[0]);
     }
 
-    if (params.name === 'smart-watches') {
+    if (params.from === 'smart-watches') {
       setCurrentProducts(smartWatchesProduct);
+      setMainImg(currentProduct.images[0]);
+    }
+
+    if (params.from === 'recommended') {
+      setCurrentProducts(recommendedProducts);
       setMainImg(currentProduct.images[0]);
     }
   }, [
@@ -160,6 +168,7 @@ const Item = () => {
     smartphonesProduct,
     camerasProduct,
     pcLaptopProduct,
+    recommendedProducts,
   ]);
 
   useEffect(() => {

@@ -12,7 +12,7 @@ const SavedForLaterCard = ({ product, isDragging }) => {
 
   const productClickHandler = () => {
     if (!isDragging) {
-      navigate(`../product/${`mobile-accessory`}/${product.id}`);
+      navigate(`../product/${product.path}/${parseInt(product.id)}`);
     }
   };
 

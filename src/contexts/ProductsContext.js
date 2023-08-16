@@ -19,10 +19,12 @@ import {
   pcLaptop,
   smartphones,
 } from '../data/consumerElectronics/consumerElectronicsData';
+import { recommended } from '../data/home/homeData';
 
 const moibleAccessoryContext = createContext();
 const homeOutdoorContext = createContext();
 const consumerElectronicsContext = createContext();
+const recommendedContext = createContext();
 
 export const useMobileAccessoryProducts = () => {
   return useContext(moibleAccessoryContext);
@@ -34,6 +36,10 @@ export const useHomeOutdoor = () => {
 
 export const useConsumerElectronics = () => {
   return useContext(consumerElectronicsContext);
+};
+
+export const useRecommendedProducts = () => {
+  return useContext(recommendedContext);
 };
 
 export const ProductsProvider = ({ children }) => {
@@ -59,6 +65,9 @@ export const ProductsProvider = ({ children }) => {
   const [camerasProduct, setCamerasProduct] = useState(cameras);
   const [pcLaptopProduct, setPcLaptopProduct] = useState(pcLaptop);
 
+  // Recommended
+  const [recommendedProducts, ,] = useState(recommended);
+
   return (
     <homeOutdoorContext.Provider
       value={[
@@ -81,11 +90,13 @@ export const ProductsProvider = ({ children }) => {
           pcLaptopProduct,
         ]}
       >
-        <moibleAccessoryContext.Provider
-          value={[mobileAccessoryProducts, setMobileAccessoryProducts]}
-        >
-          {children}
-        </moibleAccessoryContext.Provider>
+        <recommendedContext.Provider value={[recommendedProducts]}>
+          <moibleAccessoryContext.Provider
+            value={[mobileAccessoryProducts, setMobileAccessoryProducts]}
+          >
+            {children}
+          </moibleAccessoryContext.Provider>
+        </recommendedContext.Provider>
       </consumerElectronicsContext.Provider>
     </homeOutdoorContext.Provider>
   );

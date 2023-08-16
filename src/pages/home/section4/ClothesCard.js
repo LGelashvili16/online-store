@@ -1,15 +1,22 @@
+import { useNavigate } from 'react-router-dom';
 import style from './ClothesCard.module.css';
 
-const ClothesCard = (props) => {
+const ClothesCard = ({ product }) => {
+  const navigate = useNavigate();
+
+  const productClickHandler = (e) => {
+    navigate(`product/${`${product.path}`}/${parseInt(product.id)}`);
+  };
+
   return (
-    <div className={style['clothes-card']}>
+    <div className={style['clothes-card']} onClick={productClickHandler}>
       <div className={style['clothes-card-img']}>
-        <img src={props.image} alt="" />
+        <img src={product.images[0]} alt="" />
       </div>
-      <h4 className={style['clothes-card-price']}>{props.price}</h4>
+      <h4 className={style['clothes-card-price']}>{product.price}</h4>
       <div className={style['clothes-card-description']}>
-        <p>{props.description}</p>
-        <p>{props.description2}</p>
+        <p>{product.description}</p>
+        <p>{product.description2}</p>
       </div>
     </div>
   );

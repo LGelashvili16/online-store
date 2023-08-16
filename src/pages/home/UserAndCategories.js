@@ -1,10 +1,10 @@
-import styles from './Section1.module.css';
+import styles from './UserAndCategories.module.css';
 import avatar from '../../assets/home/section1/Avatar.svg';
 
 import { section1Data } from '../../data/home/homeData';
 import { Link, useNavigate } from 'react-router-dom';
 
-const Section1 = () => {
+const UserAndCategories = () => {
   const navigate = useNavigate();
 
   const addActiveHandler = (e) => {
@@ -83,4 +83,4 @@ const Section1 = () => {
   );
 };
 
-export default Section1;
+export default UserAndCategories;
