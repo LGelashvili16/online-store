@@ -16,16 +16,16 @@ const ProductItem = ({ product, layout }) => {
   const [mobileAccessoryProducts, setMobileAccessoryProducts] =
     useMobileAccessoryProducts();
 
-  const [
-    softChairsProduct,
-    sofaChairProduct,
-    kitcheDishesProduct,
-    smartWatchesProduct,
-    kitchenMixerProduct,
-    blendersProduct,
-    homeApplianceProduct,
-    coffeeMakerProduct,
-  ] = useHomeOutdoor();
+  // const [
+  //   softChairsProduct,
+  //   sofaChairProduct,
+  //   kitcheDishesProduct,
+  //   smartWatchesProduct,
+  //   kitchenMixerProduct,
+  //   blendersProduct,
+  //   homeApplianceProduct,
+  //   coffeeMakerProduct,
+  // ] = useHomeOutdoor();
 
   const defaultIsSaved =
     JSON.parse(window.localStorage.getItem('saved')) !== null &&

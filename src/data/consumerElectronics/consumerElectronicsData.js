@@ -176,11 +176,11 @@ export const consumerElectronicsCategories = [
   },
   {
     id: 8,
-    title: 'Electric kattle',
-    price: '240',
+    title: 'Gaming set',
+    price: '35',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
-    images: [electricKettleImg],
+    images: [gamingSetImg],
   },
 
   {
@@ -295,7 +295,7 @@ export const headphones = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'headphones',
     images: [
       headphone2,
       headphone1,
@@ -322,7 +322,7 @@ export const headphones = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'headphones',
     images: [
       headphone3,
       headphone1,
@@ -349,7 +349,7 @@ export const headphones = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'headphones',
     images: [
       headphone4,
       headphone3,
@@ -376,7 +376,7 @@ export const headphones = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'headphones',
     images: [
       headphone5,
       headphone6,
@@ -403,7 +403,7 @@ export const headphones = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'headphones',
     images: [
       headphone6,
       headphone4,
@@ -430,7 +430,7 @@ export const headphones = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'headphones',
     images: [
       headphone7,
       headphone6,
@@ -457,7 +457,7 @@ export const headphones = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'headphones',
     images: [
       headphone8,
       headphone2,
@@ -487,7 +487,7 @@ export const gamingSet = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'headphones',
+    path: 'gaming-set',
     images: [
       headphone8,
       headphone2,
@@ -514,7 +514,7 @@ export const gamingSet = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'gaming-set',
     images: [
       headphone2,
       headphone1,
@@ -541,7 +541,7 @@ export const gamingSet = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'gaming-set',
     images: [
       headphone3,
       headphone1,
@@ -568,7 +568,7 @@ export const gamingSet = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'gaming-set',
     images: [
       headphone4,
       headphone3,
@@ -595,7 +595,7 @@ export const gamingSet = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'gaming-set',
     images: [
       headphone5,
       headphone6,
@@ -622,7 +622,7 @@ export const gamingSet = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'gaming-set',
     images: [
       headphone6,
       headphone4,
@@ -649,7 +649,7 @@ export const gamingSet = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'gaming-set',
     images: [
       headphone7,
       headphone6,
@@ -676,7 +676,7 @@ export const gamingSet = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'gaming-set',
     images: [
       headphone2,
       headphone4,
@@ -706,7 +706,7 @@ export const smartphones = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'headphones',
+    path: 'smartphones',
     images: [
       smartphone1,
       smartphone2,
@@ -733,7 +733,7 @@ export const smartphones = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'smartphones',
     images: [
       smartphone2,
       smartphone1,
@@ -760,7 +760,7 @@ export const smartphones = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'smartphones',
     images: [
       smartphone3,
       smartphone1,
@@ -787,7 +787,7 @@ export const smartphones = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'smartphones',
     images: [
       smartphone4,
       smartphone5,
@@ -814,7 +814,7 @@ export const smartphones = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'smartphones',
     images: [
       smartphone5,
       smartphone4,
@@ -841,7 +841,7 @@ export const smartphones = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'smartphones',
     images: [
       smartphone2,
       smartphone3,
@@ -868,7 +868,7 @@ export const smartphones = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'smartphones',
     images: [
       smartphone1,
       smartphone3,
@@ -895,7 +895,7 @@ export const smartphones = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'smartphones',
     images: [
       smartphone5,
       smartphone3,
@@ -925,7 +925,7 @@ export const cameras = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'headphones',
+    path: 'cameras',
     images: [camera1, camera2, camera3, camera4, camera5, camera6],
   },
   {
@@ -945,7 +945,7 @@ export const cameras = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'cameras',
     images: [camera2, camera1, camera3, camera4, camera5, camera6],
   },
   {
@@ -965,7 +965,7 @@ export const cameras = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'cameras',
     images: [camera3, camera2, camera1, camera4, camera5, camera6],
   },
   {
@@ -985,7 +985,7 @@ export const cameras = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'cameras',
     images: [camera4, camera3, camera2, camera1, camera5, camera6],
   },
   {
@@ -1005,7 +1005,7 @@ export const cameras = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'cameras',
     images: [camera5, camera4, camera3, camera2, camera1, camera6],
   },
   {
@@ -1025,7 +1025,7 @@ export const cameras = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'cameras',
     images: [camera6, camera1, camera2, camera3, camera4, camera5],
   },
   {
@@ -1045,7 +1045,7 @@ export const cameras = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'cameras',
     images: [camera1, camera2, camera3, camera4, camera6, camera5],
   },
   {
@@ -1065,7 +1065,7 @@ export const cameras = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'cameras',
     images: [camera2, camera1, camera2, camera3, camera6, camera5],
   },
 ];
@@ -1088,7 +1088,7 @@ export const pcLaptop = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'headphones',
+    path: 'laptops-&-pc',
     images: [laptop1, laptop2, laptop3, laptop4, laptop5, laptop6],
   },
   {
@@ -1108,7 +1108,7 @@ export const pcLaptop = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'laptops-&-pc',
     images: [laptop2, laptop3, laptop4, laptop5, laptop6, laptop1],
   },
   {
@@ -1128,7 +1128,7 @@ export const pcLaptop = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'laptops-&-pc',
     images: [laptop3, laptop1, laptop2, laptop3, laptop5, laptop6],
   },
   {
@@ -1148,7 +1148,7 @@ export const pcLaptop = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'laptops-&-pc',
     images: [laptop4, laptop5, laptop6, laptop2, laptop3, laptop1],
   },
   {
@@ -1168,7 +1168,7 @@ export const pcLaptop = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'laptops-&-pc',
     images: [laptop5, laptop4, laptop3, laptop2, laptop1, laptop6],
   },
   {
@@ -1188,7 +1188,7 @@ export const pcLaptop = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'laptops-&-pc',
     images: [laptop6, laptop5, laptop4, laptop3, laptop2, laptop1],
   },
   {
@@ -1208,7 +1208,7 @@ export const pcLaptop = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'laptops-&-pc',
     images: [laptop2, laptop1, laptop2, laptop3, laptop4, laptop5],
   },
   {
@@ -1228,7 +1228,7 @@ export const pcLaptop = [
       seller: 'Artel Market',
     },
     saved: false,
-    path: 'soft-chairs',
+    path: 'laptops-&-pc',
     images: [laptop1, laptop2, laptop3, laptop4, laptop5, laptop6],
   },
 ];

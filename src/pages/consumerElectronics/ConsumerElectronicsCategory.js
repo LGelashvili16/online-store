@@ -17,6 +17,7 @@ import Pagination from '../../components/pagination/Pagination';
 
 // import { products } from '../../data/mobileAccessories/mobileAccessoriesData';
 import {
+  useConsumerElectronics,
   useHomeOutdoor,
   useMobileAccessoryProducts,
 } from '../../contexts/ProductsContext';
@@ -37,18 +38,18 @@ import { useParams } from 'react-router-dom';
 const ConsumerElectronicsCategory = () => {
   const [mobileAccessoryProducts, setMobileAccessoryProducts] =
     useMobileAccessoryProducts();
-  const [
-    softChairsProduct,
-    sofaChairProduct,
-    kitcheDishesProduct,
-    smartWatchesProduct,
-    kitchenMixerProduct,
-    blendersProduct,
-    homeApplianceProduct,
-    coffeeMakerProduct,
-  ] = useHomeOutdoor();
 
-  const [currentProducts, setCurrentProducts] = useState(softChairsProduct);
+  const [
+    headphonesProduct,
+    gamingSetProduct,
+    smartphonesProduct,
+    camerasProduct,
+    pcLaptopProduct,
+  ] = useConsumerElectronics();
+
+  const [, , , smartWatchesProduct] = useHomeOutdoor();
+
+  const [currentProducts, setCurrentProducts] = useState(headphonesProduct);
 
   const [gridActive, setGridActive] = useState(false);
   const [listActive, setListActive] = useState(true);
@@ -65,47 +66,37 @@ const ConsumerElectronicsCategory = () => {
   const params = useParams();
 
   useEffect(() => {
-    if (params.name === 'soft-chairs') {
-      setCurrentProducts(softChairsProduct);
+    if (params.name === 'headphones') {
+      setCurrentProducts(headphonesProduct);
     }
 
-    if (params.name === 'sofa-&-chair') {
-      setCurrentProducts(sofaChairProduct);
+    if (params.name === 'gaming-set') {
+      setCurrentProducts(gamingSetProduct);
     }
 
-    if (params.name === 'kitchen-dishes') {
-      setCurrentProducts(kitcheDishesProduct);
+    if (params.name === 'smartphones') {
+      setCurrentProducts(smartphonesProduct);
+    }
+
+    if (params.name === 'cameras') {
+      setCurrentProducts(camerasProduct);
+    }
+
+    if (params.name === 'laptops-&-pc') {
+      setCurrentProducts(pcLaptopProduct);
     }
 
     if (params.name === 'smart-watches') {
       setCurrentProducts(smartWatchesProduct);
     }
-
-    if (params.name === 'kitchen-mixer') {
-      setCurrentProducts(kitchenMixerProduct);
-    }
-
-    if (params.name === 'blenders') {
-      setCurrentProducts(blendersProduct);
-    }
-
-    if (params.name === 'home-appliance') {
-      setCurrentProducts(homeApplianceProduct);
-    }
-
-    if (params.name === 'coffee-maker') {
-      setCurrentProducts(coffeeMakerProduct);
-    }
   }, [
     params.name,
-    softChairsProduct,
-    sofaChairProduct,
-    kitcheDishesProduct,
+    headphonesProduct,
+    gamingSetProduct,
+    smartphonesProduct,
+    camerasProduct,
+    pcLaptopProduct,
     smartWatchesProduct,
-    kitchenMixerProduct,
-    blendersProduct,
-    homeApplianceProduct,
-    coffeeMakerProduct,
   ]);
 
   // Calculate products quantity

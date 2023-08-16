@@ -98,25 +98,25 @@ export const section2Discounted = [
 //   { title: 'Coffee maker', price: '10', image: coffeeMakerImg },
 // ];
 
-export const section2Electronics = [
-  { title: 'Smart watches', price: '19', image: smartWatches2Img },
-  { title: 'Cameras', price: '89', image: camerasImg },
-  { title: 'Headphones', price: '10', image: headphones2Img },
-  { title: 'Smart watches', price: '90', image: kitchenMixerImg },
-  { title: 'Gaming set', price: '35', image: gamingSetImg },
-  { title: 'Laptops & PC', price: '340', image: laptopsAndPCImg },
-  { title: 'Smartphones', price: '19', image: smartphones2Img },
-  { title: 'Electric kattle', price: '240', image: electricKettleImg },
+// export const section2Electronics = [
+//   { title: 'Smart watches', price: '19', image: smartWatches2Img },
+//   { title: 'Cameras', price: '89', image: camerasImg },
+//   { title: 'Headphones', price: '10', image: headphones2Img },
+//   { title: 'Smart watches', price: '90', image: kitchenMixerImg },
+//   { title: 'Gaming set', price: '35', image: gamingSetImg },
+//   { title: 'Laptops & PC', price: '340', image: laptopsAndPCImg },
+//   { title: 'Smartphones', price: '19', image: smartphones2Img },
+//   { title: 'Electric kattle', price: '240', image: electricKettleImg },
 
-  { title: 'Smart watches', price: '19', image: smartWatches2Img },
-  { title: 'Cameras', price: '89', image: camerasImg },
-  { title: 'Headphones', price: '10', image: headphones2Img },
-  { title: 'Smart watches', price: '90', image: kitchenMixerImg },
-  { title: 'Gaming set', price: '35', image: gamingSetImg },
-  { title: 'Laptops & PC', price: '340', image: laptopsAndPCImg },
-  { title: 'Smartphones', price: '19', image: smartphones2Img },
-  { title: 'Electric kattle', price: '240', image: electricKettleImg },
-];
+//   { title: 'Smart watches', price: '19', image: smartWatches2Img },
+//   { title: 'Cameras', price: '89', image: camerasImg },
+//   { title: 'Headphones', price: '10', image: headphones2Img },
+//   { title: 'Smart watches', price: '90', image: kitchenMixerImg },
+//   { title: 'Gaming set', price: '35', image: gamingSetImg },
+//   { title: 'Laptops & PC', price: '340', image: laptopsAndPCImg },
+//   { title: 'Smartphones', price: '19', image: smartphones2Img },
+//   { title: 'Electric kattle', price: '240', image: electricKettleImg },
+// ];
 
 export const pcsAmount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 

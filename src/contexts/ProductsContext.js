@@ -40,6 +40,7 @@ export const ProductsProvider = ({ children }) => {
   const [mobileAccessoryProducts, setMobileAccessoryProducts] =
     useState(products);
 
+  // Home and outdoor
   const [softChairsProduct, setSoftChairsProduct] = useState(softChairs);
   const [sofaChairProduct, setSofaChairProduct] = useState(sofaChair);
   const [kitchenDishesProduct, setKitchenDishesProduct] =
@@ -51,6 +52,7 @@ export const ProductsProvider = ({ children }) => {
     useState(homeAppliance);
   const [coffeeMakerProduct, setCoffeeMakerProduct] = useState(coffeeMaker);
 
+  // Consumer electronics
   const [headphonesProduct, setHeadphonesProduct] = useState(headphones);
   const [gamingSetProduct, setGamingSetProduct] = useState(gamingSet);
   const [smartphonesProduct, setSmartphonesProduct] = useState(smartphones);

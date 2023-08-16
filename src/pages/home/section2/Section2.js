@@ -16,6 +16,7 @@ import CountDown from './CountDown';
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { consumerElectronicsCategories } from '../../../data/consumerElectronics/consumerElectronicsData';
 
 const Section2 = () => {
   const [row1ProductsWidth, setRow1ProductsWidth] = useState(0);
@@ -171,13 +172,13 @@ const Section2 = () => {
             whileDrag={{ cursor: 'grabbing' }}
             className={styles['section2-row3-products']}
           >
-            {section2Electronics.map((prod, index) => {
+            {consumerElectronicsCategories.map((prod, index) => {
               return (
                 <ElectronicsProduct
                   key={index}
                   title={prod.title}
                   price={prod.price}
-                  image={prod.image}
+                  image={prod.images[0]}
                 />
               );
             })}
