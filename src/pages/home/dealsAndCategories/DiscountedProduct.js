@@ -6,7 +6,7 @@ const DiscountedProduct = (props) => {
 
   const categoryHandler = (name) => {
     if (!props.isDragging) {
-      navigate(`consumer-electronics/category/${name.replaceAll(' ', '-')}`);
+      navigate(`consumer-electronics/${name.replaceAll(' ', '-')}`);
     }
   };
 

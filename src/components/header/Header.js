@@ -73,6 +73,10 @@ const Header = () => {
     navigate(link);
   };
 
+  const profileHandler = () => {
+    navigate('login');
+  };
+
   useEffect(() => {
     const mobileGoBackHandler = () => {
       setMobileGoBack(location.pathname);
@@ -100,7 +104,7 @@ const Header = () => {
         setWindowSize(window.innerWidth);
       });
     };
-  }, [location.pathname]);
+  }, [location.pathname, mobileGoBack]);
 
   const windowClickHandler = (e) => {
     if (e.target !== menuRef.current && e.target !== categoriesRef.current) {
@@ -120,7 +124,7 @@ const Header = () => {
     <header>
       <div
         className={`${
-          mobileGoBack !== '/online-store/' && windowSize <= 480
+          mobileGoBack !== '/online-store' && windowSize <= 480
             ? styles['resp-header-top']
             : styles['header-top']
         } ${
@@ -132,7 +136,7 @@ const Header = () => {
       >
         <div
           className={`${
-            mobileGoBack !== '/online-store/' && windowSize <= 480
+            mobileGoBack !== '/online-store' && windowSize <= 480
               ? styles['hidden']
               : styles['resp-header-menu']
           }`}
@@ -200,12 +204,12 @@ const Header = () => {
 
         <div
           className={`${
-            mobileGoBack !== '/online-store/' && windowSize <= 480
+            mobileGoBack !== '/online-store' && windowSize <= 480
               ? styles['hidden']
               : styles['header-logo']
           }`}
         >
-          <Link to="/online-store/">
+          <Link to="/online-store">
             <img src={brandLogoImg} alt="Brand-Logo" />
           </Link>
         </div>
@@ -217,7 +221,7 @@ const Header = () => {
           //     : '/online-store/'
           // }
           className={`${
-            mobileGoBack !== '/online-store/' && windowSize <= 480
+            mobileGoBack !== '/online-store' && windowSize <= 480
               ? styles['resp-goBack-title']
               : styles['hidden']
           }`}
@@ -233,6 +237,8 @@ const Header = () => {
         <form
           className={`${styles['header-form']} ${
             (location.pathname.includes('cart') ||
+              location.pathname.includes('login') ||
+              location.pathname.includes('registration') ||
               location.pathname.includes('/product/mobile-accessory')) &&
             windowSize <= 480
               ? styles['hidden']
@@ -296,7 +302,10 @@ const Header = () => {
               : styles['header-user']
           }`}
         >
-          <div className={`${styles['header-user-item']} ${styles['profile']}`}>
+          <div
+            className={`${styles['header-user-item']} ${styles['profile']}`}
+            onClick={profileHandler}
+          >
             <img
               className={styles['profile-icon']}
               src={profileImg}
@@ -353,6 +362,7 @@ const Header = () => {
               className={styles['profile-icon']}
               src={respProfile}
               alt="Profile"
+              onClick={profileHandler}
             />
           </div>
         </div>

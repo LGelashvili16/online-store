@@ -9,7 +9,7 @@ import {
 
 import { homeOutdoorCategories } from '../../../data/homeAndOutdoor/homeAndOutdoorData';
 
-import styles from './Section2.module.css';
+import styles from './DealsAndCategories.module.css';
 import frwdArrowIcon from '../../../assets/home/section2/arrow_forward.svg';
 import CountDown from './CountDown';
 
@@ -18,7 +18,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { consumerElectronicsCategories } from '../../../data/consumerElectronics/consumerElectronicsData';
 
-const Section2 = () => {
+const DealsAndCategories = () => {
   const [row1ProductsWidth, setRow1ProductsWidth] = useState(0);
   const row1ProductsRef = useRef();
   const [row2ProductsWidth, setRow2ProductsWidth] = useState(0);
@@ -50,14 +50,6 @@ const Section2 = () => {
 
   const onDragEnd = () => {
     setIsDragging(false);
-  };
-
-  const onElectronicsDragStart = () => {
-    setIsDraggingElectronics(true);
-  };
-
-  const onelectronicsDragEnd = () => {
-    setIsDraggingElectronics(false);
   };
 
   const homeAndOutdoorHandler = () => {
@@ -213,4 +205,4 @@ const Section2 = () => {
   );
 };
 
-export default Section2;
+export default DealsAndCategories;

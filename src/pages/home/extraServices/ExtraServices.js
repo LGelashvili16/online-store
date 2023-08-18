@@ -1,4 +1,4 @@
-import style from './Section5.module.css';
+import style from './ExtraServices.module.css';
 import {
   section5ServicesData,
   section5SuppliersData,
@@ -6,7 +6,7 @@ import {
 import ServiceCard from './ServiceCard';
 import FlagCard from './FlagCard';
 
-const Section5 = () => {
+const ExtraServices = () => {
   return (
     <section className={style['section5']}>
       <h2 className={style['section5-services']}>Our extra services</h2>
@@ -41,4 +41,4 @@ const Section5 = () => {
   );
 };
 
-export default Section5;
+export default ExtraServices;

@@ -12,7 +12,7 @@ const Breadcrumbs = () => {
     .split('/')
     .filter((crumb) => crumb !== '')
     .map((crumb) => {
-      currentLink = +`/${crumb}`;
+      currentLink += `/${crumb}`;
 
       return (
         <div className={styles['crumb']} key={crumb}>

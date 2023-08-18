@@ -42,20 +42,20 @@ export const brands = [
 ];
 
 export const features = [
-  { id: 11, name: 'Metallic', checked: false },
-  { id: 22, name: 'Plastic cover', checked: false },
-  { id: 33, name: '8GB Ram', checked: false },
-  { id: 44, name: 'Super power', checked: false },
-  { id: 55, name: 'Large memory', checked: false },
-  { id: 66, name: 'Wireless charger', checked: false },
-  { id: 77, name: 'Fast charge', checked: false },
+  { id: '1f', name: 'Metallic', checked: false },
+  { id: '2f', name: 'Plastic cover', checked: false },
+  { id: '3f', name: '8GB Ram', checked: false },
+  { id: '4f', name: 'Super power', checked: false },
+  { id: '5f', name: 'Large memory', checked: false },
+  { id: '6f', name: 'Wireless charger', checked: false },
+  { id: '7f', name: 'Fast charge', checked: false },
 ];
 
 export const condition = ['Any', 'Refurbished', 'Brand new', 'Old items'];
 
 export const ratings = [
   {
-    id: 111,
+    id: '1r',
     name: '5 star',
     checked: false,
     stars: 5,
@@ -63,7 +63,7 @@ export const ratings = [
     emptyImg: emptyStar,
   },
   {
-    id: 222,
+    id: '2r',
     name: '4 star',
     checked: false,
     stars: 4,
@@ -71,7 +71,7 @@ export const ratings = [
     emptyImg: emptyStar,
   },
   {
-    id: 333,
+    id: '3r',
     name: '3 star',
     checked: false,
     stars: 3,
@@ -79,7 +79,7 @@ export const ratings = [
     emptyImg: emptyStar,
   },
   {
-    id: 444,
+    id: '4r',
     name: '2 star',
     checked: false,
     stars: 2,

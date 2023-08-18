@@ -92,16 +92,12 @@ const AsideList = ({
   };
 
   const filteredHandler = (e) => {
+    const identifier = +e.target.id;
     // Click on CHECKBOX & LABEL - Unchecked
-    if (
-      (e.target === e.target.closest('li').children[0] &&
-        e.target.closest('li').children[0].checked) ||
-      (e.target === e.target.closest('li').children[1] &&
-        e.target.closest('li').children[0].checked)
-    ) {
+    if (e.target.checked) {
       setBrandsForm((prev) => {
         return prev.map((elem) => {
-          if (elem.name === e.target.closest('li').children[1].innerHTML) {
+          if (elem.name === brands[identifier - 1].name) {
             elem.check = true;
           }
           return elem;
@@ -109,21 +105,16 @@ const AsideList = ({
       });
 
       setFilterItems((prev) => {
-        const final = [...prev, e.target.closest('li').children[1].innerHTML];
+        const final = [...prev, brands[identifier - 1].name];
         return final;
       });
     }
 
     // Click on CHECKBOX & LABEL - Checked
-    if (
-      (e.target === e.target.closest('li').children[0] &&
-        e.target.closest('li').children[0].checked === false) ||
-      (e.target === e.target.closest('li').children[1] &&
-        e.target.closest('li').children[0].checked === false)
-    ) {
+    if (!e.target.checked) {
       setBrandsForm((prev) => {
         return prev.map((elem) => {
-          if (elem.name === e.target.closest('li').children[1].innerHTML) {
+          if (elem.name === brands[identifier - 1].name) {
             elem.check = false;
           }
           return elem;
@@ -132,21 +123,19 @@ const AsideList = ({
 
       setFilterItems((prev) => {
         return prev.filter((elem) => {
-          return e.target.closest('li').children[1].innerHTML !== elem;
+          return brands[identifier - 1].name !== elem;
         });
       });
     }
   };
 
   const featuresListHandler = (e) => {
+    const identifier = parseInt(e.target.id);
     // Click on CHECKBOX & LABEL - Unchecked
-    if (
-      e.target === e.target.closest('li').children[0] &&
-      e.target.closest('li').children[0].checked
-    ) {
+    if (e.target.checked) {
       setFeaturesForm((prev) => {
         return prev.map((elem) => {
-          if (elem.name === e.target.closest('li').children[1].innerHTML) {
+          if (elem.name === features[identifier - 1].name) {
             elem.checked = true;
           }
           return elem;
@@ -154,21 +143,16 @@ const AsideList = ({
       });
 
       setFilterItems((prev) => {
-        const final = [...prev, e.target.closest('li').children[1].innerHTML];
+        const final = [...prev, features[identifier - 1].name];
         return final;
       });
     }
 
     // Click on CHECKBOX & LABEL - Checked
-    if (
-      (e.target === e.target.closest('li').children[0] &&
-        e.target.closest('li').children[0].checked === false) ||
-      (e.target === e.target.closest('li').children[1] &&
-        e.target.closest('li').children[0].checked === false)
-    ) {
+    if (!e.target.checked) {
       setFeaturesForm((prev) => {
         return prev.map((elem) => {
-          if (elem.name === e.target.closest('li').children[1].innerHTML) {
+          if (elem.name === features[identifier - 1].name) {
             elem.checked = false;
           }
           return elem;
@@ -177,7 +161,7 @@ const AsideList = ({
 
       setFilterItems((prev) => {
         return prev.filter((elem) => {
-          return e.target.closest('li').children[1].innerHTML !== elem;
+          return features[identifier - 1].name !== elem;
         });
       });
     }
@@ -185,41 +169,28 @@ const AsideList = ({
 
   // Ratings
   const ratingsHandler = (e) => {
-    if (
-      e.target === e.target.closest('li').children[0] ||
-      e.target === e.target.closest('li').children[1]
-    ) {
-      setRatingsForm((prev) => {
-        return prev.map((elem) => {
-          if (e.target.closest('li').children[0].name === elem.name) {
-            return { ...elem, checked: !elem.checked };
-          }
+    const identifier = parseInt(e.target.id);
 
-          return elem;
-        });
+    setRatingsForm((prev) => {
+      return prev.map((elem) => {
+        if (ratings[identifier - 1].name === elem.name) {
+          return { ...elem, checked: !elem.checked };
+        }
+
+        return elem;
       });
-    }
+    });
 
-    if (
-      (e.target === e.target.closest('li').children[0] &&
-        e.target.closest('li').children[0].checked) ||
-      (e.target === e.target.closest('li').children[1] &&
-        !e.target.closest('li').children[0].checked)
-    ) {
+    if (e.target.checked) {
       setFilterItems((prev) => {
-        return [...prev, e.target.closest('li').children[0].name];
+        return [...prev, ratings[identifier - 1].name];
       });
     }
 
-    if (
-      (e.target === e.target.closest('li').children[0] &&
-        !e.target.closest('li').children[0].checked) ||
-      (e.target === e.target.closest('li').children[1] &&
-        e.target.closest('li').children[0].checked)
-    ) {
+    if (!e.target.checked) {
       setFilterItems((prev) => {
         return prev.filter((elem) => {
-          return e.target.closest('li').children[0].name !== elem;
+          return ratings[identifier - 1].name !== elem;
         });
       });
     }
@@ -293,16 +264,12 @@ const AsideList = ({
             {showBrandsList
               ? shortBrandsForm.map((category, i) => {
                   return (
-                    <li
-                      className={styles['brands-li']}
-                      key={i}
-                      onClick={filteredHandler}
-                    >
+                    <li className={styles['brands-li']} key={i}>
                       <input
                         type="checkbox"
                         id={category.id}
                         checked={category.check}
-                        onChange={() => {}}
+                        onChange={filteredHandler}
                       />
                       <label htmlFor={category.id}>{category.name}</label>
                     </li>
@@ -310,13 +277,13 @@ const AsideList = ({
                 })
               : brands.map((category, i) => {
                   return (
-                    <li key={i} onClick={filteredHandler}>
+                    <li key={i}>
                       <input
                         type="checkbox"
                         name={category.name}
                         id={category.id}
                         checked={category.check}
-                        onChange={() => {}}
+                        onChange={filteredHandler}
                       />
                       <label htmlFor={category.id}>{category.name}</label>
                     </li>
@@ -354,17 +321,13 @@ const AsideList = ({
             {showFeaturesList
               ? shorFeaturesForm.map((cat, i) => {
                   return (
-                    <li
-                      className={styles['features-li']}
-                      key={i}
-                      onClick={featuresListHandler}
-                    >
+                    <li className={styles['features-li']} key={i}>
                       <input
                         type="checkbox"
                         name={cat.name}
                         id={cat.id}
                         checked={cat.checked}
-                        onChange={() => {}}
+                        onChange={featuresListHandler}
                       />
                       <label htmlFor={cat.id}>{cat.name}</label>
                     </li>
@@ -372,17 +335,13 @@ const AsideList = ({
                 })
               : features.map((cat, i) => {
                   return (
-                    <li
-                      className={styles['features-li']}
-                      key={i}
-                      onClick={featuresListHandler}
-                    >
+                    <li className={styles['features-li']} key={i}>
                       <input
                         type="checkbox"
                         name={cat.name}
                         id={cat.id}
                         checked={cat.checked}
-                        onChange={() => {}}
+                        onChange={featuresListHandler}
                       />
                       <label htmlFor={cat.id}>{cat.name}</label>
                     </li>
@@ -505,15 +464,15 @@ const AsideList = ({
           <ul className={styles['ratings-list']}>
             {ratings.map((rating) => {
               return (
-                <li key={rating.id} onClick={ratingsHandler}>
+                <li key={rating.id}>
                   <input
                     type="checkbox"
                     name={rating.name}
-                    id={rating.name}
+                    id={rating.id}
                     checked={rating.checked}
-                    onChange={() => {}}
+                    onChange={ratingsHandler}
                   />
-                  <label>
+                  <label htmlFor={rating.id}>
                     {generateStars(
                       rating.stars,
                       rating.filledImg,

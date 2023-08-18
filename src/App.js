@@ -29,6 +29,10 @@ import ConsumerElectronicsPage from './pages/consumerElectronics/ConsumerElectro
 import HomeAndOutdoorCategory from './pages/home-and-outdoor/HomeAndOutdoorCategory';
 import ConsumerElectronicsCategory from './pages/consumerElectronics/ConsumerElectronicsCategory';
 
+import Login from './pages/user/login/Login';
+import Registration from './pages/user/registration/Registration';
+import { UserProvider } from './contexts/UserContext';
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/online-store/" element={<RootLayout />}>
@@ -41,12 +45,12 @@ const router = createBrowserRouter(
       />
 
       <Route
-        path="home-and-outdoor/category/:name"
+        path="home-and-outdoor/:name"
         element={<HomeAndOutdoorCategory />}
       />
 
       <Route
-        path="consumer-electronics/category/:name"
+        path="consumer-electronics/:name"
         element={<ConsumerElectronicsCategory />}
       />
 
@@ -57,6 +61,9 @@ const router = createBrowserRouter(
       <Route path="cart" element={<Cart />} />
       <Route path="saved" element={<Saved />} />
 
+      <Route path="login" element={<Login />} />
+      <Route path="registration" element={<Registration />} />
+
       <Route path="*" element={<NotFound />} />
     </Route>
   )
@@ -65,13 +72,15 @@ const router = createBrowserRouter(
 function App() {
   return (
     <GlobalStateProvider>
-      <SaveForLaterStateProvider>
-        <ProductsProvider>
-          <CartStateProvider>
-            <RouterProvider router={router} />
-          </CartStateProvider>
-        </ProductsProvider>
-      </SaveForLaterStateProvider>
+      <UserProvider>
+        <SaveForLaterStateProvider>
+          <ProductsProvider>
+            <CartStateProvider>
+              <RouterProvider router={router} />
+            </CartStateProvider>
+          </ProductsProvider>
+        </SaveForLaterStateProvider>
+      </UserProvider>
     </GlobalStateProvider>
   );
 }

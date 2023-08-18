@@ -421,7 +421,7 @@ header {
   justify-content: center;
   align-items: flex-end;
 
-  min-height: 80px;
+  /* min-height: 80px; */
 }
 
 .resp-goBack-title {
@@ -467,6 +467,12 @@ header {
     align-items: center;
   }
 
+  .resp-header-top {
+    justify-content: space-between;
+    max-width: 360px;
+    padding-inline: 16px;
+  }
+
   .resp-header-product {
     width: 360px;
     min-height: 56px !important;
@@ -483,6 +489,7 @@ header {
     align-items: center;
     margin-top: 0;
     margin-left: 18px;
+    margin-right: 102px;
     height: 56px;
   }
 

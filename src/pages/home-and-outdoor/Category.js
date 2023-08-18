@@ -2,7 +2,7 @@
 
 import Breadcrumbs from '../../components/Breadcrumbs';
 import AsideList from './AsideList';
-import styles from './ConsumerElectronicsCategory.module.css';
+import styles from './Category.module.css';
 
 import expandArrow from '../../assets/mobile-accessories/expand_less.svg';
 import gridView from '../../assets/mobile-accessories/gridview.png';
@@ -17,7 +17,6 @@ import Pagination from '../../components/pagination/Pagination';
 
 // import { products } from '../../data/mobileAccessories/mobileAccessoriesData';
 import {
-  useConsumerElectronics,
   useHomeOutdoor,
   useMobileAccessoryProducts,
 } from '../../contexts/ProductsContext';
@@ -30,26 +29,26 @@ import {
   features,
   condition,
   ratings,
-} from '../../data/consumerElectronics/consumerElectronicsData';
+} from '../../data/homeAndOutdoor/homeAndOutdoorData';
 
 import MayAlsoLike from './mayAlsoLike/MayAlsoLike';
 import { useParams } from 'react-router-dom';
 
-const ConsumerElectronicsCategory = () => {
+const Category = () => {
   const [mobileAccessoryProducts, setMobileAccessoryProducts] =
     useMobileAccessoryProducts();
-
   const [
-    headphonesProduct,
-    gamingSetProduct,
-    smartphonesProduct,
-    camerasProduct,
-    pcLaptopProduct,
-  ] = useConsumerElectronics();
+    softChairsProduct,
+    sofaChairProduct,
+    kitcheDishesProduct,
+    smartWatchesProduct,
+    kitchenMixerProduct,
+    blendersProduct,
+    homeApplianceProduct,
+    coffeeMakerProduct,
+  ] = useHomeOutdoor();
 
-  const [, , , smartWatchesProduct] = useHomeOutdoor();
-
-  const [currentProducts, setCurrentProducts] = useState(headphonesProduct);
+  const [currentProducts, setCurrentProducts] = useState(softChairsProduct);
 
   const [gridActive, setGridActive] = useState(false);
   const [listActive, setListActive] = useState(true);
@@ -66,37 +65,47 @@ const ConsumerElectronicsCategory = () => {
   const params = useParams();
 
   useEffect(() => {
-    if (params.name === 'headphones') {
-      setCurrentProducts(headphonesProduct);
+    if (params.name === 'soft-chairs') {
+      setCurrentProducts(softChairsProduct);
     }
 
-    if (params.name === 'gaming-set') {
-      setCurrentProducts(gamingSetProduct);
+    if (params.name === 'sofa-&-chair') {
+      setCurrentProducts(sofaChairProduct);
     }
 
-    if (params.name === 'smartphones') {
-      setCurrentProducts(smartphonesProduct);
-    }
-
-    if (params.name === 'cameras') {
-      setCurrentProducts(camerasProduct);
-    }
-
-    if (params.name === 'laptops-&-pc') {
-      setCurrentProducts(pcLaptopProduct);
+    if (params.name === 'kitchen-dishes') {
+      setCurrentProducts(kitcheDishesProduct);
     }
 
     if (params.name === 'smart-watches') {
       setCurrentProducts(smartWatchesProduct);
     }
+
+    if (params.name === 'kitchen-mixer') {
+      setCurrentProducts(kitchenMixerProduct);
+    }
+
+    if (params.name === 'blenders') {
+      setCurrentProducts(blendersProduct);
+    }
+
+    if (params.name === 'home-appliance') {
+      setCurrentProducts(homeApplianceProduct);
+    }
+
+    if (params.name === 'coffee-maker') {
+      setCurrentProducts(coffeeMakerProduct);
+    }
   }, [
     params.name,
-    headphonesProduct,
-    gamingSetProduct,
-    smartphonesProduct,
-    camerasProduct,
-    pcLaptopProduct,
+    softChairsProduct,
+    sofaChairProduct,
+    kitcheDishesProduct,
     smartWatchesProduct,
+    kitchenMixerProduct,
+    blendersProduct,
+    homeApplianceProduct,
+    coffeeMakerProduct,
   ]);
 
   // Calculate products quantity
@@ -230,4 +239,4 @@ const ConsumerElectronicsCategory = () => {
   );
 };
 
-export default ConsumerElectronicsCategory;
+export default Category;

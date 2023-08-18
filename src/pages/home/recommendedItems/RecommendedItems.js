@@ -1,8 +1,8 @@
-import styles from './Section4.module.css';
+import styles from './RecommendedItems.module.css';
 import { recommended } from '../../../data/home/homeData';
 import ClothesCard from './ClothesCard';
 
-const Section4 = () => {
+const RecommendedItems = () => {
   return (
     <section className={styles['section4']}>
       <h2>Recommended items</h2>
@@ -24,4 +24,4 @@ const Section4 = () => {
   );
 };
 
-export default Section4;
+export default RecommendedItems;

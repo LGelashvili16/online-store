@@ -101,32 +101,32 @@ export const category = [
 ];
 
 export const brands = [
-  { id: 1, name: 'Samsung', check: false },
-  { id: 2, name: 'Apple', check: false },
-  { id: 3, name: 'Huawei', check: false },
-  { id: 4, name: 'Pocco', check: false },
-  { id: 5, name: 'Lenovo', check: false },
-  { id: 6, name: 'Google', check: false },
-  { id: 7, name: 'Xiaomi', check: false },
-  { id: 8, name: 'Sony', check: false },
-  { id: 9, name: 'LG', check: false },
+  { id: 1, name: 'Ikea', check: false },
+  { id: 2, name: 'Cb2', check: false },
+  { id: 3, name: 'Ashley', check: false },
+  { id: 4, name: 'Target', check: false },
+  { id: 5, name: 'Kare', check: false },
+  { id: 6, name: 'The home depot', check: false },
+  { id: 7, name: 'Nau', check: false },
+  { id: 8, name: 'Coaster', check: false },
+  { id: 9, name: 'Decor den', check: false },
 ];
 
 export const features = [
-  { id: 11, name: 'Metallic', checked: false },
-  { id: 22, name: 'Plastic cover', checked: false },
-  { id: 33, name: '8GB Ram', checked: false },
-  { id: 44, name: 'Super power', checked: false },
-  { id: 55, name: 'Large memory', checked: false },
-  { id: 66, name: 'Wireless charger', checked: false },
-  { id: 77, name: 'Fast charge', checked: false },
+  { id: '1f', name: 'Metallic', checked: false },
+  { id: '2f', name: 'Plastic', checked: false },
+  { id: '3f', name: 'Soft', checked: false },
+  { id: '4f', name: 'Compact', checked: false },
+  { id: '5f', name: 'Large', checked: false },
+  { id: '6f', name: 'Modern', checked: false },
+  { id: '7f', name: 'Retro', checked: false },
 ];
 
 export const condition = ['Any', 'Refurbished', 'Brand new', 'Old items'];
 
 export const ratings = [
   {
-    id: 111,
+    id: '1r',
     name: '5 star',
     checked: false,
     stars: 5,
@@ -134,7 +134,7 @@ export const ratings = [
     emptyImg: emptyStar,
   },
   {
-    id: 222,
+    id: '2r',
     name: '4 star',
     checked: false,
     stars: 4,
@@ -142,7 +142,7 @@ export const ratings = [
     emptyImg: emptyStar,
   },
   {
-    id: 333,
+    id: '3r',
     name: '3 star',
     checked: false,
     stars: 3,
@@ -150,7 +150,7 @@ export const ratings = [
     emptyImg: emptyStar,
   },
   {
-    id: 444,
+    id: '4r',
     name: '2 star',
     checked: false,
     stars: 2,

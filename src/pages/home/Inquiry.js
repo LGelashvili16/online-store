@@ -1,9 +1,9 @@
-import styles from './Section3.module.css';
+import styles from './Inquiry.module.css';
 import dropdownArrow from '../../assets/header/icons/expand-arrow.svg';
 import { pcsAmount } from '../../data/home/homeData';
 import { useEffect, useRef, useState } from 'react';
 
-const Section3 = () => {
+const Inquiry = () => {
   const [showPcsList, setShowPcsList] = useState(false);
   const [showRespForm, setShowRespForm] = useState(false);
   const [mobileScreen, setMobileScreen] = useState(false);
@@ -167,4 +167,4 @@ const Section3 = () => {
   );
 };
 
-export default Section3;
+export default Inquiry;

@@ -6,7 +6,7 @@ const ConsumerElectronicsPage = () => {
   const navigate = useNavigate();
 
   const categoryHandler = (name) => {
-    navigate(`category/${name.replaceAll(' ', '-')}`);
+    navigate(`${name.replaceAll(' ', '-')}`);
   };
 
   return (

@@ -19,6 +19,14 @@ const UserAndCategories = () => {
     navigate('mobile-accessory');
   };
 
+  const registrationHandler = () => {
+    navigate('registration');
+  };
+
+  const loginHandler = () => {
+    navigate('login');
+  };
+
   return (
     <section className={styles['section1']}>
       <ul className={styles['section1-block1']}>
@@ -55,8 +63,18 @@ const UserAndCategories = () => {
               </p>
             </div>
           </div>
-          <button className={styles['section1-block3-join']}>Join now</button>
-          <button className={styles['section1-block3-login']}>Log in</button>
+          <button
+            className={styles['section1-block3-join']}
+            onClick={registrationHandler}
+          >
+            Join now
+          </button>
+          <button
+            className={styles['section1-block3-login']}
+            onClick={loginHandler}
+          >
+            Log in
+          </button>
         </div>
 
         <div className={styles['section1-block3-offer']}>
