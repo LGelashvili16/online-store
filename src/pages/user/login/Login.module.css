@@ -1,0 +1,175 @@
+.wrapper {
+  width: min(100%, 1180px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.registered-info,
+.existed-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.registered-info h2,
+.existed-info h2 {
+  margin-top: 20px;
+
+  color: #00b517;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+.registered-info p,
+.existed-info p {
+  color: #1c1c1c;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.registered-info p a,
+.existed-info p a {
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+.registered-info p a:hover,
+.existed-info p a:hover {
+  color: #72a6f5;
+  font-weight: 600;
+}
+
+.existed-info h2 {
+  color: #ff9017;
+}
+
+.form-wrapper {
+  width: min(100%, 480px);
+  display: flex;
+  flex-direction: column;
+  margin-block: 40px;
+  padding: 40px 20px;
+  gap: 20px;
+  background: #fff;
+  border: 1px solid #dee2e7;
+  border-radius: 6px;
+}
+
+.form-wrapper h2 {
+  color: #1c1c1c;
+
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.submit-btn {
+  height: 40px;
+  background: #0067ff;
+
+  border: none;
+  border-radius: 6px;
+
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: all 0.2s;
+}
+
+.submit-btn:hover {
+  background: #fff;
+  color: var(--primary);
+  border: 1px solid #dee2e7;
+}
+
+.submit-btn:active {
+  border: 1px solid #0067ff;
+}
+
+.create-account-btn {
+  height: 40px;
+  background: #fff;
+
+  border: 1px solid #dee2e7;
+  border-radius: 6px;
+
+  color: #0067ff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: all 0.2s;
+}
+
+.btns-divider {
+  width: 100%;
+  height: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #dee2e7;
+}
+
+.btns-divider span {
+  padding: 5px;
+  background: #fff;
+
+  color: #1c1c1c;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.create-account-btn:hover {
+  border: 1px solid #0067ff;
+}
+
+.create-account-btn:active {
+  color: #00b517;
+  border: 1px solid #00b517;
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    width: min(100%, 360px);
+  }
+
+  .registered-info,
+  .existed-info {
+    width: min(90%, 360px);
+  }
+
+  .registered-info h2,
+  .existed-info h2 {
+    margin-top: 15px;
+    font-size: 18px;
+  }
+
+  .registered-info p,
+  .existed-info p {
+    font-size: 16px;
+  }
+
+  .form-wrapper h2 {
+    font-size: 18px;
+  }
+}

@@ -103,6 +103,51 @@
   border: 1px solid #0067ff;
 }
 
+.login-btn {
+  height: 40px;
+  background: #fff;
+
+  border: 1px solid #dee2e7;
+  border-radius: 6px;
+
+  color: #0067ff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: all 0.2s;
+}
+
+.btns-divider {
+  width: 100%;
+  height: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #dee2e7;
+}
+
+.btns-divider span {
+  padding: 5px;
+  background: #fff;
+
+  color: #1c1c1c;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.login-btn:hover {
+  border: 1px solid #0067ff;
+}
+
+.login-btn:active {
+  color: #00b517;
+  border: 1px solid #00b517;
+}
+
 @media (max-width: 480px) {
   .wrapper {
     width: min(100%, 360px);

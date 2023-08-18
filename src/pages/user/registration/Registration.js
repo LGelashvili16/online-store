@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './Registration.module.css';
 import FormInput from './FormInput';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useUser } from '../../../contexts/UserContext';
 
 const Registration = () => {
@@ -14,10 +14,13 @@ const Registration = () => {
     email: '',
     password: '',
     confirmPassword: '',
+    loggedIn: false,
   });
 
   const [isRegistered, setIsRegistered] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const navigate = useNavigate();
 
   const inputs = [
     {
@@ -117,8 +120,13 @@ const Registration = () => {
         email: '',
         password: '',
         confirmPassword: '',
+        loggedIn: false,
       });
     }
+  };
+
+  const loginHandler = () => {
+    navigate('/online-store/login');
   };
 
   return (
@@ -158,6 +166,12 @@ const Registration = () => {
             Submit
           </button>
         </form>
+        <div className={styles['btns-divider']}>
+          <span>or</span>
+        </div>
+        <button className={styles['login-btn']} onClick={loginHandler}>
+          Log in
+        </button>
       </div>
     </div>
   );

@@ -26,18 +26,28 @@ import { useEffect, useRef, useState } from 'react';
 import HeaderLower from './HeaderLower';
 import { useCart } from '../../contexts/CartContext';
 import { useSaveForLater } from '../../contexts/SaveForLaterContext';
+import { useUser } from '../../contexts/UserContext';
 
 const Header = () => {
   const [showCategories, setShowCategories] = useState(false);
   const [showBurgerMenu, setShowBurgerMenu] = useState(false);
+  const [showUserList, setShowUserList] = useState(false);
+  const [showRespUserList, setShowRespUserList] = useState(false);
   const [mobileGoBack, setMobileGoBack] = useState('');
   const [mobileGoBackTitle, setMobileGoBackTitle] = useState('');
   const [windowSize, setWindowSize] = useState(window.innerWidth);
   const [cart] = useCart();
   const [saveForLater] = useSaveForLater();
 
+  const [users, setUsers, loggedInUser, setLoggedInUsers] = useUser();
+
   const menuRef = useRef();
   const categoriesRef = useRef();
+
+  const profileRef = useRef();
+  const profileListRef = useRef();
+  const respProfileRef = useRef();
+  const respProfileListRef = useRef();
 
   const location = useLocation();
 
@@ -74,7 +84,35 @@ const Header = () => {
   };
 
   const profileHandler = () => {
-    navigate('login');
+    // if (loggedInUser) navigate('/online-store/profile');
+    // else
+    setShowUserList((prev) => !prev);
+  };
+
+  const respProfileHandler = () => {
+    // if (loggedInUser) navigate('/online-store/profile');
+    // else
+    setShowRespUserList((prev) => !prev);
+  };
+
+  const logOutHandler = () => {
+    setLoggedInUsers([]);
+    console.log(loggedInUser);
+
+    const existUser = users.find((user) => {
+      return user.loggedIn === true;
+    });
+
+    if (existUser) {
+      setUsers((prev) => {
+        return prev.map((user) => {
+          if (user.loggedIn === true) {
+            return { ...user, loggedIn: false };
+          }
+          return user;
+        });
+      });
+    }
   };
 
   useEffect(() => {
@@ -109,6 +147,20 @@ const Header = () => {
   const windowClickHandler = (e) => {
     if (e.target !== menuRef.current && e.target !== categoriesRef.current) {
       setShowCategories(false);
+    }
+
+    if (
+      e.target !== profileRef.current &&
+      e.target !== profileListRef.current
+    ) {
+      setShowUserList(false);
+    }
+
+    if (
+      e.target !== respProfileRef.current &&
+      e.target !== respProfileListRef.current
+    ) {
+      setShowRespUserList(false);
     }
   };
 
@@ -304,6 +356,7 @@ const Header = () => {
         >
           <div
             className={`${styles['header-user-item']} ${styles['profile']}`}
+            ref={profileRef}
             onClick={profileHandler}
           >
             <img
@@ -312,6 +365,30 @@ const Header = () => {
               alt="Profile"
             />
             <p>Profile</p>
+
+            {loggedInUser.length > 0 ? (
+              <div
+                className={`${styles['header-login-register']} ${
+                  !showUserList ? styles['hidden'] : ''
+                }`}
+                ref={profileListRef}
+              >
+                <Link to="/online-store/login" onClick={logOutHandler}>
+                  Log out
+                </Link>
+              </div>
+            ) : (
+              <div
+                className={`${styles['header-login-register']} ${
+                  !showUserList ? styles['hidden'] : ''
+                }`}
+                ref={profileListRef}
+              >
+                <Link to="/online-store/login">Log in</Link>
+
+                <Link to="/online-store/registration">Register</Link>
+              </div>
+            )}
           </div>
 
           <div className={`${styles['header-user-item']} ${styles['message']}`}>
@@ -324,7 +401,7 @@ const Header = () => {
           </div>
 
           <Link
-            to="saved"
+            to={loggedInUser.length > 0 ? 'saved' : 'login'}
             className={`${styles['header-user-item']} ${styles['orders']}`}
           >
             <img
@@ -337,7 +414,7 @@ const Header = () => {
           </Link>
 
           <Link
-            to="cart"
+            to={loggedInUser.length > 0 ? 'cart' : 'login'}
             className={`${styles['header-user-item']} ${styles['my-cart']}`}
           >
             <img
@@ -358,12 +435,37 @@ const Header = () => {
               />
             </Link>
 
-            <img
-              className={styles['profile-icon']}
-              src={respProfile}
-              alt="Profile"
-              onClick={profileHandler}
-            />
+            <div onClick={respProfileHandler} ref={respProfileRef}>
+              <img
+                className={styles['profile-icon']}
+                src={respProfile}
+                alt="Profile"
+              />
+
+              {loggedInUser ? (
+                <div
+                  className={`${styles['resp-header-login-register']} ${
+                    !showRespUserList ? styles['hidden'] : ''
+                  }`}
+                  ref={respProfileListRef}
+                >
+                  <Link to="/online-store/login" onClick={logOutHandler}>
+                    Log out
+                  </Link>
+                </div>
+              ) : (
+                <div
+                  className={`${styles['resp-header-login-register']} ${
+                    !showRespUserList ? styles['hidden'] : ''
+                  }`}
+                  ref={respProfileListRef}
+                >
+                  <Link to="/online-store/login">Log in</Link>
+
+                  <Link to="/online-store/registration">Register</Link>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

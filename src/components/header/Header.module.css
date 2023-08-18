@@ -17,6 +17,42 @@ header {
   z-index: 1;
 }
 
+.header-login-register {
+  position: absolute;
+  padding: 20px;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0px 4px 10px 0px rgba(96, 96, 96, 0.2);
+
+  z-index: 1;
+}
+
+.header-login-register a {
+  width: 150px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: var(--primary);
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.header-login-register a:hover {
+  color: var(--primary);
+  background: #fff;
+  border: 1px solid var(--primary);
+}
+
 .header-top {
   /* max-width: 1178px; */
   width: 100%;
@@ -199,6 +235,14 @@ header {
   cursor: pointer;
 }
 
+.profile {
+  position: relative;
+}
+
+.profile p {
+  pointer-events: none;
+}
+
 .message {
   margin-left: 24px;
 }
@@ -223,6 +267,7 @@ header {
 .message-icon,
 .orders-icon {
   width: 20px;
+  pointer-events: none;
 }
 
 .orders-icon {
@@ -400,6 +445,7 @@ header {
 }
 
 .resp-header-user {
+  position: relative;
   display: none;
   gap: 20px;
   width: 68px;
@@ -409,6 +455,43 @@ header {
 .resp-header-user img {
   width: 24px;
   height: 24px;
+}
+
+.resp-header-login-register {
+  position: absolute;
+  padding: 20px;
+  top: 50px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0px 4px 10px 0px rgba(96, 96, 96, 0.2);
+
+  z-index: 1;
+}
+
+.resp-header-login-register a {
+  width: 150px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: var(--primary);
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.resp-header-login-register a:hover {
+  color: var(--primary);
+  background: #fff;
+  border: 1px solid var(--primary);
 }
 
 /* ************ Responsive at mobile accessory page ************ */
