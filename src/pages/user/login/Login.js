@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useUser } from '../../../contexts/UserContext';
 
 const Login = () => {
-  const [users, setUsers, loggedInUser] = useUser();
+  const [users, setUsers, loggedInUser, setLoggedInUser] = useUser();
 
   const [values, setValues] = useState({
     username: '',
@@ -14,6 +14,7 @@ const Login = () => {
 
   const [isRegistered, setIsRegistered] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [wrongPassword, setWrongPassword] = useState(false);
 
   const navigate = useNavigate();
 
@@ -39,7 +40,10 @@ const Login = () => {
   ];
 
   useEffect(() => {
-    if (loggedInUser[0]?.loggedIn === true) navigate('/online-store/profile');
+    if (loggedInUser && loggedInUser.loggedIn === true)
+      setTimeout(() => {
+        navigate('/online-store/profile');
+      }, 1000);
     else navigate('/online-store/login');
   }, [loggedInUser, navigate]);
 
@@ -60,6 +64,9 @@ const Login = () => {
     });
 
     if (existUser) {
+      setWrongPassword(false);
+      setIsSubmitted(false);
+
       setUsers((prev) => {
         return prev.map((user) => {
           if (
@@ -67,32 +74,35 @@ const Login = () => {
               user.email.toLowerCase() === values.username.toLowerCase()) &&
             user.password === values.password
           ) {
+            setIsSubmitted(true);
+            setLoggedInUser({ ...existUser, loggedIn: true });
             return { ...user, loggedIn: true };
+          }
+
+          if (
+            (user.username.toLowerCase() === values.username.toLowerCase() ||
+              user.email.toLowerCase() === values.username.toLowerCase()) &&
+            user.password !== values.password
+          ) {
+            setWrongPassword(true);
+            return { ...user, loggedIn: false };
           }
 
           return user;
         });
       });
 
-      navigate('/online-store');
+      setIsRegistered(false);
+
+      // navigate('/online-store');
     }
 
-    // if (!existUser) {
-    //   setUsers((prev) => {
-    //     return [...prev, values];
-    //   });
-
-    //   setIsRegistered(false);
-    //   setIsSubmitted(true);
-
-    //   setValues({
-    //     usernameOrEmail: '',
-    //     password: '',
-    //   });
-    // }
+    if (!existUser) {
+      setIsRegistered(true);
+    }
   };
 
-  const loginHandler = () => {
+  const createAccountHandler = () => {
     navigate('/online-store/registration');
   };
 
@@ -100,19 +110,22 @@ const Login = () => {
     <div className={styles['wrapper']}>
       {isSubmitted && (
         <div className={styles['registered-info']}>
-          <h2>Registered successfully!</h2>
+          <h2>Logged in successfully!</h2>
+        </div>
+      )}
+
+      {isRegistered && (
+        <div className={styles['existed-info']}>
+          <h2>Username or email doesn't exist!</h2>
           <p>
             Go to <Link to={'/online-store/login'}>Log in</Link> page.
           </p>
         </div>
       )}
 
-      {isRegistered && (
+      {wrongPassword && (
         <div className={styles['existed-info']}>
-          <h2>Username or email already exists!</h2>
-          <p>
-            Go to <Link to={'/online-store/login'}>Log in</Link> page.
-          </p>
+          <h2>Oops, wrong password!</h2>
         </div>
       )}
       <div className={styles['form-wrapper']}>
@@ -137,7 +150,10 @@ const Login = () => {
         <div className={styles['btns-divider']}>
           <span>or</span>
         </div>
-        <button className={styles['create-account-btn']} onClick={loginHandler}>
+        <button
+          className={styles['create-account-btn']}
+          onClick={createAccountHandler}
+        >
           Create an account
         </button>
       </div>

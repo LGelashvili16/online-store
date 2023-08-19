@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const userContext = createContext();
 
@@ -13,8 +14,7 @@ export const UserProvider = ({ children }) => {
       : JSON.parse(window.localStorage.getItem('users'));
 
   const defaultUserValue =
-    JSON.parse(window.localStorage.getItem('users')) === null ||
-    JSON.parse(window.localStorage.getItem('users')) === 'undefined'
+    JSON.parse(window.localStorage.getItem('users')) === null
       ? []
       : JSON.parse(window.localStorage.getItem('loggedInUser'));
 

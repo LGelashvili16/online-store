@@ -41,6 +41,8 @@ const Header = () => {
 
   const [users, setUsers, loggedInUser, setLoggedInUsers] = useUser();
 
+  console.log('loggedIn in header', loggedInUser);
+
   const menuRef = useRef();
   const categoriesRef = useRef();
 
@@ -97,7 +99,6 @@ const Header = () => {
 
   const logOutHandler = () => {
     setLoggedInUsers([]);
-    console.log(loggedInUser);
 
     const existUser = users.find((user) => {
       return user.loggedIn === true;
@@ -176,7 +177,7 @@ const Header = () => {
     <header>
       <div
         className={`${
-          mobileGoBack !== '/online-store' && windowSize <= 480
+          mobileGoBack !== '/online-store/' && windowSize <= 480
             ? styles['resp-header-top']
             : styles['header-top']
         } ${
@@ -188,7 +189,7 @@ const Header = () => {
       >
         <div
           className={`${
-            mobileGoBack !== '/online-store' && windowSize <= 480
+            mobileGoBack !== '/online-store/' && windowSize <= 480
               ? styles['hidden']
               : styles['resp-header-menu']
           }`}
@@ -256,12 +257,12 @@ const Header = () => {
 
         <div
           className={`${
-            mobileGoBack !== '/online-store' && windowSize <= 480
+            mobileGoBack !== '/online-store/' && windowSize <= 480
               ? styles['hidden']
               : styles['header-logo']
           }`}
         >
-          <Link to="/online-store">
+          <Link to="/online-store/">
             <img src={brandLogoImg} alt="Brand-Logo" />
           </Link>
         </div>
@@ -273,7 +274,7 @@ const Header = () => {
           //     : '/online-store/'
           // }
           className={`${
-            mobileGoBack !== '/online-store' && windowSize <= 480
+            mobileGoBack !== '/online-store/' && windowSize <= 480
               ? styles['resp-goBack-title']
               : styles['hidden']
           }`}
@@ -366,13 +367,14 @@ const Header = () => {
             />
             <p>Profile</p>
 
-            {loggedInUser.length > 0 ? (
+            {loggedInUser?.loggedIn === true ? (
               <div
                 className={`${styles['header-login-register']} ${
                   !showUserList ? styles['hidden'] : ''
                 }`}
                 ref={profileListRef}
               >
+                <Link to="/online-store/profile">Profile</Link>
                 <Link to="/online-store/login" onClick={logOutHandler}>
                   Log out
                 </Link>
@@ -401,7 +403,7 @@ const Header = () => {
           </div>
 
           <Link
-            to={loggedInUser.length > 0 ? 'saved' : 'login'}
+            to={loggedInUser?.loggedIn === true ? 'saved' : 'login'}
             className={`${styles['header-user-item']} ${styles['orders']}`}
           >
             <img
@@ -414,7 +416,7 @@ const Header = () => {
           </Link>
 
           <Link
-            to={loggedInUser.length > 0 ? 'cart' : 'login'}
+            to={loggedInUser?.loggedIn === true ? 'cart' : 'login'}
             className={`${styles['header-user-item']} ${styles['my-cart']}`}
           >
             <img
@@ -449,6 +451,7 @@ const Header = () => {
                   }`}
                   ref={respProfileListRef}
                 >
+                  <Link to="/online-store/profile">Profile</Link>
                   <Link to="/online-store/login" onClick={logOutHandler}>
                     Log out
                   </Link>

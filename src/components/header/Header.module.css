@@ -572,7 +572,7 @@ header {
     align-items: center;
     margin-top: 0;
     margin-left: 18px;
-    margin-right: 102px;
+    /* margin-right: 102px; */
     height: 56px;
   }
 
