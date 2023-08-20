@@ -64,7 +64,6 @@ const Login = () => {
     });
 
     if (existUser) {
-      setWrongPassword(false);
       setIsSubmitted(false);
 
       setUsers((prev) => {
@@ -99,6 +98,7 @@ const Login = () => {
 
     if (!existUser) {
       setIsRegistered(true);
+      setWrongPassword(false);
     }
   };
 
@@ -118,7 +118,9 @@ const Login = () => {
         <div className={styles['existed-info']}>
           <h2>Username or email doesn't exist!</h2>
           <p>
-            Go to <Link to={'/online-store/login'}>Log in</Link> page.
+            Go to{' '}
+            <Link to={'/online-store/registration'}>Create an account</Link>{' '}
+            page.
           </p>
         </div>
       )}

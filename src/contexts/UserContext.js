@@ -15,7 +15,7 @@ export const UserProvider = ({ children }) => {
 
   const defaultUserValue =
     JSON.parse(window.localStorage.getItem('users')) === null
-      ? []
+      ? {}
       : JSON.parse(window.localStorage.getItem('loggedInUser'));
 
   const [users, setUsers] = useState(defaultValue);
@@ -36,12 +36,12 @@ export const UserProvider = ({ children }) => {
     if (users.length > 0) {
       const user = users.find((user) => user.loggedIn === true);
       if (user)
-        window.localStorage.setItem('loggedInUser', JSON.stringify([user]));
-      else window.localStorage.setItem('loggedInUser', JSON.stringify([]));
+        window.localStorage.setItem('loggedInUser', JSON.stringify(user));
+      else window.localStorage.setItem('loggedInUser', JSON.stringify({}));
     }
 
     if (users.length === 0) {
-      window.localStorage.setItem('loggedInUser', JSON.stringify([]));
+      window.localStorage.setItem('loggedInUser', JSON.stringify({}));
     }
   }, [users, loggedInUser]);
 

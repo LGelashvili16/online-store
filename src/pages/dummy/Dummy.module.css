@@ -1,0 +1,97 @@
+.container {
+  width: min(100%, 1180px);
+}
+
+.page h2 {
+  margin-block: 20px;
+
+  color: #1c1c1c;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  margin-bottom: 40px;
+  padding: 40px;
+  background: #fff;
+  border: 1px solid #dee2e7;
+  border-radius: 6px;
+}
+
+.articles h3 {
+  color: #1c1c1c;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.articles p {
+  color: #8b96a5;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.articles p:nth-child(3) {
+  max-width: 450px;
+}
+
+.articles p:nth-child(5) {
+  max-width: 500px;
+}
+
+.articles button {
+  width: 130px;
+  height: 40px;
+  padding: 0px 16px;
+
+  background: #0067ff;
+  border: none;
+  border-radius: 6px;
+
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.articles button:hover {
+  transform: scale(0.95);
+}
+
+.articles button:active {
+  background: #fff;
+  color: #0067ff;
+  border: 1px solid #0067ff;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: min(100%, 360px);
+    padding-inline: 16px;
+  }
+
+  .page h2 {
+    font-size: 20px;
+  }
+
+  .articles {
+    gap: 25px;
+    padding: 20px;
+  }
+
+  .articles h3 {
+    font-size: 18px;
+  }
+}

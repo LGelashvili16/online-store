@@ -41,8 +41,6 @@ const Header = () => {
 
   const [users, setUsers, loggedInUser, setLoggedInUsers] = useUser();
 
-  console.log('loggedIn in header', loggedInUser);
-
   const menuRef = useRef();
   const categoriesRef = useRef();
 
@@ -209,22 +207,27 @@ const Header = () => {
               <div className={styles['resp-menu-page-s1']}>
                 <img src={respAvatar} alt="" />
                 <div>
-                  <Link>Sign in</Link>
-                  <Link>Register</Link>
+                  <Link to="/online-store/login">Sign in</Link>
+                  <Link to="/online-store/register">Register</Link>
                 </div>
               </div>
 
               <div className={styles['resp-menu-page-s2']}>
                 <div>
-                  <img src={respHome} alt="" /> <Link>Home</Link>
+                  <img src={respHome} alt="" />{' '}
+                  <Link to="/online-store/">Home</Link>
                 </div>
 
                 <div>
-                  <img src={respCategories} alt="" /> <Link>Categories</Link>
+                  <img src={respCategories} alt="" />{' '}
+                  <Link to="/online-store/consumer-electronics">
+                    Categories
+                  </Link>
                 </div>
 
                 <div>
-                  <img src={respFav} alt="" /> <Link>Favorites</Link>
+                  <img src={respFav} alt="" />{' '}
+                  <Link to="/online-store/saved">Favorites</Link>
                 </div>
 
                 <div>
@@ -393,14 +396,17 @@ const Header = () => {
             )}
           </div>
 
-          <div className={`${styles['header-user-item']} ${styles['message']}`}>
+          <Link
+            to="/online-store/dummy/message"
+            className={`${styles['header-user-item']} ${styles['message']}`}
+          >
             <img
               className={styles['message-icon']}
               src={messageImg}
               alt="Message"
             />
             <p>Message</p>
-          </div>
+          </Link>
 
           <Link
             to={loggedInUser?.loggedIn === true ? 'saved' : 'login'}
@@ -429,7 +435,7 @@ const Header = () => {
           </Link>
 
           <div className={styles['resp-header-user']}>
-            <Link to="cart">
+            <Link to={loggedInUser?.loggedIn === true ? 'cart' : 'login'}>
               <img
                 className={styles['my-cart-icon']}
                 src={respCart}
@@ -444,7 +450,7 @@ const Header = () => {
                 alt="Profile"
               />
 
-              {loggedInUser ? (
+              {loggedInUser?.loggedIn === true ? (
                 <div
                   className={`${styles['resp-header-login-register']} ${
                     !showRespUserList ? styles['hidden'] : ''

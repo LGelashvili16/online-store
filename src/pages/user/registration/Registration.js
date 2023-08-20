@@ -103,6 +103,7 @@ const Registration = () => {
     if (existUser) {
       setIsRegistered(true);
       setIsSubmitted(false);
+      window.scrollTo(0, 0);
     }
 
     if (!existUser) {
@@ -122,6 +123,7 @@ const Registration = () => {
         confirmPassword: '',
         loggedIn: false,
       });
+      window.scrollTo(0, 0);
     }
   };
 

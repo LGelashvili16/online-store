@@ -33,6 +33,8 @@ import Login from './pages/user/login/Login';
 import Registration from './pages/user/registration/Registration';
 import { UserProvider } from './contexts/UserContext';
 import Profile from './pages/user/profile/Profile';
+import ProtectedRoute from './components/protectedRoute/ProtectedRoute';
+import Dummy from './pages/dummy/Dummy';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -59,12 +61,35 @@ const router = createBrowserRouter(
         <Route path=":from/:id" element={<ProductPage />} />
       </Route>
 
-      <Route path="cart" element={<Cart />} />
-      <Route path="saved" element={<Saved />} />
+      <Route
+        path="cart"
+        element={
+          <ProtectedRoute>
+            <Cart />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="saved"
+        element={
+          <ProtectedRoute>
+            <Saved />
+          </ProtectedRoute>
+        }
+      />
 
       <Route path="login" element={<Login />} />
       <Route path="registration" element={<Registration />} />
-      <Route path="profile" element={<Profile />} />
+      <Route
+        path="profile"
+        element={
+          <ProtectedRoute>
+            <Profile />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route path="dummy/:name" element={<Dummy />} />
 
       <Route path="*" element={<NotFound />} />
     </Route>
