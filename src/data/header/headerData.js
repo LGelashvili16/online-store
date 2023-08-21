@@ -10,28 +10,27 @@ import uae from '../../assets/header/icons/UAE.svg';
 import usa from '../../assets/header/icons/USA.svg';
 
 export const headerCategoriesData = [
-  { name: 'Mobile accessories', link: 'mobile-accessory' },
-  { name: 'Electronics', link: '' },
-  { name: 'Smartphones', link: '' },
-  { name: 'Modern tech', link: '' },
-  { name: 'Art', link: '' },
-  { name: 'Books', link: '' },
-  { name: 'Cameras', link: '' },
-  { name: 'Cell phones', link: '' },
-  { name: 'Travel', link: '' },
-  { name: 'Video games', link: '' },
-  { name: 'Jewelery', link: '' },
-  { name: 'Handmade', link: '' },
-  { name: 'Garden & outdoor', link: '' },
-  { name: 'Tools', link: '' },
-  { name: 'Toys', link: '' },
+  { name: 'Mobile accessory', link: 'mobile-accessory' },
+  { name: 'Smart watches', link: 'consumer-electronics/smart-watches' },
+  { name: 'Cameras', link: 'consumer-electronics/cameras' },
+  { name: 'Headphones', link: 'consumer-electronics/headphones' },
+  { name: 'Gaming set', link: 'consumer-electronics/gaming-set' },
+  { name: 'Laptops & PC', link: 'consumer-electronics/laptops-&-pc' },
+  { name: 'Smartphones', link: 'consumer-electronics/smartphones' },
+  { name: 'Soft chairs', link: 'home-and-outdoor/soft-chairs' },
+  { name: 'Sofa & chair', link: 'home-and-outdoor/sofa-&-chair' },
+  { name: 'Kitchen dishes', link: 'home-and-outdoor/kitchen-dishes' },
+  { name: 'Kitchen mixer', link: 'home-and-outdoor/kitchen-mixer' },
+  { name: 'Blenders', link: 'home-and-outdoor/blenders' },
+  { name: 'Home appliance', link: 'home-and-outdoor/home-appliance' },
+  { name: 'Coffee maker', link: 'home-and-outdoor/coffee-maker' },
 ];
 
 export const headerHelpData = [
-  'Seller center',
-  'Contact us',
-  'Returns',
-  'Money back guarantee',
+  { name: 'Seller center', link: 'dummy/seller-center' },
+  { name: 'Contact us', link: 'dummy/contact-us' },
+  { name: 'Returns', link: 'dummy/returns' },
+  { name: 'Money back guarantee', link: 'dummy/money-back-guarantee' },
 ];
 
 export const headerFlags = [

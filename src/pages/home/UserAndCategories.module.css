@@ -115,6 +115,8 @@
   box-shadow: 0px 1px 2px 0px rgba(56, 56, 56, 0.08);
 
   cursor: pointer;
+
+  transition: 0.2s;
 }
 
 .section1-block2 button:hover {
@@ -161,7 +163,8 @@
   color: var(--dark);
 }
 
-.section1-block3-join {
+.section1-block3-join,
+.section1-block3-profile {
   display: flex;
   width: 180px;
   height: 30px;
@@ -175,22 +178,27 @@
   font-weight: 500;
 
   border-radius: 6px;
-  background: var(
-    --primary-gradient,
-    linear-gradient(180deg, #127fff 0%, #0067ff 100%)
-  );
+  background: #0067ff;
   color: var(--white);
 
   cursor: pointer;
+  transition: 0.2s;
 }
 
-.section1-block3-join:hover {
+.section1-block3-join:hover,
+.section1-block3-profile:hover {
   background: var(--white, #fff);
   border: 1px solid var(--gray-300, #dee2e7);
   color: var(--primary);
 }
 
-.section1-block3-login {
+.section1-block3-join:active,
+.section1-block3-profile:active {
+  transform: scale(0.95);
+}
+
+.section1-block3-login,
+.section1-block3-logout {
   display: flex;
   width: 180px;
   height: 30px;
@@ -203,19 +211,23 @@
 
   border-radius: 6px;
   border: 1px solid var(--gray-300, #dee2e7);
-  background: var(
-    --primary-gradient,
-    linear-gradient(180deg, #127fff 0%, #0067ff 100%)
-  );
-  color: var(--white);
+  background: #fff;
+
+  color: var(--primary);
 
   cursor: pointer;
+
+  transition: 0.2s;
 }
 
-.section1-block3-login:hover {
-  background: var(--white, #fff);
-  border: 1px solid var(--gray-300, #dee2e7);
-  color: var(--primary);
+.section1-block3-login:hover,
+.section1-block3-logout:hover {
+  border: 1px solid var(--primary);
+}
+
+.section1-block3-login:active,
+.section1-block3-logout:active {
+  transform: scale(0.95);
 }
 
 .section1-block3-offer {

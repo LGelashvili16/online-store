@@ -41,9 +41,7 @@ const Login = () => {
 
   useEffect(() => {
     if (loggedInUser && loggedInUser.loggedIn === true)
-      setTimeout(() => {
-        navigate('/online-store/profile');
-      }, 1000);
+      navigate('/online-store/profile');
     else navigate('/online-store/login');
   }, [loggedInUser, navigate]);
 

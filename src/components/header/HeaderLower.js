@@ -203,17 +203,17 @@ const HeaderLower = () => {
             </li>
 
             <li>
-              <Link to="">Hot offers</Link>
+              <Link to="dummy/hot-offers">Hot offers</Link>
             </li>
 
             <li>
-              <Link to="">Gift boxes</Link>
+              <Link to="dummy/gift-boxes">Gift boxes</Link>
             </li>
             <li>
-              <Link to="">Projects</Link>
+              <Link to="dummy/projects">Projects</Link>
             </li>
             <li>
-              <Link to="">Menu item</Link>
+              <Link to="dummy/menu-item">Menu item</Link>
             </li>
             <li className={styles['header-help']}>
               <p onClick={headerHelpHandler} ref={helpListRef}>
@@ -234,7 +234,7 @@ const HeaderLower = () => {
               >
                 {headerHelpData.map((item, index) => (
                   <li key={index}>
-                    <Link to="">{item}</Link>
+                    <Link to={item.link}>{item.name}</Link>
                   </li>
                 ))}
               </ul>

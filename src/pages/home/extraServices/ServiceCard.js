@@ -1,8 +1,15 @@
+import { useNavigate } from 'react-router-dom';
 import styles from './ServiceCard.module.css';
 
 const ServiceCard = (props) => {
+  const navigate = useNavigate();
+
+  const cardHandler = () => {
+    navigate(props.link);
+  };
+
   return (
-    <div className={styles['service-card']}>
+    <div className={styles['service-card']} onClick={cardHandler}>
       <div className={styles['card-image']}>
         <img src={props.image} alt="" />
         <div className={styles['card-icon']}>

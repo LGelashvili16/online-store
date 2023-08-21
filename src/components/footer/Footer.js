@@ -90,8 +90,8 @@ const Footer = () => {
             <div className={styles['footer-about-links']}>
               {about.map((link, i) => {
                 return (
-                  <Link to="" key={i}>
-                    {link}
+                  <Link to={link.link} key={i}>
+                    {link.name}
                   </Link>
                 );
               })}
@@ -103,8 +103,8 @@ const Footer = () => {
             <div className={styles['footer-partnership-links']}>
               {partnership.map((link, i) => {
                 return (
-                  <Link to="" key={i}>
-                    {link}
+                  <Link to={link.link} key={i}>
+                    {link.name}
                   </Link>
                 );
               })}
@@ -116,8 +116,8 @@ const Footer = () => {
             <div className={styles['footer-information-links']}>
               {information.map((link, i) => {
                 return (
-                  <Link to="" key={i}>
-                    {link}
+                  <Link to={link.link} key={i}>
+                    {link.name}
                   </Link>
                 );
               })}
@@ -129,8 +129,8 @@ const Footer = () => {
             <div className={styles['footer-forUsers-links']}>
               {forUsers.map((link, i) => {
                 return (
-                  <Link to="" key={i}>
-                    {link}
+                  <Link to={link.link} key={i}>
+                    {link.name}
                   </Link>
                 );
               })}
@@ -140,10 +140,10 @@ const Footer = () => {
           <div className={styles['footer-info-getApp']}>
             <h4>Get app</h4>
             <div className={styles['footer-getApp']}>
-              <Link>
+              <Link to="https://www.apple.com/ge/app-store/" target="_blank">
                 <img src={appleStoreImg} alt="" />
               </Link>
-              <Link>
+              <Link to="https://play.google.com/store/games" target="_blank">
                 <img src={androidMarketImg} alt="" />
               </Link>
             </div>

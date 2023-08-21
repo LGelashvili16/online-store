@@ -343,24 +343,28 @@ export const section5ServicesData = [
     icon: searchIco,
     title: 'Source from',
     title2: 'Industry Hubs',
+    link: 'dummy/industry-hubs',
   },
   {
     image: colorsS5Img,
     icon: inventoryIco,
     title: 'Customize Your',
     title2: 'Products',
+    link: 'dummy/customize',
   },
   {
     image: airplaneS5Img,
     icon: sendIco,
     title: 'Fast, reliable shipping',
     title2: 'by ocean or air',
+    link: 'dummy/shipping',
   },
   {
     image: parcelPersonS5Img,
     icon: securityIco,
     title: 'Product monitoring',
     title2: 'and inspection',
+    link: 'dummy/inspection',
   },
 ];
 

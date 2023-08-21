@@ -397,7 +397,11 @@ const Header = () => {
           </div>
 
           <Link
-            to="/online-store/dummy/message"
+            to={
+              loggedInUser?.loggedIn === true
+                ? '/online-store/dummy/message'
+                : 'login'
+            }
             className={`${styles['header-user-item']} ${styles['message']}`}
           >
             <img

@@ -19,6 +19,7 @@ const ExtraServices = () => {
               icon={card.icon}
               title={card.title}
               title2={card.title2}
+              link={card.link}
             />
           );
         })}

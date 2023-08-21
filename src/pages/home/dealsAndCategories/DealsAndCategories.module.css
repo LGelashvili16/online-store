@@ -137,7 +137,7 @@
   box-shadow: 0px 1px 2px 0px rgba(56, 56, 56, 0.08);
   cursor: pointer;
 
-  transition: all 0.2s ease-in-out;
+  transition: all 0.2s;
 }
 
 .section2-row3-home button {
@@ -146,10 +146,7 @@
 
 .section2-row2-home button:hover,
 .section2-row3-home button:hover {
-  background: var(
-    --primary-gradient,
-    linear-gradient(180deg, #127fff 0%, #0067ff 100%)
-  );
+  background: var(--primary);
   color: var(--white);
   border: none;
 }

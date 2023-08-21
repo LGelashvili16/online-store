@@ -221,15 +221,12 @@
 
   border: none;
   border-radius: 6px;
-  background: var(
-    --primary-gradient,
-    linear-gradient(180deg, #127fff 0%, #0067ff 100%)
-  );
+  background: var(--primary);
   color: var(--white);
 
   cursor: pointer;
 
-  transition: all 0.2s ease-in-out;
+  transition: all 0.2s;
 }
 
 .section3-form button:hover {
