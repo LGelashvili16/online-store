@@ -79,7 +79,6 @@ const Header = () => {
 
   const goBackHandler = () => {
     navigate(-1);
-    console.log(location);
   };
 
   useEffect(() => {
@@ -493,6 +492,9 @@ const Header = () => {
                 src={respCart}
                 alt="My Cart"
               />
+              <span className={styles['resp-my-cart-badge']}>
+                {cart.length}
+              </span>
             </Link>
 
             <div onClick={respProfileHandler} ref={respProfileRef}>

@@ -23,7 +23,6 @@ import { useCart } from '../../contexts/CartContext';
 import {
   useConsumerElectronics,
   useHomeOutdoor,
-  useMobileAccessoryProducts,
   useRecommendedProducts,
 } from '../../contexts/ProductsContext';
 import { useSaveForLater } from '../../contexts/SaveForLaterContext';
@@ -75,8 +74,9 @@ const Item = () => {
 
   const [isSaved, setIsSaved] = useState(false);
   const [currentSaved, setCurrentSaved] = useState({});
+  const [readMore, setReadMore] = useState(false);
   // const [sliderIndex, setSliderIndex] = useState(1);
-
+  console.log(isSaved);
   let sliderIndex = useRef(0);
 
   const imagesRef = useRef();
@@ -267,17 +267,6 @@ const Item = () => {
   };
 
   const saveHandler = () => {
-    // Update Globally
-    // setMobileAccessoryProducts((prev) => {
-    //   prev.forEach((el) => {
-    //     if (el.id === currentProduct.id) {
-    //       el.saved = !el.saved;
-    //     }
-    //   });
-
-    //   return prev;
-    // });
-
     setSaveForLater((prev) => {
       if (prev.length === 0) {
         return [productTrue];
@@ -317,25 +306,10 @@ const Item = () => {
 
       return filter;
     });
+  };
 
-    // if (isSaved) {
-    //   setSaveForLater((prev) => {
-    //     if (!prev.includes(currentSaved)) {
-    //       return [...prev, currentSaved];
-    //     }
-    //     if (prev.includes(currentSaved)) {
-    //       return prev;
-    //     }
-    //   });
-    // }
-
-    // if (!isSaved) {
-    //   setSaveForLater((prev) => {
-    //     return prev.filter((prod) => {
-    //       return prod !== currentSaved;
-    //     });
-    //   });
-    // }
+  const readMoreHandler = () => {
+    setReadMore((prev) => !prev);
   };
 
   return (
@@ -437,7 +411,13 @@ const Item = () => {
         </div>
 
         <div className={styles['resp-seller-inquiry']}>
-          <button>Send inquiry</button>
+          <button onClick={inquiryHandler}>Send inquiry</button>
+          <button
+            className={styles['resp-add-cart-btn']}
+            onClick={addToCartHandler}
+          >
+            Add to cart
+          </button>
 
           <div
             className={styles['resp-product-favorite']}
@@ -490,11 +470,14 @@ const Item = () => {
 
       <div className={styles['resp-item-description']}>
         <p>
-          Info about edu item is an ideal companion for anyone engaged in
-          learning. The drone provides precise and ...
+          {readMore
+            ? 'Info about edu item is an ideal companion for anyone engaged in learning. The drone provides precise and Info about edu item is an ideal companion for anyone engaged in learning. The drone provides precise and Info about edu item is an ideal companion for anyone engaged in learning. The drone provides precise and Info about edu item is an ideal companion for anyone engaged in learning. The drone provides precise and'
+            : 'Info about edu item is an ideal companion for anyone engaged in learning. The drone provides precise and ...'}
         </p>
 
-        <span>Read more</span>
+        <span onClick={readMoreHandler}>
+          {readMore ? 'Read less' : 'Read more'}
+        </span>
       </div>
 
       <div className={styles['seller-wrapper']}>

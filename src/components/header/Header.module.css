@@ -571,8 +571,27 @@ header {
 }
 
 .resp-header-user {
+  position: relative;
   height: 56px;
   align-items: center;
+}
+
+.resp-my-cart-badge {
+  position: absolute;
+  left: 20px;
+  top: 3px;
+  width: 16px;
+  height: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #f52a2a;
+  border-radius: 50%;
+
+  color: #fff;
+  font-size: 11px;
 }
 
 .hidden {

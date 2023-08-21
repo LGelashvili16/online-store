@@ -463,11 +463,11 @@
   margin-bottom: 20px;
 }
 
-.resp-seller-inquiry button {
-  width: 280px;
+.resp-seller-inquiry button:first-child {
+  width: min(100%, 250px);
   height: 40px;
 
-  background: linear-gradient(180deg, #127fff 0%, #0067ff 100%);
+  background: #127fff;
   border: none;
   border-radius: 6px;
 
@@ -478,8 +478,40 @@
   font-weight: 500;
 }
 
+.resp-seller-inquiry button:first-child:active {
+  background: #fff;
+  border: 2px solid #127fff;
+  color: #127fff;
+}
+
+.resp-add-cart-btn {
+  display: none;
+
+  width: min(100%, 250px);
+  height: 40px;
+  padding: 0 10px;
+
+  background: #00b517;
+
+  border: none;
+  border-radius: 6px;
+
+  color: #fff;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+
+  transition: transform 0.2s;
+}
+
+.resp-add-cart-btn:active {
+  background: #fff;
+  border: 2px solid #00b517;
+  color: #00b517;
+}
+
 .resp-product-favorite {
-  width: 40px;
+  min-width: 40px;
   height: 40px;
   display: flex;
   justify-content: center;
@@ -675,6 +707,10 @@
 
   .resp-seller-inquiry {
     display: flex;
+  }
+
+  .resp-add-cart-btn {
+    display: block;
   }
 
   /* -- */
