@@ -10,6 +10,13 @@ import kitchenMixerImg from '../../assets/home/section2/kitchen-mixer.png';
 import filledStar from '../../assets/mobile-accessories/filled-star.svg';
 import emptyStar from '../../assets/mobile-accessories/empty-star.svg';
 
+import iphone12Img from '../../assets/mobile-accessories/iphone12.png';
+import xiaomiImg from '../../assets/mobile-accessories/xiaomi.png';
+import xiaomiTabletImg from '../../assets/mobile-accessories/xiaomi-tablet.png';
+import laptopImg from '../../assets/mobile-accessories/laptop.png';
+import smartwatchImg from '../../assets/mobile-accessories/smartwatch.png';
+import headphonesImg from '../../assets/mobile-accessories/headphones.png';
+
 import headphone1 from '../../assets/consumerElectronics/headphones1.png';
 import headphone2 from '../../assets/consumerElectronics/headphones2.png';
 import headphone3 from '../../assets/consumerElectronics/headphones3.jpg';
@@ -147,12 +154,12 @@ export const consumerElectronicsCategories = [
   },
   {
     id: 4,
-    title: 'Smart watches',
-    price: '90',
+    title: 'Mobile accessory',
+    price: '300',
     discount: '-15%',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
-    images: [kitchenMixerImg],
+    images: [smartphone2],
   },
   {
     id: 5,
@@ -266,6 +273,435 @@ export const consumerElectronicsCategories = [
 ];
 
 //Products
+export const mobileAccessory = [
+  {
+    id: 1,
+    images: [
+      iphone12Img,
+      iphone12Img,
+      iphone12Img,
+      iphone12Img,
+      iphone12Img,
+      iphone12Img,
+    ],
+    title: 'Canon Camera EOS 2000, Black 10x zoom',
+    price: '$998.00',
+    oldPrice: '$1128.00',
+    rating: 4,
+    orders: 154,
+    shipping: 'Free Shipping',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
+    saved: false,
+  },
+  {
+    id: 2,
+    images: [xiaomiImg, xiaomiImg, xiaomiImg, xiaomiImg, xiaomiImg, xiaomiImg],
+    title: 'GoPro HERO6 4K Action Camera - Black',
+    price: '$998.00',
+    oldPrice: '',
+    rating: 4,
+    orders: 154,
+    shipping: 'Free Shipping',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
+    saved: false,
+  },
+  {
+    id: 3,
+    images: [
+      xiaomiTabletImg,
+      xiaomiTabletImg,
+      xiaomiTabletImg,
+      xiaomiTabletImg,
+      xiaomiTabletImg,
+      xiaomiTabletImg,
+    ],
+    title: 'GoPro HERO6 4K Action Camera - Black',
+    price: '$998.00',
+    oldPrice: '',
+    rating: 4,
+    orders: 154,
+    shipping: 'Free Shipping',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
+    saved: false,
+  },
+  {
+    id: 4,
+    images: [laptopImg, laptopImg, laptopImg, laptopImg, laptopImg, laptopImg],
+    title: 'GoPro HERO6 4K Action Camera - Black',
+    price: '$998.00',
+    oldPrice: '',
+    rating: 4,
+    orders: 154,
+    shipping: 'Free Shipping',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
+    saved: false,
+  },
+  {
+    id: 5,
+    images: [
+      smartwatchImg,
+      smartwatchImg,
+      smartwatchImg,
+      smartwatchImg,
+      smartwatchImg,
+      smartwatchImg,
+    ],
+    title: 'GoPro HERO6 4K Action Camera - Black',
+    price: '$998.00',
+    oldPrice: '$1128.00',
+    rating: 4,
+    orders: 154,
+    shipping: 'Free Shipping',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
+    saved: false,
+  },
+  {
+    id: 6,
+    images: [
+      headphonesImg,
+      headphonesImg,
+      headphonesImg,
+      headphonesImg,
+      headphonesImg,
+      headphonesImg,
+    ],
+    title: 'GoPro HERO6 4K Action Camera - Black',
+    price: '$998.00',
+    oldPrice: '',
+    rating: 4,
+    orders: 154,
+    shipping: 'Free Shipping',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
+    saved: false,
+  },
+  {
+    id: 7,
+    images: [xiaomiImg, xiaomiImg, xiaomiImg, xiaomiImg, xiaomiImg, xiaomiImg],
+    title: 'Xiaomi R9',
+    price: '$499.00',
+    oldPrice: '',
+    rating: 4,
+    orders: 154,
+    shipping: 'Free Shipping',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
+    saved: false,
+  },
+  {
+    id: 8,
+    images: [
+      xiaomiTabletImg,
+      xiaomiTabletImg,
+      xiaomiTabletImg,
+      xiaomiTabletImg,
+      xiaomiTabletImg,
+      xiaomiTabletImg,
+    ],
+    title: 'Xiaomi Tab F1',
+    price: '$549.00',
+    oldPrice: '',
+    rating: 4,
+    orders: 154,
+    shipping: 'Free Shipping',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
+    saved: false,
+  },
+  {
+    id: 9,
+    images: [
+      iphone12Img,
+      iphone12Img,
+      iphone12Img,
+      iphone12Img,
+      iphone12Img,
+      iphone12Img,
+    ],
+    title: 'iPhone 12',
+    price: '$779.00',
+    oldPrice: '$1128.00',
+    rating: 4,
+    orders: 154,
+    shipping: 'Free Shipping',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
+    saved: false,
+  },
+  {
+    id: 10,
+    images: [
+      smartwatchImg,
+      smartwatchImg,
+      smartwatchImg,
+      smartwatchImg,
+      smartwatchImg,
+      smartwatchImg,
+    ],
+    title: 'GoPro HERO6 4K Action Camera - Black',
+    price: '$998.00',
+    oldPrice: '$1128.00',
+    rating: 4,
+    orders: 154,
+    shipping: 'Free Shipping',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
+    saved: false,
+  },
+  {
+    id: 11,
+    images: [laptopImg, laptopImg, laptopImg, laptopImg, laptopImg, laptopImg],
+    title: 'Dell XPS 15',
+    price: '$1199.00',
+    oldPrice: '',
+    rating: 4,
+    orders: 154,
+    shipping: 'Free Shipping',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
+    saved: false,
+  },
+  {
+    id: 12,
+    images: [
+      iphone12Img,
+      iphone12Img,
+      iphone12Img,
+      iphone12Img,
+      iphone12Img,
+      iphone12Img,
+    ],
+    title: 'iPhone 12',
+    price: '$779.00',
+    oldPrice: '$1128.00',
+    rating: 4,
+    orders: 154,
+    shipping: 'Free Shipping',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
+    saved: false,
+  },
+  {
+    id: 13,
+    images: [
+      iphone12Img,
+      iphone12Img,
+      iphone12Img,
+      iphone12Img,
+      iphone12Img,
+      iphone12Img,
+    ],
+    title: 'iPhone 13',
+    price: '$998.00',
+    oldPrice: '$1128.00',
+    rating: 4,
+    orders: 154,
+    shipping: 'Free Shipping',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
+    saved: false,
+  },
+  {
+    id: 14,
+    images: [laptopImg, laptopImg, laptopImg, laptopImg, laptopImg, laptopImg],
+    title: 'Dell Inspiron 13',
+    price: '$878.00',
+    oldPrice: '',
+    rating: 4,
+    orders: 154,
+    shipping: 'Free Shipping',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
+    saved: false,
+  },
+  {
+    id: 15,
+    images: [xiaomiImg, xiaomiImg, xiaomiImg, xiaomiImg, xiaomiImg, xiaomiImg],
+    title: 'Black Shark 5',
+    price: '$1009.00',
+    oldPrice: '',
+    rating: 4,
+    orders: 154,
+    shipping: 'Free Shipping',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
+    saved: false,
+  },
+  {
+    id: 16,
+    images: [
+      smartwatchImg,
+      smartwatchImg,
+      smartwatchImg,
+      smartwatchImg,
+      smartwatchImg,
+      smartwatchImg,
+    ],
+    title: 'Apple Watch',
+    price: '$829.00',
+    oldPrice: '$1128.00',
+    rating: 4,
+    orders: 154,
+    shipping: 'Free Shipping',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
+    saved: false,
+  },
+  {
+    id: 17,
+    images: [
+      xiaomiTabletImg,
+      xiaomiTabletImg,
+      xiaomiTabletImg,
+      xiaomiTabletImg,
+      xiaomiTabletImg,
+      xiaomiTabletImg,
+    ],
+    title: 'Samsung Tab S8',
+    price: '$1288.00',
+    oldPrice: '',
+    rating: 4,
+    orders: 154,
+    shipping: 'Free Shipping',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
+    saved: false,
+  },
+  {
+    id: 18,
+    images: [
+      headphonesImg,
+      headphonesImg,
+      headphonesImg,
+      headphonesImg,
+      headphonesImg,
+      headphonesImg,
+    ],
+    title: 'Sony WH',
+    price: '$359.00',
+    oldPrice: '',
+    rating: 4,
+    orders: 154,
+    shipping: 'Free Shipping',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, reiciendis ducimus! Porro quos magnam ea!',
+    information: {
+      size: 'medium',
+      color: 'blue',
+      material: 'plastic',
+      seller: 'Artel Market',
+    },
+    saved: false,
+  },
+];
+
 export const headphones = [
   {
     id: '1head',

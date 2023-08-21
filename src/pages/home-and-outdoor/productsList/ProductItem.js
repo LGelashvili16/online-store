@@ -6,15 +6,12 @@ import emptyStarImg from '../../../assets/mobile-accessories/empty-star.svg';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { useSaveForLater } from '../../../contexts/SaveForLaterContext';
-import {
-  useHomeOutdoor,
-  useMobileAccessoryProducts,
-} from '../../../contexts/ProductsContext';
+import { useHomeOutdoor } from '../../../contexts/ProductsContext';
 
 const ProductItem = ({ product, layout }) => {
   const [saveForLater, setSaveForLater] = useSaveForLater();
-  const [mobileAccessoryProducts, setMobileAccessoryProducts] =
-    useMobileAccessoryProducts();
+  // const [mobileAccessoryProducts, setMobileAccessoryProducts] =
+  //   useMobileAccessoryProducts();
 
   // const [
   //   softChairsProduct,
@@ -67,15 +64,15 @@ const ProductItem = ({ product, layout }) => {
 
   const favoriteHandler = () => {
     // Update Globally
-    setMobileAccessoryProducts((prev) => {
-      prev.forEach((el) => {
-        if (el.id === product.id) {
-          el.saved = !el.saved;
-        }
-      });
+    // setMobileAccessoryProducts((prev) => {
+    //   prev.forEach((el) => {
+    //     if (el.id === product.id) {
+    //       el.saved = !el.saved;
+    //     }
+    //   });
 
-      return prev;
-    });
+    //   return prev;
+    // });
 
     // add if there is no product
     setSaveForLater((prev) => {

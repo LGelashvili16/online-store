@@ -413,6 +413,11 @@
 
 /* Responsive */
 
+.item-all-images-wrapper-inner {
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 24px;
+}
+
 .resp-images-switcher {
   display: none;
   position: absolute;
@@ -434,6 +439,8 @@
   background: none;
   border: none;
   padding-top: 2px;
+
+  transition: 0.1s;
 }
 
 .resp-images-switcher-next {
@@ -441,6 +448,12 @@
   height: 100%;
   background: none;
   border: none;
+  transition: 0.1s;
+}
+
+.resp-images-switcher-prev:active,
+.resp-images-switcher-next:active {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .resp-seller-inquiry {
@@ -544,6 +557,7 @@
 
     border: none;
     border-radius: 0;
+    pointer-events: none;
   }
 
   .active-image {

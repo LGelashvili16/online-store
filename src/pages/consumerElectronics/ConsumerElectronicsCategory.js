@@ -19,7 +19,6 @@ import Pagination from '../../components/pagination/Pagination';
 import {
   useConsumerElectronics,
   useHomeOutdoor,
-  useMobileAccessoryProducts,
 } from '../../contexts/ProductsContext';
 
 import SelectedFilter from './SelectedFilter';
@@ -36,10 +35,11 @@ import MayAlsoLike from './mayAlsoLike/MayAlsoLike';
 import { useParams } from 'react-router-dom';
 
 const ConsumerElectronicsCategory = () => {
-  const [mobileAccessoryProducts, setMobileAccessoryProducts] =
-    useMobileAccessoryProducts();
+  // const [mobileAccessoryProducts, setMobileAccessoryProducts] =
+  //   useMobileAccessoryProducts();
 
   const [
+    mobileAccessoryProduct,
     headphonesProduct,
     gamingSetProduct,
     smartphonesProduct,
@@ -50,6 +50,7 @@ const ConsumerElectronicsCategory = () => {
   const [, , , smartWatchesProduct] = useHomeOutdoor();
 
   const [currentProducts, setCurrentProducts] = useState(headphonesProduct);
+  console.log();
 
   const [gridActive, setGridActive] = useState(false);
   const [listActive, setListActive] = useState(true);
@@ -66,6 +67,10 @@ const ConsumerElectronicsCategory = () => {
   const params = useParams();
 
   useEffect(() => {
+    if (params.name === 'mobile-accessory') {
+      setCurrentProducts(mobileAccessoryProduct);
+    }
+
     if (params.name === 'headphones') {
       setCurrentProducts(headphonesProduct);
     }
@@ -97,6 +102,7 @@ const ConsumerElectronicsCategory = () => {
     camerasProduct,
     pcLaptopProduct,
     smartWatchesProduct,
+    mobileAccessoryProduct,
   ]);
 
   // Calculate products quantity

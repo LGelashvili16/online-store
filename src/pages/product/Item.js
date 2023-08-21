@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import styles from './Item.module.css';
 import { products } from '../../data/mobileAccessories/mobileAccessoriesData';
 import { useEffect, useRef, useState } from 'react';
@@ -29,8 +29,8 @@ import {
 import { useSaveForLater } from '../../contexts/SaveForLaterContext';
 
 const Item = () => {
-  const [mobileAccessoryProducts, setMobileAccessoryProducts] =
-    useMobileAccessoryProducts();
+  // const [mobileAccessoryProducts, setMobileAccessoryProducts] =
+  //   useMobileAccessoryProducts();
   const [
     softChairsProduct,
     sofaChairProduct,
@@ -43,6 +43,7 @@ const Item = () => {
   ] = useHomeOutdoor();
 
   const [
+    mobileAccessoryProducts,
     headphonesProduct,
     gamingSetProduct,
     smartphonesProduct,
@@ -50,11 +51,17 @@ const Item = () => {
     pcLaptopProduct,
   ] = useConsumerElectronics();
 
-  const [recommendedProducts] = useRecommendedProducts();
+  const [
+    recommendedProducts,
+    youMayLikeProducts,
+    relatedProducts,
+    alsoLikeProducts,
+  ] = useRecommendedProducts();
 
   const [saveForLater, setSaveForLater] = useSaveForLater();
   const [cart, setCart] = useCart();
 
+  const navigate = useNavigate();
   const params = useParams();
 
   const [currentProducts, setCurrentProducts] = useState(
@@ -78,6 +85,11 @@ const Item = () => {
   const productTrue = { ...currentProduct, saved: true };
 
   useEffect(() => {
+    if (params.from === 'mobile-accessory') {
+      setCurrentProducts(mobileAccessoryProducts);
+      setMainImg(currentProduct.images[0]);
+    }
+
     if (params.from === 'soft-chairs') {
       setCurrentProducts(softChairsProduct);
       setMainImg(currentProduct.images[0]);
@@ -152,6 +164,21 @@ const Item = () => {
       setCurrentProducts(recommendedProducts);
       setMainImg(currentProduct.images[0]);
     }
+
+    if (params.from === 'you-may-like') {
+      setCurrentProducts(youMayLikeProducts);
+      setMainImg(currentProduct.images[0]);
+    }
+
+    if (params.from === 'related') {
+      setCurrentProducts(relatedProducts);
+      setMainImg(currentProduct.images[0]);
+    }
+
+    if (params.from === 'may-also-like') {
+      setCurrentProducts(alsoLikeProducts);
+      setMainImg(currentProduct.images[0]);
+    }
   }, [
     params,
     softChairsProduct,
@@ -169,6 +196,10 @@ const Item = () => {
     camerasProduct,
     pcLaptopProduct,
     recommendedProducts,
+    mobileAccessoryProducts,
+    youMayLikeProducts,
+    relatedProducts,
+    alsoLikeProducts,
   ]);
 
   useEffect(() => {
@@ -217,6 +248,14 @@ const Item = () => {
     e.target.closest('div').children[0].classList.add(styles['active-price']);
   };
 
+  const sellerProfileHandler = () => {
+    navigate('/online-store/dummy/seller-profile');
+  };
+
+  const inquiryHandler = () => {
+    navigate('/online-store/dummy/inquiry');
+  };
+
   const addToCartHandler = () => {
     setCart((prev) => {
       if (prev.length === 0) {
@@ -229,15 +268,15 @@ const Item = () => {
 
   const saveHandler = () => {
     // Update Globally
-    setMobileAccessoryProducts((prev) => {
-      prev.forEach((el) => {
-        if (el.id === currentProduct.id) {
-          el.saved = !el.saved;
-        }
-      });
+    // setMobileAccessoryProducts((prev) => {
+    //   prev.forEach((el) => {
+    //     if (el.id === currentProduct.id) {
+    //       el.saved = !el.saved;
+    //     }
+    //   });
 
-      return prev;
-    });
+    //   return prev;
+    // });
 
     setSaveForLater((prev) => {
       if (prev.length === 0) {
@@ -307,26 +346,28 @@ const Item = () => {
         </div>
 
         <div className={styles['item-all-images-wrapper']}>
-          <ul
-            style={{ left: `${fromLeft}px` }}
-            className={styles['item-all-images']}
-            ref={imagesRef}
-          >
-            {currentProduct.images.map((img, i) => {
-              return (
-                <li
-                  key={i}
-                  className={`${styles['image']} ${
-                    i === 0 ? styles['active-image'] : ''
-                  }`}
-                  onClick={imageHandler}
-                  ref={imageRef}
-                >
-                  <img src={img} alt="product" />
-                </li>
-              );
-            })}
-          </ul>
+          <div className={styles['item-all-images-wrapper-inner']}>
+            <ul
+              style={{ left: `${fromLeft}px` }}
+              className={styles['item-all-images']}
+              ref={imagesRef}
+            >
+              {currentProduct.images.map((img, i) => {
+                return (
+                  <li
+                    key={i}
+                    className={`${styles['image']} ${
+                      i === 0 ? styles['active-image'] : ''
+                    }`}
+                    onClick={imageHandler}
+                    ref={imageRef}
+                  >
+                    <img src={img} alt="product" />
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
 
           <div className={styles['resp-images-switcher']}>
             <button
@@ -483,8 +524,8 @@ const Item = () => {
           </div>
 
           <div className={styles['seller-inquiry-profile']}>
-            <button>Send inquiry</button>
-            <button>Seller's profile</button>
+            <button onClick={inquiryHandler}>Send inquiry</button>
+            <button onClick={sellerProfileHandler}>Seller's profile</button>
           </div>
         </div>
 

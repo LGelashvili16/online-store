@@ -10,7 +10,7 @@ import uae from '../../assets/header/icons/UAE.svg';
 import usa from '../../assets/header/icons/USA.svg';
 
 export const headerCategoriesData = [
-  { name: 'Mobile accessory', link: 'mobile-accessory' },
+  { name: 'Mobile accessory', link: 'consumer-electronics/mobile-accessory' },
   { name: 'Smart watches', link: 'consumer-electronics/smart-watches' },
   { name: 'Cameras', link: 'consumer-electronics/cameras' },
   { name: 'Headphones', link: 'consumer-electronics/headphones' },

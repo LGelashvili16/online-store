@@ -32,14 +32,17 @@ export const footerInfo = {
 export const language = [
   {
     lang: 'English',
+    cur: 'USD',
     flag: usaFlag,
   },
   {
     lang: 'French',
+    cur: 'EUR',
     flag: franceFlag,
   },
   {
     lang: 'German',
+    cur: 'EUR',
     flag: deutschlandFlag,
   },
 ];

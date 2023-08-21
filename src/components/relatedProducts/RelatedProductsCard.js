@@ -1,13 +1,25 @@
+import { useNavigate } from 'react-router-dom';
 import styles from './RelatedProductsCard.module.css';
 
-const RelatedProductsCard = ({ image, title, price }) => {
+const RelatedProductsCard = ({ prod }) => {
+  const navigate = useNavigate();
+
+  const productClickHandler = (e) => {
+    // if (
+    //   e.target !== favoriteRef.current &&
+    //   e.target !== favoriteRef.current.children[0]
+    // )
+    navigate(
+      `/online-store/product/${`${prod.path}`}/${parseInt(parseInt(prod.id))}`
+    );
+  };
   return (
-    <div className={styles['card']}>
+    <div className={styles['card']} onClick={productClickHandler}>
       <div className={styles['card-image']}>
-        <img src={image} alt="product" />
+        <img src={prod.images[0]} alt="product" />
       </div>
-      <h4>{title}</h4>
-      <p>{price}</p>
+      <h4>{prod.title}</h4>
+      <p>{prod.priceRange}</p>
     </div>
   );
 };

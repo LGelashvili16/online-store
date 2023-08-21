@@ -51,6 +51,14 @@
   border-bottom: 2px solid #0d6efd;
 }
 
+.item-details-content {
+  display: none;
+}
+
+.active-content {
+  display: block;
+}
+
 .item-details-description {
   max-width: 798px;
   margin-left: 20px;

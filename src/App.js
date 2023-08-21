@@ -9,7 +9,7 @@ import './App.css';
 
 // Pages
 import Home from './pages/home/Home';
-import MobileAccessories from './pages/mobile-accessories/MobileAccessories';
+// import MobileAccessories from './pages/mobile-accessories/MobileAccessories';
 import ProductPage from './pages/product/ProductPage';
 
 // Layouts
@@ -40,7 +40,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/online-store/" element={<RootLayout />}>
       <Route index element={<Home />} />
-      <Route path="mobile-accessory" element={<MobileAccessories />} />
+      {/* <Route path="mobile-accessory" element={<MobileAccessories />} /> */}
       <Route path="home-and-outdoor" element={<HomeAndOutdoorPage />} />
       <Route
         path="consumer-electronics"

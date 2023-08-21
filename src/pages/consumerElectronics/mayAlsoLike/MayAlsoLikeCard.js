@@ -1,14 +1,25 @@
 import React from 'react';
 import styles from './MayAlsoLikeCard.module.css';
+import { useNavigate } from 'react-router-dom';
 
-const MayAlsoLikeCard = ({ image, price, description }) => {
+const MayAlsoLikeCard = ({ prod }) => {
+  const navigate = useNavigate();
+
+  const productClickHandler = (e) => {
+    // if (
+    //   e.target !== favoriteRef.current &&
+    //   e.target !== favoriteRef.current.children[0]
+    // )
+    navigate(`../product/${`${prod.path}`}/${parseInt(parseInt(prod.id))}`);
+  };
+
   return (
-    <div className={styles['card']}>
+    <div className={styles['card']} onClick={productClickHandler}>
       <div className={styles['card-image']}>
-        <img src={image} alt="product" />
+        <img src={prod.images[0]} alt="product" />
       </div>
-      <h3>{price}</h3>
-      <p>{description}</p>
+      <h3>{prod.price}</h3>
+      <p>{prod.description}</p>
     </div>
   );
 };

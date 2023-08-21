@@ -9,7 +9,7 @@ import germanyFlag from '../../assets/item/Germanyflag.png';
 import verifiedIcon from '../../assets/item/verified_user.png';
 import worldwideIcon from '../../assets/item/worldwide.png';
 import angleIcon from '../../assets/item/angle_right.png';
-import MayAlsoLike from '../mobile-accessories/mayAlsoLike/MayAlsoLike';
+import MayAlsoLike from '../../components/mayAlsoLike/MayAlsoLike';
 
 const ProductPage = () => {
   return (

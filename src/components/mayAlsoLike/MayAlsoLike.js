@@ -1,13 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './MayAlsoLike.module.css';
 import MayAlsoLikeCard from './MayAlsoLikeCard';
-import { mayAlsoLikeData } from '../../../data/mobileAccessories/mobileAccessoriesData';
+import { mayAlsoLikeData } from '../../data/mobileAccessories/mobileAccessoriesData';
 
 import { motion } from 'framer-motion';
+import { useRecommendedProducts } from '../../contexts/ProductsContext';
 
 const MayAlsoLike = () => {
   const [cardsContainerWidth, setCardsContainerWidth] = useState(0);
   const containerRef = useRef();
+  const [, , , alsoLikeProducts] = useRecommendedProducts();
 
   useEffect(() => {
     setCardsContainerWidth(
@@ -30,15 +32,8 @@ const MayAlsoLike = () => {
           dragConstraints={{ right: 0, left: -cardsContainerWidth }}
           className={styles['may-also-like-cards']}
         >
-          {mayAlsoLikeData.map((itm, i) => {
-            return (
-              <MayAlsoLikeCard
-                key={i}
-                image={itm.image}
-                price={itm.price}
-                description={itm.description}
-              />
-            );
+          {alsoLikeProducts.map((itm, i) => {
+            return <MayAlsoLikeCard key={i} prod={itm} />;
           })}
         </motion.div>
       </motion.div>

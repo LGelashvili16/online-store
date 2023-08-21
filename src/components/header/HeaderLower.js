@@ -145,10 +145,15 @@ const HeaderLower = () => {
           className={styles['resp-inner-carousel']}
         >
           <div>
+            <Link to="/online-store/">Home</Link>
+          </div>
+          <div>
             <Link to="/online-store/consumer-electronics">All category</Link>
           </div>
           <div>
-            <Link to="mobile-accessory">Mobile accessory</Link>
+            <Link to="consumer-electronics/mobile-accessory">
+              Mobile accessory
+            </Link>
           </div>
           <div>
             <Link to="/online-store/consumer-electronics">Gadgets</Link>
@@ -157,7 +162,7 @@ const HeaderLower = () => {
             <Link to="/online-store/home-and-outdoor">Clothes</Link>
           </div>
           <div>
-            <Link to="mobile-accessory">Accesories</Link>
+            <Link to="consumer-electronics/mobile-accessory">Accesories</Link>
           </div>
         </motion.div>
       </motion.div>

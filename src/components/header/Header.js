@@ -27,22 +27,29 @@ import HeaderLower from './HeaderLower';
 import { useCart } from '../../contexts/CartContext';
 import { useSaveForLater } from '../../contexts/SaveForLaterContext';
 import { useUser } from '../../contexts/UserContext';
+import { language } from '../../data/footer/footerData';
+import { useChangeLanguage } from '../../contexts/Context';
 
 const Header = () => {
   const [showCategories, setShowCategories] = useState(false);
   const [showBurgerMenu, setShowBurgerMenu] = useState(false);
   const [showUserList, setShowUserList] = useState(false);
   const [showRespUserList, setShowRespUserList] = useState(false);
+  const [showLangList, setShowLangList] = useState(false);
   const [mobileGoBack, setMobileGoBack] = useState('');
   const [mobileGoBackTitle, setMobileGoBackTitle] = useState('');
   const [windowSize, setWindowSize] = useState(window.innerWidth);
   const [cart] = useCart();
   const [saveForLater] = useSaveForLater();
+  const [currentLang, setCurrentLang] = useChangeLanguage();
 
   const [users, setUsers, loggedInUser, setLoggedInUsers] = useUser();
 
   const menuRef = useRef();
   const categoriesRef = useRef();
+
+  const showListRef = useRef();
+  const listRef = useRef();
 
   const profileRef = useRef();
   const profileListRef = useRef();
@@ -57,8 +64,22 @@ const Header = () => {
     setShowBurgerMenu(!showBurgerMenu);
   };
 
+  const showLangListHandler = () => {
+    setShowLangList(!showLangList);
+  };
+
+  const selectLangHandler = (e) => {
+    const flag = e.target.closest('li').children[0].src;
+    const lang = e.target.closest('li').children[1].innerText;
+
+    setCurrentLang((prev) => {
+      return { ...prev, lang: lang, flag: flag };
+    });
+  };
+
   const goBackHandler = () => {
     navigate(-1);
+    console.log(location);
   };
 
   useEffect(() => {
@@ -208,7 +229,7 @@ const Header = () => {
                 <img src={respAvatar} alt="" />
                 <div>
                   <Link to="/online-store/login">Sign in</Link>
-                  <Link to="/online-store/register">Register</Link>
+                  <Link to="/online-store/registration">Register</Link>
                 </div>
               </div>
 
@@ -231,28 +252,55 @@ const Header = () => {
                 </div>
 
                 <div>
-                  <img src={respOrders} alt="" /> <Link>My orders</Link>
+                  <img src={respOrders} alt="" />{' '}
+                  <Link to="dummy/orders">My orders</Link>
                 </div>
               </div>
 
               <div className={styles['resp-menu-page-s3']}>
-                <div>
-                  <img src={respLang} alt="" /> <Link>English | USD</Link>
+                <div
+                  className={styles['resp-menu-page-s3-inner']}
+                  onClick={showLangListHandler}
+                >
+                  <img src={respLang} alt="" />
+                  <Link>
+                    {currentLang.lang} |
+                    {currentLang.lang === 'English' ? ' USD' : ' EUR'}
+                  </Link>
+                  <ul
+                    className={`${
+                      showLangList
+                        ? styles['footer-change-lang-list']
+                        : styles['hidden']
+                    }`}
+                    ref={listRef}
+                  >
+                    {language.map((lang, i) => {
+                      return (
+                        <li key={i} onClick={selectLangHandler}>
+                          <img src={lang.flag} alt="flag" />
+                          <span>{lang.lang}</span>
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </div>
 
                 <div>
-                  <img src={respContact} alt="" /> <Link>Contact us</Link>
+                  <img src={respContact} alt="" />{' '}
+                  <Link to="dummy/contact-us">Contact us</Link>
                 </div>
 
                 <div>
-                  <img src={respAbout} alt="" /> <Link>About</Link>
+                  <img src={respAbout} alt="" />{' '}
+                  <Link to="dummy/about">About</Link>
                 </div>
               </div>
 
               <div className={styles['resp-menu-page-s4']}>
-                <Link>User agreetment</Link>
-                <Link>Partnership</Link>
-                <Link>Privacy policy</Link>
+                <Link to="dummy/user-agreetment">User agreetment</Link>
+                <Link to="dummy/partnership">Partnership</Link>
+                <Link to="dummy/privacy-policy">Privacy policy</Link>
               </div>
             </div>
           </div>

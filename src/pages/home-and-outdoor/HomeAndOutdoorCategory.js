@@ -16,10 +16,7 @@ import Newsletter from '../../components/newsletter/Newsletter';
 import Pagination from '../../components/pagination/Pagination';
 
 // import { products } from '../../data/mobileAccessories/mobileAccessoriesData';
-import {
-  useHomeOutdoor,
-  useMobileAccessoryProducts,
-} from '../../contexts/ProductsContext';
+import { useHomeOutdoor } from '../../contexts/ProductsContext';
 
 import SelectedFilter from './SelectedFilter';
 
@@ -35,8 +32,8 @@ import MayAlsoLike from './mayAlsoLike/MayAlsoLike';
 import { useParams } from 'react-router-dom';
 
 const HomeAndOutdoorCategory = () => {
-  const [mobileAccessoryProducts, setMobileAccessoryProducts] =
-    useMobileAccessoryProducts();
+  // const [mobileAccessoryProducts, setMobileAccessoryProducts] =
+  //   useMobileAccessoryProducts();
   const [
     softChairsProduct,
     sofaChairProduct,
