@@ -18,14 +18,36 @@ const SavedForLaterCard = ({ product, isDragging }) => {
 
   const addToCartHandler = (e) => {
     e.stopPropagation();
+
     setCart((prev) => {
       if (prev.length === 0) {
         return [product];
       }
 
-      return !prev.includes(product) ? [...prev, product] : prev;
+      const findEl = prev.find((el) => {
+        return el.id === product.id;
+      });
+
+      if (findEl) {
+        return prev;
+      }
+
+      return [...prev, product];
+
+      // return !prev.includes(productTrue) ? [...prev, productTrue] : prev;
     });
   };
+
+  // const addToCartHandler = (e) => {
+  //   e.stopPropagation();
+  //   setCart((prev) => {
+  //     if (prev.length === 0) {
+  //       return [product];
+  //     }
+
+  //     return !prev.includes(product) ? [...prev, product] : prev;
+  //   });
+  // };
 
   const removeHandler = (e) => {
     e.stopPropagation();

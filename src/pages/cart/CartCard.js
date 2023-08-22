@@ -18,6 +18,7 @@ const CartCard = ({ product, quantity, setQuantity }) => {
   const [showPcsList, setShowPcsList] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
   const [windowSize, setWindowSize] = useState(window.innerWidth);
+  const [isSaved, setIsSaved] = useState(product.saved);
 
   const [saveForLater, setSaveForLater] = useSaveForLater();
   const [cart, setCart] = useCart();
@@ -79,19 +80,20 @@ const CartCard = ({ product, quantity, setQuantity }) => {
   const productTrue = { ...product, saved: true };
   const productFalse = { ...product, saved: false };
 
+  // Add to saved
+  useEffect(() => {
+    const find = saveForLater.find((prod) => prod.id === product.id);
+    if (find) setIsSaved(true);
+    if (!find?.saved) setIsSaved(false);
+  }, [saveForLater, product]);
+
   const favoriteHandler = () => {
-    // add if there is no product
     setSaveForLater((prev) => {
       if (prev.length === 0) {
         return [productTrue];
       }
 
-      return [...prev, productFalse];
-    });
-
-    // change "saved" propery
-    if (saveForLater.length > 0) {
-      setSaveForLater((prev) => {
+      if (prev.length > 0) {
         const map = prev.map((prod) => {
           if (prod.id === product.id) {
             return { ...prod, saved: !prod.saved };
@@ -100,28 +102,60 @@ const CartCard = ({ product, quantity, setQuantity }) => {
           return prod;
         });
 
-        return map;
-      });
-    }
+        const find = map.find((prod) => prod.id === product.id);
 
-    setSaveForLater((prev) => {
-      const unique = prev.filter((el, index) => {
-        return index === prev.findIndex((o) => el.id === o.id);
-      });
+        if (!find) map.push(productTrue);
 
-      return unique;
-    });
+        const filter = map.filter((prod) => prod.saved === true);
 
-    setSaveForLater((prev) => {
-      const filter = prev.filter((el) => {
-        return el.saved === true;
-      });
-
-      // setIsSaved(false);
-
-      return filter;
+        return filter;
+      }
     });
   };
+
+  // const favoriteHandler = () => {
+  //   // add if there is no product
+  //   setSaveForLater((prev) => {
+  //     if (prev.length === 0) {
+  //       return [productTrue];
+  //     }
+
+  //     return [...prev, productFalse];
+  //   });
+
+  //   // change "saved" propery
+  //   if (saveForLater.length > 0) {
+  //     setSaveForLater((prev) => {
+  //       const map = prev.map((prod) => {
+  //         if (prod.id === product.id) {
+  //           return { ...prod, saved: !prod.saved };
+  //         }
+
+  //         return prod;
+  //       });
+
+  //       return map;
+  //     });
+  //   }
+
+  //   setSaveForLater((prev) => {
+  //     const unique = prev.filter((el, index) => {
+  //       return index === prev.findIndex((o) => el.id === o.id);
+  //     });
+
+  //     return unique;
+  //   });
+
+  //   setSaveForLater((prev) => {
+  //     const filter = prev.filter((el) => {
+  //       return el.saved === true;
+  //     });
+
+  //     // setIsSaved(false);
+
+  //     return filter;
+  //   });
+  // };
 
   useEffect(() => {
     setPrice(+currentPrice * Number(productQuantity));
@@ -182,7 +216,7 @@ const CartCard = ({ product, quantity, setQuantity }) => {
               Remove
             </button>
             <button className={styles['later-btn']} onClick={favoriteHandler}>
-              Save for later
+              {isSaved ? 'Saved' : 'Save for later'}
             </button>
           </div>
 

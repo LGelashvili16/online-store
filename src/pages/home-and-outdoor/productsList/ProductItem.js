@@ -62,30 +62,20 @@ const ProductItem = ({ product, layout }) => {
       navigate(`../product/${`${params.name}`}/${parseInt(product.id)}`);
   };
 
+  // Add to saved
+  useEffect(() => {
+    const find = saveForLater.find((prod) => prod.id === product.id);
+    if (find) setIsSaved(true);
+    if (!find?.saved) setIsSaved(false);
+  }, [saveForLater, product]);
+
   const favoriteHandler = () => {
-    // Update Globally
-    // setMobileAccessoryProducts((prev) => {
-    //   prev.forEach((el) => {
-    //     if (el.id === product.id) {
-    //       el.saved = !el.saved;
-    //     }
-    //   });
-
-    //   return prev;
-    // });
-
-    // add if there is no product
     setSaveForLater((prev) => {
       if (prev.length === 0) {
         return [productTrue];
       }
 
-      return [...prev, productFalse];
-    });
-
-    // change "saved" propery
-    if (saveForLater.length > 0) {
-      setSaveForLater((prev) => {
+      if (prev.length > 0) {
         const map = prev.map((prod) => {
           if (prod.id === product.id) {
             return { ...prod, saved: !prod.saved };
@@ -94,28 +84,60 @@ const ProductItem = ({ product, layout }) => {
           return prod;
         });
 
-        return map;
-      });
-    }
+        const find = map.find((prod) => prod.id === product.id);
 
-    setSaveForLater((prev) => {
-      const unique = prev.filter((el, index) => {
-        return index === prev.findIndex((o) => el.id === o.id);
-      });
+        if (!find) map.push(productTrue);
 
-      return unique;
-    });
+        const filter = map.filter((prod) => prod.saved === true);
 
-    setSaveForLater((prev) => {
-      const filter = prev.filter((el) => {
-        return el.saved === true;
-      });
-
-      setIsSaved(false);
-
-      return filter;
+        return filter;
+      }
     });
   };
+
+  // const favoriteHandler = () => {
+  //   // add if there is no product
+  //   setSaveForLater((prev) => {
+  //     if (prev.length === 0) {
+  //       return [productTrue];
+  //     }
+
+  //     return [...prev, productFalse];
+  //   });
+
+  //   // change "saved" propery
+  //   if (saveForLater.length > 0) {
+  //     setSaveForLater((prev) => {
+  //       const map = prev.map((prod) => {
+  //         if (prod.id === product.id) {
+  //           return { ...prod, saved: !prod.saved };
+  //         }
+
+  //         return prod;
+  //       });
+
+  //       return map;
+  //     });
+  //   }
+
+  //   setSaveForLater((prev) => {
+  //     const unique = prev.filter((el, index) => {
+  //       return index === prev.findIndex((o) => el.id === o.id);
+  //     });
+
+  //     return unique;
+  //   });
+
+  //   setSaveForLater((prev) => {
+  //     const filter = prev.filter((el) => {
+  //       return el.saved === true;
+  //     });
+
+  //     setIsSaved(false);
+
+  //     return filter;
+  //   });
+  // };
 
   return (
     <div

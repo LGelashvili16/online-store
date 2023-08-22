@@ -256,15 +256,43 @@ const Item = () => {
     navigate('/online-store/dummy/inquiry');
   };
 
-  const addToCartHandler = () => {
+  const addToCartHandler = (e) => {
+    e.stopPropagation();
+
     setCart((prev) => {
       if (prev.length === 0) {
         return [currentProduct];
       }
 
-      return !prev.includes(currentProduct) ? [...prev, currentProduct] : prev;
+      const findEl = prev.find((el) => {
+        return el.id === currentProduct.id;
+      });
+
+      if (findEl) {
+        return prev;
+      }
+
+      return [...prev, currentProduct];
+
+      // return !prev.includes(productTrue) ? [...prev, productTrue] : prev;
     });
   };
+
+  // const addToCartHandler = () => {
+  //   setCart((prev) => {
+  //     if (prev.length === 0) {
+  //       return [currentProduct];
+  //     }
+
+  //     return !prev.includes(currentProduct) ? [...prev, currentProduct] : prev;
+  //   });
+  // };
+
+  useEffect(() => {
+    const find = saveForLater.find((prod) => prod.id === currentProduct.id);
+    if (find) setIsSaved(true);
+    if (!find?.saved) setIsSaved(false);
+  }, [saveForLater, currentProduct]);
 
   const saveHandler = () => {
     setSaveForLater((prev) => {
@@ -272,11 +300,7 @@ const Item = () => {
         return [productTrue];
       }
 
-      return [...prev, currentProduct];
-    });
-
-    if (saveForLater.length > 0) {
-      setSaveForLater((prev) => {
+      if (prev.length > 0) {
         const map = prev.map((prod) => {
           if (prod.id === currentProduct.id) {
             return { ...prod, saved: !prod.saved };
@@ -285,28 +309,61 @@ const Item = () => {
           return prod;
         });
 
-        return map;
-      });
-    }
+        const find = map.find((prod) => prod.id === currentProduct.id);
 
-    setSaveForLater((prev) => {
-      const unique = prev.filter((el, index) => {
-        return index === prev.findIndex((o) => el.id === o.id);
-      });
+        if (!find) map.push(productTrue);
 
-      return unique;
-    });
+        const filter = map.filter((prod) => prod.saved === true);
 
-    setSaveForLater((prev) => {
-      const filter = prev.filter((el) => {
-        return el.saved === true;
-      });
-
-      setIsSaved(false);
-
-      return filter;
+        return filter;
+      }
     });
   };
+
+  // const saveHandler = () => {
+
+  //   setSaveForLater((prev) => {
+  //     if (prev.length === 0) {
+  //       return [productTrue];
+  //     }
+
+  //     return [...prev, currentProduct];
+  //   });
+
+  //   if (saveForLater.length > 0) {
+  //     setSaveForLater((prev) => {
+  //       const map = prev.map((prod) => {
+  //         if (prod.id === currentProduct.id) {
+  //           return { ...prod, saved: !prod.saved };
+  //         }
+
+  //         return prod;
+  //       });
+
+  //       return map;
+  //     });
+  //   }
+
+  //   setSaveForLater((prev) => {
+  //     const unique = prev.filter((el, index) => {
+  //       return index === prev.findIndex((o) => el.id === o.id);
+  //     });
+
+  //     return unique;
+  //   });
+
+  //   setTimeout(() => {
+  //     setSaveForLater((prev) => {
+  //       const filter = prev.filter((el) => {
+  //         return el.saved === true;
+  //       });
+
+  //       setIsSaved(false);
+
+  //       return filter;
+  //     });
+  //   }, 0);
+  // };
 
   const readMoreHandler = () => {
     setReadMore((prev) => !prev);
@@ -423,10 +480,7 @@ const Item = () => {
             className={styles['resp-product-favorite']}
             onClick={saveHandler}
           >
-            <img
-              src={currentProduct.saved ? saveFilledIcon : saveIcon}
-              alt="favorite"
-            />
+            <img src={isSaved ? saveFilledIcon : saveIcon} alt="favorite" />
           </div>
         </div>
 
