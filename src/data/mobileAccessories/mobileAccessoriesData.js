@@ -1,4 +1,5 @@
 import iphone12Img from '../../assets/mobile-accessories/iphone12.png';
+import iphone14Img from '../../assets/mobile-accessories/iphone14pro.jpeg';
 import xiaomiImg from '../../assets/mobile-accessories/xiaomi.png';
 import xiaomiTabletImg from '../../assets/mobile-accessories/xiaomi-tablet.png';
 import laptopImg from '../../assets/mobile-accessories/laptop.png';
@@ -93,7 +94,7 @@ export const products = [
     id: 1,
     images: [
       iphone12Img,
-      iphone12Img,
+      iphone14Img,
       iphone12Img,
       iphone12Img,
       iphone12Img,

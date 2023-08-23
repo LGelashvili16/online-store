@@ -29,6 +29,7 @@ import { useSaveForLater } from '../../contexts/SaveForLaterContext';
 import { useUser } from '../../contexts/UserContext';
 import { language } from '../../data/footer/footerData';
 import { useChangeLanguage } from '../../contexts/Context';
+import { useAllProducts } from '../../contexts/ProductsContext';
 
 const Header = () => {
   const [showCategories, setShowCategories] = useState(false);
@@ -39,11 +40,17 @@ const Header = () => {
   const [mobileGoBack, setMobileGoBack] = useState('');
   const [mobileGoBackTitle, setMobileGoBackTitle] = useState('');
   const [windowSize, setWindowSize] = useState(window.innerWidth);
+  const [showSearchedList, setShowSearchedList] = useState(false);
+  const [searched, setSearched] = useState([]);
   const [cart] = useCart();
   const [saveForLater] = useSaveForLater();
   const [currentLang, setCurrentLang] = useChangeLanguage();
 
   const [users, setUsers, loggedInUser, setLoggedInUsers] = useUser();
+  const [allProducts] = useAllProducts();
+
+  const searchedListRef = useRef();
+  const searchRef = useRef();
 
   const menuRef = useRef();
   const categoriesRef = useRef();
@@ -59,6 +66,28 @@ const Header = () => {
   const location = useLocation();
 
   const navigate = useNavigate();
+
+  const searchHandler = (e) => {
+    const filtered = allProducts.filter((prod) => {
+      return prod.title.toLowerCase().includes(e.target.value.toLowerCase());
+    });
+
+    setSearched(filtered);
+
+    if (e.target.value === '') setSearched([]);
+  };
+
+  const searchFocusHandler = () => {
+    setShowSearchedList(true);
+  };
+
+  const searchBlurHandler = () => {
+    if (searched.length === 0) setShowSearchedList(false);
+  };
+
+  const searchedProductClickHandler = (path = 'unknown', id) => {
+    navigate(`/online-store/product/${path}/${id}`);
+  };
 
   const burgerMenuHandler = (e) => {
     setShowBurgerMenu(!showBurgerMenu);
@@ -164,23 +193,20 @@ const Header = () => {
   }, [location.pathname, mobileGoBack]);
 
   const windowClickHandler = (e) => {
-    if (e.target !== menuRef.current && e.target !== categoriesRef.current) {
+    if (e.target !== menuRef.current && e.target !== categoriesRef.current)
       setShowCategories(false);
-    }
 
-    if (
-      e.target !== profileRef.current &&
-      e.target !== profileListRef.current
-    ) {
+    if (e.target !== profileRef.current && e.target !== profileListRef.current)
       setShowUserList(false);
-    }
 
     if (
       e.target !== respProfileRef.current &&
       e.target !== respProfileListRef.current
-    ) {
+    )
       setShowRespUserList(false);
-    }
+
+    if (e.target !== searchedListRef.current && e.target !== searchRef.current)
+      setShowSearchedList(false);
   };
 
   useEffect(() => {
@@ -348,6 +374,34 @@ const Header = () => {
               : ''
           }`}
         >
+          <ul
+            className={`${styles['searched-list']} ${
+              showSearchedList ? styles['show-searched'] : styles['']
+            }`}
+            ref={searchedListRef}
+          >
+            {searched.length === 0 && <span>No product found!</span>}
+            {searched.length > 0 &&
+              searched.map((prod) => (
+                <li
+                  key={prod.id}
+                  onClick={() =>
+                    searchedProductClickHandler(prod.path, parseInt(prod.id))
+                  }
+                >
+                  <div className={styles['searched-img']}>
+                    <img src={prod.images[0]} alt="" />
+                  </div>
+
+                  <div className={styles['searched-info']}>
+                    <h4>{prod.title}</h4>
+                    <p>{prod.price}</p>
+                    <p>{prod.description.slice(0, 35)}</p>
+                  </div>
+                </li>
+              ))}
+          </ul>
+
           <img
             className={styles['header-form-search-icon']}
             src={searchProfile}
@@ -357,6 +411,10 @@ const Header = () => {
             className={styles['header-search']}
             type="text"
             placeholder="Search"
+            onFocus={searchFocusHandler}
+            onBlur={searchBlurHandler}
+            onChange={searchHandler}
+            ref={searchRef}
           />
 
           <div className={styles['header-select']}>

@@ -1,9 +1,7 @@
 import { createContext, useContext, useState } from 'react';
 
-import {
-  mayAlsoLikeData,
-  products,
-} from '../data/mobileAccessories/mobileAccessoriesData';
+import { mayAlsoLikeData } from '../data/mobileAccessories/mobileAccessoriesData';
+
 import {
   kitchenDishes,
   sofaChair,
@@ -34,6 +32,7 @@ const moibleAccessoryContext = createContext();
 const homeOutdoorContext = createContext();
 const consumerElectronicsContext = createContext();
 const recommendedContext = createContext();
+const allProductsContext = createContext();
 
 export const useMobileAccessoryProducts = () => {
   return useContext(moibleAccessoryContext);
@@ -51,42 +50,68 @@ export const useRecommendedProducts = () => {
   return useContext(recommendedContext);
 };
 
+export const useAllProducts = () => {
+  return useContext(allProductsContext);
+};
+
 export const ProductsProvider = ({ children }) => {
   // const [mobileAccessoryProducts, setMobileAccessoryProducts] =
   //   useState(products);
 
   // Home and outdoor
-  const [softChairsProduct, setSoftChairsProduct] = useState(softChairs);
-  const [sofaChairProduct, setSofaChairProduct] = useState(sofaChair);
-  const [kitchenDishesProduct, setKitchenDishesProduct] =
-    useState(kitchenDishes);
-  const [smartWatchesProduct, setSmartWatchesProduct] = useState(smartWatches);
-  const [kitchenMixerProduct, setKitchenMixerProduct] = useState(kitchenMixer);
-  const [blendersProduct, setBlendersProduct] = useState(blenders);
-  const [homeApplianceProduct, setHomeApplianceProduct] =
-    useState(homeAppliance);
-  const [coffeeMakerProduct, setCoffeeMakerProduct] = useState(coffeeMaker);
+  const [softChairsProduct] = useState(softChairs);
+  const [sofaChairProduct] = useState(sofaChair);
+  const [kitchenDishesProduct] = useState(kitchenDishes);
+  const [smartWatchesProduct] = useState(smartWatches);
+  const [kitchenMixerProduct] = useState(kitchenMixer);
+  const [blendersProduct] = useState(blenders);
+  const [homeApplianceProduct] = useState(homeAppliance);
+  const [coffeeMakerProduct] = useState(coffeeMaker);
 
   // Consumer electronics
-  const [mobileAccessoryProduct, setMobileAccessoryProduct] =
-    useState(mobileAccessory);
-  const [headphonesProduct, setHeadphonesProduct] = useState(headphones);
-  const [gamingSetProduct, setGamingSetProduct] = useState(gamingSet);
-  const [smartphonesProduct, setSmartphonesProduct] = useState(smartphones);
-  const [camerasProduct, setCamerasProduct] = useState(cameras);
-  const [pcLaptopProduct, setPcLaptopProduct] = useState(pcLaptop);
+  const [mobileAccessoryProduct] = useState(mobileAccessory);
+  const [headphonesProduct] = useState(headphones);
+  const [gamingSetProduct] = useState(gamingSet);
+  const [smartphonesProduct] = useState(smartphones);
+  const [camerasProduct] = useState(cameras);
+  const [pcLaptopProduct] = useState(pcLaptop);
 
   // Recommended
-  const [recommendedProducts, ,] = useState(recommended);
+  const [recommendedProducts] = useState(recommended);
 
   // You may like
-  const [youMayLikeProducts, ,] = useState(youMayLikeData);
+  const [youMayLikeProducts] = useState(youMayLikeData);
 
   // Related products
-  const [relatedProducts, ,] = useState(relatedProdutcs);
+  const [relatedProducts] = useState(relatedProdutcs);
 
   // Related products
-  const [alsoLikeProducts, ,] = useState(mayAlsoLikeData);
+  const [alsoLikeProducts] = useState(mayAlsoLikeData);
+
+  // All products
+
+  const allProductsUnited = [
+    ...softChairsProduct,
+    ...sofaChairProduct,
+    ...kitchenDishesProduct,
+    ...smartWatchesProduct,
+    ...kitchenMixerProduct,
+    ...blendersProduct,
+    ...homeApplianceProduct,
+    ...coffeeMakerProduct,
+    ...mobileAccessoryProduct,
+    ...headphonesProduct,
+    ...gamingSetProduct,
+    ...smartphonesProduct,
+    ...camerasProduct,
+    ...pcLaptopProduct,
+    ...recommendedProducts,
+    ...youMayLikeProducts,
+    ...relatedProducts,
+    ...alsoLikeProducts,
+  ];
+
+  const [allProducts] = useState(allProductsUnited);
 
   return (
     <homeOutdoorContext.Provider
@@ -119,11 +144,9 @@ export const ProductsProvider = ({ children }) => {
             alsoLikeProducts,
           ]}
         >
-          {/* <moibleAccessoryContext.Provider
-            value={[mobileAccessoryProducts, setMobileAccessoryProducts]}
-          > */}
-          {children}
-          {/* </moibleAccessoryContext.Provider> */}
+          <allProductsContext.Provider value={[allProducts]}>
+            {children}
+          </allProductsContext.Provider>
         </recommendedContext.Provider>
       </consumerElectronicsContext.Provider>
     </homeOutdoorContext.Provider>

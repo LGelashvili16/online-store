@@ -25,6 +25,7 @@
 
 .saved-card-image img {
   max-width: 209px;
+  min-width: 185px;
   max-height: 194px;
 }
 
@@ -153,6 +154,7 @@
 
   .saved-card-image img {
     max-width: 78px;
+    min-width: 50px;
     max-height: 89px;
   }
 

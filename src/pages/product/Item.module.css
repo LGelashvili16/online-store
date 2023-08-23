@@ -28,7 +28,8 @@
 }
 
 .item-main-image img {
-  width: min(100%, 345px);
+  max-width: 345px;
+
   height: min(100%, 345px);
 }
 

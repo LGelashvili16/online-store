@@ -11,6 +11,7 @@ import filledStar from '../../assets/mobile-accessories/filled-star.svg';
 import emptyStar from '../../assets/mobile-accessories/empty-star.svg';
 
 import iphone12Img from '../../assets/mobile-accessories/iphone12.png';
+import iphone14Img from '../../assets/mobile-accessories/iphone14pro.jpeg';
 import xiaomiImg from '../../assets/mobile-accessories/xiaomi.png';
 import xiaomiTabletImg from '../../assets/mobile-accessories/xiaomi-tablet.png';
 import laptopImg from '../../assets/mobile-accessories/laptop.png';
@@ -278,11 +279,11 @@ export const mobileAccessory = [
     id: 1,
     images: [
       iphone12Img,
+      iphone14Img,
       iphone12Img,
+      iphone14Img,
       iphone12Img,
-      iphone12Img,
-      iphone12Img,
-      iphone12Img,
+      iphone14Img,
     ],
     title: 'Canon Camera EOS 2000, Black 10x zoom',
     price: '$998.00',
