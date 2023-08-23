@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/online-store/static/css/main.27c6cdab.css",
-    "main.js": "/online-store/static/js/main.5f768f39.js",
+    "main.css": "/online-store/static/css/main.a570a784.css",
+    "main.js": "/online-store/static/js/main.1524f0c3.js",
     "static/js/787.a92fe09e.chunk.js": "/online-store/static/js/787.a92fe09e.chunk.js",
     "static/media/parcels.png": "/online-store/static/media/parcels.4be3316d701f729664cd.png",
     "static/media/camera2.png": "/online-store/static/media/camera2.029f36e800b4980a5c29.png",
@@ -36,6 +36,7 @@
     "static/media/elecronics-bg.png": "/online-store/static/media/elecronics-bg.013808f95d19cba05732.png",
     "static/media/jacket.png": "/online-store/static/media/jacket.f1ae04b7cc93a4efe61f.png",
     "static/media/shirt.png": "/online-store/static/media/shirt.22b04e13a7b471e431b1.png",
+    "static/media/iphone14pro.jpeg": "/online-store/static/media/iphone14pro.beba52d6015213f5103a.jpeg",
     "static/media/smartphone3.jpg": "/online-store/static/media/smartphone3.beba52d6015213f5103a.jpg",
     "static/media/pc6.jpg": "/online-store/static/media/pc6.3bf39961bf7a70dc14aa.jpg",
     "static/media/bag.png": "/online-store/static/media/bag.0693375d751825a8a857.png",
@@ -122,12 +123,12 @@
     "static/media/send.svg": "/online-store/static/media/send.fd43422d6f71d88a26619684852d112e.svg",
     "static/media/check-mark.svg": "/online-store/static/media/check-mark.5ada59f0c61a3353d51a.svg",
     "static/media/chevron_right.svg": "/online-store/static/media/chevron_right.d1a4c566e1676df4b29c4cdfacc0e31d.svg",
-    "main.27c6cdab.css.map": "/online-store/static/css/main.27c6cdab.css.map",
-    "main.5f768f39.js.map": "/online-store/static/js/main.5f768f39.js.map",
+    "main.a570a784.css.map": "/online-store/static/css/main.a570a784.css.map",
+    "main.1524f0c3.js.map": "/online-store/static/js/main.1524f0c3.js.map",
     "787.a92fe09e.chunk.js.map": "/online-store/static/js/787.a92fe09e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.27c6cdab.css",
-    "static/js/main.5f768f39.js"
+    "static/css/main.a570a784.css",
+    "static/js/main.1524f0c3.js"
   ]
 }
