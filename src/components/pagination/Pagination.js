@@ -57,48 +57,56 @@ const Pagination = ({
   };
 
   return (
-    <div className={styles['pagination']}>
-      <div className={styles['choose-amount']} onClick={showAmountListHandler}>
-        <p>{showAmount}</p>
-        <img src={expandMoreArrow} alt="expand" />
-        <ul
-          className={`${styles['choose-amount-list']} ${
-            !showAmountList ? styles['hidden'] : ''
-          }`}
+    <div className={styles['pagination-wrapper']}>
+      <div className={styles['pagination']}>
+        <div
+          className={styles['choose-amount']}
+          onClick={showAmountListHandler}
         >
-          <li onClick={showAmountHandler}>
-            <span>Show 6</span>
-          </li>
-          <li onClick={showAmountHandler}>
-            <span>Show 10</span>
-          </li>
-          <li onClick={showAmountHandler}>
-            <span>Show 18</span>
-          </li>
-        </ul>
-      </div>
-
-      <div className={styles['switch-pages']}>
-        <div className={styles['left-arrow']} onClick={leftArrHandler}>
-          <img src={currentPage === 1 ? leftArrDisabled : leftArr} alt="left" />
+          <p>{showAmount}</p>
+          <img src={expandMoreArrow} alt="expand" />
+          <ul
+            className={`${styles['choose-amount-list']} ${
+              !showAmountList ? styles['hidden'] : ''
+            }`}
+          >
+            <li onClick={showAmountHandler}>
+              <span>Show 6</span>
+            </li>
+            <li onClick={showAmountHandler}>
+              <span>Show 10</span>
+            </li>
+            <li onClick={showAmountHandler}>
+              <span>Show 18</span>
+            </li>
+          </ul>
         </div>
 
-        <ul className={styles['pages']}>
-          {pages.map((page) => (
-            <PaginationItem
-              page={page}
-              key={page}
-              currentPage={currentPage}
-              onPageChange={onPageChange}
+        <div className={styles['switch-pages']}>
+          <div className={styles['left-arrow']} onClick={leftArrHandler}>
+            <img
+              src={currentPage === 1 ? leftArrDisabled : leftArr}
+              alt="left"
             />
-          ))}
-        </ul>
+          </div>
 
-        <div className={styles['right-arrow']} onClick={rightArrHandler}>
-          <img
-            src={currentPage === pagesCount ? rightArrDisabled : rightArr}
-            alt="right"
-          />
+          <ul className={styles['pages']}>
+            {pages.map((page) => (
+              <PaginationItem
+                page={page}
+                key={page}
+                currentPage={currentPage}
+                onPageChange={onPageChange}
+              />
+            ))}
+          </ul>
+
+          <div className={styles['right-arrow']} onClick={rightArrHandler}>
+            <img
+              src={currentPage === pagesCount ? rightArrDisabled : rightArr}
+              alt="right"
+            />
+          </div>
         </div>
       </div>
     </div>

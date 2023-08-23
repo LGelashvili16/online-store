@@ -39,3 +39,21 @@
 .hidden {
   display: none;
 }
+
+@media (max-width: 480px) {
+  .filtered-items {
+    width: 360px;
+    padding-left: 15px;
+  }
+
+  .filtered-item {
+    gap: 7px;
+    padding: 4px 4px 4px 7px;
+    font-size: 14px;
+  }
+
+  .filtered-items button {
+    font-size: 14px;
+    margin-left: 0;
+  }
+}

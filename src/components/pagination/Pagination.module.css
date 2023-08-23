@@ -1,6 +1,11 @@
+.pagination-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: min(100%, 1180px);
+}
+
 .pagination {
   display: flex;
-  align-self: flex-end;
   gap: 9px;
   margin-top: 30px;
   margin-bottom: 43px;
@@ -112,7 +117,44 @@
 }
 
 @media (max-width: 480px) {
+  .pagination-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    width: min(100%, 360px);
+    padding-inline: 10px;
+    margin-inline: auto;
+  }
+
   .pagination {
-    display: none;
+    gap: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .choose-amount {
+    position: relative;
+    gap: 10px;
+
+    width: 100px;
+    height: 35px;
+  }
+
+  .choose-amount p {
+    font-size: 14px;
+  }
+
+  .choose-amount-list {
+    top: 40px;
+    width: 100px;
+  }
+
+  .left-arrow {
+    width: 40px;
+    height: 35px;
+  }
+
+  .right-arrow {
+    width: 40px;
+    height: 35px;
   }
 }

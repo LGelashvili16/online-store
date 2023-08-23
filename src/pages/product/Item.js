@@ -76,7 +76,6 @@ const Item = () => {
   const [currentSaved, setCurrentSaved] = useState({});
   const [readMore, setReadMore] = useState(false);
   // const [sliderIndex, setSliderIndex] = useState(1);
-  console.log(isSaved);
   let sliderIndex = useRef(0);
 
   const imagesRef = useRef();

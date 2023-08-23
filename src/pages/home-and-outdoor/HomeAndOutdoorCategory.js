@@ -59,6 +59,12 @@ const HomeAndOutdoorCategory = () => {
   const [featuresForm, setFeaturesForm] = useState(features);
   const [ratingsForm, setRatingsForm] = useState(ratings);
 
+  const [showFeaturedList, setShowFeaturedList] = useState(false);
+  const [featured, setFeatured] = useState('Featured');
+  const [showRespFilters, setShowRespFilters] = useState(false);
+  const [showRespSort, setShowRespSort] = useState(false);
+  const [sort, setSort] = useState('Newest');
+
   const params = useParams();
 
   useEffect(() => {
@@ -130,6 +136,26 @@ const HomeAndOutdoorCategory = () => {
 
   const productsAmount = currentProducts.length;
 
+  const featuredListHandler = () => {
+    setShowFeaturedList((prev) => !prev);
+  };
+
+  const featuredHandler = (val) => {
+    setFeatured(val);
+  };
+
+  const respSortHandler = () => {
+    setShowRespSort((prev) => !prev);
+  };
+
+  const sortHandler = (val) => {
+    setSort(val);
+  };
+
+  const respFilterHandler = () => {
+    setShowRespFilters((prev) => !prev);
+  };
+
   return (
     <>
       <div className={styles['container']}>
@@ -148,6 +174,7 @@ const HomeAndOutdoorCategory = () => {
               condition={condition}
               filterItems={filterItems}
               setFilterItems={setFilterItems}
+              showRespFilters={showRespFilters}
             />
           </aside>
 
@@ -168,19 +195,56 @@ const HomeAndOutdoorCategory = () => {
                     <label htmlFor="verified">Verified only</label>
                   </div>
 
-                  <div className={styles['organize-products-featured']}>
+                  <div
+                    className={styles['organize-products-featured']}
+                    onClick={featuredListHandler}
+                  >
                     <p>Featured</p>
                     <img src={expandArrow} alt="" />
+
+                    <ul
+                      className={`${
+                        styles['organize-products-featured-list']
+                      } ${showFeaturedList && styles['show-featured']}`}
+                    >
+                      <li onClick={() => featuredHandler('Featured')}>
+                        Featured
+                      </li>
+                      <li onClick={() => featuredHandler('Not featured')}>
+                        Not featured
+                      </li>
+                    </ul>
                   </div>
 
-                  <div className={styles['resp-sort']}>
+                  <div
+                    className={styles['resp-sort']}
+                    onClick={respSortHandler}
+                  >
                     <h4>
-                      Sort: <span>Newest</span>
+                      Sort: <span>{sort}</span>
                     </h4>
                     <img src={sortIcon} alt="sort" />
+
+                    <ul
+                      className={`${styles['resp-sort-list']} ${
+                        showRespSort && styles['show-sort']
+                      }`}
+                    >
+                      <li onClick={() => sortHandler('Newest')}>Newest</li>
+                      <li onClick={() => sortHandler('Oldest')}>Oldest</li>
+                      <li onClick={() => sortHandler('Low price')}>
+                        Low price
+                      </li>
+                      <li onClick={() => sortHandler('High price')}>
+                        High price
+                      </li>
+                    </ul>
                   </div>
 
-                  <div className={styles['resp-filter']}>
+                  <div
+                    className={styles['resp-filter']}
+                    onClick={respFilterHandler}
+                  >
                     <h4>
                       Filter (<span>{filterItems.length}</span>)
                     </h4>

@@ -76,7 +76,8 @@
   }
 
   .discounted-product-img img {
-    height: 83px;
+    min-width: 80px;
+    height: 80px;
   }
 
   .discounted-product-title {

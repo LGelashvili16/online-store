@@ -23,6 +23,7 @@ const AsideList = ({
   condition,
   filterItems,
   setFilterItems,
+  showRespFilters,
 }) => {
   const shortenedCategory = category.slice(0, 4);
   const shortBrandsForm = brands.slice(0, 5);
@@ -200,7 +201,11 @@ const AsideList = ({
   //! ****************************** JSX
 
   return (
-    <div className={styles['aside-container']}>
+    <div
+      className={`${styles['aside-container']} ${
+        showRespFilters && styles['resp-show']
+      }`}
+    >
       <div className={styles['category']}>
         <div
           className={styles['title']}
