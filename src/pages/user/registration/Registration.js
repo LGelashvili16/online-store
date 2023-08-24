@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import styles from './Registration.module.css';
 import FormInput from './FormInput';
 import { Link, useNavigate } from 'react-router-dom';

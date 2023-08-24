@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { homeOutdoorCategories } from '../../data/homeAndOutdoor/homeAndOutdoorData';
 import styles from './HomeAndOutdoorPage.module.css';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 const HomeAndOutdoorPage = () => {
   const navigate = useNavigate();
@@ -11,6 +12,8 @@ const HomeAndOutdoorPage = () => {
 
   return (
     <div className={styles['container']}>
+      <Breadcrumbs />
+
       <h3 className={styles['page-title']}>Home and outdoor</h3>
 
       <div className={styles['category-cards']}>

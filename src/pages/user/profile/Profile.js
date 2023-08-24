@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);
-  const [users, setUsers, loggedInUser, setLoggedInUsers] = useUser();
+  const [, setUsers, loggedInUser, setLoggedInUsers] = useUser();
 
   const navigate = useNavigate();
 

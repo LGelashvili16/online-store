@@ -21,7 +21,7 @@ const CartCard = ({ product, quantity, setQuantity }) => {
   const [isSaved, setIsSaved] = useState(product.saved);
 
   const [saveForLater, setSaveForLater] = useSaveForLater();
-  const [cart, setCart] = useCart();
+  const [, setCart] = useCart();
 
   const pcsRef = useRef();
   const pcsListRef = useRef();
@@ -78,7 +78,6 @@ const CartCard = ({ product, quantity, setQuantity }) => {
   };
 
   const productTrue = { ...product, saved: true };
-  const productFalse = { ...product, saved: false };
 
   // Add to saved
   useEffect(() => {

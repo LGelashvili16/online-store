@@ -6,29 +6,9 @@ import emptyStarImg from '../../../assets/mobile-accessories/empty-star.svg';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { useSaveForLater } from '../../../contexts/SaveForLaterContext';
-import { useHomeOutdoor } from '../../../contexts/ProductsContext';
 
 const ProductItem = ({ product, layout }) => {
   const [saveForLater, setSaveForLater] = useSaveForLater();
-  // const [mobileAccessoryProducts, setMobileAccessoryProducts] =
-  //   useMobileAccessoryProducts();
-
-  const [
-    softChairsProduct,
-    sofaChairProduct,
-    kitcheDishesProduct,
-    smartWatchesProduct,
-    kitchenMixerProduct,
-    blendersProduct,
-    homeApplianceProduct,
-    coffeeMakerProduct,
-  ] = useHomeOutdoor();
-
-  const defaultIsSaved =
-    JSON.parse(window.localStorage.getItem('saved')) !== null &&
-    JSON.parse(window.localStorage.getItem('saved')).length > 0
-      ? JSON.parse(window.localStorage.getItem('saved'))
-      : false;
 
   const [isSaved, setIsSaved] = useState(product.saved);
 
@@ -38,18 +18,12 @@ const ProductItem = ({ product, layout }) => {
   const params = useParams();
 
   const productTrue = { ...product, saved: true };
-  const productFalse = { ...product, saved: false };
 
   useEffect(() => {
     if (saveForLater.length > 0) {
       const findEl = saveForLater.find((el) => el.id === product.id);
 
       findEl ? setIsSaved(true) : setIsSaved(false);
-
-      // saveForLater.forEach((el) => {
-
-      //   el.id === product.id && setIsSaved(true);
-      // });
     }
     saveForLater.length === 0 && setIsSaved(false);
   }, [saveForLater, product]);
@@ -94,51 +68,6 @@ const ProductItem = ({ product, layout }) => {
       }
     });
   };
-
-  // const favoriteHandler = () => {
-
-  //   // add if there is no product
-  //   setSaveForLater((prev) => {
-  //     if (prev.length === 0) {
-  //       return [productTrue];
-  //     }
-
-  //     return [...prev, productFalse];
-  //   });
-
-  //   // change "saved" propery
-  //   if (saveForLater.length > 0) {
-  //     setSaveForLater((prev) => {
-  //       const map = prev.map((prod) => {
-  //         if (prod.id === product.id) {
-  //           return { ...prod, saved: !prod.saved };
-  //         }
-
-  //         return prod;
-  //       });
-
-  //       return map;
-  //     });
-  //   }
-
-  //   setSaveForLater((prev) => {
-  //     const unique = prev.filter((el, index) => {
-  //       return index === prev.findIndex((o) => el.id === o.id);
-  //     });
-
-  //     return unique;
-  //   });
-
-  //   setSaveForLater((prev) => {
-  //     const filter = prev.filter((el) => {
-  //       return el.saved === true;
-  //     });
-
-  //     setIsSaved(false);
-
-  //     return filter;
-  //   });
-  // };
 
   return (
     <div

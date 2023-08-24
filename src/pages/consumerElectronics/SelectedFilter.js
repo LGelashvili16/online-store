@@ -9,7 +9,6 @@ const SelectedFilter = ({
   setRatingsForm,
 }) => {
   const onDeleteHandler = (e) => {
-    // console.log(e.target.closest('span').innerText);
     setFilterItems((prev) => {
       return prev.filter((el) => e.target.closest('span').innerText !== el);
     });

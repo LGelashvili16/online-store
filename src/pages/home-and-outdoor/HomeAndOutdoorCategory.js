@@ -1,5 +1,3 @@
-// /online-store/mobile-accessories
-
 import Breadcrumbs from '../../components/Breadcrumbs';
 import AsideList from './AsideList';
 import styles from './HomeAndOutdoorCategory.module.css';
@@ -15,7 +13,6 @@ import ProductsList from './productsList/ProductsList';
 import Newsletter from '../../components/newsletter/Newsletter';
 import Pagination from '../../components/pagination/Pagination';
 
-// import { products } from '../../data/mobileAccessories/mobileAccessoriesData';
 import { useHomeOutdoor } from '../../contexts/ProductsContext';
 
 import SelectedFilter from './SelectedFilter';
@@ -32,8 +29,6 @@ import MayAlsoLike from './mayAlsoLike/MayAlsoLike';
 import { useParams } from 'react-router-dom';
 
 const HomeAndOutdoorCategory = () => {
-  // const [mobileAccessoryProducts, setMobileAccessoryProducts] =
-  //   useMobileAccessoryProducts();
   const [
     softChairsProduct,
     sofaChairProduct,
@@ -60,7 +55,7 @@ const HomeAndOutdoorCategory = () => {
   const [ratingsForm, setRatingsForm] = useState(ratings);
 
   const [showFeaturedList, setShowFeaturedList] = useState(false);
-  const [featured, setFeatured] = useState('Featured');
+  const [, setFeatured] = useState('Featured');
   const [showRespFilters, setShowRespFilters] = useState(false);
   const [showRespSort, setShowRespSort] = useState(false);
   const [sort, setSort] = useState('Newest');

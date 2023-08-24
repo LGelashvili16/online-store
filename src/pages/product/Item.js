@@ -1,6 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import styles from './Item.module.css';
-import { products } from '../../data/mobileAccessories/mobileAccessoriesData';
 import { useEffect, useRef, useState } from 'react';
 
 import { generateStars } from '../../utils/starGenerator';
@@ -28,8 +27,6 @@ import {
 import { useSaveForLater } from '../../contexts/SaveForLaterContext';
 
 const Item = () => {
-  // const [mobileAccessoryProducts, setMobileAccessoryProducts] =
-  //   useMobileAccessoryProducts();
   const [
     softChairsProduct,
     sofaChairProduct,
@@ -58,7 +55,7 @@ const Item = () => {
   ] = useRecommendedProducts();
 
   const [saveForLater, setSaveForLater] = useSaveForLater();
-  const [cart, setCart] = useCart();
+  const [, setCart] = useCart();
 
   const navigate = useNavigate();
   const params = useParams();
@@ -73,9 +70,9 @@ const Item = () => {
   const [fromLeft, setFromLeft] = useState(0);
 
   const [isSaved, setIsSaved] = useState(false);
-  const [currentSaved, setCurrentSaved] = useState({});
+  const [, setCurrentSaved] = useState({});
   const [readMore, setReadMore] = useState(false);
-  // const [sliderIndex, setSliderIndex] = useState(1);
+
   let sliderIndex = useRef(0);
 
   const imagesRef = useRef();
@@ -272,20 +269,8 @@ const Item = () => {
       }
 
       return [...prev, currentProduct];
-
-      // return !prev.includes(productTrue) ? [...prev, productTrue] : prev;
     });
   };
-
-  // const addToCartHandler = () => {
-  //   setCart((prev) => {
-  //     if (prev.length === 0) {
-  //       return [currentProduct];
-  //     }
-
-  //     return !prev.includes(currentProduct) ? [...prev, currentProduct] : prev;
-  //   });
-  // };
 
   useEffect(() => {
     const find = saveForLater.find((prod) => prod.id === currentProduct.id);
@@ -318,51 +303,6 @@ const Item = () => {
       }
     });
   };
-
-  // const saveHandler = () => {
-
-  //   setSaveForLater((prev) => {
-  //     if (prev.length === 0) {
-  //       return [productTrue];
-  //     }
-
-  //     return [...prev, currentProduct];
-  //   });
-
-  //   if (saveForLater.length > 0) {
-  //     setSaveForLater((prev) => {
-  //       const map = prev.map((prod) => {
-  //         if (prod.id === currentProduct.id) {
-  //           return { ...prod, saved: !prod.saved };
-  //         }
-
-  //         return prod;
-  //       });
-
-  //       return map;
-  //     });
-  //   }
-
-  //   setSaveForLater((prev) => {
-  //     const unique = prev.filter((el, index) => {
-  //       return index === prev.findIndex((o) => el.id === o.id);
-  //     });
-
-  //     return unique;
-  //   });
-
-  //   setTimeout(() => {
-  //     setSaveForLater((prev) => {
-  //       const filter = prev.filter((el) => {
-  //         return el.saved === true;
-  //       });
-
-  //       setIsSaved(false);
-
-  //       return filter;
-  //     });
-  //   }, 0);
-  // };
 
   const readMoreHandler = () => {
     setReadMore((prev) => !prev);

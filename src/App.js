@@ -9,7 +9,6 @@ import './App.css';
 
 // Pages
 import Home from './pages/home/Home';
-// import MobileAccessories from './pages/mobile-accessories/MobileAccessories';
 import ProductPage from './pages/product/ProductPage';
 
 // Layouts

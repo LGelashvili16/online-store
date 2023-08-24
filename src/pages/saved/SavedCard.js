@@ -2,19 +2,15 @@ import styles from './SavedCard.module.css';
 import cartIcon from '../../assets/cart/shopping_cart.png';
 import { useSaveForLater } from '../../contexts/SaveForLaterContext';
 import { useCart } from '../../contexts/CartContext';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const SavedCard = ({ product }) => {
-  const [saveForLater, setSaveForLater] = useSaveForLater();
-  const [cart, setCart] = useCart();
+  const [, setSaveForLater] = useSaveForLater();
+  const [, setCart] = useCart();
 
   const navigate = useNavigate();
 
   const productClickHandler = (e) => {
-    // if (
-    //   e.target !== favoriteRef.current &&
-    //   e.target !== favoriteRef.current.children[0]
-    // )
     e.stopPropagation();
     navigate(`../product/${product.path}/${parseInt(product.id)}`);
   };
@@ -36,8 +32,6 @@ const SavedCard = ({ product }) => {
       }
 
       return [...prev, product];
-
-      // return !prev.includes(productTrue) ? [...prev, productTrue] : prev;
     });
   };
 

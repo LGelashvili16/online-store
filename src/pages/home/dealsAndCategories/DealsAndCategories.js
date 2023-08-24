@@ -2,11 +2,6 @@ import DiscountedProduct from './DiscountedProduct';
 import HomeOutdoorProduct from './HomeOutdoorProduct';
 import ElectronicsProduct from './ElectronicsProduct';
 
-import {
-  section2Discounted,
-  section2Electronics,
-} from '../../../data/home/homeData';
-
 import { homeOutdoorCategories } from '../../../data/homeAndOutdoor/homeAndOutdoorData';
 
 import styles from './DealsAndCategories.module.css';
@@ -25,7 +20,6 @@ const DealsAndCategories = () => {
   const row2ProductsRef = useRef();
   const [row3ProductsWidth, setRow3ProductsWidth] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
-  const [isDraggingElectronics, setIsDraggingElectronics] = useState(false);
   const row3ProductsRef = useRef();
 
   const navigate = useNavigate();

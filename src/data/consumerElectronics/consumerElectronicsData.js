@@ -3,7 +3,6 @@ import headphones2Img from '../../assets/home/section2/headphones2.png';
 import gamingSetImg from '../../assets/home/section2/gaming-set.png';
 import laptopsAndPCImg from '../../assets/home/section2/laptops&pc.png';
 import smartphones2Img from '../../assets/home/section2/smartphones2.png';
-import electricKettleImg from '../../assets/home/section2/electric-kettle.png';
 import smartWatches2Img from '../../assets/home/section2/smart-watches2.png';
 import kitchenMixerImg from '../../assets/home/section2/kitchen-mixer.png';
 
@@ -48,21 +47,41 @@ import laptop5 from '../../assets/consumerElectronics/pc5.jpg';
 import laptop6 from '../../assets/consumerElectronics/pc6.jpg';
 
 export const category = [
-  'Mobile accessory',
-  'Electronics',
-  'Smartphones',
-  'Modern tech',
-  'Art',
-  'Books',
-  'Cameras',
-  'Cell phones',
-  'Travel',
-  'Video games',
-  'Jewelery',
-  'Handmade',
-  'Garden & outdoor',
-  'Tools',
-  'Toys',
+  {
+    name: 'Mobile accessory',
+    link: '/online-store/consumer-electronics/mobile-accessory',
+  },
+  {
+    name: 'Smart watches',
+    link: '/online-store/consumer-electronics/smart-watches',
+  },
+  { name: 'Cameras', link: '/online-store/consumer-electronics/cameras' },
+  { name: 'Headphones', link: '/online-store/consumer-electronics/headphones' },
+  { name: 'Gaming set', link: '/online-store/consumer-electronics/gaming-set' },
+  {
+    name: 'Laptops & PC',
+    link: '/online-store/consumer-electronics/laptops-&-pc',
+  },
+  {
+    name: 'Smartphones',
+    link: '/online-store/consumer-electronics/smartphones',
+  },
+  { name: 'Soft chairs', link: '/online-store/home-and-outdoor/soft-chairs' },
+  { name: 'Sofa & chair', link: '/online-store/home-and-outdoor/sofa-&-chair' },
+  {
+    name: 'Kitchen dishes',
+    link: '/online-store/home-and-outdoor/kitchen-dishes',
+  },
+  {
+    name: 'Kitchen mixer',
+    link: '/online-store/home-and-outdoor/kitchen-mixer',
+  },
+  { name: 'Blenders', link: '/online-store/home-and-outdoor/blenders' },
+  {
+    name: 'Home appliance',
+    link: '/online-store/home-and-outdoor/home-appliance',
+  },
+  { name: 'Coffee maker', link: '/online-store/home-and-outdoor/coffee-maker' },
 ];
 
 export const brands = [

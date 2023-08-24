@@ -1,14 +1,10 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styles from './YouMayLikeCard.module.css';
 
 const YouMayLikeCard = ({ prod }) => {
   const navigate = useNavigate();
 
   const productClickHandler = (e) => {
-    // if (
-    //   e.target !== favoriteRef.current &&
-    //   e.target !== favoriteRef.current.children[0]
-    // )
     navigate(
       `/online-store/product/${`${prod.path}`}/${parseInt(parseInt(prod.id))}`
     );

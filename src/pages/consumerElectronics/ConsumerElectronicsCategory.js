@@ -1,5 +1,3 @@
-// /online-store/mobile-accessories
-
 import Breadcrumbs from '../../components/Breadcrumbs';
 import AsideList from './AsideList';
 import styles from './ConsumerElectronicsCategory.module.css';
@@ -15,7 +13,6 @@ import ProductsList from './productsList/ProductsList';
 import Newsletter from '../../components/newsletter/Newsletter';
 import Pagination from '../../components/pagination/Pagination';
 
-// import { products } from '../../data/mobileAccessories/mobileAccessoriesData';
 import {
   useConsumerElectronics,
   useHomeOutdoor,
@@ -35,9 +32,6 @@ import MayAlsoLike from './mayAlsoLike/MayAlsoLike';
 import { useParams } from 'react-router-dom';
 
 const ConsumerElectronicsCategory = () => {
-  // const [mobileAccessoryProducts, setMobileAccessoryProducts] =
-  //   useMobileAccessoryProducts();
-
   const [
     mobileAccessoryProduct,
     headphonesProduct,

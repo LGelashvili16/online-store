@@ -3,7 +3,7 @@ import styles from './Saved.module.css';
 import { useSaveForLater } from '../../contexts/SaveForLaterContext';
 
 const Saved = () => {
-  const [saveForLater, setSaveForLater] = useSaveForLater();
+  const [saveForLater] = useSaveForLater();
 
   return (
     <div className={styles['container']}>

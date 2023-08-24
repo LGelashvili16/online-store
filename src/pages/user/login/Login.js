@@ -90,8 +90,6 @@ const Login = () => {
       });
 
       setIsRegistered(false);
-
-      // navigate('/online-store');
     }
 
     if (!existUser) {

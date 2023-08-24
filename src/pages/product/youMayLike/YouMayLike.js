@@ -1,5 +1,4 @@
 import { useRecommendedProducts } from '../../../contexts/ProductsContext';
-import { youMayLikeData } from '../../../data/productPage/productPage';
 import styles from './YouMayLike.module.css';
 import YouMayLikeCard from './YouMayLikeCard';
 

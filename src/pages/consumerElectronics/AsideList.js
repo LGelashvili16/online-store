@@ -7,8 +7,6 @@ import { generateStars } from '../../utils/starGenerator';
 import styles from './AsideList.module.css';
 import expandArr from '../../assets/mobile-accessories/expand_less.svg';
 
-import { useFilterProducts } from '../../contexts/Context';
-
 const MIN = 0;
 const MAX = 30000;
 
@@ -69,7 +67,7 @@ const AsideList = ({
         });
       });
     }
-  }, [filterItems]);
+  }, [filterItems, setFeaturesForm, setBrandsForm, setRatingsForm]);
 
   // Handlers
   const categoryHandler = () => {
@@ -226,14 +224,14 @@ const AsideList = ({
               ? shortenedCategory.map((cat, i) => {
                   return (
                     <li key={i}>
-                      <Link>{cat}</Link>
+                      <Link to={cat.link}>{cat.name}</Link>
                     </li>
                   );
                 })
               : category.map((cat, i) => {
                   return (
                     <li key={i}>
-                      <Link>{cat}</Link>
+                      <Link to={cat.link}>{cat.name}</Link>
                     </li>
                   );
                 })}

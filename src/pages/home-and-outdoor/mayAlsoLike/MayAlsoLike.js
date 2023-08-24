@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './MayAlsoLike.module.css';
 import MayAlsoLikeCard from './MayAlsoLikeCard';
-import { mayAlsoLikeData } from '../../../data/mobileAccessories/mobileAccessoriesData';
 
 import { motion } from 'framer-motion';
 import { useRecommendedProducts } from '../../../contexts/ProductsContext';

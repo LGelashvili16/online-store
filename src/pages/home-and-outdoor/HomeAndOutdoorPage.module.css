@@ -4,7 +4,7 @@
 }
 
 .page-title {
-  margin-block: 20px;
+  margin-bottom: 20px;
 
   color: #1c1c1c;
   font-size: 24px;
@@ -78,9 +78,11 @@
 @media (max-width: 480px) {
   .container {
     width: min(100%, 360px);
+    padding-inline: 10px;
   }
 
   .page-title {
+    margin-block: 20px;
     font-size: 20px;
   }
 

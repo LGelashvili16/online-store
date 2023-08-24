@@ -6,10 +6,6 @@ const MayAlsoLikeCard = ({ prod }) => {
   const navigate = useNavigate();
 
   const productClickHandler = (e) => {
-    // if (
-    //   e.target !== favoriteRef.current &&
-    //   e.target !== favoriteRef.current.children[0]
-    // )
     navigate(`../product/${`${prod.path}`}/${parseInt(parseInt(prod.id))}`);
   };
 

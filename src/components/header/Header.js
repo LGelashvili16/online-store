@@ -55,7 +55,6 @@ const Header = () => {
   const menuRef = useRef();
   const categoriesRef = useRef();
 
-  const showListRef = useRef();
   const listRef = useRef();
 
   const profileRef = useRef();
@@ -133,14 +132,10 @@ const Header = () => {
   };
 
   const profileHandler = () => {
-    // if (loggedInUser) navigate('/online-store/profile');
-    // else
     setShowUserList((prev) => !prev);
   };
 
   const respProfileHandler = () => {
-    // if (loggedInUser) navigate('/online-store/profile');
-    // else
     setShowRespUserList((prev) => !prev);
   };
 
