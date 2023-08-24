@@ -207,6 +207,8 @@ const Header = () => {
 
     if (e.target !== searchedListRef.current && e.target !== searchRef.current)
       setShowSearchedList(false);
+
+    if (document.activeElement === searchRef.current) setShowSearchedList(true);
   };
 
   useEffect(() => {
