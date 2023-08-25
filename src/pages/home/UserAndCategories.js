@@ -4,17 +4,16 @@ import avatar from '../../assets/home/section1/Avatar.svg';
 import { section1Data } from '../../data/home/homeData';
 import { Link, useNavigate } from 'react-router-dom';
 import { useUser } from '../../contexts/UserContext';
+import { useState } from 'react';
 
 const UserAndCategories = () => {
+  const [active, setActive] = useState(0);
+
   const navigate = useNavigate();
   const [users, setUsers, loggedInUser, setLoggedInUsers] = useUser();
 
-  const addActiveHandler = (e) => {
-    Array.from(e.target.closest('ul').children).forEach((element) => {
-      element.classList.remove(styles['active']);
-    });
-
-    e.target.closest('li').classList.add(styles['active']);
+  const addActiveHandler = (index) => {
+    setActive(index);
   };
 
   const learnMoreHandler = () => {
@@ -68,9 +67,9 @@ const UserAndCategories = () => {
             <li
               key={index}
               data-id={index}
-              className={index === 0 ? styles.active : ''}
+              className={index === active ? styles.active : styles['']}
             >
-              <Link to="" onClick={addActiveHandler}>
+              <Link to="" onClick={() => addActiveHandler(index)}>
                 {title}
               </Link>
             </li>

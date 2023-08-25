@@ -18,6 +18,7 @@ import { useState } from 'react';
 
 const Cart = () => {
   const [quantity, setQuantity] = useState([]);
+  const [couponInput, setCouponInput] = useState('');
   const [cart, setCart] = useCart();
 
   const navigate = useNavigate();
@@ -45,7 +46,7 @@ const Cart = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    e.target.children[0].value = '';
+    setCouponInput('');
   };
 
   return (
@@ -81,7 +82,12 @@ const Cart = () => {
             <h4>Have a coupon?</h4>
 
             <form onSubmit={submitHandler} className={styles['coupon-form']}>
-              <input type="text" placeholder="Add coupon" />
+              <input
+                type="text"
+                placeholder="Add coupon"
+                value={couponInput}
+                onChange={(e) => setCouponInput(e.target.value)}
+              />
               <button>Apply</button>
             </form>
           </div>

@@ -74,8 +74,8 @@ const HeaderLower = () => {
     setCurrentCurrency(e.target.textContent);
   };
 
-  const currentShipToHandler = (e) => {
-    setCurrentShipTo(e.target.closest('li').children[0].src);
+  const currentShipToHandler = (flag) => {
+    setCurrentShipTo(flag);
   };
 
   const windowClickHandler = (e) => {
@@ -297,7 +297,10 @@ const HeaderLower = () => {
                 ref={shippingListRef}
               >
                 {headerFlags.map((item, index) => (
-                  <li key={index} onClick={currentShipToHandler}>
+                  <li
+                    key={index}
+                    onClick={() => currentShipToHandler(item.flag)}
+                  >
                     {<img src={item.flag} alt="" />}
                     {<p>{item.country}</p>}
                   </li>

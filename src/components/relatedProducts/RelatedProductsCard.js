@@ -4,11 +4,7 @@ import styles from './RelatedProductsCard.module.css';
 const RelatedProductsCard = ({ prod }) => {
   const navigate = useNavigate();
 
-  const productClickHandler = (e) => {
-    // if (
-    //   e.target !== favoriteRef.current &&
-    //   e.target !== favoriteRef.current.children[0]
-    // )
+  const productClickHandler = () => {
     navigate(
       `/online-store/product/${`${prod.path}`}/${parseInt(parseInt(prod.id))}`
     );

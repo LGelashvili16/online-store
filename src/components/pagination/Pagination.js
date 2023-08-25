@@ -30,12 +30,10 @@ const Pagination = ({
     setShowAmountList(!showAmountList);
   };
 
-  const showAmountHandler = (e) => {
-    setShowAmount(e.target.closest('li').children[0].innerHTML);
+  const showAmountHandler = (num) => {
+    setShowAmount(`Show ${num}`);
 
-    const extractNum = e.target.closest('li').children[0].innerHTML.split(' ');
-
-    showProductsAmount(+extractNum[1]);
+    showProductsAmount(num);
 
     // set current page to 1
     onPageChange(1);
@@ -70,13 +68,13 @@ const Pagination = ({
               !showAmountList ? styles['hidden'] : ''
             }`}
           >
-            <li onClick={showAmountHandler}>
+            <li onClick={() => showAmountHandler(6)}>
               <span>Show 6</span>
             </li>
-            <li onClick={showAmountHandler}>
+            <li onClick={() => showAmountHandler(10)}>
               <span>Show 10</span>
             </li>
-            <li onClick={showAmountHandler}>
+            <li onClick={() => showAmountHandler(18)}>
               <span>Show 18</span>
             </li>
           </ul>

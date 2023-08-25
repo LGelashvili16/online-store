@@ -30,11 +30,7 @@ const ProductItem = ({ product, layout }) => {
   }, [saveForLater, product]);
 
   const productClickHandler = (e) => {
-    if (
-      e.target !== favoriteRef.current &&
-      e.target !== favoriteRef.current.children[0]
-    )
-      navigate(`../product/${`${params.name}`}/${parseInt(product.id)}`);
+    navigate(`../product/${`${params.name}`}/${parseInt(product.id)}`);
   };
 
   // Add to saved
@@ -44,7 +40,9 @@ const ProductItem = ({ product, layout }) => {
     if (!find?.saved) setIsSaved(false);
   }, [saveForLater, product]);
 
-  const favoriteHandler = () => {
+  const favoriteHandler = (e) => {
+    e.stopPropagation();
+
     setSaveForLater((prev) => {
       if (prev.length === 0) {
         return [productTrue];

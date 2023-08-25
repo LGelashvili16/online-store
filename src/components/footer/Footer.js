@@ -26,19 +26,17 @@ const Footer = () => {
     setShowLangList(!showLangList);
   };
 
-  const selectLangHandler = (e) => {
-    const flag = e.target.closest('li').children[0].src;
-    const lang = e.target.closest('li').children[1].innerText;
+  const selectLangHandler = (lang, flag) => {
+    const curFlag = flag;
+    const curLang = lang;
 
     setCurrentLang((prev) => {
-      return { ...prev, lang: lang, flag: flag };
+      return { ...prev, lang: curLang, flag: curFlag };
     });
   };
 
   const windowClickHandler = (e) => {
-    const parentDiv = e.target.closest('div');
-
-    if (parentDiv !== showListRef.current) {
+    if (e.target !== showListRef.current && e.target !== listRef.current) {
       setShowLangList(false);
     }
 
@@ -180,7 +178,10 @@ const Footer = () => {
             >
               {language.map((lang, i) => {
                 return (
-                  <li key={i} onClick={selectLangHandler}>
+                  <li
+                    key={i}
+                    onClick={() => selectLangHandler(lang.lang, lang.flag)}
+                  >
                     <img src={lang.flag} alt="flag" />
                     <span>{lang.lang}</span>
                   </li>

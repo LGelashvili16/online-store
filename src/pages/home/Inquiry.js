@@ -10,7 +10,7 @@ const Inquiry = () => {
 
   const [pcs, setPcs] = useState('');
 
-  const formRefs = useRef({
+  const [form, setForm] = useState({
     requestedItem: '',
     requestedItemDetails: '',
     requestedItemQuantity: '',
@@ -48,22 +48,33 @@ const Inquiry = () => {
 
   const pcsHandler = (e) => {
     setPcs(`${e.target.textContent}`);
-    formRefs.current.pcs = e.target.textContent;
+
+    setForm((prev) => {
+      prev.pcs = e.target.textContent;
+      return prev;
+    });
   };
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
 
-    e.target.children[1].value = '';
-    e.target.children[2].value = '';
-    e.target.children[3].children[0].value = '';
+    setForm({
+      requestedItem: '',
+      requestedItemDetails: '',
+      requestedItemQuantity: '',
+      pcs: pcs,
+    });
+
     setPcs('');
   };
 
   const onChangeHandler = (e) => {
     const { name, value } = e.target;
-    console.log((formRefs.current[name] = value));
-    console.log(formRefs.current);
+
+    setForm((prev) => {
+      prev[name] = value;
+      return prev;
+    });
   };
 
   // Attach window click listener

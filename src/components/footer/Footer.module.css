@@ -155,6 +155,7 @@ footer {
 
 .footer-flag {
   width: 24px;
+  pointer-events: none;
 }
 
 .footer-change-lang p {
@@ -165,10 +166,12 @@ footer {
   line-height: 24px;
   letter-spacing: -0.2px;
   color: #606060;
+  pointer-events: none;
 }
 
 .footer-arrow {
   margin-right: 6px;
+  pointer-events: none;
 }
 
 .footer-change-lang-list {

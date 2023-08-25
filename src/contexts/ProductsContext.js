@@ -55,9 +55,6 @@ export const useAllProducts = () => {
 };
 
 export const ProductsProvider = ({ children }) => {
-  // const [mobileAccessoryProducts, setMobileAccessoryProducts] =
-  //   useState(products);
-
   // Home and outdoor
   const [softChairsProduct] = useState(softChairs);
   const [sofaChairProduct] = useState(sofaChair);

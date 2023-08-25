@@ -67,7 +67,10 @@ const Item = () => {
   const [currentProduct] = currentProducts.slice(+params.id - 1, +params.id);
 
   const [mainImg, setMainImg] = useState(currentProduct.images[0]);
+  const [activeImg, setActiveImg] = useState(0);
   const [fromLeft, setFromLeft] = useState(0);
+
+  const [activePrice, setActivePrice] = useState(0);
 
   const [isSaved, setIsSaved] = useState(false);
   const [, setCurrentSaved] = useState({});
@@ -226,22 +229,14 @@ const Item = () => {
     setFromLeft(-(imageRef.current.offsetWidth + 2) * sliderIndex.current);
   };
 
-  const imageHandler = (e) => {
-    Array.from(e.target.closest('ul').children).forEach((element) => {
-      element.classList.remove(styles['active-image']);
-    });
+  const imageHandler = (image, active) => {
+    setActiveImg(active);
 
-    e.target.closest('li').classList.add(styles['active-image']);
-
-    setMainImg(e.target.closest('li').children[0].src);
+    setMainImg(image);
   };
 
-  const priceHandler = (e) => {
-    Array.from(e.target.closest('[data-name]').children).forEach((el) => {
-      el.children[0].classList.remove(styles['active-price']);
-    });
-
-    e.target.closest('div').children[0].classList.add(styles['active-price']);
+  const priceHandler = (active) => {
+    setActivePrice(active);
   };
 
   const sellerProfileHandler = () => {
@@ -327,9 +322,9 @@ const Item = () => {
                   <li
                     key={i}
                     className={`${styles['image']} ${
-                      i === 0 ? styles['active-image'] : ''
+                      i === activeImg ? styles['active-image'] : ''
                     }`}
-                    onClick={imageHandler}
+                    onClick={() => imageHandler(img, i)}
                     ref={imageRef}
                   >
                     <img src={img} alt="product" />
@@ -390,18 +385,38 @@ const Item = () => {
         </div>
 
         <div className={styles['prices']} data-name="prices">
-          <div onClick={priceHandler}>
-            <h4 className={styles['active-price']}>{currentProduct.price}</h4>
+          <div onClick={() => priceHandler(0)}>
+            <h4
+              className={`${
+                activePrice === 0 ? styles['active-price'] : styles['']
+              }`}
+            >
+              {currentProduct.price}
+            </h4>
             <span>50-100 pcs</span>
           </div>
 
-          <div onClick={priceHandler}>
-            <h4>{currentProduct.price}</h4>
+          <div onClick={() => priceHandler(1)}>
+            <h4
+              className={`${
+                activePrice === 1 ? styles['active-price'] : styles['']
+              }`}
+            >
+              {`$${
+                +currentProduct.price.slice(1, currentProduct.price.length) - 20
+              }`}
+            </h4>
             <span>100-700 pcs</span>
           </div>
 
-          <div onClick={priceHandler}>
-            <h4>{currentProduct.price}</h4>
+          <div onClick={() => priceHandler(2)}>
+            <h4
+              className={`${
+                activePrice === 2 ? styles['active-price'] : styles['']
+              }`}
+            >{`$${
+              +currentProduct.price.slice(1, currentProduct.price.length) - 40
+            }`}</h4>
             <span>700+ pcs</span>
           </div>
         </div>

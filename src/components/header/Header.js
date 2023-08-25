@@ -96,9 +96,9 @@ const Header = () => {
     setShowLangList(!showLangList);
   };
 
-  const selectLangHandler = (e) => {
-    const flag = e.target.closest('li').children[0].src;
-    const lang = e.target.closest('li').children[1].innerText;
+  const selectLangHandler = (curFlag, curLang) => {
+    const flag = curFlag;
+    const lang = curLang;
 
     setCurrentLang((prev) => {
       return { ...prev, lang: lang, flag: flag };
@@ -299,7 +299,12 @@ const Header = () => {
                   >
                     {language.map((lang, i) => {
                       return (
-                        <li key={i} onClick={selectLangHandler}>
+                        <li
+                          key={i}
+                          onClick={() =>
+                            selectLangHandler(lang.lang, lang.flag)
+                          }
+                        >
                           <img src={lang.flag} alt="flag" />
                           <span>{lang.lang}</span>
                         </li>
