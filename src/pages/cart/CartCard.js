@@ -238,7 +238,7 @@ const CartCard = ({ product, quantity, setQuantity }) => {
           alt=""
           onClick={optionsHandler}
         />
-        <span className={styles['price']}>${price}</span>
+        <span className={styles['price']}>${price.toFixed(2)}</span>
 
         <div
           className={styles['pcs-dropdown']}
