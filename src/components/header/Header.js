@@ -28,7 +28,7 @@ import { useCart } from '../../contexts/CartContext';
 import { useSaveForLater } from '../../contexts/SaveForLaterContext';
 import { useUser } from '../../contexts/UserContext';
 import { language } from '../../data/footer/footerData';
-import { useChangeLanguage } from '../../contexts/Context';
+import { useChangeLanguage, useSearched } from '../../contexts/Context';
 import { useAllProducts } from '../../contexts/ProductsContext';
 
 const Header = () => {
@@ -41,7 +41,8 @@ const Header = () => {
   const [mobileGoBackTitle, setMobileGoBackTitle] = useState('');
   const [windowSize, setWindowSize] = useState(window.innerWidth);
   const [showSearchedList, setShowSearchedList] = useState(false);
-  const [searched, setSearched] = useState([]);
+  // const [searched, setSearched] = useState([]);
+  const [searched, setSearched] = useSearched();
   const [cart] = useCart();
   const [saveForLater] = useSaveForLater();
   const [currentLang, setCurrentLang] = useChangeLanguage();
@@ -125,6 +126,15 @@ const Header = () => {
 
   const headerCategoryHandler = () => {
     setShowCategories(!showCategories);
+  };
+
+  const searchClickHandler = (e) => {
+    e.preventDefault();
+    if (searched.length > 0) {
+      navigate('/online-store/searched');
+    }
+
+    return;
   };
 
   const categoryRedirectHandler = (link) => {
@@ -382,7 +392,7 @@ const Header = () => {
             }`}
             ref={searchedListRef}
           >
-            {searched.length === 0 && <span>No product found!</span>}
+            {searched.length === 0 && <span>No products found!</span>}
             {searched.length > 0 &&
               searched.map((prod) => (
                 <li
@@ -455,6 +465,7 @@ const Header = () => {
             className={styles['header-search-btn']}
             type="submit"
             value="Search"
+            onClick={searchClickHandler}
           />
         </form>
 

@@ -34,6 +34,7 @@ import { UserProvider } from './contexts/UserContext';
 import Profile from './pages/user/profile/Profile';
 import ProtectedRoute from './components/protectedRoute/ProtectedRoute';
 import Dummy from './pages/dummy/Dummy';
+import SearchedPage from './pages/searched/SearchedPage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -76,6 +77,8 @@ const router = createBrowserRouter(
           </ProtectedRoute>
         }
       />
+
+      <Route path="searched" element={<SearchedPage />} />
 
       <Route path="login" element={<Login />} />
       <Route path="registration" element={<Registration />} />

@@ -12,7 +12,6 @@ import { useSaveForLater } from '../../contexts/SaveForLaterContext';
 const CartCard = ({ product, quantity, setQuantity }) => {
   const currentPrice = +product.price.slice(1, product.price.length);
 
-  // const [pcs, setPcs] = useState(1);
   const [productQuantity, setProductQuantity] = useState(1);
   const [price, setPrice] = useState(currentPrice * +productQuantity);
   const [showPcsList, setShowPcsList] = useState(false);
@@ -111,50 +110,6 @@ const CartCard = ({ product, quantity, setQuantity }) => {
       }
     });
   };
-
-  // const favoriteHandler = () => {
-  //   // add if there is no product
-  //   setSaveForLater((prev) => {
-  //     if (prev.length === 0) {
-  //       return [productTrue];
-  //     }
-
-  //     return [...prev, productFalse];
-  //   });
-
-  //   // change "saved" propery
-  //   if (saveForLater.length > 0) {
-  //     setSaveForLater((prev) => {
-  //       const map = prev.map((prod) => {
-  //         if (prod.id === product.id) {
-  //           return { ...prod, saved: !prod.saved };
-  //         }
-
-  //         return prod;
-  //       });
-
-  //       return map;
-  //     });
-  //   }
-
-  //   setSaveForLater((prev) => {
-  //     const unique = prev.filter((el, index) => {
-  //       return index === prev.findIndex((o) => el.id === o.id);
-  //     });
-
-  //     return unique;
-  //   });
-
-  //   setSaveForLater((prev) => {
-  //     const filter = prev.filter((el) => {
-  //       return el.saved === true;
-  //     });
-
-  //     // setIsSaved(false);
-
-  //     return filter;
-  //   });
-  // };
 
   useEffect(() => {
     setPrice(+currentPrice * Number(productQuantity));

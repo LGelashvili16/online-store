@@ -6,6 +6,7 @@ import { language } from '../data/footer/footerData';
 const currencyDataContext = React.createContext();
 const shipToContext = React.createContext();
 const ChangeLanguageContext = React.createContext();
+const SearchedContext = React.createContext();
 
 export function useCurrencyData() {
   return useContext(currencyDataContext);
@@ -17,6 +18,10 @@ export function useShipToData() {
 
 export function useChangeLanguage() {
   return useContext(ChangeLanguageContext);
+}
+
+export function useSearched() {
+  return useContext(SearchedContext);
 }
 
 export const GlobalStateProvider = ({ children }) => {
@@ -38,6 +43,7 @@ export const GlobalStateProvider = ({ children }) => {
   const [currentCurrency, setCurrentCurrency] = useState(localStorageCurrency);
   const [currentShipTo, setCurrentShipTo] = useState(localStorageShipping);
   const [currentLang, setCurrentLang] = useState(localStorageLang);
+  const [searched, setSearched] = useState([]);
   // const [currentCurrency, setCurrentCurrency] = useState(currencyData[0].name);
   // const [currentShipTo, setCurrentShipTo] = useState(headerFlags[0].flag);
   // const [currentLang, setCurrentLang] = useState(language[0]);
@@ -70,7 +76,9 @@ export const GlobalStateProvider = ({ children }) => {
     <currencyDataContext.Provider value={[currentCurrency, setCurrentCurrency]}>
       <shipToContext.Provider value={[currentShipTo, setCurrentShipTo]}>
         <ChangeLanguageContext.Provider value={[currentLang, setCurrentLang]}>
-          {children}
+          <SearchedContext.Provider value={[searched, setSearched]}>
+            {children}
+          </SearchedContext.Provider>
         </ChangeLanguageContext.Provider>
       </shipToContext.Provider>
     </currencyDataContext.Provider>

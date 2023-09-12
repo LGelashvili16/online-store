@@ -1,0 +1,128 @@
+.container {
+  width: min(100%, 1180px);
+  padding-bottom: 20px;
+}
+
+.page-title {
+  margin-bottom: 20px;
+
+  color: #1c1c1c;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.searched-cards {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+}
+
+.searched-card {
+  padding: 15px;
+
+  background: #fff;
+  border: 1px solid #dee2e7;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  cursor: pointer;
+}
+
+.searched-card-title {
+  color: #1c1c1c;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.searched-card-about {
+  display: flex;
+  gap: 10px;
+}
+
+.searched-card-image {
+  min-width: 120px;
+  min-height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searched-card-image img {
+  max-width: 90px;
+  max-height: 90px;
+  pointer-events: none;
+}
+
+.searched-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.searched-card-price {
+  color: #8b96a5;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.searched-card-description {
+  color: #1c1c1c;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: min(100%, 360px);
+    padding-inline: 10px;
+  }
+
+  .page-title {
+    margin-block: 20px;
+    font-size: 20px;
+  }
+
+  .searched-cards {
+    grid-template-columns: auto;
+    gap: 10px;
+  }
+
+  .searched-card {
+    padding: 10px;
+    gap: 5px;
+  }
+
+  .searched-card-title {
+    font-size: 18px;
+  }
+
+  .searched-card-about {
+    gap: 5px;
+  }
+
+  .searched-card-image {
+    min-width: 100px;
+    min-height: 100px;
+  }
+
+  .searched-card-image img {
+    max-width: 70px;
+    max-height: 70px;
+  }
+
+  .searched-card-info {
+    gap: 5px;
+  }
+
+  .searched-card-price {
+    font-size: 13px;
+  }
+
+  .searched-card-description {
+    font-size: 13px;
+  }
+}
