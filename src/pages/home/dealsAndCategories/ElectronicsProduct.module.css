@@ -1,15 +1,7 @@
-:root {
-  --primary: #0d6efd;
-  --gray-500: #8b96a5;
-  --gray-600: #505050;
-  --dark: #1c1c1c;
-  --white: #fff;
-}
-
 .section2-row3-product {
   display: flex;
   justify-content: space-between;
-  min-width: 224px;
+  width: 224px;
   height: 127px;
   padding-top: 20px;
   padding-left: 15px;
@@ -58,6 +50,9 @@
 
 .row3-product-price-resp {
   display: none;
+}
+
+@media (max-width: 768px) {
 }
 
 @media (max-width: 480px) {

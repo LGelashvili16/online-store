@@ -10,7 +10,7 @@ const Inquiry = () => {
 
   const [pcs, setPcs] = useState('');
 
-  const [form, setForm] = useState({
+  const [, setForm] = useState({
     requestedItem: '',
     requestedItemDetails: '',
     requestedItemQuantity: '',
@@ -18,7 +18,7 @@ const Inquiry = () => {
   });
 
   const detectMobile = () => {
-    if (window.innerWidth <= 480) {
+    if (window.innerWidth <= 480 || window.innerWidth <= 769) {
       setMobileScreen(true);
     } else {
       setMobileScreen(false);

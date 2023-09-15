@@ -27,6 +27,37 @@
   color: var(--white);
 }
 
+@media (max-width: 768px) {
+  .section2-row1-offers-countdown {
+    display: flex;
+    gap: 4px;
+    margin-top: 0;
+  }
+
+  .timer-card:first-child {
+    display: none;
+  }
+
+  .timer-card {
+    width: 45px;
+    height: 44px;
+    padding-top: 6px;
+    border-radius: 0;
+    background: #eff2f4;
+    text-align: center;
+  }
+
+  .timer-card h3 {
+    font-weight: 600;
+    color: var(--gray-500);
+  }
+
+  .timer-card p {
+    font-size: 11px;
+    color: var(--gray-500);
+  }
+}
+
 @media (max-width: 480px) {
   .section2-row1-offers-countdown {
     display: flex;

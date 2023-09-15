@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const SavedCard = ({ product }) => {
   const [, setSaveForLater] = useSaveForLater();
-  const [, setCart] = useCart();
+  const [cart, setCart] = useCart();
 
   const navigate = useNavigate();
 
@@ -44,6 +44,8 @@ const SavedCard = ({ product }) => {
     });
   };
 
+  const btnTitleCheck = cart.find((itm) => product.id === itm.id);
+
   return (
     <div className={styles['card']} onClick={productClickHandler}>
       <div className={styles['saved-card-image']}>
@@ -66,7 +68,7 @@ const SavedCard = ({ product }) => {
         <div className={styles['saved-card-btns']}>
           <button className={styles['move-btn']} onClick={addToCartHandler}>
             <img src={cartIcon} alt="cart" />
-            Move to cart
+            {!btnTitleCheck ? 'Move to cart' : 'Added'}
           </button>
 
           <button className={styles['remove-btn']} onClick={removeHandler}>

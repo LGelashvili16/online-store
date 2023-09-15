@@ -33,21 +33,8 @@ const SavedForLaterCard = ({ product, isDragging }) => {
       }
 
       return [...prev, product];
-
-      // return !prev.includes(productTrue) ? [...prev, productTrue] : prev;
     });
   };
-
-  // const addToCartHandler = (e) => {
-  //   e.stopPropagation();
-  //   setCart((prev) => {
-  //     if (prev.length === 0) {
-  //       return [product];
-  //     }
-
-  //     return !prev.includes(product) ? [...prev, product] : prev;
-  //   });
-  // };
 
   const removeHandler = (e) => {
     e.stopPropagation();
@@ -57,6 +44,8 @@ const SavedForLaterCard = ({ product, isDragging }) => {
       });
     });
   };
+
+  const btnTitleCheck = cart.find((itm) => product.id === itm.id);
 
   return (
     <div className={styles['saved-card']} onClick={productClickHandler}>
@@ -74,7 +63,7 @@ const SavedForLaterCard = ({ product, isDragging }) => {
         <div className={styles['saved-card-btns']}>
           <button className={styles['move-btn']} onClick={addToCartHandler}>
             <img src={cartIcon} alt="cart" />
-            Move to cart
+            {!btnTitleCheck ? 'Move to cart' : 'Added'}
           </button>
 
           <button className={styles['remove-btn']} onClick={removeHandler}>
