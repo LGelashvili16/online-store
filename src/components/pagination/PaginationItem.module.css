@@ -23,7 +23,7 @@
   color: #8b96a5;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .page {
     width: 40px;
     height: 35px;
@@ -31,3 +31,12 @@
     font-size: 14px;
   }
 }
+
+/* @media (max-width: 480px) {
+  .page {
+    width: 40px;
+    height: 35px;
+
+    font-size: 14px;
+  }
+} */

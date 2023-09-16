@@ -25,8 +25,14 @@
   color: var(--gray-500, #8b96a5);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .breadcrumbs {
     display: none;
   }
 }
+
+/* @media (max-width: 480px) {
+  .breadcrumbs {
+    display: none;
+  }
+} */

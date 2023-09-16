@@ -17,7 +17,7 @@ const UserAndCategories = () => {
   };
 
   const learnMoreHandler = () => {
-    navigate('mobile-accessory');
+    navigate('consumer-electronics/mobile-accessory');
   };
 
   const registrationHandler = () => {
