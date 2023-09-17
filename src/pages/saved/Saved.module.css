@@ -20,13 +20,20 @@
   gap: 20px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .container {
-    width: min(100%, 360px);
-    padding-inline: 10px;
+    width: min(100%, 600px);
+    padding-inline: 30px;
   }
 
   .container h3 {
     font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: min(100%, 360px);
+    padding-inline: 10px;
   }
 }

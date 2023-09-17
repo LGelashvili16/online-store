@@ -40,9 +40,9 @@
   font-weight: 600;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .saved {
-    width: min(100%, 360px);
+    width: min(100%, 600px);
     height: min(100%, 475px);
 
     padding: 0 10px 0;
@@ -63,5 +63,12 @@
 
     margin-top: 0;
     margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .saved {
+    width: min(100%, 360px);
+    height: min(100%, 475px);
   }
 }

@@ -188,7 +188,7 @@
   display: none;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .container {
     width: min(100%, 360px);
     display: flex;
@@ -273,5 +273,24 @@
 
   .confirmation-btns button:last-child {
     height: 35px;
+  }
+}
+@media (max-width: 480px) {
+  .container {
+    width: min(100%, 360px);
+    padding-inline: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .titles {
+    gap: 15px;
+    font-size: 14px;
+  }
+
+  .values {
+    gap: 15px;
+    font-size: 14px;
   }
 }

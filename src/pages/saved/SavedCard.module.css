@@ -133,7 +133,7 @@
   border: 1px solid #fa3434;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .card {
     display: flex;
     align-items: center;

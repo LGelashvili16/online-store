@@ -159,7 +159,7 @@ const CartCard = ({ product, quantity, setQuantity }) => {
 
           <div
             className={`${
-              windowSize > 480
+              windowSize > 768
                 ? styles['card-btns']
                 : showOptions
                 ? styles['card-btns']
