@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/online-store/static/css/main.d2a52669.css",
-    "main.js": "/online-store/static/js/main.de94d5a0.js",
+    "main.js": "/online-store/static/js/main.f7e6ba32.js",
     "static/js/787.a92fe09e.chunk.js": "/online-store/static/js/787.a92fe09e.chunk.js",
     "static/media/parcels.png": "/online-store/static/media/parcels.4be3316d701f729664cd.png",
     "static/media/kitchenDishes8.webp": "/online-store/static/media/kitchenDishes8.a9a81d5ee5cf1079bebc.webp",
@@ -150,11 +150,11 @@
     "static/media/check-mark.svg": "/online-store/static/media/check-mark.5ada59f0c61a3353d51a.svg",
     "static/media/chevron_right.svg": "/online-store/static/media/chevron_right.d1a4c566e1676df4b29c4cdfacc0e31d.svg",
     "main.d2a52669.css.map": "/online-store/static/css/main.d2a52669.css.map",
-    "main.de94d5a0.js.map": "/online-store/static/js/main.de94d5a0.js.map",
+    "main.f7e6ba32.js.map": "/online-store/static/js/main.f7e6ba32.js.map",
     "787.a92fe09e.chunk.js.map": "/online-store/static/js/787.a92fe09e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d2a52669.css",
-    "static/js/main.de94d5a0.js"
+    "static/js/main.f7e6ba32.js"
   ]
 }
