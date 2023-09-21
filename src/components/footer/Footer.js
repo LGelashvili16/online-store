@@ -138,10 +138,18 @@ const Footer = () => {
           <div className={styles['footer-info-getApp']}>
             <h4>Get app</h4>
             <div className={styles['footer-getApp']}>
-              <Link to="https://www.apple.com/ge/app-store/" target="_blank">
+              <Link
+                title="App store"
+                to="https://www.apple.com/ge/app-store/"
+                target="_blank"
+              >
                 <img src={appleStoreImg} alt="" />
               </Link>
-              <Link to="https://play.google.com/store/games" target="_blank">
+              <Link
+                title="Play store"
+                to="https://play.google.com/store/games"
+                target="_blank"
+              >
                 <img src={androidMarketImg} alt="" />
               </Link>
             </div>

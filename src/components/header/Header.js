@@ -525,7 +525,7 @@ const Header = () => {
             <img
               className={styles['message-icon']}
               src={messageImg}
-              alt="Message"
+              alt="Message icon"
             />
             <p>Message</p>
           </Link>
