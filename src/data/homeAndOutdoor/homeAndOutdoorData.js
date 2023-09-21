@@ -1,85 +1,85 @@
-import smartwatchImg from '../../assets/mobile-accessories/smartwatch.png';
+import smartwatchImg from '../../assets/mobile-accessories/smartwatch.webp';
 
-import bagImg from '../../assets/mobile-accessories/bag.png';
-import jacketImg from '../../assets/mobile-accessories/jacket.png';
+import bagImg from '../../assets/mobile-accessories/bag.webp';
+import jacketImg from '../../assets/mobile-accessories/jacket.webp';
 
 import filledStar from '../../assets/mobile-accessories/filled-star.svg';
 import emptyStar from '../../assets/mobile-accessories/empty-star.svg';
 
 // Home Outdoor
-import softChairsImg from '../../assets/home/section2/soft-chairs.png';
-import sofaChairImg from '../../assets/home/section2/sofa&chair.png';
-import kitcheDishesImg from '../../assets/home/section2/kitchen-dishes.png';
-import smartWatches2Img from '../../assets/home/section2/smart-watches2.png';
-import kitchenMixerImg from '../../assets/home/section2/kitchen-mixer.png';
-import blendersImg from '../../assets/home/section2/blenders.png';
-import homeApplianceImg from '../../assets/home/section2/home-appliance.png';
-import coffeeMakerImg from '../../assets/home/section2/coffee-maker.png';
+import softChairsImg from '../../assets/home/section2/soft-chairs.webp';
+import sofaChairImg from '../../assets/home/section2/sofa&chair.webp';
+import kitcheDishesImg from '../../assets/home/section2/kitchen-dishes.webp';
+import smartWatches2Img from '../../assets/home/section2/smart-watches2.webp';
+import kitchenMixerImg from '../../assets/home/section2/kitchen-mixer.webp';
+import blendersImg from '../../assets/home/section2/blenders.webp';
+import homeApplianceImg from '../../assets/home/section2/home-appliance.webp';
+import coffeeMakerImg from '../../assets/home/section2/coffee-maker.webp';
 
 // Soft Chair
-import softChair1 from '../../assets/homeAndOutdoor/softChair1.jpeg';
-import softChair2 from '../../assets/homeAndOutdoor/softChair2.jpeg';
-import softChair4 from '../../assets/homeAndOutdoor/softChair4.jpeg';
-import softChair5 from '../../assets/homeAndOutdoor/softChair5.jpeg';
-import softChair6 from '../../assets/homeAndOutdoor/softChair6.jpeg';
-import softChair7 from '../../assets/homeAndOutdoor/softChair7.jpeg';
-import softChair8 from '../../assets/homeAndOutdoor/softChair8.jpeg';
+import softChair1 from '../../assets/homeAndOutdoor/softChair1.webp';
+import softChair2 from '../../assets/homeAndOutdoor/softChair2.webp';
+import softChair4 from '../../assets/homeAndOutdoor/softChair4.webp';
+import softChair5 from '../../assets/homeAndOutdoor/softChair5.webp';
+import softChair6 from '../../assets/homeAndOutdoor/softChair6.webp';
+import softChair7 from '../../assets/homeAndOutdoor/softChair7.webp';
+import softChair8 from '../../assets/homeAndOutdoor/softChair8.webp';
 
 // Sofa Chair
-import sofaChair1 from '../../assets/homeAndOutdoor/sofaChair1.jpeg';
-import sofaChair2 from '../../assets/homeAndOutdoor/sofaChair2.jpeg';
-import sofaChair3 from '../../assets/homeAndOutdoor/sofaChair3.jpeg';
-import sofaChair4 from '../../assets/homeAndOutdoor/sofaChair4.jpeg';
-import sofaChair5 from '../../assets/homeAndOutdoor/sofaChair5.jpeg';
-import sofaChair6 from '../../assets/homeAndOutdoor/sofaChair6.jpeg';
-import sofaChair7 from '../../assets/homeAndOutdoor/sofaChair7.jpeg';
-import sofaChair8 from '../../assets/homeAndOutdoor/sofaChair8.jpeg';
+import sofaChair1 from '../../assets/homeAndOutdoor/sofaChair1.webp';
+import sofaChair2 from '../../assets/homeAndOutdoor/sofaChair2.webp';
+import sofaChair3 from '../../assets/homeAndOutdoor/sofaChair3.webp';
+import sofaChair4 from '../../assets/homeAndOutdoor/sofaChair4.webp';
+import sofaChair5 from '../../assets/homeAndOutdoor/sofaChair5.webp';
+import sofaChair6 from '../../assets/homeAndOutdoor/sofaChair6.webp';
+import sofaChair7 from '../../assets/homeAndOutdoor/sofaChair7.webp';
+import sofaChair8 from '../../assets/homeAndOutdoor/sofaChair8.webp';
 
 // Kitchen dishes
-import kitchenDishes1 from '../../assets/homeAndOutdoor/kitchenDishes1.jpg';
-import kitchenDishes2 from '../../assets/homeAndOutdoor/kitchenDishes2.jpg';
-import kitchenDishes3 from '../../assets/homeAndOutdoor/kitchenDishes3.jpg';
-import kitchenDishes4 from '../../assets/homeAndOutdoor/kitchenDishes4.jpg';
-import kitchenDishes5 from '../../assets/homeAndOutdoor/kitchenDishes5.jpg';
-import kitchenDishes6 from '../../assets/homeAndOutdoor/kitchenDishes6.jpg';
-import kitchenDishes7 from '../../assets/homeAndOutdoor/kitchenDishes7.jpg';
-import kitchenDishes8 from '../../assets/homeAndOutdoor/kitchenDishes8.jpg';
+import kitchenDishes1 from '../../assets/homeAndOutdoor/kitchenDishes1.webp';
+import kitchenDishes2 from '../../assets/homeAndOutdoor/kitchenDishes2.webp';
+import kitchenDishes3 from '../../assets/homeAndOutdoor/kitchenDishes3.webp';
+import kitchenDishes4 from '../../assets/homeAndOutdoor/kitchenDishes4.webp';
+import kitchenDishes5 from '../../assets/homeAndOutdoor/kitchenDishes5.webp';
+import kitchenDishes6 from '../../assets/homeAndOutdoor/kitchenDishes6.webp';
+import kitchenDishes7 from '../../assets/homeAndOutdoor/kitchenDishes7.webp';
+import kitchenDishes8 from '../../assets/homeAndOutdoor/kitchenDishes8.webp';
 
 // Smart watches
-import smartwatch1 from '../../assets/homeAndOutdoor/smartWatch1.png';
-import smartwatch2 from '../../assets/homeAndOutdoor/smartWatch1.png';
-import smartwatch3 from '../../assets/homeAndOutdoor/smartWatch1.png';
-import smartwatch4 from '../../assets/homeAndOutdoor/smartWatch1.png';
-import smartwatch5 from '../../assets/homeAndOutdoor/smartWatch1.png';
-import smartwatch6 from '../../assets/homeAndOutdoor/smartWatch1.png';
-import smartwatch7 from '../../assets/homeAndOutdoor/smartWatch1.png';
-import smartwatch8 from '../../assets/homeAndOutdoor/smartWatch1.png';
+import smartwatch1 from '../../assets/homeAndOutdoor/smartWatch1.webp';
+import smartwatch2 from '../../assets/homeAndOutdoor/smartWatch1.webp';
+import smartwatch3 from '../../assets/homeAndOutdoor/smartWatch1.webp';
+import smartwatch4 from '../../assets/homeAndOutdoor/smartWatch1.webp';
+import smartwatch5 from '../../assets/homeAndOutdoor/smartWatch1.webp';
+import smartwatch6 from '../../assets/homeAndOutdoor/smartWatch1.webp';
+import smartwatch7 from '../../assets/homeAndOutdoor/smartWatch1.webp';
+import smartwatch8 from '../../assets/homeAndOutdoor/smartWatch1.webp';
 
 // Kitchen mixer
-import kitchenMixer1 from '../../assets/homeAndOutdoor/kitchenMixer1.png';
-import kitchenMixer2 from '../../assets/homeAndOutdoor/kitchenMixer1.png';
-import kitchenMixer3 from '../../assets/homeAndOutdoor/kitchenMixer1.png';
-import kitchenMixer4 from '../../assets/homeAndOutdoor/kitchenMixer1.png';
-import kitchenMixer5 from '../../assets/homeAndOutdoor/kitchenMixer1.png';
-import kitchenMixer6 from '../../assets/homeAndOutdoor/kitchenMixer1.png';
-import kitchenMixer7 from '../../assets/homeAndOutdoor/kitchenMixer1.png';
-import kitchenMixer8 from '../../assets/homeAndOutdoor/kitchenMixer1.png';
+import kitchenMixer1 from '../../assets/homeAndOutdoor/kitchenMixer1.webp';
+import kitchenMixer2 from '../../assets/homeAndOutdoor/kitchenMixer1.webp';
+import kitchenMixer3 from '../../assets/homeAndOutdoor/kitchenMixer1.webp';
+import kitchenMixer4 from '../../assets/homeAndOutdoor/kitchenMixer1.webp';
+import kitchenMixer5 from '../../assets/homeAndOutdoor/kitchenMixer1.webp';
+import kitchenMixer6 from '../../assets/homeAndOutdoor/kitchenMixer1.webp';
+import kitchenMixer7 from '../../assets/homeAndOutdoor/kitchenMixer1.webp';
+import kitchenMixer8 from '../../assets/homeAndOutdoor/kitchenMixer1.webp';
 
 // Blenders
-import blenders1 from '../../assets/homeAndOutdoor/blenders1.png';
-import blenders2 from '../../assets/homeAndOutdoor/blenders1.png';
-import blenders3 from '../../assets/homeAndOutdoor/blenders1.png';
-import blenders4 from '../../assets/homeAndOutdoor/blenders1.png';
-import blenders5 from '../../assets/homeAndOutdoor/blenders1.png';
-import blenders6 from '../../assets/homeAndOutdoor/blenders1.png';
-import blenders7 from '../../assets/homeAndOutdoor/blenders1.png';
-import blenders8 from '../../assets/homeAndOutdoor/blenders1.png';
+import blenders1 from '../../assets/homeAndOutdoor/blenders1.webp';
+import blenders2 from '../../assets/homeAndOutdoor/blenders1.webp';
+import blenders3 from '../../assets/homeAndOutdoor/blenders1.webp';
+import blenders4 from '../../assets/homeAndOutdoor/blenders1.webp';
+import blenders5 from '../../assets/homeAndOutdoor/blenders1.webp';
+import blenders6 from '../../assets/homeAndOutdoor/blenders1.webp';
+import blenders7 from '../../assets/homeAndOutdoor/blenders1.webp';
+import blenders8 from '../../assets/homeAndOutdoor/blenders1.webp';
 
 // Home appliance
-import homeAppliance1 from '../../assets/homeAndOutdoor/homeAppliance1.png';
+import homeAppliance1 from '../../assets/homeAndOutdoor/homeAppliance1.webp';
 
 // Coffee maker
-import coffeeMaker1 from '../../assets/homeAndOutdoor/coffeeMaker1.png';
+import coffeeMaker1 from '../../assets/homeAndOutdoor/coffeeMaker1.webp';
 
 export const category = [
   {

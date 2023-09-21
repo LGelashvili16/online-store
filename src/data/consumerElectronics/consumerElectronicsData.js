@@ -1,50 +1,50 @@
-import camerasImg from '../../assets/home/section2/cameras.png';
-import headphones2Img from '../../assets/home/section2/headphones2.png';
-import gamingSetImg from '../../assets/home/section2/gaming-set.png';
-import laptopsAndPCImg from '../../assets/home/section2/laptops&pc.png';
-import smartphones2Img from '../../assets/home/section2/smartphones2.png';
-import smartWatches2Img from '../../assets/home/section2/smart-watches2.png';
-import kitchenMixerImg from '../../assets/home/section2/kitchen-mixer.png';
+import camerasImg from '../../assets/home/section2/cameras.webp';
+import headphones2Img from '../../assets/home/section2/headphones2.webp';
+import gamingSetImg from '../../assets/home/section2/gaming-set.webp';
+import laptopsAndPCImg from '../../assets/home/section2/laptops&pc.webp';
+import smartphones2Img from '../../assets/home/section2/smartphones2.webp';
+import smartWatches2Img from '../../assets/home/section2/smart-watches2.webp';
+import kitchenMixerImg from '../../assets/home/section2/kitchen-mixer.webp';
 
 import filledStar from '../../assets/mobile-accessories/filled-star.svg';
 import emptyStar from '../../assets/mobile-accessories/empty-star.svg';
 
-import iphone12Img from '../../assets/mobile-accessories/iphone12.png';
-import iphone14Img from '../../assets/mobile-accessories/iphone14pro.jpeg';
-import xiaomiImg from '../../assets/mobile-accessories/xiaomi.png';
-import xiaomiTabletImg from '../../assets/mobile-accessories/xiaomi-tablet.png';
-import laptopImg from '../../assets/mobile-accessories/laptop.png';
-import smartwatchImg from '../../assets/mobile-accessories/smartwatch.png';
-import headphonesImg from '../../assets/mobile-accessories/headphones.png';
+import iphone12Img from '../../assets/mobile-accessories/iphone12.webp';
+import iphone14Img from '../../assets/mobile-accessories/iphone14pro.webp';
+import xiaomiImg from '../../assets/mobile-accessories/xiaomi.webp';
+import xiaomiTabletImg from '../../assets/mobile-accessories/xiaomi-tablet.webp';
+import laptopImg from '../../assets/mobile-accessories/laptop.webp';
+import smartwatchImg from '../../assets/mobile-accessories/smartwatch.webp';
+import headphonesImg from '../../assets/mobile-accessories/headphones.webp';
 
-import headphone1 from '../../assets/consumerElectronics/headphones1.png';
-import headphone2 from '../../assets/consumerElectronics/headphones2.png';
-import headphone3 from '../../assets/consumerElectronics/headphones3.jpg';
-import headphone4 from '../../assets/consumerElectronics/headphones4.jpg';
-import headphone5 from '../../assets/consumerElectronics/headphones5.jpg';
-import headphone6 from '../../assets/consumerElectronics/headphones6.jpg';
-import headphone7 from '../../assets/consumerElectronics/headphones7.png';
-import headphone8 from '../../assets/consumerElectronics/headphones8.jpg';
+import headphone1 from '../../assets/consumerElectronics/headphones1.webp';
+import headphone2 from '../../assets/consumerElectronics/headphones2.webp';
+import headphone3 from '../../assets/consumerElectronics/headphones3.webp';
+import headphone4 from '../../assets/consumerElectronics/headphones4.webp';
+import headphone5 from '../../assets/consumerElectronics/headphones5.webp';
+import headphone6 from '../../assets/consumerElectronics/headphones6.webp';
+import headphone7 from '../../assets/consumerElectronics/headphones7.webp';
+import headphone8 from '../../assets/consumerElectronics/headphones8.webp';
 
-import smartphone1 from '../../assets/consumerElectronics/smartphone1.jpg';
-import smartphone2 from '../../assets/consumerElectronics/smartphone2.jpg';
-import smartphone3 from '../../assets/consumerElectronics/smartphone3.jpg';
-import smartphone4 from '../../assets/consumerElectronics/smartphone4.jpg';
-import smartphone5 from '../../assets/consumerElectronics/smartphone5.jpg';
+import smartphone1 from '../../assets/consumerElectronics/smartphone1.webp';
+import smartphone2 from '../../assets/consumerElectronics/smartphone2.webp';
+import smartphone3 from '../../assets/consumerElectronics/smartphone3.webp';
+import smartphone4 from '../../assets/consumerElectronics/smartphone4.webp';
+import smartphone5 from '../../assets/consumerElectronics/smartphone5.webp';
 
-import camera1 from '../../assets/consumerElectronics/camera1.jpg';
-import camera2 from '../../assets/consumerElectronics/camera2.png';
-import camera3 from '../../assets/consumerElectronics/camera3.png';
-import camera4 from '../../assets/consumerElectronics/camera4.jpg';
-import camera5 from '../../assets/consumerElectronics/camera5.jpg';
-import camera6 from '../../assets/consumerElectronics/camera6.png';
+import camera1 from '../../assets/consumerElectronics/camera1.webp';
+import camera2 from '../../assets/consumerElectronics/camera2.webp';
+import camera3 from '../../assets/consumerElectronics/camera3.webp';
+import camera4 from '../../assets/consumerElectronics/camera4.webp';
+import camera5 from '../../assets/consumerElectronics/camera5.webp';
+import camera6 from '../../assets/consumerElectronics/camera6.webp';
 
-import laptop1 from '../../assets/consumerElectronics/pc1.jpg';
-import laptop2 from '../../assets/consumerElectronics/pc2.jpg';
-import laptop3 from '../../assets/consumerElectronics/pc3.jpg';
-import laptop4 from '../../assets/consumerElectronics/pc4.jpg';
-import laptop5 from '../../assets/consumerElectronics/pc5.jpg';
-import laptop6 from '../../assets/consumerElectronics/pc6.jpg';
+import laptop1 from '../../assets/consumerElectronics/pc1.webp';
+import laptop2 from '../../assets/consumerElectronics/pc2.webp';
+import laptop3 from '../../assets/consumerElectronics/pc3.webp';
+import laptop4 from '../../assets/consumerElectronics/pc4.webp';
+import laptop5 from '../../assets/consumerElectronics/pc5.webp';
+import laptop6 from '../../assets/consumerElectronics/pc6.webp';
 
 export const category = [
   {

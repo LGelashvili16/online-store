@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './NotFound.module.css';
-import error404 from '../../assets/error/404.jpg';
+import error404 from '../../assets/error/404.webp';
 
 const NotFound = () => {
   return (

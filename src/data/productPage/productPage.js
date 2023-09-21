@@ -1,15 +1,15 @@
-import coatImg from '../../assets/item/coat.png';
-import tShirtImg from '../../assets/item/t-shirt.png';
-import jacketImg from '../../assets/item/jacket.png';
-import tShirt2Img from '../../assets/item/t-shirt2.png';
-import bagImg from '../../assets/item/bag.png';
+import coatImg from '../../assets/item/coat.webp';
+import tShirtImg from '../../assets/item/t-shirt.webp';
+import jacketImg from '../../assets/item/jacket.webp';
+import tShirt2Img from '../../assets/item/t-shirt2.webp';
+import bagImg from '../../assets/item/bag.webp';
 
-import walletImg from '../../assets/item/r-wallet.png';
-import smartwatchImg from '../../assets/item/r-smartwatch.png';
-import headphonesImg from '../../assets/item/r-headphones.png';
-import shirtImg from '../../assets/item/r-shirt.png';
-import kettleImg from '../../assets/item/r-kettle.png';
-import unknownImg from '../../assets/item/r-unknown.png';
+import walletImg from '../../assets/item/r-wallet.webp';
+import smartwatchImg from '../../assets/item/r-smartwatch.webp';
+import headphonesImg from '../../assets/item/r-headphones.webp';
+import shirtImg from '../../assets/item/r-shirt.webp';
+import kettleImg from '../../assets/item/r-kettle.webp';
+import unknownImg from '../../assets/item/r-unknown.webp';
 
 export const youMayLikeData = [
   {

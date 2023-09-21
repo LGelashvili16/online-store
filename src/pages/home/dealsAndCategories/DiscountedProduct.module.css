@@ -19,8 +19,10 @@
 }
 
 .discounted-product-img img {
-  min-width: 129px;
-  max-height: 128px;
+  /* min-width: 129px; */
+  height: 121px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
 
   /* background-position: center; */
 }

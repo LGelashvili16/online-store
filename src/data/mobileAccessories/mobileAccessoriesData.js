@@ -1,13 +1,13 @@
-import iphone12Img from '../../assets/mobile-accessories/iphone12.png';
-import iphone14Img from '../../assets/mobile-accessories/iphone14pro.jpeg';
-import xiaomiImg from '../../assets/mobile-accessories/xiaomi.png';
-import xiaomiTabletImg from '../../assets/mobile-accessories/xiaomi-tablet.png';
-import laptopImg from '../../assets/mobile-accessories/laptop.png';
-import smartwatchImg from '../../assets/mobile-accessories/smartwatch.png';
-import headphonesImg from '../../assets/mobile-accessories/headphones.png';
+import iphone12Img from '../../assets/mobile-accessories/iphone12.webp';
+import iphone14Img from '../../assets/mobile-accessories/iphone14pro.webp';
+import xiaomiImg from '../../assets/mobile-accessories/xiaomi.webp';
+import xiaomiTabletImg from '../../assets/mobile-accessories/xiaomi-tablet.webp';
+import laptopImg from '../../assets/mobile-accessories/laptop.webp';
+import smartwatchImg from '../../assets/mobile-accessories/smartwatch.webp';
+import headphonesImg from '../../assets/mobile-accessories/headphones.webp';
 
-import bagImg from '../../assets/mobile-accessories/bag.png';
-import jacketImg from '../../assets/mobile-accessories/jacket.png';
+import bagImg from '../../assets/mobile-accessories/bag.webp';
+import jacketImg from '../../assets/mobile-accessories/jacket.webp';
 
 import filledStar from '../../assets/mobile-accessories/filled-star.svg';
 import emptyStar from '../../assets/mobile-accessories/empty-star.svg';

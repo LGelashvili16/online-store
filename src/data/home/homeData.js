@@ -1,37 +1,13 @@
-import smartWatchesImg from '../../assets/home/section2/smart-watches.png';
-import laptopsImg from '../../assets/home/section2/laptops.png';
-import canonCamerasImg from '../../assets/home/section2/canon-cameras.png';
-import headphonesImg from '../../assets/home/section2/headphones.png';
-import smartphonesImg from '../../assets/home/section2/smartphones.png';
-
-// Home Outdoor
-import softChairsImg from '../../assets/home/section2/soft-chairs.png';
-import sofaChairImg from '../../assets/home/section2/sofa&chair.png';
-import kitcheDishesImg from '../../assets/home/section2/kitchen-dishes.png';
-import smartWatches2Img from '../../assets/home/section2/smart-watches2.png';
-import kitchenMixerImg from '../../assets/home/section2/kitchen-mixer.png';
-import blendersImg from '../../assets/home/section2/blenders.png';
-import homeApplianceImg from '../../assets/home/section2/home-appliance.png';
-import coffeeMakerImg from '../../assets/home/section2/coffee-maker.png';
-
-// Electronics
-import camerasImg from '../../assets/home/section2/cameras.png';
-import headphones2Img from '../../assets/home/section2/headphones2.png';
-import gamingSetImg from '../../assets/home/section2/gaming-set.png';
-import laptopsAndPCImg from '../../assets/home/section2/laptops&pc.png';
-import smartphones2Img from '../../assets/home/section2/smartphones2.png';
-import electricKettleImg from '../../assets/home/section2/electric-kettle.png';
-
 // Section 4
-import tShirtImg from '../../assets/home/section4/t-shirt.png';
-import jacketImg from '../../assets/home/section4/jacket.png';
-import coatImg from '../../assets/home/section4/coat.png';
-import walletImg from '../../assets/home/section4/wallet.png';
-import bagImg from '../../assets/home/section4/bag.png';
-import shirtImg from '../../assets/home/section4/shirt.png';
-import headphonesS4Img from '../../assets/home/section4/headphones.png';
-import potS4Img from '../../assets/home/section4/pot.png';
-import kettleS4Img from '../../assets/home/section4/kettle.png';
+import tShirtImg from '../../assets/home/section4/t-shirt.webp';
+import jacketImg from '../../assets/home/section4/jacket.webp';
+import coatImg from '../../assets/home/section4/coat.webp';
+import walletImg from '../../assets/home/section4/wallet.webp';
+import bagImg from '../../assets/home/section4/bag.webp';
+import shirtImg from '../../assets/home/section4/shirt.webp';
+import headphonesS4Img from '../../assets/home/section4/headphones.webp';
+import potS4Img from '../../assets/home/section4/pot.webp';
+import kettleS4Img from '../../assets/home/section4/kettle.webp';
 
 // Section 5
 import parcelsS5Img from '../../assets/home/section5/parcels.png';
@@ -66,57 +42,6 @@ export const section1Data = [
   'Machinery tools',
   'More category',
 ];
-
-// export const section2Discounted = [
-//   { image: smartWatchesImg, title: 'Smart watches', discount: '-25%' },
-//   { image: laptopsImg, title: 'Laptops', discount: '-15%' },
-//   { image: canonCamerasImg, title: 'Canon cameras', discount: '-40%' },
-//   { image: headphonesImg, title: 'Headphones', discount: '-25%' },
-//   { image: smartphonesImg, title: 'Smartphones', discount: '-25%' },
-//   { image: laptopsImg, title: 'Laptops', discount: '-15%' },
-//   { image: headphonesImg, title: 'Headphones', discount: '-25%' },
-//   { image: canonCamerasImg, title: 'Canon cameras', discount: '-40%' },
-// ];
-
-// export const section2HomeOutdoor = [
-//   { title: 'Soft chairs', price: '19', image: softChairsImg },
-//   { title: 'Sofa & chair', price: '19', image: sofaChairImg },
-//   { title: 'Kitchen dishes', price: '19', image: kitcheDishesImg },
-//   { title: 'Smart watches', price: '19', image: smartWatches2Img },
-//   { title: 'Kitchen mixer', price: '100', image: kitchenMixerImg },
-//   { title: 'Blenders', price: '39', image: blendersImg },
-//   { title: 'Home appliance', price: '19', image: homeApplianceImg },
-//   { title: 'Coffee maker', price: '10', image: coffeeMakerImg },
-
-//   { title: 'Soft chairs', price: '19', image: softChairsImg },
-//   { title: 'Sofa & chair', price: '19', image: sofaChairImg },
-//   { title: 'Kitchen dishes', price: '19', image: kitcheDishesImg },
-//   { title: 'Smart watches', price: '19', image: smartWatches2Img },
-//   { title: 'Kitchen mixer', price: '100', image: kitchenMixerImg },
-//   { title: 'Blenders', price: '39', image: blendersImg },
-//   { title: 'Home appliance', price: '19', image: homeApplianceImg },
-//   { title: 'Coffee maker', price: '10', image: coffeeMakerImg },
-// ];
-
-// export const section2Electronics = [
-//   { title: 'Smart watches', price: '19', image: smartWatches2Img },
-//   { title: 'Cameras', price: '89', image: camerasImg },
-//   { title: 'Headphones', price: '10', image: headphones2Img },
-//   { title: 'Smart watches', price: '90', image: kitchenMixerImg },
-//   { title: 'Gaming set', price: '35', image: gamingSetImg },
-//   { title: 'Laptops & PC', price: '340', image: laptopsAndPCImg },
-//   { title: 'Smartphones', price: '19', image: smartphones2Img },
-//   { title: 'Electric kattle', price: '240', image: electricKettleImg },
-
-//   { title: 'Smart watches', price: '19', image: smartWatches2Img },
-//   { title: 'Cameras', price: '89', image: camerasImg },
-//   { title: 'Headphones', price: '10', image: headphones2Img },
-//   { title: 'Smart watches', price: '90', image: kitchenMixerImg },
-//   { title: 'Gaming set', price: '35', image: gamingSetImg },
-//   { title: 'Laptops & PC', price: '340', image: laptopsAndPCImg },
-//   { title: 'Smartphones', price: '19', image: smartphones2Img },
-//   { title: 'Electric kattle', price: '240', image: electricKettleImg },
-// ];
 
 export const pcsAmount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
