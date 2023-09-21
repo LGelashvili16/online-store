@@ -12,7 +12,7 @@ const Home = () => {
       <Helmet>
         <title>Online Store - Home</title>
         <meta name="description" content="shop latest electronics" />
-        <link rel="canonical" href="/online-store" />
+        <link rel="canonical" href="/online-store/" />
 
         <meta property="og:title" content="Electronics store, online store" />
         <meta
