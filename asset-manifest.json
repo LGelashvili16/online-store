@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/online-store/static/css/main.d2a52669.css",
-    "main.js": "/online-store/static/js/main.1867da31.js",
+    "main.js": "/online-store/static/js/main.2596b9f5.js",
     "static/js/787.a92fe09e.chunk.js": "/online-store/static/js/787.a92fe09e.chunk.js",
     "static/media/parcels.png": "/online-store/static/media/parcels.4be3316d701f729664cd.png",
     "static/media/kitchenDishes8.webp": "/online-store/static/media/kitchenDishes8.a9a81d5ee5cf1079bebc.webp",
@@ -120,9 +120,9 @@
     "static/media/Germany.svg": "/online-store/static/media/Germany.d7f016dfa62db6318e6e973dc114af4f.svg",
     "static/media/laptops&pc.webp": "/online-store/static/media/laptops&pc.80ea489e897659b6060b.webp",
     "static/media/t-shirt2.webp": "/online-store/static/media/t-shirt2.a79bd21fbd5e394295e6.webp",
+    "index.html": "/online-store/index.html",
     "static/media/linkedin.svg": "/online-store/static/media/linkedin.4f985deeb413dd0c7b347acd995fa195.svg",
     "static/media/resp-shopping-cart.svg": "/online-store/static/media/resp-shopping-cart.aeff2239524289b9a611b7ca5c86863f.svg",
-    "index.html": "/online-store/index.html",
     "static/media/coffee-maker.webp": "/online-store/static/media/coffee-maker.5a52b8f8323a25f81334.webp",
     "static/media/kitchen-dishes.webp": "/online-store/static/media/kitchen-dishes.5a52b8f8323a25f81334.webp",
     "static/media/favorite.svg": "/online-store/static/media/favorite.00ca67460606a04e17a9a6e14f52bd2d.svg",
@@ -150,11 +150,11 @@
     "static/media/check-mark.svg": "/online-store/static/media/check-mark.5ada59f0c61a3353d51a.svg",
     "static/media/chevron_right.svg": "/online-store/static/media/chevron_right.d1a4c566e1676df4b29c4cdfacc0e31d.svg",
     "main.d2a52669.css.map": "/online-store/static/css/main.d2a52669.css.map",
-    "main.1867da31.js.map": "/online-store/static/js/main.1867da31.js.map",
+    "main.2596b9f5.js.map": "/online-store/static/js/main.2596b9f5.js.map",
     "787.a92fe09e.chunk.js.map": "/online-store/static/js/787.a92fe09e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d2a52669.css",
-    "static/js/main.1867da31.js"
+    "static/js/main.2596b9f5.js"
   ]
 }
