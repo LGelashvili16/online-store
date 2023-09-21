@@ -27,6 +27,7 @@ import {
 
 import MayAlsoLike from './mayAlsoLike/MayAlsoLike';
 import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const HomeAndOutdoorCategory = () => {
   const [
@@ -153,6 +154,15 @@ const HomeAndOutdoorCategory = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{params.name}</title>
+        <meta name="description" content="shop home and outdoor items" />
+        <link
+          rel="canonical"
+          href={`/online-store/consumer-electronics/${params.name}`}
+        />
+      </Helmet>
+
       <div className={styles['container']}>
         <Breadcrumbs />
 
